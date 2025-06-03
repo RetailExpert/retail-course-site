@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3: Selling Techniques | Retail Expert Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-section {
+            background: white;
+            margin: -60px auto 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section {
+            padding: 60px 50px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-right: 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .paso-framework {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .paso-step {
+            background: linear-gradient(135deg, #f7fafc, #edf2f7);
+            border-radius: 20px;
+            padding: 30px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .paso-step::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .paso-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .paso-letter {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+
+        .paso-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .paso-description {
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .interactive-table {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin: 30px 0;
+        }
+
+        .table-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 2fr;
+            padding: 25px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s ease;
+        }
+
+        .table-row:hover {
+            background: #f8faff;
+        }
+
+        .table-row:last-child {
+            border-bottom: none;
+        }
+
+        .table-cell {
+            padding-right: 20px;
+        }
+
+        .table-cell strong {
+            color: #2d3748;
+            font-weight: 600;
+        }
+
+        .fba-demo {
+            background: linear-gradient(135deg, #fff5f5, #fed7d7);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 6px solid #e53e3e;
+        }
+
+        .fba-step {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .fba-label {
+            font-weight: 700;
+            color: #e53e3e;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .objection-handler {
+            background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 6px solid #38a169;
+        }
+
+        .lscr-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .lscr-step {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .lscr-step:hover {
+            transform: translateY(-3px);
+        }
+
+        .lscr-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .quiz-container {
+            background: linear-gradient(135deg, #ebf8ff, #bee3f8);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 25px;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 15px;
+        }
+
+        .quiz-option {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-option:hover {
+            border-color: #667eea;
+            background: #f8faff;
+        }
+
+        .quiz-option.correct {
+            background: #f0fff4;
+            border-color: #38a169;
+        }
+
+        .quiz-option.incorrect {
+            background: #fff5f5;
+            border-color: #e53e3e;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+
+        .floating-nav {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: white;
+            transform: scale(1.3);
+        }
+
+        .tip-callout {
+            background: linear-gradient(135deg, #fffaf0, #feebc8);
+            border-radius: 16px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #ed8936;
+            position: relative;
+        }
+
+        .tip-callout::before {
+            content: '💡';
+            font-size: 1.5rem;
+            position: absolute;
+            top: 25px;
+            left: -12px;
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        .tip-callout strong {
+            color: #9c4221;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section {
+                padding: 40px 30px;
+            }
+            
+            .table-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .floating-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="floating-nav">
+        <div class="nav-dot active" data-section="0"></div>
+        <div class="nav-dot" data-section="1"></div>
+        <div class="nav-dot" data-section="2"></div>
+        <div class="nav-dot" data-section="3"></div>
+        <div class="nav-dot" data-section="4"></div>
+    </div>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Selling Techniques</h1>
+            <p class="hero-subtitle">Master the art of consultative selling and transform customer interactions into lasting relationships</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            
+            <div class="section" data-section="0">
+                <div class="section-header">
+                    <div class="section-number">1</div>
+                    <h2 class="section-title">The PASO Framework</h2>
+                </div>
+                
+                <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 40px; line-height: 1.7;">Modern selling isn't about pushing products—it's about guiding customers to solutions that genuinely improve their lives. The PASO framework provides a structured yet natural approach to every customer interaction.</p>
+                
+                <div class="paso-framework">
+                    <div class="paso-step">
+                        <div class="paso-letter">P</div>
+                        <h3 class="paso-title">Probe</h3>
+                        <p class="paso-description">Ask strategic questions to uncover both stated and hidden needs. Listen more than you speak, and show genuine curiosity about their situation.</p>
+                    </div>
+                    
+                    <div class="paso-step">
+                        <div class="paso-letter">A</div>
+                        <h3 class="paso-title">Align</h3>
+                        <p class="paso-description">Connect specific product features to their expressed needs. Create clear links between what they want and what you're offering.</p>
+                    </div>
+                    
+                    <div class="paso-step">
+                        <div class="paso-letter">S</div>
+                        <h3 class="paso-title">Solve</h3>
+                        <p class="paso-description">Address concerns and objections as opportunities to provide valuable information rather than obstacles to overcome.</p>
+                    </div>
+                    
+                    <div class="paso-step">
+                        <div class="paso-letter">O</div>
+                        <h3 class="paso-title">Optimize</h3>
+                        <p class="paso-description">Suggest complementary items that enhance their primary purchase, focusing on improved experience rather than just increased sales.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-callout">
+                    <strong>Pro Tip:</strong> The best selling technique is the one the customer doesn't recognize as a technique. When done right, effective selling feels like helpful guidance from a knowledgeable friend.
+                </div>
+            </div>
+
+            <div class="section" data-section="1">
+                <div class="section-header">
+                    <div class="section-number">2</div>
+                    <h2 class="section-title">Strategic Questioning</h2>
+                </div>
+                
+                <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; line-height: 1.7;">Master these six question types to uncover true customer needs and build rapport naturally:</p>
+                
+                <div class="interactive-table">
+                    <div class="table-header">
+                        <div class="table-row">
+                            <div><strong>Question Type</strong></div>
+                            <div><strong>Purpose</strong></div>
+                            <div><strong>Example</strong></div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Open Exploration</strong></div>
+                        <div class="table-cell">Discover general needs and preferences</div>
+                        <div class="table-cell">"What brings you in today?" or "What are you looking for in a new smartphone?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Problem Identification</strong></div>
+                        <div class="table-cell">Uncover pain points or frustrations</div>
+                        <div class="table-cell">"What issues are you having with your current setup?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Situational Context</strong></div>
+                        <div class="table-cell">Understand usage environment</div>
+                        <div class="table-cell">"Where will you primarily be using this?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Priority Clarification</strong></div>
+                        <div class="table-cell">Identify decision-making criteria</div>
+                        <div class="table-cell">"Between speed and storage, which matters most to you?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Future-Oriented</strong></div>
+                        <div class="table-cell">Anticipate evolving requirements</div>
+                        <div class="table-cell">"How do you see your needs changing over time?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Confirmation</strong></div>
+                        <div class="table-cell">Verify understanding and build agreement</div>
+                        <div class="table-cell">"So you need something durable and under $50. Correct?"</div>
+                    </div>
+                </div>
+                
+                <div class="quiz-container">
+                    <div class="quiz-question">Quick Practice: A customer says "I need a laptop for work." What's your best follow-up question?</div>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="selectAnswer(this, false)">A) "What's your budget for this laptop?"</div>
+                        <div class="quiz-option" onclick="selectAnswer(this, true)">B) "What type of work will you primarily be doing on it?"</div>
+                        <div class="quiz-option" onclick="selectAnswer(this, false)">C) "Do you prefer Windows or Mac?"</div>
+                        <div class="quiz-option" onclick="selectAnswer(this, false)">D) "Have you looked at our featured models?"</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" data-section="2">
+                <div class="section-header">
+                    <div class="section-number">3</div>
+                    <h2 class="section-title">Feature-Benefit-Advantage Selling</h2>
+                </div>
+                
+                <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; line-height: 1.7;">Transform technical specifications into compelling value propositions by following this sequence:</p>
+                
+                <div class="fba-demo">
+                    <h3 style="color: #2d3748; margin-bottom: 30px; font-size: 1.4rem;">Smart Watch Example</h3>
+                    
+                    <div class="fba-step">
+                        <div class="fba-label">Feature (What it has)</div>
+                        <p>"This smartwatch has built-in GPS tracking."</p>
+                    </div>
+                    
+                    <div class="fba-step">
+                        <div class="fba-label">Benefit (How it helps)</div>
+                        <p>"So you can track your runs without carrying your phone."</p>
+                    </div>
+                    
+                    <div class="fba-step">
+                        <div class="fba-label">Advantage (Why it's superior)</div>
+                        <p>"This gives you more freedom than fitness trackers that require phone connectivity, and you'll never miss tracking a workout because you forgot your phone."</p>
+                    </div>
+                </div>
+                
+                <div class="tip-callout">
+                    <strong>Remember:</strong> Always present in F-B-A order. Leading with technical specifications alone loses most customers' attention within seconds.
+                </div>
+            </div>
+
+            <div class="section" data-section="3">
+                <div class="section-header">
+                    <div class="section-number">4</div>
+                    <h2 class="section-title">Objection Handling Mastery</h2>
+                </div>
+                
+                <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; line-height: 1.7;">Customer objections aren't roadblocks—they're opportunities to provide clarity and build trust. Master the LSCR method:</p>
+                
+                <div class="objection-handler">
+                    <div class="lscr-steps">
+                        <div class="lscr-step">
+                            <div class="lscr-icon">L</div>
+                            <h4 style="color: #2d3748; margin-bottom: 10px;">Listen</h4>
+                            <p style="color: #4a5568;">Allow complete expression without interrupting</p>
+                        </div>
+                        
+                        <div class="lscr-step">
+                            <div class="lscr-icon">S</div>
+                            <h4 style="color: #2d3748; margin-bottom: 10px;">Support</h4>
+                            <p style="color: #4a5568;">Validate their right to be concerned</p>
+                        </div>
+                        
+                        <div class="lscr-step">
+                            <div class="lscr-icon">C</div>
+                            <h4 style="color: #2d3748; margin-bottom: 10px;">Counter</h4>
+                            <p style="color: #4a5568;">Address with relevant information</p>
+                        </div>
+                        
+                        <div class="lscr-step">
+                            <div class="lscr-icon">R</div>
+                            <h4 style="color: #2d3748; margin-bottom: 10px;">Reaffirm</h4>
+                            <p style="color: #4a5568;">Circle back to key benefits</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="background: #f8faff; padding: 30px; border-radius: 16px; margin: 30px 0; border-left: 4px solid #667eea;">
+                    <h4 style="color: #2d3748; margin-bottom: 15px;">Real Example: "It's too expensive"</h4>
+                    <p style="margin-bottom: 10px;"><strong>Listen:</strong> [Allow them to fully express their concern]</p>
+                    <p style="margin-bottom: 10px;"><strong>Support:</strong> "I completely understand that budget is important, and it's smart to be careful with investments."</p>
+                    <p style="margin-bottom: 10px;"><strong>Counter:</strong> "What many customers find is that this model's 3-year warranty and energy efficiency actually save money long-term. Plus, we offer 12-month interest-free payments."</p>
+                    <p><strong>Reaffirm:</strong> "And since processing speed was your top priority, this will save you hours each week compared to lower-priced alternatives."</p>
+                </div>
+            </div>
+
+            <div class="section" data-section="4">
+                <div class="section-header">
+                    <div class="section-number">5</div>
+                    <h2 class="section-title">Closing with Confidence</h2>
+                </div>
+                
+                <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 30px; line-height: 1.7;">Different customers respond to different closing approaches. Match your technique to their personality type:</p>
+                
+                <div class="interactive-table">
+                    <div class="table-header">
+                        <div class="table-row">
+                            <div><strong>Customer Type</strong></div>
+                            <div><strong>Best Closing Technique</strong></div>
+                            <div><strong>Example Language</strong></div>
+                        </div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>The Researcher</strong></div>
+                        <div class="table-cell">Summary Close: Recap how product meets all requirements</div>
+                        <div class="table-cell">"Based on your need for durability, portability, and battery life, this checks all boxes. Anything else to consider?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>The Impulsive</strong></div>
+                        <div class="table-cell">Urgency Close: Emphasize limited availability</div>
+                        <div class="table-cell">"This is our last one in this color. Should I get this ready for you?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>The Wanderer</strong></div>
+                        <div class="table-cell">Experience Close: Focus on positive feelings</div>
+                        <div class="table-cell">"Imagine how great this will look in your living room. Friday or Saturday delivery?"</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell"><strong>Budget-Conscious</strong></div>
+                        <div class="table-cell">Value Justification: Emphasize long-term savings</div>
+                        <div class="table-cell">"This 5-year lifespan vs. 2 years for cheaper options saves you $200 long-term. Full payment or financing?"</div>
+                    </div>
+                </div>
+                
+                <div class="tip-callout">
+                    <strong>Watch for Buying Signals:</strong> Questions about delivery, warranty details, or payment options indicate readiness to purchase. When you see these signals, move confidently toward closing.
+                </div>
+                
+                <div style="text-align: center; margin-top: 60px;">
+                    <button onclick="completeLesson()" style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 18px 40px; border: none; border-radius: 30px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: transform 0.2s ease;">
+                        Complete Lesson & Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Progress bar functionality
+        function updateProgressBar() {
+            const sections = document.querySelectorAll('[data-section]');
+            const progressBar = document.getElementById('progressBar');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            progressBar.style.width = scrollPercent + '%';
+        }
+
+        // Navigation dots functionality
+        function updateActiveSection() {
+            const sections = document.querySelectorAll('[data-section]');
+            const navDots = document.querySelectorAll('.nav-dot');
+            const scrollTop = window.pageYOffset + 200;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+
+                if (scrollTop >= sectionTop && scrollTop < sectionTop + sectionHeight) {
+                    navDots.forEach(dot => dot.classList.remove('active'));
+                    navDots[index]?.classList.add('active');
+                }
+            });
+        }
+
+        // Quiz functionality
+        function selectAnswer(element, isCorrect) {
+            const options = element.parentNode.querySelectorAll('.quiz-option');
+            options.forEach(option => {
+                option.onclick = null;
+                if (option === element) {
+                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else if (isCorrect) {
+                    // Don't mark others if this one is correct
+                } else {
+                    // If this answer is wrong, find and highlight the correct one
+                    if (option.textContent.includes('What type of work')) {
+                        option.classList.add('correct');
+                    }
+                }
+            });
+
+            if (isCorrect) {
+                setTimeout(() => {
+                    alert('Correct! Understanding the work context helps you recommend the right specifications and features.');
+                }, 500);
+            } else {
+                setTimeout(() => {
+                    alert('Not quite. The best approach is to understand their work context first, which then guides your product recommendations.');
+                }, 500);
+            }
+        }
+
+        // Navigation dot click functionality
+        document.querySelectorAll('.nav-dot').forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                const targetSection = document.querySelector(`[data-section="${index}"]`);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Complete lesson functionality
+        function completeLesson() {
+            alert('Congratulations! You\'ve completed Lesson 3: Selling Techniques. You\'re now equipped with powerful frameworks for consultative selling that builds trust and drives results.');
+        }
+
+        // Event listeners
+        window.addEventListener('scroll', () => {
+            updateProgressBar();
+            updateActiveSection();
+        });
+
+        // Initial calls
+        updateProgressBar();
+        updateActiveSection();
+
+        // Smooth scroll for better UX
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
