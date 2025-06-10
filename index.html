@@ -414,8 +414,8 @@
             <p class="price-tag">Special Launch Price: $1.00</p>
             <p>Complete access to all 7 modules, bonus resources, and lifetime updates</p>
             <p class="guarantee">30-Day Money-Back Guarantee</p>
-              <div id="paypal-container-GTPH3XNR4N3E8"></div>
-https://www.paypal.com/ncp/payment/GTPH3XNR4N3E8
+           <script src="https://www.paypal.com/sdk/js?client-id="GTPH3XNR4N3E8></script>
+<div id="paypal-container"></div>
         </div>
     </section>
     
@@ -469,5 +469,22 @@ https://www.paypal.com/ncp/payment/GTPH3XNR4N3E8
             <p>&copy; 2025 Retail Mastery. All Rights Reserved.</p>
         </div>
     </footer>
-</body>
+<script>
+paypal.Buttons({
+    createOrder: function(data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: '97.00'
+                }
+            }]
+        });
+    },
+    onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+            alert('Payment completed!');
+        });
+    }
+}).render('#paypal-container');
+</script>/body>
 </html>
