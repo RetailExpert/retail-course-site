@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Customer Service Mastery - Deep Dive Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 3em;
+            background: linear-gradient(45deg, #3498db, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-style: italic;
+            font-size: 1.3em;
+        }
+        
+        h2 {
+            color: #2980b9;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #3498db;
+            font-size: 2em;
+        }
+        
+        h3 {
+            color: #e74c3c;
+            margin: 25px 0 15px 0;
+            font-size: 1.5em;
+        }
+        
+        h4 {
+            color: #27ae60;
+            margin: 20px 0 10px 0;
+            font-size: 1.3em;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            border-left: 6px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .real-life-example {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            border-left: 6px solid #f39c12;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(243, 156, 18, 0.2);
+        }
+        
+        .real-life-example::before {
+            content: "📋 REAL SCENARIO";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #f39c12;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .technique-box {
+            background: linear-gradient(135deg, #e8f5e8, #d4f3d4);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 6px solid #27ae60;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+        }
+        
+        .technique-box::before {
+            content: "💡 TECHNIQUE";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #27ae60;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 6px solid #e74c3c;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+        }
+        
+        .warning-box::before {
+            content: "⚠️ AVOID THIS";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #e74c3c;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .deep-dive-box {
+            background: linear-gradient(135deg, #e8f4f8, #d4e9f7);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 6px solid #3498db;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        }
+        
+        .deep-dive-box::before {
+            content: "🔍 DEEP DIVE";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #3498db;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .quiz-section {
+            background: linear-gradient(135deg, #f0f8ff, #e6f3ff);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            border: 3px solid #4169e1;
+            box-shadow: 0 6px 20px rgba(65, 105, 225, 0.2);
+        }
+        
+        .quiz-question {
+            margin: 30px 0;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #4169e1;
+        }
+        
+        .quiz-options label {
+            display: block;
+            margin: 15px 0;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            border: 2px solid #ddd;
+            font-size: 1.05em;
+        }
+        
+        .quiz-options label:hover {
+            background-color: #f0f8ff;
+            border-color: #3498db;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+            margin: 15px 8px;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
+        }
+        
+        .btn-danger {
+            background: linear-gradient(45deg, #e74c3c, #c0392b);
+        }
+        
+        .btn-warning {
+            background: linear-gradient(45deg, #f39c12, #e67e22);
+        }
+        
+        .customer-type {
+            background: #e3f2fd;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            border-left: 5px solid #2196f3;
+            box-shadow: 0 3px 10px rgba(33, 150, 243, 0.1);
+        }
+        
+        .dialogue-box {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-style: italic;
+            border-left: 4px solid #666;
+            font-size: 1.05em;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .customer-speech {
+            background: linear-gradient(135deg, #ffebee, #fce4ec);
+            border-left-color: #e74c3c;
+        }
+        
+        .employee-speech {
+            background: linear-gradient(135deg, #e8f5e8, #f1f8e9);
+            border-left-color: #27ae60;
+        }
+        
+        .progress-tracker {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+        }
+        
+        .progress-item {
+            text-align: center;
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .progress-item.completed {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .interactive-scenario {
+            background: #fff;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 2px solid #3498db;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
+        }
+        
+        .scenario-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .scenario-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border-top: 5px solid #3498db;
+            transition: transform 0.3s;
+        }
+        
+        .scenario-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .result-box {
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 12px;
+            display: none;
+            font-size: 1.1em;
+        }
+        
+        .success-box {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        
+        .incorrect-box {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        
+        .okay-box {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffeaa7;
+        }
+        
+        .cultural-awareness {
+            background: linear-gradient(135deg, #fef7e0, #fdf2e9);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 6px solid #e67e22;
+            position: relative;
+        }
+        
+        .cultural-awareness::before {
+            content: "🌍 CULTURAL AWARENESS";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #e67e22;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .stress-management {
+            background: linear-gradient(135deg, #f3e5f5, #e8d5ea);
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border-left: 6px solid #9b59b6;
+            position: relative;
+        }
+        
+        .stress-management::before {
+            content: "🧘 STRESS MANAGEMENT";
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            background: #9b59b6;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+        
+        .score-display {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .module-complete {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌟 Complete Customer Service Mastery</h1>
+        <p class="subtitle">The Ultimate Deep-Dive Training for Retail Excellence</p>
+        <p class="subtitle"><em>Master Every Aspect of Customer Service with Real-World Scenarios</em></p>
+        
+        <div class="progress-tracker">
+            <div class="progress-item completed" id="module1">Module 1: Psychology ✓</div>
+            <div class="progress-item" id="module2">Module 2: Communication</div>
+            <div class="progress-item" id="module3">Module 3: Conflict Resolution</div>
+            <div class="progress-item" id="module4">Module 4: Cultural Awareness</div>
+            <div class="progress-item" id="module5">Module 5: Stress Management</div>
+        </div>
+
+        <h2>🧠 Module 1: Deep Customer Psychology</h2>
+        
+        <div class="section">
+            <h3>The Customer's Hidden Motivations</h3>
+            <p>Every customer walks in with invisible baggage - their mood, their past experiences, their expectations. Understanding these hidden drivers is the key to exceptional service.</p>
+            
+            <div class="deep-dive-box">
+                <h4>The Iceberg Theory of Customer Behavior</h4>
+                <p><strong>What You See (10%):</strong> Their words, actions, immediate requests</p>
+                <p><strong>What You Don't See (90%):</strong> Their emotional state, past experiences, personal pressures, cultural background, financial stress, time constraints, and underlying needs</p>
+                
+                <h4>The Real Reasons Customers Get Upset:</h4>
+                <ul>
+                    <li><strong>Feeling Unheard:</strong> They've explained their problem multiple times</li>
+                    <li><strong>Loss of Control:</strong> The situation is beyond their influence</li>
+                    <li><strong>Time Pressure:</strong> They're running late or have other commitments</li>
+                    <li><strong>Financial Stress:</strong> Money is tight and this purchase matters</li>
+                    <li><strong>Past Trauma:</strong> Previous bad experiences with similar situations</li>
+                    <li><strong>Social Embarrassment:</strong> Fear of looking foolish in front of others</li>
+                </ul>
+            </div>
+            
+            <div class="customer-type">
+                <h4>🎭 The Performance Customer</h4>
+                <p><strong>Recognition Signs:</strong> Speaks loudly, mentions being a "valued customer," name-drops</p>
+                <p><strong>Hidden Need:</strong> Wants to feel important and respected</p>
+                <p><strong>Magic Words:</strong> "You're absolutely right," "I can see you're an experienced shopper," "Let me take special care of this for you"</p>
+                <p><strong>Approach:</strong> Give them the spotlight briefly, then guide professionally</p>
+            </div>
+            
+            <div class="customer-type">
+                <h4>🕵️ The Suspicious Customer</h4>
+                <p><strong>Recognition Signs:</strong> Questions everything, reads fine print, asks for guarantees</p>
+                <p><strong>Hidden Need:</strong> Has been scammed or disappointed before</p>
+                <p><strong>Magic Words:</strong> "That's a smart question," "I'd want to know that too," "Let me show you exactly how this works"</p>
+                <p><strong>Approach:</strong> Provide detailed explanations and documentation</p>
+            </div>
+            
+            <div class="customer-type">
+                <h4>👨‍👩‍👧‍👦 The Family Peacekeeper</h4>
+                <p><strong>Recognition Signs:</strong> Shopping with family, tries to please everyone, looks stressed</p>
+                <p><strong>Hidden Need:</strong> Wants to make everyone happy without conflict</p>
+                <p><strong>Magic Words:</strong> "This would work great for everyone," "Your family will love this," "This solves multiple needs"</p>
+                <p><strong>Approach:</strong> Help them find win-win solutions</p>
+            </div>
+        </div>
+
+        <div class="real-life-example">
+            <h4>Real Scenario: The Overwhelmed New Mom</h4>
+            <p><strong>Setting:</strong> Baby store, Saturday afternoon</p>
+            <p><strong>Customer:</strong> First-time mother with 3-month-old baby, looking exhausted and overwhelmed</p>
+            <p><strong>Context:</strong> Baby is crying, mom looks like she's been up all night</p>
+            
+            <div class="dialogue-box customer-speech">
+                <strong>Customer:</strong> "I need a car seat, but I don't know what's safe. Everyone keeps telling me different things. My baby won't stop crying and I'm so tired I can't think straight. I just want to keep my baby safe but everything is so expensive and confusing!"
+            </div>
+            
+            <div class="technique-box">
+                <h4>Reading the Hidden Needs:</h4>
+                <p><strong>Surface Need:</strong> Car seat purchase</p>
+                <p><strong>Hidden Needs:</strong> Reassurance about being a good mother, simplification of overwhelming choices, emotional support, validation of her concerns</p>
+            </div>
+            
+            <div class="dialogue-box employee-speech">
+                <strong>Exceptional Response:</strong> "First, let me say you're doing an amazing job - the fact that you're here asking these questions shows how much you care about your baby's safety. Being a new mom is overwhelming, and you're handling it beautifully. Let me make this simple for you. Here are the top three car seats that meet all safety standards in your budget. Each one will keep your little one perfectly safe. Would you like me to show you how they work while your baby settles down?"
+            </div>
+            
+            <div class="warning-box">
+                <h4>What Would Make This Worse:</h4>
+                <p>"Here's our car seat section. All the information is on the boxes. Let me know if you have questions." - This ignores her emotional state and overwhelm.</p>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h3>🧠 Psychology Assessment Quiz</h3>
+            
+            <div class="quiz-question">
+                <h4>Question 1: A customer keeps asking "Are you sure?" about everything you tell them. What's their likely hidden need?</h4>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q1" value="a"> A) They don't trust your competence</label>
+                    <label><input type="radio" name="q1" value="b"> B) They've been disappointed by bad advice before</label>
+                    <label><input type="radio" name="q1" value="c"> C) They're naturally argumentative</label>
+                    <label><input type="radio" name="q1" value="d"> D) They're trying to get a discount</label>
+                </div>
+                <button class="btn" onclick="checkAnswer('q1', 'b', 'Correct! Repetitive doubt usually indicates past negative experiences. They need extra reassurance and proof.')">Check Answer</button>
+                <div id="q1-result" class="result-box"></div>
+            </div>
+            
+            <div class="quiz-question">
+                <h4>Question 2: A customer says "I'm just looking" but keeps glancing at price tags and seems hesitant. What should you do?</h4>
+                <div class="quiz-options">
+                    <label><input type="radio" name="q2" value="a"> A) Leave them alone since they said they're just looking</label>
+                    <label><input type="radio" name="q2" value="b"> B) Show them the sale items immediately</label>
+                    <label><input type="radio" name="q2" value="c"> C) Acknowledge their browsing but stay available to help</label>
+                    <label><input type="radio" name="q2" value="d"> D) Ask directly about their budget</label>
+                </div>
+                <button class="btn" onclick="checkAnswer('q2', 'c', 'Correct! They want to shop but need space and non-pressure support. The price-checking suggests interest but budget concerns.')">Check Answer</button>
+                <div id="q2-result" class="result-box"></div>
+            </div>
+        </div>
+
+        <h2>🗣️ Module 2: Advanced Communication Mastery</h2>
+        
+        <div class="section">
+            <h3>The PRECISE Communication Framework</h3>
+            <p>Beyond basic courtesy, master communicators use the PRECISE method for challenging situations:</p>
+            
+            <div class="technique-box">
+                <h4>P - Pause and Breathe</h4>
+                <p><strong>Why:</strong> Prevents reactive responses, gives you thinking time</p>
+                <p><strong>How:</strong> Take 2-3 seconds, breathe deeply, center yourself</p>
+                <p><strong>Example:</strong> Customer starts yelling → You pause, breathe, then respond calmly</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>R - Reflect Their Emotion</h4>
+                <p><strong>Why:</strong> Shows understanding, validates their feelings</p>
+                <p><strong>How:</strong> Mirror their emotional intensity (but stay positive)</p>
+                <p><strong>Example:</strong> "I can hear how frustrated you are about this situation"</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>E - Explore the Full Story</h4>
+                <p><strong>Why:</strong> Uncovers root issues, prevents solving wrong problems</p>
+                <p><strong>How:</strong> Ask open-ended questions, listen for details</p>
+                <p><strong>Example:</strong> "Help me understand exactly what happened from the beginning"</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>C - Collaborate on Solutions</h4>
+                <p><strong>Why:</strong> Makes them part of the solution, increases buy-in</p>
+                <p><strong>How:</strong> Present options, ask for their preference</p>
+                <p><strong>Example:</strong> "I can do X or Y. Which would work better for you?"</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>I - Implement with Care</h4>
+                <p><strong>Why:</strong> Execution matters as much as the solution</p>
+                <p><strong>How:</strong> Explain each step, check understanding</p>
+                <p><strong>Example:</strong> "I'm processing your refund now. It should appear in 3-5 business days"</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>S - Secure Future Success</h4>
+                <p><strong>Why:</strong> Prevents repeat issues, builds loyalty</p>
+                <p><strong>How:</strong> Follow up, provide prevention tips</p>
+                <p><strong>Example:</strong> "To prevent this in the future, here's what to look for..."</p>
+            </div>
+            
+            <div class="technique-box">
+                <h4>E - End on a Positive Note</h4>
+                <p><strong>Why:</strong> Final impression is lasting impression</p>
+                <p><strong>How:</strong> Thank them, invite return, express genuine care</p>
+                <p><strong>Example:</strong> "Thank you for giving us the chance to make this right"</p>
+            </div>
+        </div>
+
+        <div class="real-life-example">
+            <h4>Real Scenario: The Ruined Special Occasion</h4>
+            <p><strong>Setting:</strong> Dry cleaner, day before customer's daughter's wedding</p>
+            <p><strong>Customer:</strong> Father of the bride picking up his tuxedo that was damaged in cleaning</p>
+            
+            <div class="dialogue-box customer-speech">
+                <strong>Customer:</strong> "This is unbelievable! My daughter's wedding is tomorrow and you've ruined my tuxedo! There's a stain that wasn't there before and the lapel looks wrong. This was my father's tuxedo - it's irreplaceable! How could you be so careless? I trusted you with something priceless!"
+            </div>
+            
+            <div class="technique-box">
+                <h4>PRECISE Method in Action:</h4>
+                <p><strong>P - Pause:</strong> [Takes breath] "Let me give you my complete attention."</p>
+                <p><strong>R - Reflect:</strong> "I can see how devastating this is - your daughter's wedding and your father's tuxedo."</p>
+                <p><strong>E - Explore:</strong> "Tell me exactly what the tuxedo looked like when you brought it in."</p>
+                <p><strong>C - Collaborate:</strong> "Here's what I can do: rush alterations today, professional cleaning retry, or help you find a replacement. What matters most to you?"</p>
+                <p><strong>I - Implement:</strong> "I'm calling our master tailor right now. He'll work tonight if needed."</p>
+                <p><strong>S - Secure:</strong> "I'm personally overseeing this and will deliver it to your home tomorrow morning."</p>
+                <p><strong>E - End Positive:</strong> "Your daughter's wedding will be perfect. I'll make sure of it."</p>
+            </div>
+        </div>
+
+        <div class="deep-dive-box">
+            <h4>The Science of Voice and Body Language</h4>
+            <p><strong>Research Finding:</strong> 55% of communication impact comes from body language, 38% from tone of voice, only 7% from actual words.</p>
+            
+            <h4>Power Postures for Customer Service:</h4>
+            <ul>
+                <li><strong>Open Stance:</strong> Feet shoulder-width apart, arms uncrossed</li>
+                <li><strong>Slight Forward Lean:</strong> Shows interest and engagement</li>
+                <li><strong>Eye Contact Rule:</strong> 50-70% of the time (not staring)</li>
+                <li><strong>Mirroring:</strong> Subtly match their energy level and posture</li>
+                <li><strong>Hand Position:</strong> Visible and relaxed, not hidden or fidgeting</li>
+            </ul>
+            
+            <h4>Voice Techniques That Work:</h4>
+            <ul>
+                <li><strong>Lower Pitch:</strong> Sounds more authoritative and calming</li>
+                <li><strong>Slower Speed:</strong> 10-15% slower than normal conversation</li>
+                <li><strong>Strategic Pauses:</strong> After important information</li>
+                <li><strong>Volume Matching:</strong> Slightly softer than theirs to calm situations</li>
+                <li><strong>Inflection:</strong> Rise at end of questions, fall for statements</li>
+            </ul>
+        </div>
+
+        <h2>🔥 Module 3: Advanced Conflict Resolution</h2>
+        
+        <div class="section">
+            <h3>The Conflict Resolution Pyramid</h3>
+            <p>Handle conflicts systematically using this escalating approach:</p>
+            
+            <div class="scenario-grid">
+                <div class="scenario-card">
+                    <h4>Level 1: Prevention (Best Outcome)</h4>
+                    <p><strong>Goal:</strong> Stop conflicts before they start</p>
+                    <p><strong>Techniques:</strong> Clear communication, manage expectations, proactive service</p>
+                    <p><strong>Example:</strong> "This process usually takes 15-20 minutes. I'll keep you updated every step."</p>
+                </div>
+                
+                <div class="scenario-card">
+                    <h4>Level 2: De-escalation (Good Outcome)</h4>
+                    <p><strong>Goal:</strong> Calm the situation quickly</p>
+                    <p><strong>Techniques:</strong> Active listening, empathy, validation</p>
+                    <p><strong>Example:</strong> "I completely understand your frustration. Let's fix this together."</p>
+                </div>
+                
+                <div class="scenario-card">
+                    <h4>Level 3: Resolution (Acceptable Outcome)</h4>
+                    <p><strong>Goal:</strong> Solve the problem satisfactorily</p>
+                    <p><strong>Techniques:</strong> Problem-solving, compromise, alternatives</p>
+                    <p><strong>Example:</strong> "I can offer you these three options
