@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 7: Legendary Customer Service - Advanced Mastery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-size: 1.2em;
+            line-height: 1.4;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            padding: 35px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 6px solid #667eea;
+            position: relative;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 12px 12px 0 0;
+        }
+
+        .section h2 {
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-size: 1.8em;
+            font-weight: 600;
+        }
+
+        .section h3 {
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+
+        .deep-dive {
+            background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .psychology-box {
+            background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #f6ad55;
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .strategy-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+        }
+
+        .interactive-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        .role-selector {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .role-btn {
+            padding: 12px 25px;
+            border: 2px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .role-btn:hover, .role-btn.active {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .scenario-container {
+            background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .scenario-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .scenario-step {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #38b2ac;
+        }
+
+        .case-study {
+            background: linear-gradient(135deg, #edf2f7 0%, #cbd5e0 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #4299e1;
+        }
+
+        .advanced-techniques {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .technique-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 3px solid #38b2ac;
+        }
+
+        .quiz-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .quiz-question {
+            margin-bottom: 30px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .quiz-question h4 {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .quiz-options {
+            margin-left: 0px;
+        }
+
+        .quiz-option {
+            margin: 12px 0;
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            padding: 12px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background-color: rgba(255,255,255,0.15);
+        }
+
+        .quiz-option input[type="radio"] {
+            margin-right: 12px;
+            margin-top: 2px;
+            transform: scale(1.3);
+        }
+
+        .quiz-option label {
+            cursor: pointer;
+            line-height: 1.5;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            padding: 14px 35px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #5a67d8;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .btn-success {
+            background: #48bb78;
+        }
+
+        .btn-success:hover {
+            background: #38a169;
+        }
+
+        .btn-warning {
+            background: #ed8936;
+        }
+
+        .btn-warning:hover {
+            background: #dd7324;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background: #e2e8f0;
+            border-radius: 5px;
+            margin: 25px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .result-box {
+            background: #f0fff4;
+            border: 2px solid #48bb78;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: none;
+        }
+
+        .result-box.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        .warning-box {
+            background: #fef5e7;
+            border: 2px solid #ed8936;
+            color: #744210;
+        }
+
+        .info-box {
+            background: #ebf8ff;
+            border: 2px solid #4299e1;
+            color: #2b6cb0;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .knowledge-depth {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #805ad5;
+        }
+
+        .expert-tip {
+            background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #f6ad55;
+            position: relative;
+        }
+
+        .expert-tip::before {
+            content: "💡";
+            position: absolute;
+            top: 10px;
+            left: -15px;
+            background: #f6ad55;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .expert-tip {
+            padding-left: 35px;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input[type="text"]:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .reflection-journal {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 35px;
+            border-radius: 12px;
+            margin: 25px 0;
+        }
+
+        .journal-field {
+            margin-bottom: 25px;
+        }
+
+        .journal-field label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #8b4513;
+            font-size: 16px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .section {
+                padding: 25px 20px;
+            }
+
+            .strategy-grid, .advanced-techniques {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .role-selector {
+                flex-direction: column;
+            }
+        }
+
+        .completion-badge {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Lesson 7: Legendary Customer Service</h1>
+        <p class="subtitle">The Unshakable Professional – Advanced Psychology, Strategic Communication, and Crisis Mastery for Retail Excellence</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressBar"></div>
+        </div>
+
+        <!-- Introduction & Psychology Foundation -->
+        <div class="section">
+            <h2>🧠 The Psychology of Service Excellence</h2>
+            
+            <div class="psychology-box">
+                <h3>The Neuroscience Behind Customer Interactions</h3>
+                <p>Every customer service interaction triggers complex psychological responses in both you and the customer. Understanding these mechanisms is the foundation of legendary service:</p>
+                
+                <ul style="margin-left: 20px; margin-top: 15px;">
+                    <li><strong>Mirror Neurons:</strong> Customers unconsciously mirror your emotional state. Your calm confidence becomes their calm confidence.</li>
+                    <li><strong>Amygdala Hijack:</strong> Stress activates the brain's alarm system. Your professional response can literally calm their nervous system.</li>
+                    <li><strong>Cognitive Load Theory:</strong> Frustrated customers have reduced mental capacity. Simplify options and guide their decision-making.</li>
+                    <li><strong>Social Proof Principle:</strong> People look for behavioral cues. Your professional demeanor signals how they should respond.</li>
+                </ul>
+            </div>
+
+            <div class="deep-dive">
+                <h3>The Service Professional's Mindset Framework</h3>
+                <p>Research from Harvard Business School shows that top-performing service professionals operate from a fundamentally different mental model than average performers. They don't just handle transactions—they architect experiences.</p>
+                
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h4>🎯 Solution Architect</h4>
+                        <p>You're not just processing complaints—you're designing solutions. Every interaction is an opportunity to create a positive outcome from a challenging situation.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4>🛡️ Emotional Firewall</h4>
+                        <p>Professional boundaries protect your energy while maintaining empathy. You can care without carrying their emotional burden.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4>📈 Relationship Builder</h4>
+                        <p>Each difficult interaction is a trust-building opportunity. Customers remember how you made them feel more than the specific resolution.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <h3>🎯 Professional Identity Assessment</h3>
+                <p>Select your primary role and experience level to receive personalized guidance throughout this lesson:</p>
+                
+                <div class="role-selector">
+                    <button class="role-btn" onclick="selectRole('sales-new')">Sales Associate (New)</button>
+                    <button class="role-btn" onclick="selectRole('sales-experienced')">Sales Associate (Experienced)</button>
+                    <button class="role-btn" onclick="selectRole('cashier-new')">Cashier (New)</button>
+                    <button class="role-btn" onclick="selectRole('cashier-experienced')">Cashier (Experienced)</button>
+                    <button class="role-btn" onclick="selectRole('supervisor')">Supervisor/Team Lead</button>
+                    <button class="role-btn" onclick="selectRole('manager')">Manager</button>
+                </div>
+
+                <div id="roleGuidance" style="margin-top: 20px; padding: 20px; background: #f7fafc; border-radius: 8px; display: none;">
+                    <!-- Role-specific guidance will appear here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Communication Strategies -->
+        <div class="section">
+            <h2>🗣️ Advanced Communication Psychology</h2>
+            
+            <div class="knowledge-depth">
+                <h3>The PEACE Method for Difficult Conversations</h3>
+                <p>Developed through analysis of thousands of successful customer service interactions, PEACE provides a psychological framework for transforming conflicts into connections:</p>
+            </div>
+
+            <div class="advanced-techniques">
+                <div class="technique-card">
+                    <h4><strong>P</strong> - Pause & Presence</h4>
+                    <p><strong>Psychology:</strong> A 3-second pause activates your prefrontal cortex, engaging rational thinking over emotional reaction.</p>
+                    <p><strong>Technique:</strong> Take a visible breath, make eye contact, and ground yourself before responding.</p>
+                    <p><strong>Script:</strong> "Let me make sure I understand this completely..."</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4><strong>E</strong> - Empathetic Acknowledgment</h4>
+                    <p><strong>Psychology:</strong> Feeling heard activates the brain's reward center, reducing defensive responses.</p>
+                    <p><strong>Technique:</strong> Reflect their emotion without taking responsibility for the problem.</p>
+                    <p><strong>Script:</strong> "I can see this situation is really frustrating, and I understand why you'd feel that way."</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4><strong>A</strong> - Assess & Align</h4>
+                    <p><strong>Psychology:</strong> Collaborative problem-solving shifts the dynamic from adversarial to partnership.</p>
+                    <p><strong>Technique:</strong> Ask clarifying questions that demonstrate genuine interest in solving their problem.</p>
+                    <p><strong>Script:</strong> "Help me understand what outcome would make this right for you."</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4><strong>C</strong> - Create Solutions</h4>
+                    <p><strong>Psychology:</strong> Offering choices gives customers a sense of control, reducing anxiety and resistance.</p>
+                    <p><strong>Technique:</strong> Present 2-3 specific options, explaining the benefits of each.</p>
+                    <p><strong>Script:</strong> "I have three ways we can resolve this. Let me walk you through each option..."</p>
+                </div>
+
+                <div class="technique-card">
+                    <h4><strong>E</strong> - Execute & Exceed</h4>
+                    <p><strong>Psychology:</strong> Following through builds trust; exceeding expectations creates advocates.</p>
+                    <p><strong>Technique:</strong> Do what you promised, plus one small extra touch.</p>
+                    <p><strong>Script:</strong> "I've processed your refund, and I'm also including a discount code for your next visit."</p>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <h3>🎭 Advanced Scenario Practice</h3>
+                <p>Practice the PEACE method with these escalating difficulty scenarios:</p>
+                
+                <select id="scenarioSelector" onchange="loadScenario()" style="margin-bottom: 20px;">
+                    <option value="">Select a scenario to practice...</option>
+                    <option value="no-receipt">No Receipt Return - Angry Customer</option>
+                    <option value="policy-exception">Policy Exception Request</option>
+                    <option value="damaged-product">Damaged Product - Customer Fault</option>
+                    <option value="price-match">Price Match Dispute</option>
+                    <option value="multiple-issues">Multiple Complaints - Overwhelmed Customer</option>
+                    <option value="manager-unavailable">Escalation When Manager Unavailable</option>
+                </select>
+
+                <div id="scenarioContent" style="display: none;">
+                    <!-- Scenario content will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Deep Dive Case Studies -->
+        <div class="section">
+            <h2>📚 Master Class Case Studies</h2>
+            
+            <div class="case-study">
+                <h3>Case Study 1: The $500 Return Crisis</h3>
+                <p><strong>Situation:</strong> A customer wants to return a $500 item purchased 45 days ago (30-day policy), claiming it "never worked properly." The item shows clear signs of use, customer has no receipt, and your manager is at lunch during the store's busiest hour.</p>
+                
+                <div class="scenario-steps">
+                    <div class="scenario-step">
+                        <h4>❌ Typical Response</h4>
+                        <p>"I'm sorry, our policy is 30 days with a receipt. Since you don't have either, I can't help you. You'll have to wait for my manager."</p>
+                        <p><strong>Result:</strong> Angry customer, potential social media complaint, manager interruption.</p>
+                    </div>
+                    
+                    <div class="scenario-step">
+                        <h4>✅ Legendary Response</h4>
+                        <p><em>PEACE Method Application:</em></p>
+                        <p><strong>Pause:</strong> "Let me take a moment to review your situation thoroughly."</p>
+                        <p><strong>Empathy:</strong> "A $500 purchase is significant, and I can understand your frustration when it doesn't meet your expectations."</p>
+                        <p><strong>Assess:</strong> "Help me understand the issues you experienced so I can find the best solution."</p>
+                        <p><strong>Create:</strong> "I have several options: store credit for 70% value, exchange for a different model, or connect you with our district manager for a full review."</p>
+                        <p><strong>Execute:</strong> Process chosen solution plus offer to follow up in a week.</p>
+                    </div>
+                </div>
+
+                <div class="expert-tip">
+                    <strong>Expert Analysis:</strong> The legendary response acknowledges the customer's investment, shows problem-solving intent, and provides face-saving options. Even if they choose to wait for the manager, you've demonstrated professionalism and begun the solution process.
+                </div>
+            </div>
+
+            <div class="case-study">
+                <h3>Case Study 2: The Holiday Rush Meltdown</h3>
+                <p><strong>Situation:</strong> December 23rd, 2-hour wait times, customer approaches your register screaming about "incompetent staff" because another associate allegedly promised a discount that's not in the system. Other customers are staring.</p>
+                
+                <div class="scenario-container">
+                    <h4>🎯 Strategic Response Framework</h4>
+                    
+                    <div class="scenario-steps">
+                        <div class="scenario-step">
+                            <h4>Step 1: Environmental Control</h4>
+                            <p>Lower your voice (they'll mirror), maintain open body language, create psychological safety for other customers.</p>
+                            <p><em>"I can see you've had a really challenging experience today. Let's step aside so I can give you my full attention."</em></p>
+                        </div>
+                        
+                        <div class="scenario-step">
+                            <h4>Step 2: Emotional Validation</h4>
+                            <p>Acknowledge without accepting blame, show understanding of their time investment.</p>
+                            <p><em>"Waiting two hours during the holidays is incredibly frustrating, especially when there seems to be confusion about a discount."</em></p>
+                        </div>
+                        
+                        <div class="scenario-step">
+                            <h4>Step 3: Information Gathering</h4>
+                            <p>Get specific details to understand the real issue beneath the emotion.</p>
+                            <p><em>"Help me understand exactly what discount you were told about so I can research what happened."</em></p>
+                        </div>
+                        
+                        <div class="scenario-step">
+                            <h4>Step 4: Solution Architecture</h4>
+                            <p>Present options that address both the practical problem and the emotional experience.</p>
+                            <p><em>"Here's what I can do right now: apply a similar discount from our current promotions, or escalate this to management with a priority flag for resolution."</em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <h3>🧠 Personal Scenario Builder</h3>
+                <p>Think of your most challenging customer service experience. Use this framework to reconstruct how you could handle it using advanced techniques:</p>
+                
+                <div style="margin: 20px 0;">
+                    <label for="personalScenario">Describe your challenging scenario:</label>
+                    <textarea id="personalScenario" rows="4" placeholder="Briefly describe the situation, customer behavior, and what made it difficult..."></textarea>
+                </div>
+
+                <div style="margin: 20px 0;">
+                    <label for="peaceApplication">Apply the PEACE method to your scenario:</label>
+                    <textarea id="peaceApplication" rows="6" placeholder="P - How would you pause and center yourself?
+E - How would you show empathy without taking blame?
+A - What questions would you ask to assess the situation?
+C - What solutions could you create?
+E - How would you execute and exceed expectations?"></textarea>
+                </div>
+
+                <button class="btn btn-success" onclick="analyzePersonalScenario()">Analyze My Scenario</button>
+                <div id="scenarioAnalysis" class="result-box"></div>
+            </div>
+        </div>
+
+        <!-- Advanced Psychology & Neuroscience -->
+        <div class="section">
+            <h2>🔬 The Science of Service Recovery</h2>
+            
+            <div class="knowledge-depth">
+                <h3>The Service Recovery Paradox</h3>
+                <p>Research from the Journal of Service Research reveals a counterintuitive truth: customers who experience a problem that's resolved exceptionally well often become more loyal than customers who never experienced a problem at all. This "Service Recovery Paradox" occurs because:</p>
+                
+                <ul style="margin-left: 20px; margin-top: 15px; line-height: 1.8;">
+                    <li><strong>Surprise and Delight:</strong> Exceeding expectations in crisis creates powerful positive memories</li>
+                    <li><strong>Cognitive Dissonance Resolution:</strong> When you solve their problem beautifully, they mentally justify their choice to shop with you</li>
+                    <li><strong>Trust Through Adversity:</strong> How you handle problems reveals your true character</li>
+                    <li><strong>Emotional Investment:</strong> Working through challenges together creates psychological ownership</li>
+                </ul>
+            </div>
+
+            <div class="psychology-box">
+                <h3>Stress Response Physiology in Customer Service</h3>
+                <p>When customers are upset, their bodies are in fight-or-flight mode. Understanding this helps you respond appropriately:</p>
+                
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h4>🧠 What's Happening in Their Brain</h4>
+                        <ul>
+                            <li>Amygdala activated (emotional center)</li>
+                            <li>Prefrontal cortex suppressed (rational thinking)</li>
+                            <li>Stress hormones elevated</li>
+                            <li>Memory formation impaired</li>
+                        </ul>
+                    </div>
+                    <div class="strategy-card">
+                        <h4>🎯 Your Strategic Response</h4>
+                        <ul>
+                            <li>Speak slower and clearer</li>
+                            <li>Use simple, concrete language</li>
+                            <li>Repeat important information</li>
+                            <li>Stay physically calm to trigger their mirror neurons</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="interactive-box">
+                <h3>🧘 Advanced Stress Management Techniques</h3>
+                <p>Master these evidence-based techniques for maintaining peak performance during challenging interactions:</p>
+                
+                <div class="advanced-techniques">
+                    <div class="technique-card">
+                        <h4>Box Breathing (Navy SEAL Technique)</h4>
+                        <p>Inhale for 4 counts, hold for 4, exhale for 4, hold for 4. This activates your parasympathetic nervous system.</p>
+                        <button class="btn" onclick="startBreathingExercise()">Practice Box Breathing</button>
+                    </div>
+                    
+                    <div class="technique-card">
+                        <h4>Anchoring Technique</h4>
+                        <p>Create a physical gesture (touching thumb to finger) while in a calm state. Use this anchor during stress to trigger calm.</p>
+                        <button class="btn" onclick="learnAnchoring()">Learn Anchoring</button>
+                    </div>
+                </div>
+
+                <div id="breathingExercise" style="display: none; text-align: center; padding: 20px; background: #f0fff4; border-radius: 8px; margin: 15px 0;">
+                    <h4>Box Breathing Exercise</h4>
+                    <div id="breathingInstruction" style="font-size: 1.2em; margin: 20px 0;">Ready to begin...</div>
+                    <div id="breathingCounter" style="font-size: 2em; color: #667eea; margin: 20px 0;">4</div>
+                    <button id="breathingButton" class="btn btn-success" onclick="runBreathingCycle()">Start</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Role-Specific Mastery -->
+        <div class="section">
+            <h2>🎯 Role-Specific Mastery Strategies</h2>
+            
+            <div id="roleSpecificContent">
+                <p>Select your role above to see advanced, personalized strategies for your specific position and experience level.</p>
+            </div>
+        </div>
+
+        <!-- Advanced Crisis Management -->
+        <div class="section">
+            <h2>🚨 Crisis Management & De-escalation Mastery</h2>
+            
+            <div class="scenario-container">
+                <h3>🛡️ The De-escalation Decision Tree</h3>
+                <p>Use this
