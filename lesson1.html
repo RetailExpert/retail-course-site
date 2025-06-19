@@ -833,5 +833,25 @@
 
     <a class="btn" href="lesson2.html">Continue to Lesson 2: Customer Profiling Mastery →</a>
   </div>
+  <button id="markComplete">✅ Mark Lesson 1 Complete</button>
+
+<script>
+document.getElementById("markComplete").addEventListener("click", function () {
+  MemberStack.onReady.then(function (member) {
+    if (member.loggedIn) {
+      const currentTags = member["tags"];
+      if (!currentTags.includes("lesson2")) {
+        member.update({
+          tags: [...currentTags, "lesson2"]
+        }).then(() => {
+          alert("🎉 Lesson 1 complete! Redirecting to Lesson 2.");
+          window.location.href = "/lesson2.html";
+        });
+      }
+    }
+  });
+});
+</script>
+
 </body>
 </html>
