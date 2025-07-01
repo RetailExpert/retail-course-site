@@ -6,488 +6,31 @@
   <title>Lesson 2: Advanced Customer Profiling & Behavioral Segmentation | Retail Expert</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: #333;
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-    header {
-      background: linear-gradient(135deg, #000 0%, #434343 100%);
-      color: white;
-      padding: 25px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      font-weight: 700;
-    }
-    nav a {
-      color: white;
-      margin-left: 25px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: opacity 0.3s ease;
-    }
-    nav a:hover {
-      opacity: 0.8;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 50px 20px;
-    }
-    .hero {
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-      color: white;
-      padding: 60px 40px;
-      border-radius: 20px;
-      margin-bottom: 40px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: 0.3;
-    }
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      font-weight: 700;
-      position: relative;
-      z-index: 2;
-    }
-    .hero p {
-      font-size: 20px;
-      opacity: 0.95;
-      max-width: 800px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-    .lesson-nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-      padding: 20px 30px;
-      border-radius: 15px;
-      margin-bottom: 30px;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .lesson-nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-    .lesson-nav a:hover {
-      transform: translateX(-5px);
-    }
-    .progress-container {
-      background: rgba(255,255,255,0.2);
-      height: 8px;
-      border-radius: 4px;
-      margin: 30px 0;
-      overflow: hidden;
-    }
-    .progress-fill {
-      background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
-      height: 100%;
-      width: 28%;
-      border-radius: 4px;
-      transition: width 0.3s ease;
-      position: relative;
-    }
-    .progress-fill::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.3) 50%, transparent 100%);
-      animation: shimmer 2s infinite;
-    }
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin: 40px 0;
-    }
-    .stat-card {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      padding: 35px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255,255,255,0.2);
-    }
-    .stat-card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-    }
-    .stat-number {
-      font-size: 48px;
-      font-weight: 700;
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
-    }
-    .stat-label {
-      font-size: 16px;
-      color: #555;
-      font-weight: 500;
-    }
-    h2, h3 {
-      color: #222;
-    }
-    h3 {
-      font-size: 26px;
-      margin-bottom: 25px;
-      display: flex;
-      align-items: center;
-    }
-    .section-icon {
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-      border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-right: 20px;
-      color: white;
-      font-weight: bold;
-      font-size: 20px;
-      box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
-    }
-    .section {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      padding: 45px;
-      margin-bottom: 35px;
-      border-radius: 25px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-      border: 1px solid rgba(255,255,255,0.2);
-      position: relative;
-      overflow: hidden;
-    }
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-    }
-    .personality-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 25px;
-      margin: 30px 0;
-    }
-    .personality-card {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(240, 147, 251, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .personality-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-      transform: rotate(45deg);
-      transition: all 0.3s ease;
-    }
-    .personality-card:hover::before {
-      transform: rotate(45deg) translate(20px, 20px);
-    }
-    .personality-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(240, 147, 251, 0.4);
-    }
-    .personality-card h4 {
-      margin: 0 0 15px 0;
-      font-size: 22px;
-      font-weight: 700;
-      position: relative;
-      z-index: 2;
-    }
-    .personality-card p {
-      margin-bottom: 15px;
-      position: relative;
-      z-index: 2;
-      opacity: 0.95;
-    }
-    .personality-traits {
-      list-style: none;
-      padding: 0;
-      position: relative;
-      z-index: 2;
-    }
-    .personality-traits li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-    }
-    .personality-traits li::before {
-      content: '✓';
-      margin-right: 10px;
-      font-weight: bold;
-    }
-    .insight-box {
-      background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 20px;
-      margin: 25px 0;
-      box-shadow: 0 10px 25px rgba(79, 172, 254, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .insight-box::before {
-      content: '💡';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      opacity: 0.7;
-    }
-    .insight-box h4 {
-      margin: 0 0 15px 0;
-      font-weight: 600;
-      font-size: 20px;
-    }
-    .case-study {
-      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-      color: #2d3436;
-      padding: 30px;
-      border-radius: 20px;
-      margin: 25px 0;
-      box-shadow: 0 10px 25px rgba(168, 237, 234, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .case-study::before {
-      content: '📊';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-      opacity: 0.7;
-    }
-    .case-study h4 {
-      margin: 0 0 15px 0;
-      color: #00b894;
-      font-weight: 600;
-      font-size: 20px;
-    }
-    .technique-showcase {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      margin: 30px 0;
-    }
-    .technique-card {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .technique-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, transparent 100%);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    .technique-card:hover::before {
-      opacity: 1;
-    }
-    .technique-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
-    }
-    .technique-card h5 {
-      margin: 0 0 15px 0;
-      font-weight: 600;
-      font-size: 18px;
-      position: relative;
-      z-index: 2;
-    }
-    .technique-card p {
-      position: relative;
-      z-index: 2;
-      opacity: 0.95;
-    }
-    .profiling-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 25px;
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    .profiling-table th {
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-      color: white;
-      padding: 20px 15px;
-      text-align: left;
-      font-weight: 600;
-      font-size: 16px;
-    }
-    .profiling-table td {
-      border-bottom: 1px solid #eee;
-      padding: 18px 15px;
-      text-align: left;
-      transition: background 0.3s ease;
-    }
-    .profiling-table tr:hover {
-      background: linear-gradient(135deg, #f8f9ff 0%, #fff2f2 100%);
-    }
-    .profiling-table tr:hover td {
-      transform: scale(1.01);
-    }
-    .interactive-quiz {
-      background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
-      padding: 35px;
-      border-radius: 20px;
-      margin: 30px 0;
-      box-shadow: 0 10px 25px rgba(255, 234, 167, 0.3);
-      position: relative;
-    }
-    .interactive-quiz::before {
-      content: '🎯';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-    }
-    .interactive-quiz h4 {
-      margin: 0 0 20px 0;
-      color: #e17055;
-      font-weight: 600;
-      font-size: 22px;
-    }
-    .quiz-question {
-      background: rgba(255,255,255,0.3);
-      padding: 20px;
-      border-radius: 12px;
-      margin: 15px 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .quiz-question:hover {
-      background: rgba(255,255,255,0.5);
-      transform: scale(1.02);
-    }
-    .action-item {
-      background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);
-      padding: 30px;
-      border-radius: 20px;
-      margin: 25px 0;
-      box-shadow: 0 10px 25px rgba(253, 121, 168, 0.3);
-      position: relative;
-    }
-    .action-item::before {
-      content: '🚀';
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 30px;
-    }
-    .action-item h4 {
-      margin: 0 0 15px 0;
-      color: white;
-      font-weight: 600;
-      font-size: 20px;
-    }
-    .action-item p, .action-item ul {
-      color: white;
-    }
-    .btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
-      color: white;
-      padding: 20px 40px;
-      text-decoration: none;
-      border-radius: 15px;
-      margin-top: 30px;
-      font-weight: 600;
-      font-size: 18px;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    .btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: left 0.5s;
-    }
-    .btn:hover::before {
-      left: 100%;
-    }
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
-    }
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #000 0%, #434343 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
+    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.8; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 400px; }
+    #progressBarContainer .progress-outer { background:#e2e8f0; border-radius:6px; overflow:hidden; height:14px; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#667eea,#764ba2); transition:width 0.7s; }
+    #progressText { text-align:center; font-size:1em; margin-top:6px; color:#667eea; font-weight:bold; }
+    #lesson-completion { margin:40px 0 30px 0; text-align:center; }
+    #completionMsg { margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); border: none; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
+    .dashboard-link { text-align:center; margin-bottom:40px; }
+    .dashboard-link a { color:#667eea; font-weight:500; text-decoration:underline; font-size:1em; }
+    h3 { margin-top:40px; color:#222;}
+    .section {margin-bottom: 34px;}
+    .section-icon {font-weight: bold; color: #764ba2; margin-right: 10px;}
+    .callout {background:linear-gradient(135deg,#f1f8e9 0%,#e8eaf6 100%);padding:18px 22px;border-radius:10px;margin:20px 0;}
+    .quiz-section {background:#fff8e1;padding:30px 25px;border-radius:16px;box-shadow:0 2px 10px rgba(200,180,80,0.07);margin:40px 0 0 0;}
     @media (max-width: 768px) {
-      .hero h2 { font-size: 32px; }
-      .hero p { font-size: 18px; }
-      .personality-grid, .technique-showcase { grid-template-columns: 1fr; }
-      .section { padding: 30px 25px; }
+      #lesson-completion button, #lesson-completion a { display:block; width:90%; margin:12px auto; font-size:1em; padding:14px 0; }
+      #progressBarContainer {max-width:95vw;}
+      .quiz-section {padding:18px 10px;}
     }
   </style>
 </head>
@@ -500,461 +43,192 @@
       <a href="/contact.html">Contact</a>
     </nav>
   </header>
-
   <div class="container">
-    <div class="lesson-nav">
-      <a href="lesson1.html">← Lesson 1: Retail Psychology</a>
-      <span style="color: white; font-weight: 600;">Lesson 2 of 7</span>
-      <a href="lesson3.html">Lesson 3: Sales Techniques →</a>
+    <div id="progressBarContainer">
+      <div class="progress-outer">
+        <div id="progressBarFill"></div>
+      </div>
+      <div id="progressText">Lesson 2 of 7</div>
     </div>
 
+    <!-- === LESSON 2 CONTENT STARTS HERE === -->
     <div class="hero">
-      <h2>Customer Profiling & Behavioral Segmentation</h2>
+      <h2>Advanced Customer Profiling & Behavioral Segmentation</h2>
       <p>Decode your customers' psychological DNA in seconds. Learn to read micro-signals, predict buying patterns, and customize your approach for each personality type with surgical precision.</p>
     </div>
 
-    <div class="progress-container">
-      <div class="progress-fill"></div>
-    </div>
-    <p style="text-align: center; color: white; margin-top: 15px; font-weight: 500;">Progress: 28% Complete • 18 min read</p>
-
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">73%</div>
-        <div class="stat-label">Accuracy in predicting purchases using behavioral cues</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">8</div>
-        <div class="stat-label">Core personality types in retail environments</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">52%</div>
-        <div class="stat-label">Increase in sales when approach matches personality</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">3.2x</div>
-        <div class="stat-label">Faster rapport building with profiling techniques</div>
-      </div>
-    </div>
-
     <div class="section">
-      <h3><span class="section-icon">🧬</span>The Psychology of Customer DNA</h3>
-      
-      <div class="insight-box">
-        <h4>Revolutionary Insight: Behavioral Genetics in Retail</h4>
-        <p>Recent neuroscience research reveals that shopping behaviors are 60% consistent across situations—meaning once you decode someone's "retail personality," you can predict their preferences, objections, and buying triggers with remarkable accuracy.</p>
+      <h3><span class="section-icon">1</span>Understanding Customer Profiling</h3>
+      <div class="callout">
+        <b>Why profile?</b> Retail is never “one-size-fits-all.” The best retailers know exactly who is in front of them and instantly adapt their approach, products, and messaging.
       </div>
-
-      <p><strong>The Science Behind Customer Profiling:</strong> Dr. Robert Cialdini's research on influence psychology combined with modern behavioral economics has identified that customers fall into predictable psychological patterns. These aren't stereotypes—they're neurologically-based response systems that remain consistent across different shopping scenarios.</p>
-
-      <div class="case-study">
-        <h4>Case Study: Amazon's Behavioral Prediction Engine</h4>
-        <p>Amazon's recommendation algorithm doesn't just track what you buy—it analyzes how you browse, where you pause, what you compare, and even your mouse movement patterns. This behavioral profiling generates 35% of their revenue ($280 billion annually). The same principles work in physical retail when you know what to observe.</p>
-      </div>
-
-      <h4>The 4 Foundational Behavioral Dimensions:</h4>
-
-      <div class="technique-showcase">
-        <div class="technique-card">
-          <h5>Decision Speed: Fast vs. Deliberate</h5>
-          <p><strong>Fast Deciders:</strong> Trust gut instincts, respond to urgency, prefer simple choices<br>
-          <strong>Deliberate Deciders:</strong> Need information, compare options, resist pressure</p>
-        </div>
-        <div class="technique-card">
-          <h5>Social Orientation: Independent vs. Collaborative</h5>
-          <p><strong>Independent:</strong> Shop alone, resist suggestions, value personal choice<br>
-          <strong>Collaborative:</strong> Seek opinions, influenced by others, social validation matters</p>
-        </div>
-        <div class="technique-card">
-          <h5>Risk Tolerance: Adventurous vs. Conservative</h5>
-          <p><strong>Adventurous:</strong> Try new things, early adopters, willing to experiment<br>
-          <strong>Conservative:</strong> Stick to known brands, fear mistakes, need guarantees</p>
-        </div>
-        <div class="technique-card">
-          <h5>Value Focus: Price vs. Experience</h5>
-          <p><strong>Price-Focused:</strong> Compare costs, seek deals, practical decisions<br>
-          <strong>Experience-Focused:</strong> Pay for quality, emotional connection, status symbols</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">👥</span>The 8 Retail Personality Archetypes</h3>
-      
-      <p><strong>Master These 8 Types and You'll Handle 95% of Customer Interactions:</strong></p>
-
-      <div class="personality-grid">
-        <div class="personality-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);">
-          <h4>🎯 The Decisive Achiever</h4>
-          <p><strong>Profile:</strong> Fast decision-maker, results-oriented, values efficiency</p>
-          <ul class="personality-traits">
-            <li>Wants quick service and clear options</li>
-            <li>Responds to authority and expertise</li>
-            <li>Appreciates time-saving solutions</li>
-            <li>Willing to pay premium for convenience</li>
-          </ul>
-          <p><strong>Approach:</strong> Be direct, show benefits quickly, offer premium options first</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-          <h4>📊 The Analytical Researcher</h4>
-          <p><strong>Profile:</strong> Thorough researcher, needs detailed information, fears making wrong choice</p>
-          <ul class="personality-traits">
-            <li>Asks many questions about specifications</li>
-            <li>Compares multiple options carefully</li>
-            <li>Values warranties and return policies</li>
-            <li>Appreciates expert knowledge</li>
-          </ul>
-          <p><strong>Approach:</strong> Provide detailed comparisons, share technical knowledge, offer guarantees</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2d3436;">
-          <h4>🤝 The Social Harmonizer</h4>
-          <p><strong>Profile:</strong> Values relationships, seeks consensus, influenced by others' opinions</p>
-          <ul class="personality-traits">
-            <li>Often shops with friends/family</li>
-            <li>Asks "What do you think?" frequently</li>
-            <li>Values personal service and connection</li>
-            <li>Influenced by social proof</li>
-          </ul>
-          <p><strong>Approach:</strong> Build rapport, use social proof, involve their companions in the process</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-          <h4>🌟 The Experience Seeker</h4>
-          <p><strong>Profile:</strong> Values unique experiences, early adopter, emotionally driven</p>
-          <ul class="personality-traits">
-            <li>Attracted to new and innovative products</li>
-            <li>Values storytelling and brand narrative</li>
-            <li>Willing to pay for exclusivity</li>
-            <li>Influenced by lifestyle alignment</li>
-          </ul>
-          <p><strong>Approach:</strong> Share stories, highlight uniqueness, create experiential moments</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%); color: #2d3436;">
-          <h4>💰 The Value Hunter</h4>
-          <p><strong>Profile:</strong> Price-conscious, deal-seeking, practical decision-maker</p>
-          <ul class="personality-traits">
-            <li>Compares prices across multiple stores</li>
-            <li>Asks about sales and discounts</li>
-            <li>Values practical functionality</li>
-            <li>Influenced by savings and deals</li>
-          </ul>
-          <p><strong>Approach:</strong> Lead with value proposition, highlight savings, show practical benefits</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%);">
-          <h4>🛡️ The Security Seeker</h4>
-          <p><strong>Profile:</strong> Risk-averse, needs reassurance, values proven solutions</p>
-          <ul class="personality-traits">
-            <li>Prefers established brands</li>
-            <li>Asks about guarantees and warranties</li>
-            <li>Values recommendations from trusted sources</li>
-            <li>Needs time to feel comfortable</li>
-          </ul>
-          <p><strong>Approach:</strong> Provide reassurance, share testimonials, offer guarantees</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);">
-          <h4>⚡ The Impulse Enthusiast</h4>
-          <p><strong>Profile:</strong> Spontaneous buyer, emotionally driven, responds to excitement</p>
-          <ul class="personality-traits">
-            <li>Makes quick emotional decisions</li>
-            <li>Influenced by immediate gratification</li>
-            <li>Responds to scarcity and urgency</li>
-            <li>Values fun and excitement in shopping</li>
-          </ul>
-          <p><strong>Approach:</strong> Create excitement, use scarcity, encourage immediate action</p>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
-          <h4>👑 The Status Conscious</h4>
-          <p><strong>Profile:</strong> Image-focused, brand-aware, values prestige and recognition</p>
-          <ul class="personality-traits">
-            <li>Attracted to premium and luxury brands</li>
-            <li>Values exclusivity and status symbols</li>
-            <li>Influenced by what others will think</li>
-            <li>Willing to pay for prestige</li>
-          </ul>
-          <p><strong>Approach:</strong> Emphasize exclusivity, highlight status benefits, use premium presentation</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">🔍</span>Rapid Profiling Techniques: The 30-Second Assessment</h3>
-      
-      <div class="insight-box">
-        <h4>Professional Secret: The OBSERVE Method</h4>
-        <p>Master profilers use the OBSERVE framework to categorize customers within 30 seconds of interaction. This systematic approach achieves 85%+ accuracy in personality identification.</p>
-      </div>
-
-      <h4>The OBSERVE Framework:</h4>
-
-      <table class="profiling-table">
-        <tr>
-          <th>Letter</th>
-          <th>What to Observe</th>
-          <th>Key Indicators</th>
-          <th>Personality Clues</th>
-        </tr>
-        <tr>
-          <td><strong>O</strong>utfit & Appearance</td>
-          <td>Clothing style, grooming, accessories</td>
-          <td>Designer labels, practical vs. fashionable, attention to detail</td>
-          <td>Status Conscious vs. Value Hunter vs. Practical</td>
-        </tr>
-        <tr>
-          <td><strong>B</strong>ehavior Patterns</td>
-          <td>Walking speed, browsing style, interaction approach</td>
-          <td>Quick scanning vs. careful examination, direct vs. wandering</td>
-          <td>Decisive Achiever vs. Analytical Researcher</td>
-        </tr>
-        <tr>
-          <td><strong>S</strong>peech & Language</td>
-          <td>Tone, pace, word choice, questions asked</td>
-          <td>Fast/direct vs. thoughtful/detailed, technical vs. emotional language</td>
-          <td>Communication style reveals decision-making approach</td>
-        </tr>
-        <tr>
-          <td><strong>E</strong>ye Contact & Body Language</td>
-          <td>Confidence level, openness, personal space preferences</td>
-          <td>Direct gaze vs. avoidant, open vs. closed posture, proximity comfort</td>
-          <td>Social orientation and confidence levels</td>
-        </tr>
-        <tr>
-          <td><strong>R</strong>eaction to Suggestions</td>
-          <td>Response to initial recommendations or help offers</td>
-          <td>Immediate acceptance vs. skepticism, questions asked</td>
-          <td>Trust level and decision-making style</td>
-        </tr>
-        <tr>
-          <td><strong>V</strong>alue Focus Signals</td>
-          <td>What they examine first: price tags, features, brand names</td>
-          <td>Price checking vs. quality assessment vs. brand recognition</td>
-          <td>Primary value driver identification</td>
-        </tr>
-        <tr>
-          <td><strong>E</strong>nergy & Enthusiasm</td>
-          <td>Overall excitement level and engagement with products</td>
-          <td>High energy vs. reserved, experimental vs. cautious</td>
-          <td>Risk tolerance and purchase motivation</td>
-        </tr>
-      </table>
-
-      <div class="case-study">
-        <h4>Real-World Application: The 30-Second Challenge</h4>
-        <p><strong>Scenario:</strong> A customer enters your electronics store. Within 30 seconds, you observe: Expensive watch (Status), walks directly to premium section (Decisive), asks specific technical questions (Analytical), maintains confident eye contact (Independent). <strong>Profile:</strong> Status-Conscious Decisive Achiever with Analytical tendencies. <strong>Approach:</strong> Lead with premium options, provide technical specs quickly, emphasize exclusivity and performance benefits.</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">🎯</span>Advanced Micro-Reading Techniques</h3>
-      
-      <h4>Body Language Micro-Signals That Reveal Buying Intent:</h4>
-
-      <div class="technique-showcase">
-        <div class="technique-card">
-          <h5>🤔 The Decision Process Signals</h5>
-          <p><strong>Ready to Buy:</strong> Nodding, leaning forward, touching/holding items longer<br>
-          <strong>Still Considering:</strong> Looking around, checking phone, asking "what if" questions<br>
-          <strong>Not Interested:</strong> Stepping back, crossed arms, looking toward exit</p>
-        </div>
-        <div class="technique-card">
-          <h5>💰 Price Sensitivity Indicators</h5>
-          <p><strong>Price-Conscious:</strong> Immediately checks price tags, compares similar items, asks about discounts<br>
-          <strong>Value-Focused:</strong> Examines quality first, asks about durability, considers cost-per-use<br>
-          <strong>Price-Insensitive:</strong> Minimal price checking, focuses on features/benefits</p>
-        </div>
-        <div class="technique-card">
-          <h5>⏰ Urgency Level Assessment</h5>
-          <p><strong>High Urgency:</strong> Checking time, quick decisions, mentions deadlines<br>
-          <strong>Medium Urgency:</strong> Focused but thorough, asks specific questions<br>
-          <strong>Browsing Mode:</strong> Leisurely pace, general questions, "just looking"</p>
-        </div>
-        <div class="technique-card">
-          <h5>🎭 Emotional State Reading</h5>
-          <p><strong>Excited:</strong> Animated gestures, positive language, eager to try/see more<br>
-          <strong>Skeptical:</strong> Questioning tone, seeks proof, mentions past bad experiences<br>
-          <strong>Overwhelmed:</strong> Information overload signals, requests simplification</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">💡</span>Personality-Matched Communication Strategies</h3>
-      
-      <div class="insight-box">
-        <h4>The Communication Mirror Principle</h4>
-        <p>Neuroscience research shows that people are 67% more likely to trust and buy from someone who mirrors their communication style. This isn't mimicry—it's strategic adaptation to their psychological preferences.</p>
-      </div>
-
-      <h4>Tailored Communication Approaches:</h4>
-
-      <div class="personality-grid">
-        <div class="personality-card" style="background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);">
-          <h4>🎯 For Decisive Achievers</h4>
-          <p><strong>Language Style:</strong> Direct, confident, results-focused</p>
-          <ul class="personality-traits">
-            <li>"This is our top-performing model"</li>
-            <li>"You'll save 2 hours per week with this"</li>
-            <li>"Most executives choose this option"</li>
-            <li>Avoid: Lengthy explanations, multiple options</li>
-          </ul>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-          <h4>📊 For Analytical Researchers</h4>
-          <p><strong>Language Style:</strong> Detailed, factual, comparative</p>
-          <ul class="personality-traits">
-            <li>"Here are the technical specifications"</li>
-            <li>"Let me show you a comparison chart"</li>
-            <li>"This has a 5-year warranty vs. 2-year"</li>
-            <li>Avoid: Pressure tactics, emotional appeals</li>
-          </ul>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); color: #2d3436;">
-          <h4>🤝 For Social Harmonizers</h4>
-          <p><strong>Language Style:</strong> Warm, inclusive, consensus-building</p>
-          <ul class="personality-traits">
-            <li>"What does your family think?"</li>
-            <li>"Our customers love this feature"</li>
-            <li>"Let's find something everyone will enjoy"</li>
-            <li>Avoid: High-pressure individual decisions</li>
-          </ul>
-        </div>
-
-        <div class="personality-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-          <h4>🌟 For Experience Seekers</h4>
-          <p><strong>Language Style:</strong> Storytelling, emotional, experiential</p>
-          <ul class="personality-traits">
-            <li>"Imagine how this will feel..."</li>
-            <li>"This is exclusive to our store"</li>
-            <li>"You'll be one of the first to have this"</li>
-            <li>Avoid: Pure technical data, generic presentations</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">🧪</span>Interactive Profiling Exercise</h3>
-      
-      <div class="interactive-quiz">
-        <h4>Test Your Profiling Skills</h4>
-        <p><strong>Scenario:</strong> A customer enters your store and immediately heads to the sale section, carefully examines price tags, asks if there are any additional discounts, mentions they're comparing prices with online retailers, and wants to know about the return policy.</p>
-        
-        <div class="quiz-question">
-          <strong>What's their primary personality type?</strong><br>
-          A) Status Conscious - they want the best deals on premium items<br>
-          B) Value Hunter - price is their primary decision factor<br>
-          C) Security Seeker - they need reassurance about their purchase<br>
-          D) Analytical Researcher - they're gathering comprehensive data
-        </div>
-
-        <p style="margin-top: 25px;"><strong>Answer:</strong> <em>B) Value Hunter</em> - The immediate focus on sales, price comparison, discount inquiry, and return policy questions all indicate price-conscious decision making. Your approach should emphasize value, savings, and practical benefits.</p>
-      </div>
-
-      <div class="case-study">
-        <h4>Advanced Profiling Challenge</h4>
-        <p><strong>Complex Customer:</strong> A well-dressed individual enters, browses premium items, asks detailed technical questions, but also checks prices and mentions budget considerations. They seem interested but hesitant to commit.</p>
-        <p><strong>Analysis:</strong> This is a hybrid profile - Status Conscious + Analytical + Value considerations. They want quality but need justification. <strong>Strategy:</strong> Present premium options with detailed value propositions, emphasize long-term cost benefits, and provide technical justification for the higher price point.</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">📈</span>Measuring Your Profiling Success</h3>
-      
-      <h4>Key Performance Indicators for Customer Profiling:</h4>
-
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-number">85%</div>
-          <div class="stat-label">Target accuracy rate for personality identification</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">30sec</div>
-          <div class="stat-label">Maximum time needed for initial profiling</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">40%</div>
-          <div class="stat-label">Increase in conversion when approach matches personality</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">2.5x</div>
-          <div class="stat-label">Faster rapport building with accurate profiling</div>
-        </div>
-      </div>
-
-      <div class="insight-box">
-        <h4>Continuous Improvement Strategy</h4>
-        <p>Track your profiling accuracy by noting your initial assessment, the approach you used, and the customer's response. Keep a simple log: "Initial Profile → Approach Used → Customer Response → Outcome." This data will help you refine your skills and identify patterns in your accuracy.</p>
-      </div>
-    </div>
-
-    <div class="action-item">
-      <h4>Your 7-Day Profiling Challenge</h4>
-      <p><strong>This Week's Mission:</strong> Practice the OBSERVE method on 20 customers without making any sales attempts. Focus purely on observation and profiling accuracy.</p>
       <ul>
-        <li><strong>Day 1-2:</strong> Focus only on the "O" and "B" aspects (Outfit and Behavior)</li>
-        <li><strong>Day 3-4:</strong> Add "S" and "E" (Speech and Eye contact)</li>
-        <li><strong>Day 5-6:</strong> Include "R" and "V" (Reactions and Value focus)</li>
-        <li><strong>Day 7:</strong> Practice the complete OBSERVE method</li>
+        <li><b>Demographics:</b> Age, gender, occupation, income, marital status.</li>
+        <li><b>Psychographics:</b> Values, lifestyle, aspirations, motivators, fears.</li>
+        <li><b>Behavioral Data:</b> Shopping frequency, average spend, preferred channels, purchase triggers.</li>
       </ul>
-      <p><strong>Success Metric:</strong> By day 7, you should be able to identify the primary personality type of 8 out of 10 customers within 30 seconds of interaction.</p>
+      <div class="callout" style="background:#e3fcec;">
+        <b>Knowledge Boost:</b> According to a 2023 Deloitte study, retailers who personalize based on psychographics see a 30% increase in repeat purchases compared to those who only use demographics.
+      </div>
+      <div class="callout">
+        <b>Pro Tip:</b> Ask open-ended questions: “What brings you in today?” or “What are you hoping to find?” Listen for both words AND non-verbal cues.
+      </div>
     </div>
 
     <div class="section">
-      <h3><span class="section-icon">🚀</span>Ready for Advanced Sales Techniques?</h3>
-      
-      <p>You now possess the foundational skills to read customer personalities and adapt your communication style accordingly. In Lesson 3, we'll build on these profiling skills to learn advanced sales techniques that are perfectly matched to each personality type.</p>
-
-      <div class="case-study">
-        <h4>What's Next: Sales Technique Integration</h4>
-        <p>The next lesson will teach you how to seamlessly transition from profiling to selling, using personality-specific closing techniques, objection handling strategies, and upselling approaches that feel natural and consultative rather than pushy.</p>
+      <h3><span class="section-icon">2</span>The 8 Primary Retail Personality Types</h3>
+      <ul>
+        <li><b>The Mission Shopper:</b> On a mission, wants efficiency. <i>Approach:</i> Be direct, offer fast solutions.</li>
+        <li><b>The Browser:</b> No clear goal, open to discovery. <i>Approach:</i> Spark curiosity, offer suggestions.</li>
+        <li><b>The Value Seeker:</b> Motivated by deals. <i>Approach:</i> Highlight promotions, loyalty programs.</li>
+        <li><b>The Quality Connoisseur:</b> Seeks best-in-class. <i>Approach:</i> Focus on craftsmanship, warranties.</li>
+        <li><b>The Social Shopper:</b> Buys for others, wants validation. <i>Approach:</i> Use social proof, stories.</li>
+        <li><b>The Researcher:</b> Already informed, detail-oriented. <i>Approach:</i> Provide expert info, specs.</li>
+        <li><b>The Impulse Buyer:</b> Responds to emotion, urgency. <i>Approach:</i> Use scarcity, FOMO language.</li>
+        <li><b>The Loyalist:</b> Repeat customer, expects recognition. <i>Approach:</i> Personalize, give VIP perks.</li>
+      </ul>
+      <div class="callout" style="background:#e3fcec;">
+        <b>Knowledge Boost:</b> Harvard research shows that “Value Seekers” are 2.8x more likely to share positive experiences on social media than “Mission Shoppers.”
       </div>
+    </div>
 
-      <a href="lesson3.html" class="btn">Continue to Lesson 3: Advanced Sales Techniques →</a>
+    <div class="section">
+      <h3><span class="section-icon">3</span>Behavioral Segmentation in Action</h3>
+      <div class="callout">
+        <b>Case Study:</b> Sephora segments shoppers by “Explorers,” “Planners,” and “Quick-In-&-Out” types. They use in-store tech to tailor recommendations, changing music and displays based on customer type and time of day.
+      </div>
+      <ul>
+        <li>Track how different profiles react to greetings, displays, and promotions.</li>
+        <li>Adjust your approach in real-time: If a “Mission Shopper” is browsing too long, offer fast help; if a “Browser” seems stuck, invite them to a demo.</li>
+      </ul>
+      <div class="callout" style="background:#e3fcec;">
+        <b>Expert Insight:</b> Brands like Nike use purchase history, app behavior, and in-store interactions to predict and recommend the next best offer for each segment. This increases cross-sell opportunities by 25%.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">4</span>Micro-Signals: The Psychology of Reading Customers</h3>
+      <ul>
+        <li><b>Body Language:</b> Crossed arms = resistance. Leaning in = interest. Glancing at exit = disengaged.</li>
+        <li><b>Touch:</b> Customers touching products are 40% more likely to buy. Encourage interaction.</li>
+        <li><b>Facial Cues:</b> Surprised = new; smiling = engaged; frowning = confused.</li>
+      </ul>
+      <div class="callout">
+        <b>Exercise:</b> Spend 10 minutes observing customers. Categorize by type and note their micro-signals.
+      </div>
+      <div class="callout" style="background:#e3fcec;">
+        <b>Knowledge Boost:</b> Eye-tracking studies show that the first 5 seconds in-store determine 60% of a customer’s “approach or avoid” decision.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Lesson 2 Mastery Summary</h3>
+      <ul>
+        <li>Customer profiles are dynamic—adapt, don’t stereotype.</li>
+        <li>Use behavioral cues for real-time segmentation.</li>
+        <li>Personalization = higher sales, loyalty, and satisfaction.</li>
+      </ul>
+      <div class="callout" style="background:linear-gradient(135deg,#ffeaa7 0%,#fab1a0 100%);">
+        <b>Challenge:</b> Profile 10 customers this week. Record their type, interaction, and what closed the sale. Share top insights in your next team meeting!
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <h3>Mini-Quiz: Customer Profiling Mastery</h3>
+      <form id="quiz2">
+        <div>
+          <b>1. Which customer type responds best to urgency and limited-time offers?</b><br/>
+          <label><input type="radio" name="q1" value="a"/> The Loyalist</label><br/>
+          <label><input type="radio" name="q1" value="b"/> The Impulse Buyer</label><br/>
+          <label><input type="radio" name="q1" value="c"/> The Researcher</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>2. True or False: Behavioral segmentation should only use data from loyalty programs.</b><br/>
+          <label><input type="radio" name="q2" value="a"/> True</label><br/>
+          <label><input type="radio" name="q2" value="b"/> False</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>3. What’s the best first step to profile a new customer?</b><br/>
+          <label><input type="radio" name="q3" value="a"/> Offer them a discount immediately</label><br/>
+          <label><input type="radio" name="q3" value="b"/> Ask open-ended questions about their needs</label><br/>
+          <label><input type="radio" name="q3" value="c"/> Wait for them to approach you</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>4. Which of the following is a psychographic trait?</b><br/>
+          <label><input type="radio" name="q4" value="a"/> Preferred payment method</label><br/>
+          <label><input type="radio" name="q4" value="b"/> Age</label><br/>
+          <label><input type="radio" name="q4" value="c"/> Personal values</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>5. What physical action in-store is most closely linked to purchase intent?</b><br/>
+          <label><input type="radio" name="q5" value="a"/> Looking at price tags</label><br/>
+          <label><input type="radio" name="q5" value="b"/> Touching the product</label><br/>
+          <label><input type="radio" name="q5" value="c"/> Standing near entrance</label>
+        </div>
+        <button type="button" class="btn" onclick="gradeQuiz2()" style="margin-top:18px;">Submit Quiz</button>
+      </form>
+      <div id="quiz2-result" style="font-weight:bold;margin-top:20px;"></div>
+    </div>
+    <script>
+      function gradeQuiz2() {
+        const correct = { q1: 'b', q2: 'b', q3: 'b', q4: 'c', q5: 'b' };
+        let score = 0;
+        let total = 5;
+        for(let i=1; i<=total; i++) {
+          let ans = document.querySelector('input[name="q'+i+'"]:checked');
+          if(ans && ans.value === correct['q'+i]) score++;
+        }
+        let msg = `You scored ${score} out of ${total}. `;
+        if(score === total) msg += "Excellent! 🎉";
+        else if(score >= total-1) msg += "Great job! Review any missed questions above.";
+        else msg += "Keep practicing and review the lesson above.";
+        document.getElementById('quiz2-result').textContent = msg;
+      }
+    </script>
+
+    <!-- === LESSON 2 CONTENT ENDS HERE === -->
+
+    <div id="lesson-completion">
+      <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
+      <a id="nextLessonBtn" href="lesson3.html" class="btn" style="display:none; margin-left:20px;">Continue to Lesson 3 &rarr;</a>
+      <div id="completionMsg">🎉 Well done! This lesson is marked complete. You can continue to the next lesson.</div>
+    </div>
+    <div class="dashboard-link">
+      <a href="progress.html">View Your Course Progress &rarr;</a>
     </div>
   </div>
-
   <script>
-    // Simple progress animation
-    document.addEventListener('DOMContentLoaded', function() {
-      const progressFill = document.querySelector('.progress-fill');
-      progressFill.style.width = '0%';
-      setTimeout(() => {
-        progressFill.style.width = '28%';
-      }, 500);
-    });
-
-    // Interactive quiz functionality
-    document.querySelectorAll('.quiz-question').forEach(question => {
-      question.addEventListener('click', function() {
-        this.style.background = 'rgba(255,255,255,0.6)';
-        this.style.transform = 'scale(1.02)';
-        setTimeout(() => {
-          this.style.background = 'rgba(255,255,255,0.3)';
-          this.style.transform = 'scale(1)';
-        }, 200);
-      });
-    });
-
-    // Smooth scrolling for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+    const lessonNum = 2;
+    const totalLessons = 7;
+    function markLessonComplete() {
+      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      progress[`lesson${lessonNum}`] = true;
+      localStorage.setItem('retailProgress', JSON.stringify(progress));
+      document.getElementById('nextLessonBtn').style.display = 'inline-block';
+      document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+      document.getElementById('markComplete').disabled = true;
+      document.getElementById('completionMsg').style.display = 'block';
+      updateProgressBar();
+    }
+    function updateProgressBar() {
+      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      let completed = 0;
+      for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
+      let percent = Math.round((completed/totalLessons)*100);
+      document.getElementById('progressBarFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent =
+        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+    }
+    window.onload = function() {
+      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if(progress[`lesson${lessonNum}`]) {
+        document.getElementById('nextLessonBtn').style.display = 'inline-block';
+        document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+        document.getElementById('markComplete').disabled = true;
+        document.getElementById('completionMsg').style.display = 'block';
+      }
+      updateProgressBar();
+    };
   </script>
 </body>
 </html>
