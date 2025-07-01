@@ -1,782 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Complete Retail Marketing Mastery Guide</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lesson 5: Data-Driven Retail—KPIs, Analytics, and Smart Decisions | Retail Expert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
-    body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      line-height: 1.7; 
-      padding: 0; 
-      margin: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      background: white;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    }
-    
-    .header {
-      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-      color: white;
-      padding: 40px;
-      text-align: center;
-    }
-    
-    .header h1 {
-      font-size: 2.5em;
-      margin: 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    }
-    
-    .subtitle {
-      font-size: 1.2em;
-      margin-top: 10px;
-      opacity: 0.9;
-    }
-    
-    .content {
-      padding: 40px;
-    }
-    
-    .section {
-      margin-bottom: 50px;
-      position: relative;
-    }
-    
-    h2 {
-      color: #2c3e50;
-      font-size: 2em;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #3498db;
-      position: relative;
-    }
-    
-    h3 {
-      color: #34495e;
-      font-size: 1.4em;
-      margin: 25px 0 15px 0;
-    }
-    
-    .highlight-box {
-      background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
-      color: white;
-      padding: 25px;
-      border-radius: 15px;
-      margin: 25px 0;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    .quote {
-      background: #f8f9fa;
-      padding: 20px;
-      border-left: 5px solid #e74c3c;
-      margin: 20px 0;
-      font-style: italic;
-      font-size: 1.1em;
-      border-radius: 0 10px 10px 0;
-    }
-    
-    .tip {
-      background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-    
-    .pro-tip {
-      background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-      position: relative;
-    }
-    
-    .pro-tip::before {
-      content: "💡 PRO TIP";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 10px;
-    }
-    
-    .warning {
-      background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-    
-    .warning::before {
-      content: "⚠️ WARNING";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 10px;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 25px 0;
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    th {
-      background: linear-gradient(135deg, #6c5ce7 0%, #5f3dc4 100%);
-      color: white;
-      padding: 15px;
-      text-align: left;
-      font-weight: bold;
-    }
-    
-    td {
-      padding: 15px;
-      border-bottom: 1px solid #eee;
-    }
-    
-    tr:nth-child(even) {
-      background: #f8f9fa;
-    }
-    
-    tr:hover {
-      background: #e3f2fd;
-      transition: background 0.3s;
-    }
-    
-    .activity {
-      background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      margin: 30px 0;
-    }
-    
-    .quiz {
-      background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 15px;
-      margin: 30px 0;
-    }
-    
-    .case-study {
-      background: #f1f2f6;
-      padding: 25px;
-      border-radius: 10px;
-      margin: 25px 0;
-      border: 2px solid #ddd;
-    }
-    
-    .case-study h4 {
-      color: #2d3436;
-      margin-top: 0;
-    }
-    
-    ul, ol {
-      padding-left: 25px;
-    }
-    
-    li {
-      margin-bottom: 8px;
-    }
-    
-    .metric-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 25px 0;
-    }
-    
-    .metric-card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      text-align: center;
-      border-top: 4px solid #3498db;
-    }
-    
-    .metric-number {
-      font-size: 2em;
-      font-weight: bold;
-      color: #3498db;
-    }
-    
-    .interactive-element {
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    
-    .interactive-element:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    }
-    
-    .checklist {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-    
-    .checklist-item {
-      display: flex;
-      align-items: center;
-      margin: 10px 0;
-      padding: 10px;
-      background: #f8f9fa;
-      border-radius: 5px;
-    }
-    
-    .checklist-item input[type="checkbox"] {
-      margin-right: 15px;
-      transform: scale(1.2);
-    }
-    
-    .psychology-box {
-      background: linear-gradient(135deg, #ff9ff3 0%, #f368e0 100%);
-      color: white;
-      padding: 25px;
-      border-radius: 15px;
-      margin: 25px 0;
-    }
-    
-    .psychology-box::before {
-      content: "🧠 CUSTOMER PSYCHOLOGY";
-      font-weight: bold;
-      display: block;
-      margin-bottom: 15px;
-    }
-    
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
+    header { background: linear-gradient(135deg, #000 0%, #434343 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
+    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
+    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.8; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 400px; }
+    #progressBarContainer .progress-outer { background:#e2e8f0; border-radius:6px; overflow:hidden; height:14px; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#667eea,#764ba2); transition:width 0.7s; }
+    #progressText { text-align:center; font-size:1em; margin-top:6px; color:#667eea; font-weight:bold; }
+    #lesson-completion { margin:40px 0 30px 0; text-align:center; }
+    #completionMsg { margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); border: none; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
+    .dashboard-link { text-align:center; margin-bottom:40px; }
+    .dashboard-link a { color:#667eea; font-weight:500; text-decoration:underline; font-size:1em; }
+    h3 { margin-top:40px; color:#222;}
+    .section {margin-bottom: 34px;}
+    .section-icon {font-weight: bold; color: #764ba2; margin-right: 10px;}
+    .callout {background:linear-gradient(135deg,#f1f8e9 0%,#e8eaf6 100%);padding:18px 22px;border-radius:10px;margin:20px 0;}
+    .quiz-section {background:#fff8e1;padding:30px 25px;border-radius:16px;box-shadow:0 2px 10px rgba(200,180,80,0.07);margin:40px 0 0 0;}
+    .fun-fact {background:#c7f9cc;color:#222;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
+    .case-study {background:#f7e1fc;color:#422160;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
+    .expert-tip {background:#e0c3fc;color:#4b2360;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
+    .activity {background:#fffbe7;color:#5c4000;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
+    .kpi-table {background:#e8eaf6;padding:18px 24px;border-radius:8px;margin:18px 0;}
+    .kpi-table table {width:100%;border-collapse:collapse;}
+    .kpi-table th, .kpi-table td {padding:8px 10px;border-bottom:1px solid #d1d5db;text-align:left;}
+    .kpi-table th {background:#c3cfe2;}
+    .kpi-table tr:last-child td {border-bottom:none;}
+    .leaderboard {background:#ffeaa7;padding:12px 16px;border-radius:8px;margin:18px 0;font-weight:600;}
     @media (max-width: 768px) {
-      .content { padding: 20px; }
-      h1 { font-size: 2em; }
-      h2 { font-size: 1.5em; }
-      .metric-grid { grid-template-columns: 1fr; }
+      #lesson-completion button, #lesson-completion a { display:block; width:90%; margin:12px auto; font-size:1em; padding:14px 0; }
+      #progressBarContainer {max-width:95vw;}
+      .quiz-section {padding:18px 10px;}
+      .kpi-table {padding:8px 2px;}
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Retail Expert Academy</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/course.html">Course</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
   <div class="container">
-    <div class="header">
-      <h1>🛍️ The Complete Retail Marketing Mastery Guide</h1>
-      <div class="subtitle">From Psychology to Profit: Master Every Angle of Retail Marketing</div>
+    <div id="progressBarContainer">
+      <div class="progress-outer">
+        <div id="progressBarFill"></div>
+      </div>
+      <div id="progressText">Lesson 5 of 7</div>
     </div>
 
-    <div class="content">
-      <!-- Section 1: Foundation & Psychology -->
-      <div class="section">
-        <h2>🎯 Section 1: The Psychology of Retail Marketing</h2>
-        
-        <div class="highlight-box">
-          <h3>What Really Drives Customer Behavior?</h3>
-          <p>Retail marketing isn't just about pretty displays and discount signs. It's about understanding the human brain and leveraging psychological triggers that turn browsers into buyers.</p>
-        </div>
+    <!-- === LESSON 5 CONTENT STARTS HERE === -->
+    <div class="hero">
+      <h2>Data-Driven Retail: KPIs, Analytics, and Smart Decisions</h2>
+      <p>
+        Unlock the secret superpower of high-performing retailers: <b>data!</b> Learn which numbers truly matter, how to analyze deep trends, and how to turn insight into profit—no spreadsheets required.
+      </p>
+    </div>
 
-        <div class="psychology-box">
-          <h4>The 6 Core Psychological Triggers:</h4>
-          <ol>
-            <li><strong>Scarcity:</strong> "Only 3 left in stock!"</li>
-            <li><strong>Social Proof:</strong> "Bestseller" or customer reviews</li>
-            <li><strong>Reciprocity:</strong> Free samples or styling advice</li>
-            <li><strong>Authority:</strong> Expert recommendations</li>
-            <li><strong>Consistency:</strong> Brand loyalty programs</li>
-            <li><strong>Emotion:</strong> How products make them feel</li>
-          </ol>
-        </div>
+    <div class="fun-fact"><span class="emoji">📊</span> <b>Did you know?</b> Top retailers who track and act on KPIs grow <b>2x faster</b> and are <b>23% more profitable</b> than those who go by “gut feeling” alone! <span class="emoji">💹</span></div>
 
-        <div class="quote">
-          "People don't buy products, they buy better versions of themselves. Your job is to show them that transformation."
-        </div>
-
-        <h3>The Customer Journey Mindset</h3>
+    <div class="section">
+      <h3><span class="section-icon">1</span>All the KPIs You Need: The Ultimate Retail Scorecard</h3>
+      <div class="callout">
+        <b>What’s a KPI?</b> A Key Performance Indicator is a focused number that tells you if your business, your team, or you are winning or losing.
+      </div>
+      <div class="kpi-table">
         <table>
           <tr>
-            <th>Stage</th>
-            <th>Customer Mindset</th>
-            <th>Marketing Focus</th>
-            <th>Staff Action</th>
+            <th>KPI</th>
+            <th>What It Measures</th>
+            <th>Formula / Target</th>
+            <th>Pro Tips</th>
           </tr>
           <tr>
-            <td>Discovery</td>
-            <td>"What's new/interesting?"</td>
-            <td>Attention-grabbing displays</td>
-            <td>Warm greeting, highlight features</td>
+            <td><b>Conversion Rate</b></td>
+            <td>% of visitors who buy</td>
+            <td>(Purchases ÷ Visitors) × 100<br><i>Goal: 15-40% (store), 2-5% (online)</i></td>
+            <td>Raise with great greetings & demos</td>
           </tr>
           <tr>
-            <td>Interest</td>
-            <td>"Tell me more"</td>
-            <td>Product storytelling</td>
-            <td>Share benefits, not just features</td>
+            <td><b>Average Transaction Value (ATV)</b></td>
+            <td>Average $ per sale</td>
+            <td>Total Sales ÷ # Transactions</td>
+            <td>Upsell, bundle, offer “complete the look”</td>
           </tr>
           <tr>
-            <td>Consideration</td>
-            <td>"Is this right for me?"</td>
-            <td>Social proof, try-before-buy</td>
-            <td>Ask questions, personalize</td>
+            <td><b>Units Per Transaction (UPT)</b></td>
+            <td>Avg. items per sale</td>
+            <td>Total Units Sold ÷ # Transactions</td>
+            <td>Suggest add-ons every time!</td>
           </tr>
           <tr>
-            <td>Purchase</td>
-            <td>"I want this now"</td>
-            <td>Remove friction, add value</td>
-            <td>Suggest complementary items</td>
+            <td><b>Basket Analysis</b></td>
+            <td>Popular item combos</td>
+            <td>Analyze receipts for pairs/groups</td>
+            <td>Cross-merchandise & create “power combos”</td>
           </tr>
           <tr>
-            <td>Advocacy</td>
-            <td>"I love this brand"</td>
-            <td>Follow-up, loyalty programs</td>
-            <td>Create memorable experience</td>
+            <td><b>Stock Turnover</b></td>
+            <td>Inventory sold per period</td>
+            <td>COGS ÷ Avg Inventory</td>
+            <td>Swap out slow sellers fast</td>
+          </tr>
+          <tr>
+            <td><b>Customer Conversion</b></td>
+            <td>% of browsers converted by each staff</td>
+            <td>Individual Purchases ÷ Individual Visitors</td>
+            <td>Track & coach for best greetings</td>
+          </tr>
+          <tr>
+            <td><b>Loyalty/Rewards Signups</b></td>
+            <td>% of sales linked to rewards program</td>
+            <td>Member Sales ÷ Total Sales</td>
+            <td>Set daily/weekly staff targets</td>
+          </tr>
+          <tr>
+            <td><b>Account Signups</b></td>
+            <td>New emails/phone numbers/accounts</td>
+            <td>Signups per day/week</td>
+            <td>Offer instant rewards for joining</td>
+          </tr>
+          <tr>
+            <td><b>Customer Lifetime Value (CLV)</b></td>
+            <td>Total profit per customer</td>
+            <td>ATV × Frequency × Retention</td>
+            <td>Pamper your top 10%!</td>
+          </tr>
+          <tr>
+            <td><b>Churn Rate/Retention</b></td>
+            <td>Who comes back (or not)</td>
+            <td>Repeat Buyers ÷ All Buyers</td>
+            <td>Follow up with “we miss you” offers</td>
+          </tr>
+          <tr>
+            <td><b>Net Promoter Score (NPS)</b></td>
+            <td>Willingness to recommend</td>
+            <td>Survey: “How likely to recommend?”<br>50+ is excellent</td>
+            <td>Use feedback to improve service</td>
           </tr>
         </table>
       </div>
-
-      <!-- Section 2: Campaign Strategy Deep Dive -->
-      <div class="section">
-        <h2>🚀 Section 2: Campaign Strategy & Execution</h2>
-
-        <div class="highlight-box">
-          <h3>The Campaign Ecosystem</h3>
-          <p>Successful campaigns aren't just marketing pushes—they're carefully orchestrated experiences that align every touchpoint from social media to the sales floor.</p>
-        </div>
-
-        <h3>Campaign Types & Their Power</h3>
-        <table>
-          <tr>
-            <th>Campaign Type</th>
-            <th>Primary Goal</th>
-            <th>Duration</th>
-            <th>Key Metrics</th>
-            <th>Example Themes</th>
-          </tr>
-          <tr>
-            <td>Brand Awareness</td>
-            <td>Recognition & Recall</td>
-            <td>3-6 months</td>
-            <td>Reach, Brand Mentions</td>
-            <td>"Authentic You", "Everyday Luxury"</td>
-          </tr>
-          <tr>
-            <td>Product Launch</td>
-            <td>Drive Trial</td>
-            <td>4-8 weeks</td>
-            <td>Units Sold, Trial Rate</td>
-            <td>"Innovation Meets Style"</td>
-          </tr>
-          <tr>
-            <td>Seasonal Push</td>
-            <td>Clear Inventory</td>
-            <td>2-4 weeks</td>
-            <td>Sell-through Rate</td>
-            <td>"Summer Refresh", "Winter Warmth"</td>
-          </tr>
-          <tr>
-            <td>Loyalty Building</td>
-            <td>Retain Customers</td>
-            <td>Ongoing</td>
-            <td>Repeat Purchase Rate</td>
-            <td>"VIP Experience", "Member Exclusive"</td>
-          </tr>
-          <tr>
-            <td>Traffic Building</td>
-            <td>Footfall Increase</td>
-            <td>1-3 weeks</td>
-            <td>Store Visits, Conversion</td>
-            <td>"Grand Opening", "Flash Event"</td>
-          </tr>
-        </table>
-
-        <div class="case-study">
-          <h4>🏆 Case Study: Zara's "Join Life" Sustainable Campaign</h4>
-          <p><strong>Challenge:</strong> Appeal to eco-conscious millennials without compromising fashion-forward image.</p>
-          <p><strong>Strategy:</strong> Integrated storytelling across all channels with staff trained as sustainability ambassadors.</p>
-          <p><strong>Execution:</strong> Special green tags, staff wearing Join Life pieces, sustainability corner in stores.</p>
-          <p><strong>Results:</strong> 40% increase in sustainable line sales, 25% boost in brand perception among target demographic.</p>
-          <p><strong>Key Lesson:</strong> Authenticity requires full commitment from every team member.</p>
-        </div>
-
-        <div class="pro-tip">
-          Campaign success isn't just about the big idea—it's about flawless execution at every level. Your newest part-time associate should be able to explain your campaign as clearly as your store manager.
-        </div>
+      <div class="activity">
+        <b>Activity:</b> For the next week, track <b>conversion rate</b>, <b>ATV</b>, and <b>UPT</b> daily—for your store, your team, and yourself!
       </div>
+    </div>
 
-      <!-- Section 3: Visual Merchandising & Store Experience -->
-      <div class="section">
-        <h2>🎨 Section 3: Visual Merchandising & Experiential Design</h2>
-
-        <div class="highlight-box">
-          <h3>Your Store as a Stage</h3>
-          <p>Every square foot of your retail space tells a story. Visual merchandising is your silent salesperson working 24/7.</p>
-        </div>
-
-        <h3>The Science of Store Layout</h3>
-        <div class="psychology-box">
-          <h4>Traffic Flow Psychology:</h4>
-          <ul>
-            <li><strong>Decompression Zone:</strong> First 5-15 feet where customers adjust to your environment</li>
-            <li><strong>Right-Turn Tendency:</strong> 90% of shoppers turn right upon entering</li>
-            <li><strong>Power Wall:</strong> The right wall gets maximum exposure</li>
-            <li><strong>Golden Triangle:</strong> The path most customers naturally follow</li>
-            <li><strong>Butt-Brush Effect:</strong> Customers avoid narrow aisles where they might be bumped</li>
-          </ul>
-        </div>
-
-        <h3>Visual Merchandising Hierarchy</h3>
-        <table>
-          <tr>
-            <th>Level</th>
-            <th>Purpose</th>
-            <th>Tools</th>
-            <th>Refresh Frequency</th>
-          </tr>
-          <tr>
-            <td>Macro (Store Level)</td>
-            <td>Brand story, season theme</td>
-            <td>Color schemes, major displays</td>
-            <td>Monthly/Seasonally</td>
-          </tr>
-          <tr>
-            <td>Micro (Zone Level)</td>
-            <td>Category focus, cross-selling</td>
-            <td>Fixtures, signage, groupings</td>
-            <td>Bi-weekly</td>
-          </tr>
-          <tr>
-            <td>Detail (Product Level)</td>
-            <td>Individual item appeal</td>
-            <td>Styling, props, lighting</td>
-            <td>Weekly</td>
-          </tr>
-        </table>
-
-        <div class="tip">
-          <strong>The 3-Second Rule:</strong> Customers decide whether to engage with a display within 3 seconds. Use bold colors, clear hierarchy, and emotional triggers to grab attention fast.
-        </div>
-
-        <h3>Sensory Marketing Integration</h3>
-        <div class="metric-grid">
-          <div class="metric-card interactive-element">
-            <div class="metric-number">👁️</div>
-            <h4>Visual</h4>
-            <p>Color psychology, lighting temperature, visual flow</p>
-          </div>
-          <div class="metric-card interactive-element">
-            <div class="metric-number">👂</div>
-            <h4>Audio</h4>
-            <p>Music tempo affects shopping pace, volume influences time spent</p>
-          </div>
-          <div class="metric-card interactive-element">
-            <div class="metric-number">👃</div>
-            <h4>Scent</h4>
-            <p>Signature scents increase brand recall by 65%</p>
-          </div>
-          <div class="metric-card interactive-element">
-            <div class="metric-number">✋</div>
-            <h4>Touch</h4>
-            <p>Tactile experiences increase purchase likelihood by 40%</p>
-          </div>
-        </div>
+    <div class="section">
+      <h3><span class="section-icon">2</span>How to Read, Use, and Supercharge Your KPIs</h3>
+      <ul>
+        <li><b>Conversion Rate:</b> If low, audit greetings, staff engagement, and path to purchase. Test new approaches and measure again.</li>
+        <li><b>ATV & UPT:</b> If either is flat, coach staff on add-ons, bundles, and “complete the look” selling. Run a team challenge for highest UPT!</li>
+        <li><b>Basket Analysis:</b> Use data to create irresistible combos (e.g., “Customers who buy X also love Y!”).</li>
+        <li><b>Churn/Retention:</b> If retention drops, launch “welcome back” campaigns and analyze why customers don’t return (returns, complaints, etc).</li>
+        <li><b>Loyalty Signups:</b> Run a “double points” day or a friendly competition—prizes for most new signups!</li>
+        <li><b>Account Signups:</b> Offer instant discounts for joining. Make sign-up frictionless (20 seconds max).</li>
+        <li><b>CLV:</b> Identify your VIPs and treat them to exclusive perks or previews.</li>
+        <li><b>NPS:</b> Survey after every purchase. Act on feedback and recognize staff who earn 10/10s!</li>
+      </ul>
+      <div class="case-study">
+        <b>Case Study: Starbucks</b><br>
+        Starbucks tracks conversion, rewards signups, app downloads, and CLV. Stores that set weekly signup targets average 30% more repeat visits and a 12% jump in ATV.
       </div>
-
-      <!-- Section 4: Digital Integration -->
-      <div class="section">
-        <h2>📱 Section 4: Omnichannel Marketing Integration</h2>
-
-        <div class="highlight-box">
-          <h3>Breaking Down Channel Silos</h3>
-          <p>Modern retail marketing isn't online OR offline—it's seamlessly integrated across all touchpoints to create one cohesive customer experience.</p>
-        </div>
-
-        <h3>The Connected Customer Journey</h3>
-        <table>
-          <tr>
-            <th>Touchpoint</th>
-            <th>Customer Action</th>
-            <th>Marketing Opportunity</th>
-            <th>Staff Integration</th>
-          </tr>
-          <tr>
-            <td>Social Media</td>
-            <td>Discovers product</td>
-            <td>Inspiring content, user-generated content</td>
-            <td>Share styling tips that match online content</td>
-          </tr>
-          <tr>
-            <td>Website/App</td>
-            <td>Researches, saves items</td>
-            <td>Personalized recommendations, reviews</td>
-            <td>Access customer's wishlist in-store</td>
-          </tr>
-          <tr>
-            <td>Email/SMS</td>
-            <td>Receives offers</td>
-            <td>Targeted promotions, restock alerts</td>
-            <td>Reference email offers during visit</td>
-          </tr>
-          <tr>
-            <td>Physical Store</td>
-            <td>Tries on, purchases</td>
-            <td>Expert advice, experiential elements</td>
-            <td>Create moments worth sharing online</td>
-          </tr>
-          <tr>
-            <td>Post-Purchase</td>
-            <td>Uses, shares, reviews</td>
-            <td>Follow-up care, loyalty programs</td>
-            <td>Proactive check-ins, styling advice</td>
-          </tr>
-        </table>
-
-        <div class="case-study">
-          <h4>🏆 Case Study: Sephora's Beauty Insider Ecosystem</h4>
-          <p><strong>Challenge:</strong> Create seamless experience across 2,600+ stores and digital platforms.</p>
-          <p><strong>Solution:</strong> Integrated loyalty program with consistent rewards, reviews, and recommendations across all channels.</p>
-          <p><strong>Innovation:</strong> AR try-on technology, Color IQ matching, Beauty Board social sharing.</p>
-          <p><strong>Results:</strong> 90% of purchases influenced by multiple touchpoints, 80% of customers interact across channels.</p>
-          <p><strong>Key Insight:</strong> Staff equipped with customer's digital history can provide personalized service that feels magical.</p>
-        </div>
-
-        <div class="pro-tip">
-          Train your team to ask: "Have you seen us on Instagram?" or "Did you get our email about the new collection?" This bridges digital and physical experiences naturally.
-        </div>
+      <div class="expert-tip">
+        <b>Expert Tip:</b> Track KPIs by <b>individual staff</b> as well as by team/store—post a fun leaderboard (see below)!
       </div>
-
-      <!-- Section 5: Advanced Promotional Strategies -->
-      <div class="section">
-        <h2>💡 Section 5: Advanced Promotional Psychology</h2>
-
-        <div class="highlight-box">
-          <h3>Beyond Basic Discounts</h3>
-          <p>Anyone can slash prices. Master retailers understand the psychology of value perception and use sophisticated promotional strategies that actually increase brand equity.</p>
-        </div>
-
-        <h3>Promotional Strategy Matrix</h3>
-        <table>
-          <tr>
-            <th>Strategy Type</th>
-            <th>Psychological Trigger</th>
-            <th>Best For</th>
-            <th>Risk Level</th>
-            <th>Example</th>
-          </tr>
-          <tr>
-            <td>Bundle Pricing</td>
-            <td>Value perception</td>
-            <td>Cross-selling</td>
-            <td>Low</td>
-            <td>"Complete the Look" packages</td>
-          </tr>
-          <tr>
-            <td>Tiered Rewards</td>
-            <td>Achievement motivation</td>
-            <td>Loyalty building</td>
-            <td>Low</td>
-            <td>"Spend $200, get 20% off next purchase"</td>
-          </tr>
-          <tr>
-            <td>Scarcity Marketing</td>
-            <td>Fear of missing out</td>
-            <td>High-demand items</td>
-            <td>Medium</td>
-            <td>"Limited edition - only 50 made"</td>
-          </tr>
-          <tr>
-            <td>Surprise & Delight</td>
-            <td>Reciprocity</td>
-            <td>Premium customers</td>
-            <td>Low</td>
-            <td>Unexpected free gift with purchase</td>
-          </tr>
-          <tr>
-            <td>Social Currency</td>
-            <td>Status signaling</td>
-            <td>Trendy demographics</td>
-            <td>Medium</td>
-            <td>"VIP Early Access" events</td>
-          </tr>
-          <tr>
-            <td>Straight Discount</td>
-            <td>Immediate gratification</td>
-            <td>Clearance, traffic building</td>
-            <td>High</td>
-            <td>"50% off everything"</td>
-          </tr>
-        </table>
-
-        <div class="warning">
-          Straight discounting can be addictive for both retailers and customers. Use sparingly and always with a clear exit strategy. Customers trained to expect constant sales will never pay full price.
-        </div>
-
-        <h3>The Goldilocks Principle of Promotions</h3>
-        <div class="psychology-box">
-          <h4>Finding the "Just Right" Promotional Mix:</h4>
-          <ul>
-            <li><strong>Too Little:</strong> No urgency, sales stagnate</li>
-            <li><strong>Too Much:</strong> Brand devaluation, margin erosion</li>
-            <li><strong>Just Right:</strong> Strategic promotions that enhance brand value while driving sales</li>
-          </ul>
-        </div>
-
-        <div class="tip">
-          <strong>The 70-20-10 Rule:</strong> 70% full-price selling, 20% strategic promotions, 10% clearance. This maintains healthy margins while keeping customers engaged.
-        </div>
+      <div class="leaderboard">
+        <b>Leaderboard Example:</b><br>
+        <ul>
+          <li>Alice: Conversion 23%, UPT 2.4, 11 rewards signups</li>
+          <li>Marcus: Conversion 19%, UPT 2.0, 7 rewards signups</li>
+          <li>Priya: Conversion 21%, UPT 2.7, 15 rewards signups 🏆</li>
+        </ul>
+        <span style="color:#764ba2;">Celebrate wins weekly—and coach your team for even better results!</span>
       </div>
+    </div>
 
-      <!-- Section 6: Team Training & Execution -->
-      <div class="section">
-        <h2>👥 Section 6: Team Training & Campaign Execution</h2>
-
-        <div class="highlight-box">
-          <h3>Your Team is Your Campaign</h3>
-          <p>The most brilliant campaign dies without proper team execution. Every team member must become a brand ambassador who can authentically communicate your message.</p>
-        </div>
-
-        <h3>The Campaign Readiness Framework</h3>
-        <div class="checklist">
-          <h4>Pre-Launch Checklist (Complete 48 hours before campaign launch):</h4>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief1">
-            <label for="brief1">All staff briefed on campaign theme, key messages, and target customers</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief2">
-            <label for="brief2">Team can articulate the campaign story in their own words</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief3">
-            <label for="brief3">Product knowledge updated for featured items</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief4">
-            <label for="brief4">Visual merchandising completed and approved</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief5">
-            <label for="brief5">Staff wearing/styling campaign pieces</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief6">
-            <label for="brief6">Opening and closing conversation scripts practiced</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief7">
-            <label for="brief7">Social media handles and hashtags memorized</label>
-          </div>
-          <div class="checklist-item">
-            <input type="checkbox" id="brief8">
-            <label for="brief8">Manager has daily coaching points ready</label>
-          </div>
-        </div>
-
-        <h3>Role-Specific Campaign Responsibilities</h3>
-        <table>
-          <tr>
-            <th>Role</th>
-            <th>Primary Focus</th>
-            <th>Key Behaviors</th>
-            <th>Success Metrics</th>
-          </tr>
-          <tr>
-            <td>Store Manager</td>
-            <td>Campaign conductor</td>
-            <td>Daily team huddles, mystery shopping, coaching</td>
-            <td>Overall sales lift, team engagement scores</td>
-          </tr>
-          <tr>
-            <td>Visual Merchandiser</td>
-            <td>Story through display</td>
-            <td>Daily display updates, photo documentation</td>
-            <td>Dwell time in featured areas, photo engagement</td>
-          </tr>
-          <tr>
-            <td>Sales Associates</td>
-            <td>Customer storytellers</td>
-            <td>Campaign language in every interaction</td>
-            <td>Attachment rate, customer feedback scores</td>
-          </tr>
-          <tr>
-            <td>Greeter/Host</td>
-            <td>Campaign introduction</td>
-            <td>Warm welcome with campaign hook</td>
-            <td>Customer engagement rate, time in store</td>
-          </tr>
-          <tr>
-            <td>Cashier</td>
-            <td>Campaign closer</td>
-            <td>Final campaign message, social encouragement</td>
-            <td>Add-on sales, email/social capture rate</td>
-          </tr>
-        </table>
-
-        <div class="pro-tip">
-          Create a "Campaign Champion" program where team members earn points for perfect campaign execution. This gamification keeps energy high throughout the campaign period.
-        </div>
-
-        <div class="activity">
-          <h4>Morning Huddle Script (5 minutes max):</h4>
-          <ol>
-            <li><strong>Energy Check:</strong> "Rate your energy 1-10, let's get everyone to a 10!"</li>
-            <li><strong>Campaign Focus:</strong> "Today we're highlighting [specific aspect]"</li>
-            <li><strong>Success Story:</strong> Share yesterday's wins</li>
-            <li><strong>Goal Setting:</strong> "Let's aim for X campaign mentions today"</li>
-            <li><strong>Role Play:</strong> Quick practice of key phrases</li>
-          </ol>
-        </div>
+    <div class="section">
+      <h3><span class="section-icon">3</span>Action: Make Data Your Daily Habit</h3>
+      <ul>
+        <li>Use a whiteboard, app, or dashboard to visualize your store’s KPIs in real time.</li>
+        <li>Review trends: Are Mondays always slow? Did a new display boost conversion?</li>
+        <li>Share results daily—turn numbers into a team sport!</li>
+        <li>Experiment: Try a new greeting, offer, or bundling strategy and see if the data moves.</li>
+        <li>Recognize top performers and “most improved” every week.</li>
+      </ul>
+      <div class="fun-fact"><span class="emoji">🏆</span> <b>Fun Fact:</b> Teams that post sales and conversion stats see a 15% boost in motivation and results!</div>
+      <div class="activity">
+        <b>Game:</b> Launch a “KPI Olympics” where everyone tries to beat their own best score—reward creativity and improvement, not just top results!
       </div>
+    </div>
 
-      <!-- Section 7: Metrics & Analytics -->
-      <div class="section">
-        <h2>📊 Section 7: Advanced Metrics & Campaign Analytics</h2>
+    <div class="section">
+      <h3><span class="section-icon">4</span>Analytics Tools: Make Technology Your Friend</h3>
+      <ul>
+        <li>Most POS systems (like Square, Shopify, Vend) display KPIs automatically—explore your dashboard weekly.</li>
+        <li>Free tools (like Google Analytics for online) reveal where customers come from and what they do.</li>
+        <li>Mobile apps and cloud dashboards let you track and compare on the go—share screenshots with the team!</li>
+        <li><b>Advanced:</b> Use basket analysis or AI-powered tools to predict which products will sell together or who is likely to return.</li>
+      </ul>
+      <div class="case-study">
+        <b>Case Study: Zara</b><br>
+        Zara reviews sell-through rates daily. If a product lags, they swap it fast—keeping stores fresh and markdowns low.
+      </div>
+      <div class="activity">
+        <b>Try This:</b> Set aside 10 minutes this week to explore at least one new report or dashboard in your POS or analytics tool. Share one surprising insight with your team!
+      </div>
+    </div>
 
-        <div class="highlight-box">
-          <h3>Beyond Sales Numbers</h3>
-          <p>Measuring campaign success requires looking at leading indicators, not just lagging results. The best retailers track customer behavior changes that predict future success.</p>
+    <div class="section">
+      <h3><span class="section-icon">5</span>Deep Dive: Customer KPIs & Individual Targets</h3>
+      <ul>
+        <li><b>Conversion by Staff:</b> Track who converts browsers into buyers best. Coach with roleplay and live feedback.</li>
+        <li><b>Rewards/Account Signups:</b> Set individual targets (e.g., 5 new signups per week per staff). Celebrate top enrollers with a small prize.</li>
+        <li><b>Churn/NPS by Staff:</b> Survey customers by staff served—find hidden superstars and coaching opportunities.</li>
+        <li><b>Personal CLV Impact:</b> Recognize staff who build loyal, repeat customers (VIPs often mention favorite staff by name in reviews).</li>
+      </ul>
+      <div class="case-study">
+        <b>Case Study: Ulta Beauty</b><br>
+        Ulta tracks each associate’s conversion, UPT, and rewards signups. Stores with “KPI leaderboards” see 15% more signups and higher overall conversion.
+      </div>
+      <div class="expert-tip">
+        <b>Advanced Tip:</b> Once a month, run a “KPI Olympics”—reward top conversion, most improved, and most creative idea for driving up any KPI!
+      </div>
+      <div class="activity">
+        <b>Action:</b> Pick <b>one</b> customer KPI (conversion, rewards signups, account signups, or NPS) and set a personal improvement goal this week.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Lesson 5 Mastery Summary</h3>
+      <ul>
+        <li>KPIs = your retail “dashboard.” Watch them daily—by store, team, and individual!</li>
+        <li>Data is powerful only when you take action and experiment.</li>
+        <li>Celebrate improvement, coach for growth, and make tracking fun.</li>
+        <li>Customer-focused KPIs (conversion, loyalty, signups, NPS) build lasting profit and loyalty.</li>
+      </ul>
+      <div class="callout" style="background:linear-gradient(135deg,#ffeaa7 0%,#fab1a0 100%);">
+        <b>Challenge:</b> Choose one KPI and improve it by 10% this month. Share your journey and results with your team!
+      </div>
+    </div>
+
+    <div class="quiz-section">
+      <h3>Mini-Quiz: Data-Driven Retail Mastery</h3>
+      <form id="quiz5">
+        <div>
+          <b>1. What does “conversion rate” measure?</b><br/>
+          <label><input type="radio" name="q1" value="a"/> The percentage of visitors who make a purchase</label><br/>
+          <label><input type="radio" name="q1" value="b"/> The number of products on display</label><br/>
+          <label><input type="radio" name="q1" value="c"/> The amount spent on advertising</label>
         </div>
-
-        <h3>The Retail Marketing Metrics Pyramid</h3>
-        <div class="metric-grid">
-          <div class="metric-card interactive-element">
-            <div class="metric-number">Level 1</div>
-            <h4>Awareness Metrics</h4>
-            <p>Reach, Impressions, Brand Mentions, Social Engagement</p>
-          </div>
-          <div class="metric-card interactive-element">
-            <div class="metric-number">Level 2</div>
-            <h4>Engagement Metrics</h4>
-            <p>Store Visits, Dwell Time, Try-on Rate, Staff Interactions</p>
-          </div>
-          <div class="metric-card interactive-element">
-            <div class="metric-number">Level 3</div>
-            <h4>Conversion Metrics</h4>
-            <p>Purchase Rate, Average Transaction Value, Items per Transaction</p>
-          </div>
-          <div class="metric-card interactive-element">
-            <div class="metric-number">Level 4</div>
-            <h4>Loyalty Metrics</h4>
-            <p>Repeat Purchase Rate, Customer Lifetime Value, Net Promoter Score</p>
-          </div>
+        <div style="margin-top:15px;">
+          <b>2. Which KPI reveals how well you use your store space?</b><br/>
+          <label><input type="radio" name="q2" value="a"/> Units Per Transaction</label><br/>
+          <label><input type="radio" name="q2" value="b"/> Sales Per Square Foot</label><br/>
+          <label><input type="radio" name="q2" value="c"/> Stock Turnover</label>
         </div>
+        <div style="margin-top:15px;">
+          <b>3. True or False: Improving your ATV means you are selling more items per transaction.</b><br/>
+          <label><input type="radio" name="q3" value="a"/> True</label><br/>
+          <label><input type="radio" name="q3" value="b"/> False</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>4. What’s the best first step if your conversion rate is low?</b><br/>
+          <label><input type="radio" name="q4" value="a"/> Improve store lighting</label><br/>
+          <label><input type="radio" name="q4" value="b"/> Review greetings and customer experience</label><br/>
+          <label><input type="radio" name="q4" value="c"/> Raise prices</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>5. What is a “basket analysis”?</b><br/>
+          <label><input type="radio" name="q5" value="a"/> Checking what items are bought together</label><br/>
+          <label><input type="radio" name="q5" value="b"/> Counting daily foot traffic</label><br/>
+          <label><input type="radio" name="q5" value="c"/> Calculating rent per month</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>6. Which one is NOT a retail KPI?</b><br/>
+          <label><input type="radio" name="q6" value="a"/> Average Transaction Value</label><br/>
+          <label><input type="radio" name="q6" value="b"/> Units Per Transaction</label><br/>
+          <label><input type="radio" name="q6" value="c"/> Favorite staff lunch order</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>7. What does CLV stand for?</b><br/>
+          <label><input type="radio" name="q7" value="a"/> Customer Loyalty Value</label><br/>
+          <label><input type="radio" name="q7" value="b"/> Customer Lifetime Value</label><br/>
+          <label><input type="radio" name="q7" value="c"/> Customer Lost Visits</label>
+        </div>
+        <div style="margin-top:15px;">
+          <b>8. True or False: Setting and tracking individual staff KPI goals can boost store performance.</b><br/>
+          <label><input type="radio" name="q8" value="a"/> True</label><br/>
+          <label><input type="radio" name="q8" value="b"/> False</label>
+        </div>
+        <button type="button" class="btn" onclick="gradeQuiz5()" style="margin-top:18px;">Submit Quiz</button>
+      </form>
+      <div id="quiz5-result" style="font-weight:bold;margin-top:20px;"></div>
+    </div>
+    <script>
+      function gradeQuiz5() {
+        const correct = {
+          q1: 'a', q2: 'b', q3: 'b', q4: 'b', q5: 'a', q6: 'c', q7: 'b', q8: 'a'
+        };
+        let score = 0, total = 8;
+        for(let i=1; i<=total; i++) {
+          let ans = document.querySelector('input[name="q'+i+'"]:checked');
+          if(ans && ans.value === correct['q'+i]) score++;
+        }
+        let msg = `You scored ${score} out of ${total}. `;
+        if(score === total) msg += "Brilliant! You’re a data-driven retail pro! 🎉";
+        else if(score >= total-1) msg += "Great job! Review any missed questions above.";
+        else if(score >= total-3) msg += "Good effort! Review key lessons and try the quiz again.";
+        else msg += "Keep learning and practicing!";
+        document.getElementById('quiz5-result').textContent = msg;
+      }
+    </script>
+    <!-- === LESSON 5 CONTENT ENDS HERE === -->
 
-        <h3>Campaign Performance Dashboard</h3>
-        <table>
-          <tr>
-            <th>Metric Category</th>
-            <th>Key Indicators</th>
-            <th>Measurement Period</th>
-            <th>Good/Great Targets</th>
-          </tr>
-          <tr>
-            <td>Traffic Generation</td>
-            <td>Store visits, unique visitors, peak hour density</td>
-            <td>Daily/
+    <div id="lesson-completion">
+      <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
+      <a id="nextLessonBtn" href="lesson6.html" class="btn" style="display:none; margin-left:20px;">Continue to Lesson 6 &rarr;</a>
+      <div id="completionMsg">🎉 Well done! This lesson is marked complete. You can continue to the next lesson.</div>
+    </div>
+    <div class="dashboard-link">
+      <a href="progress.html">View Your Course Progress &rarr;</a>
+    </div>
+  </div>
+  <script>
+    const lessonNum = 5;
+    const totalLessons = 7;
+    function markLessonComplete() {
+      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      progress[`lesson${lessonNum}`] = true;
+      localStorage.setItem('retailProgress', JSON.stringify(progress));
+      document.getElementById('nextLessonBtn').style.display = 'inline-block';
+      document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+      document.getElementById('markComplete').disabled = true;
+      document.getElementById('completionMsg').style.display = 'block';
+      updateProgressBar();
+    }
+    function updateProgressBar() {
+      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      let completed = 0;
+      for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
+      let percent = Math.round((completed/totalLessons)*100);
+      document.getElementById('progressBarFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent =
+        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+    }
+    window.onload = function() {
+      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if(progress[`lesson${lessonNum}`]) {
+        document.getElementById('nextLessonBtn').style.display = 'inline-block';
+        document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+        document.getElementById('markComplete').disabled = true;
+        document.getElementById('completionMsg').style.display = 'block';
+      }
+      updateProgressBar();
+    };
+  </script>
+</body>
+</html>
