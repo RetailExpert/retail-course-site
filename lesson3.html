@@ -3,44 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 3: Advanced Selling Techniques | Retail Expert</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Lesson 3: Advanced Selling Techniques | Ultimate Black Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
-    header { background: linear-gradient(135deg, #000 0%, #434343 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
-    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
-    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: opacity 0.3s ease; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
-    #progressBarContainer { margin: 30px auto 40px auto; max-width: 400px; }
-    #progressBarContainer .progress-outer { background:#e2e8f0; border-radius:6px; overflow:hidden; height:14px; }
-    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#667eea,#764ba2); transition:width 0.7s; }
-    #progressText { text-align:center; font-size:1em; margin-top:6px; color:#667eea; font-weight:bold; }
-    #lesson-completion { margin:40px 0 30px 0; text-align:center; }
-    #completionMsg { margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); border: none; cursor: pointer; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
-    .dashboard-link { text-align:center; margin-bottom:40px; }
-    .dashboard-link a { color:#667eea; font-weight:500; text-decoration:underline; font-size:1em; }
-    h3 { margin-top:40px; color:#222;}
-    .section {margin-bottom: 34px;}
-    .section-icon {font-weight: bold; color: #764ba2; margin-right: 10px;}
-    .callout {background:linear-gradient(135deg,#f1f8e9 0%,#e8eaf6 100%);padding:18px 22px;border-radius:10px;margin:20px 0;}
-    .fun-fact {background:#c7f9cc;color:#222;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
-    .case-study {background:#f7e1fc;color:#422160;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
-    .expert-tip {background:#e0c3fc;color:#4b2360;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
-    .activity {background:#fffbe7;color:#5c4000;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
-    .quiz-section {background:#fff8e1;padding:30px 25px;border-radius:16px;box-shadow:0 2px 10px rgba(200,180,80,0.07);margin:40px 0 0 0;}
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.7; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
+    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+    .fun-fact { background: linear-gradient(135deg, rgba(199, 249, 204, 0.15) 0%, rgba(147, 250, 165, 0.15) 100%); color: #F5F5F5; font-weight: 600; padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
+    .case-study { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 25px 0; border: 3px solid #FFD700; }
+    .expert-tip { background: linear-gradient(135deg, rgba(224, 195, 252, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%); color: #F5F5F5; font-weight: 500; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #9f7aea; }
+    .activity { background: linear-gradient(135deg, rgba(255, 251, 231, 0.1) 0%, rgba(255, 237, 160, 0.1) 100%); color: #F5F5F5; font-weight: 500; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #ecc94b; }
+    ul { margin: 20px 0 20px 25px; }
+    li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
+    li strong { color: #FFD700; font-weight: 700; }
+    .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+    .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
+    .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
+    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
+    .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
+    .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
+    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .dashboard-link { text-align: center; margin: 40px 0; }
+    .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
+    .emoji { font-size: 1.5em; vertical-align: middle; }
     @media (max-width: 768px) {
-      #lesson-completion button, #lesson-completion a { display:block; width:90%; margin:12px auto; font-size:1em; padding:14px 0; }
-      #progressBarContainer {max-width:95vw;}
-      .quiz-section {padding:18px 10px;}
+      header h1 { font-size: 18px; }
+      .hero h2 { font-size: 2em; }
+      h3 { font-size: 1.5em; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Retail Expert Academy</h1>
+    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/course.html">Course</a>
@@ -52,221 +66,346 @@
       <div class="progress-outer">
         <div id="progressBarFill"></div>
       </div>
-      <div id="progressText">Lesson 3 of 7</div>
+      <div id="progressText">Lesson 3 of 8</div>
     </div>
 
-    <!-- === LESSON 3 CONTENT STARTS HERE === -->
     <div class="hero">
-      <h2>Advanced Selling Techniques</h2>
+      <h2>💎 Lesson 3: Advanced Selling Techniques</h2>
       <p>
-        Go beyond basics! Master the art and science of sales with psychology-based frameworks, powerful questioning, expert-level objection handling, closing strategies, and fun sales hacks. Become the trusted advisor customers love to buy from.
+        Go beyond basics. Master the art and science of sales with psychology-based frameworks, powerful questioning, expert-level objection handling, and closing strategies. Become the trusted advisor customers love to buy from.
       </p>
     </div>
 
-    <div class="fun-fact"><span class="emoji">🎯</span> <b>Did you know?</b> Top-performing salespeople spend 60% of their time listening, not talking! <span class="emoji">👂</span></div>
+    <div class="fun-fact">
+      <span class="emoji">🎯</span> <b>Pro Secret:</b> Top-performing salespeople spend 60% of their time listening, not talking! <span class="emoji">👂</span>
+    </div>
 
     <div class="section">
-      <h3><span class="section-icon">1</span>Consultative Selling: Moving from Seller to Trusted Advisor</h3>
-      <div class="callout">
-        <b>Consultative Selling</b> means diagnosing needs and tailoring your solution, not just pitching products.
+      <h3><span class="section-icon">1</span>Consultative Selling: From Seller to Trusted Advisor</h3>
+      
+      <div class="golden-box">
+        <h4>The Paradigm Shift</h4>
+        <p><strong>Old Way:</strong> "I pitch products to customers"<br>
+        <strong>New Way:</strong> "I diagnose needs and prescribe solutions"</p>
+        <p>Consultative selling means you're not just moving inventory—you're solving problems. This approach builds trust, increases average transaction value, and creates loyal customers who return specifically for YOU.</p>
       </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">The Consultative Framework</h4>
       <ul>
-        <li><b>Open-Ended Questions:</b><br>
-          <i>“What brings you in today?” “How will you use this?” “What’s been your biggest frustration with X?”</i>
+        <li><strong>Step 1 - Open-Ended Questions:</strong> "What brings you in today?" "How will you use this?" "What's been your biggest frustration with [category]?"</li>
+        <li><strong>Step 2 - Listen for "Why":</strong> The real reason people buy is often beneath the surface. Listen for emotions, not just facts.</li>
+        <li><strong>Step 3 - Solution Mapping:</strong> Connect features to emotional benefits—"This is lightweight, so you'll love carrying it everywhere!"</li>
+        <li><strong>Step 4 - Confirm Understanding:</strong> "So, you're looking for something durable and easy to clean, right?"</li>
+      </ul>
+
+      <div class="expert-tip">
+        <b>Pro Tip:</b> Repeat and summarize what you've heard. This shows you're listening AND gives the customer a chance to correct or clarify. It builds massive trust.
+      </div>
+
+      <div class="activity">
+        <h4 style="color: #FFD700;">💪 Try This:</h4>
+        <p>For your next 5 customers, ask ONLY open-ended questions for the first 2 minutes. No pitching. Just questions and listening. Notice what deeper needs you discover.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">2</span>The Science of Influence: Cialdini's 6 Principles</h3>
+      
+      <div class="golden-box">
+        <h4>Psychology-Based Selling</h4>
+        <p>Dr. Robert Cialdini identified 6 universal principles of influence. Master these and you become exponentially more persuasive—ethically.</p>
+      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">The 6 Weapons of Influence:</h4>
+      
+      <ul>
+        <li><strong>1. Reciprocity:</strong> People feel obligated to give back when given something first
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Free samples, personalized tips, going above and beyond</li>
+            <li>Example: "Let me show you a little trick with this..."</li>
+          </ul>
         </li>
-        <li><b>Listening for “Why”:</b> The real reason people buy is often beneath the surface! Listen for emotions, not just facts.</li>
-        <li><b>Solution Mapping:</b> Connect <b>features</b> to <b>emotional benefits</b> (e.g., “This is lightweight, so you’ll love carrying it everywhere!”)</li>
+        
+        <li><strong>2. Commitment & Consistency:</strong> People want to act consistently with their words and actions
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Get small "yeses" to build towards the big "yes"</li>
+            <li>Example: "Would you like to try this on?" → "Does it feel comfortable?" → "Should we get you checked out?"</li>
+          </ul>
+        </li>
+        
+        <li><strong>3. Social Proof:</strong> People follow what others do
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Share what's popular, bestsellers, customer favorites</li>
+            <li>Example: "This is our #1 seller this month!" or "You have great taste—others love this too"</li>
+          </ul>
+        </li>
+        
+        <li><strong>4. Authority:</strong> People defer to experts
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Display credentials, expert picks, professional endorsements</li>
+            <li>Example: "As someone who's worked with this brand for 3 years, I can tell you..."</li>
+          </ul>
+        </li>
+        
+        <li><strong>5. Liking:</strong> We say yes to people we like
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Find genuine common ground, give compliments, mirror energy</li>
+            <li>Example: "I love that color too! Great choice"</li>
+          </ul>
+        </li>
+        
+        <li><strong>6. Scarcity:</strong> We want what's rare or running out
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Honest scarcity creates urgency</li>
+            <li>Example: "This is our last one in this color!" or "Sale ends today"</li>
+          </ul>
+        </li>
       </ul>
+
+      <div class="case-study">
+        <h4 style="color: #FFD700;">📖 Case Study: Sephora's Influence Mastery</h4>
+        <p>Sephora's "Try Me" stations (Reciprocity) and "Staff Picks" tags (Authority + Social Proof) boost conversion by 22%. They layer multiple influence principles in every store experience. The makeup artist gives you free application tips (Reciprocity), shows you the bestsellers (Social Proof), and you naturally want to return the favor by purchasing.</p>
+      </div>
+
+      <div class="fun-fact">
+        <span class="emoji">🧲</span> <b>Fun Fact:</b> Customers are 3x more likely to buy when they see other shoppers holding the same item! (Social Proof in action)
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">3</span>Objection Handling: Turning "No" into "Yes"</h3>
+      
+      <div class="golden-box">
+        <h4>Reframe Your Thinking</h4>
+        <p><strong>Objections aren't rejection—they're buying signals!</strong> The customer is engaged enough to care. They're giving you information about what they need to hear to say yes.</p>
+      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">The 3 Most Common Objections & How to Handle Them</h4>
+
+      <div class="golden-box" style="background: rgba(224, 195, 252, 0.1); border-left-color: #9f7aea;">
+        <h4 style="color: #9f7aea;">💰 "It's too expensive"</h4>
+        <p><strong>What they really mean:</strong> "I don't see enough value yet"</p>
+        <p><strong>Your response:</strong></p>
+        <ol style="margin-top: 10px;">
+          <li><strong>Empathize:</strong> "I completely understand—making the right choice is important"</li>
+          <li><strong>Clarify:</strong> "Is it the price itself, or are you concerned about the value?"</li>
+          <li><strong>Reframe:</strong> "When you break it down to cost-per-wear, it's actually less than $2 each time you use it"</li>
+          <li><strong>Compare:</strong> "Compared to [competitor/alternative], you're getting [specific benefits]"</li>
+        </ol>
+      </div>
+
+      <div class="golden-box" style="background: rgba(224, 195, 252, 0.1); border-left-color: #9f7aea;">
+        <h4 style="color: #9f7aea;">👀 "I'm just looking"</h4>
+        <p><strong>What they really mean:</strong> "Don't pressure me" or "I'm not ready yet"</p>
+        <p><strong>Your response:</strong></p>
+        <ol style="margin-top: 10px;">
+          <li><strong>Give space:</strong> "No problem! Take your time"</li>
+          <li><strong>Plant a seed:</strong> "If you have any questions, I'm [Name], happy to help"</li>
+          <li><strong>Create curiosity:</strong> "By the way, we just got some new arrivals over here if you want to check them out"</li>
+          <li><strong>Re-engage naturally:</strong> Watch for body language signals and re-approach when they touch/linger</li>
+        </ol>
+      </div>
+
+      <div class="golden-box" style="background: rgba(224, 195, 252, 0.1); border-left-color: #9f7aea;">
+        <h4 style="color: #9f7aea;">🤔 "I need to think about it"</h4>
+        <p><strong>What they really mean:</strong> "I'm uncertain" or "I have unanswered questions"</p>
+        <p><strong>Your response:</strong></p>
+        <ol style="margin-top: 10px;">
+          <li><strong>Respect it:</strong> "Of course! This is an important decision"</li>
+          <li><strong>Uncover the real concern:</strong> "What specifically would you like to think about? Maybe I can help"</li>
+          <li><strong>Use Feel-Felt-Found:</strong> "I understand how you feel. Others have felt that way too, but they found that [benefit] made it worth it"</li>
+          <li><strong>Create soft urgency:</strong> "Just so you know, we only have a few left at this price, but I can hold one for you if you'd like?"</li>
+        </ol>
+      </div>
+
       <div class="expert-tip">
-        <b>Pro Tip:</b> Repeat and summarize what you’ve heard: “So, you’re looking for something durable and easy to clean, right?”
+        <b>Expert Tip:</b> Always THANK the customer for raising a concern! "That's a great question" or "I'm glad you brought that up" keeps the conversation positive and positions you as helpful, not pushy.
       </div>
-      <div class="activity">
-        <b>Try This:</b> For your next 5 customers, ask only open-ended questions for the first 2 minutes. See what deeper needs you discover!
-      </div>
-    </div>
 
-    <div class="section">
-      <h3><span class="section-icon">2</span>The Science of Influence: Cialdini’s 6 Principles Applied</h3>
-      <ul>
-        <li><b>Reciprocity:</b> Free samples, small favors, or a personalized tip create a sense of obligation to give back.</li>
-        <li><b>Commitment & Consistency:</b> Get small “yeses” (“Would you like to try this on?”) to build towards the big “yes.”</li>
-        <li><b>Social Proof:</b> Share what’s popular—“Our bestsellers this week!”</li>
-        <li><b>Authority:</b> Display credentials (“As seen on TV”, “Staff Pick”) or share expert opinions.</li>
-        <li><b>Liking:</b> Find genuine common ground (“I love that color too!”).</li>
-        <li><b>Scarcity:</b> “This is our last one in this color!” or “Sale ends today.”</li>
-      </ul>
       <div class="case-study">
-        <b>Case Study: Sephora</b><br>
-        Sephora’s “Try Me” stations and “Staff Picks” tags boost conversion by 22% through reciprocity, social proof, and authority.
+        <h4 style="color: #FFD700;">📖 Case Study: Best Buy's Feel-Felt-Found Method</h4>
+        <p>Best Buy trained all associates on the "Feel-Felt-Found" technique for price objections. Result: 17% increase in conversion rate in pilot stores. The technique works because it validates the customer's feelings while providing social proof and a path forward.</p>
       </div>
-      <div class="fun-fact"><span class="emoji">🧲</span> <b>Fun Fact:</b> Customers are 3x more likely to buy when they see other shoppers holding the same item!</div>
+
+      <div class="activity">
+        <h4 style="color: #FFD700;">💪 Role-Play Exercise:</h4>
+        <p>With a colleague, practice overcoming two objections: price and indecision. Take turns being customer and salesperson. Get comfortable with the language.</p>
+      </div>
     </div>
 
     <div class="section">
-      <h3><span class="section-icon">3</span>Objection Handling Masterclass: Turning “No” into “Yes”</h3>
-      <div class="callout">
-        <b>Objections aren’t rejection—they’re buying signals!</b> The customer is engaged enough to care.
+      <h3><span class="section-icon">4</span>Closing Strategies: From "Maybe" to "Yes!"</h3>
+      
+      <div class="golden-box">
+        <h4>The Truth About Closing</h4>
+        <p>Closing isn't a "trick" or manipulation—it's the natural conclusion of a consultative conversation. If you've diagnosed needs and provided value, the close is just confirming the obvious next step.</p>
       </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">5 Powerful Closing Techniques</h4>
+
       <ul>
-        <li><b>Common Objections:</b> “It’s too expensive,” “I’m just looking,” “I need to think about it.”</li>
-        <li><b>Empathize:</b> “I completely understand—making the right choice is important.”</li>
-        <li><b>Clarify:</b> “Is the price, the fit, or something else making you hesitate?”</li>
-        <li><b>Reframe:</b> “Many of our happiest customers felt the same way at first, but found the long-term value was worth it!”</li>
-        <li><b>Feel-Felt-Found Method:</b> “I understand how you feel. Others have felt that way, but they found…”</li>
+        <li><strong>1. The Assumptive Close:</strong> Assume they're buying—just clarify the details
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>"Would you like to take this today or have it delivered?"</li>
+            <li>"Will you be using cash or card?"</li>
+          </ul>
+        </li>
+
+        <li><strong>2. The Option Close:</strong> Give two choices, both leading to a sale
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>"Would you prefer the blue or the grey?"</li>
+            <li>"Did you want one or two?"</li>
+            <li>NEVER ask "Do you want it?"—always give options!</li>
+          </ul>
+        </li>
+
+        <li><strong>3. The Urgency Close:</strong> Honest scarcity creates action
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>"This is the last one at this price—should I set it aside for you?"</li>
+            <li>"The sale ends tonight—shall we get you checked out?"</li>
+          </ul>
+        </li>
+
+        <li><strong>4. The Summary Close:</strong> Recap the value they've agreed to
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>"So, you love the comfort, the style, and the warranty—shall we get you set up?"</li>
+            <li>Reinforces all the "yes" moments you've built</li>
+          </ul>
+        </li>
+
+        <li><strong>5. The Puppy Dog Close:</strong> Let them experience ownership
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>"Try it for a week—if you don't love it, bring it back. But I think you'll love it"</li>
+            <li>Works because possession creates attachment</li>
+          </ul>
+        </li>
       </ul>
+
       <div class="case-study">
-        <b>Case Study: Best Buy</b><br>
-        Using the “Feel-Felt-Found” technique increased their conversion rate by 17% in pilot stores.
+        <h4 style="color: #FFD700;">📖 Case Study: Zappos' Option Close Success</h4>
+        <p>Zappos found that associates using the "Option Close" (choice between two products) had a 23% higher close rate than those who simply asked "Do you want to buy this?" Giving choices feels empowering, not pressuring.</p>
       </div>
-      <div class="expert-tip">
-        <b>Expert Tip:</b> Always thank the customer for raising a concern! It keeps the conversation positive and positions you as helpful, not pushy.
-      </div>
-      <div class="activity">
-        <b>Role-Play:</b> With a colleague, practice overcoming two objections: price and indecision, using the techniques above.
-      </div>
-    </div>
 
-    <div class="section">
-      <h3><span class="section-icon">4</span>Closing Strategies: From “Maybe” to “Yes!”</h3>
-      <ul>
-        <li><b>Assumptive Close:</b> “Would you like to take this today or have it delivered?”</li>
-        <li><b>Option Close:</b> “Would you prefer the blue or the grey?” (Never “Do you want it?”—always give a choice!)</li>
-        <li><b>Urgency Close:</b> “This is the last one at this price—should I set it aside for you?”</li>
-        <li><b>Summary Close:</b> “So, you love the comfort, the style, and the warranty—shall we get you checked out?”</li>
-      </ul>
-      <div class="case-study">
-        <b>Case Study: Zappos</b><br>
-        Associates who used the “Option Close” (choice between two products) reported a 23% higher close rate than those who simply asked “Do you want to buy this?”
-      </div>
       <div class="activity">
-        <b>Challenge:</b> Track which close works best for each customer type this week. Share your results!
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="section-icon">5</span>Advanced Power-Ups: Storyselling, Humor & Gamification</h3>
-      <ul>
-        <li><b>Storyselling:</b> Tell a quick story—“I had a customer last week who…” or “This is my go-to when I travel because…” Stories are 22x more memorable than facts alone!</li>
-        <li><b>Humor:</b> A well-placed joke or light-hearted moment lowers resistance and builds connection. “I call this color ‘Monday Morning Coffee’ because it wakes you up!”</li>
-        <li><b>Gamification:</b> Use mystery discounts, “spin-to-win” wheels, or “find the golden ticket” promos. Customers who play games spend up to 30% more!</li>
-      </ul>
-      <div class="fun-fact"><span class="emoji">😄</span> <b>Fun Fact:</b> When staff laugh with customers, shoppers rate their experience 40% higher!</div>
-      <div class="activity">
-        <b>Try This:</b> Add a story, joke, or mini-game to your next sales interaction and observe the customer’s reaction.
-      </div>
-    </div>
-
-    <div class="section">
-      <h3>Lesson 3 Mastery Summary</h3>
-      <ul>
-        <li>Start by diagnosing needs—ask, listen, then recommend.</li>
-        <li>Use Cialdini’s principles to become an influencer, not a “pitcher.”</li>
-        <li>Objections are buying signals—handle them with empathy and skill.</li>
-        <li>Master multiple closing techniques for every customer type.</li>
-        <li>Use stories, humor, and fun to become the salesperson customers remember!</li>
-      </ul>
-      <div class="callout" style="background:linear-gradient(135deg,#ffeaa7 0%,#fab1a0 100%);">
-        <b>Challenge:</b> Implement at least one new technique from this lesson each day this week. Keep a journal of what worked best!
+        <h4 style="color: #FFD700;">💪 Challenge:</h4>
+        <p>Track which close works best for each customer type this week. Mission Shoppers respond to assumptive. Browsers like options. Value Seekers need urgency. Share your results!</p>
       </div>
     </div>
 
     <div class="quiz-section">
-      <h3>Mini-Quiz: Advanced Selling Techniques</h3>
+      <h3>🎯 Advanced Selling Mastery Quiz</h3>
       <form id="quiz3">
-        <div>
+        <div class="quiz-question">
           <b>1. What is the main goal of consultative selling?</b><br/>
           <label><input type="radio" name="q1" value="a"/> Pitching as many products as possible</label><br/>
           <label><input type="radio" name="q1" value="b"/> Diagnosing customer needs and tailoring solutions</label><br/>
           <label><input type="radio" name="q1" value="c"/> Offering the lowest price</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>2. Which Cialdini principle is used when you show “Staff Picks” or “Bestsellers”?</b><br/>
+        
+        <div class="quiz-question">
+          <b>2. Which Cialdini principle is used when you show "Staff Picks" or "Bestsellers"?</b><br/>
           <label><input type="radio" name="q2" value="a"/> Scarcity</label><br/>
           <label><input type="radio" name="q2" value="b"/> Social Proof</label><br/>
           <label><input type="radio" name="q2" value="c"/> Commitment</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>3. The “Feel-Felt-Found” method is best for:</b><br/>
+        
+        <div class="quiz-question">
+          <b>3. The "Feel-Felt-Found" method is best for:</b><br/>
           <label><input type="radio" name="q3" value="a"/> Handling objections</label><br/>
           <label><input type="radio" name="q3" value="b"/> Telling jokes</label><br/>
           <label><input type="radio" name="q3" value="c"/> Closing the sale</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>4. What is an “Option Close”?</b><br/>
-          <label><input type="radio" name="q4" value="a"/> Offering two choices (“Would you like the blue or the grey?”)</label><br/>
-          <label><input type="radio" name="q4" value="b"/> Asking “Do you want this or not?”</label><br/>
+        
+        <div class="quiz-question">
+          <b>4. What is an "Option Close"?</b><br/>
+          <label><input type="radio" name="q4" value="a"/> Offering two choices ("Would you like the blue or the grey?")</label><br/>
+          <label><input type="radio" name="q4" value="b"/> Asking "Do you want this or not?"</label><br/>
           <label><input type="radio" name="q4" value="c"/> Telling a story</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>5. Why use humor or fun in sales?</b><br/>
-          <label><input type="radio" name="q5" value="a"/> To distract from the product</label><br/>
-          <label><input type="radio" name="q5" value="b"/> To lower resistance & increase customer enjoyment</label><br/>
-          <label><input type="radio" name="q5" value="c"/> To rush the sale</label>
+        
+        <div class="quiz-question">
+          <b>5. What's the best way to handle the objection "It's too expensive"?</b><br/>
+          <label><input type="radio" name="q5" value="a"/> Argue about price</label><br/>
+          <label><input type="radio" name="q5" value="b"/> Empathize and reframe the value or long-term benefit</label><br/>
+          <label><input type="radio" name="q5" value="c"/> Ignore the objection</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>6. What’s the best way to handle the objection “It’s too expensive”?</b><br/>
-          <label><input type="radio" name="q6" value="a"/> Argue about price</label><br/>
-          <label><input type="radio" name="q6" value="b"/> Empathize and reframe the value or long-term benefit</label><br/>
-          <label><input type="radio" name="q6" value="c"/> Ignore the objection</label>
+        
+        <div class="quiz-question">
+          <b>6. True or False: Asking "yes or no" questions is the best way to learn about your customer.</b><br/>
+          <label><input type="radio" name="q6" value="a"/> True</label><br/>
+          <label><input type="radio" name="q6" value="b"/> False - open-ended questions reveal deeper needs</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>7. True or False: Asking “yes or no” questions is the best way to learn about your customer.</b><br/>
-          <label><input type="radio" name="q7" value="a"/> True</label><br/>
-          <label><input type="radio" name="q7" value="b"/> False</label>
+        
+        <div class="quiz-question">
+          <b>7. What's a quick way to build rapport with a new customer?</b><br/>
+          <label><input type="radio" name="q7" value="a"/> Find a genuine point of connection or share a little humor</label><br/>
+          <label><input type="radio" name="q7" value="b"/> Dive into the sales pitch immediately</label><br/>
+          <label><input type="radio" name="q7" value="c"/> Point out what they're doing wrong</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>8. What’s a quick way to build rapport with a new customer?</b><br/>
-          <label><input type="radio" name="q8" value="a"/> Find a genuine point of connection or share a little humor</label><br/>
-          <label><input type="radio" name="q8" value="b"/> Dive into the sales pitch immediately</label><br/>
-          <label><input type="radio" name="q8" value="c"/> Point out what they’re doing wrong</label>
+        
+        <div class="quiz-question">
+          <b>8. What do objections really signal?</b><br/>
+          <label><input type="radio" name="q8" value="a"/> The customer hates you</label><br/>
+          <label><input type="radio" name="q8" value="b"/> Buying signals - they're engaged enough to raise concerns</label><br/>
+          <label><input type="radio" name="q8" value="c"/> You should give up</label>
         </div>
-        <button type="button" class="btn" onclick="gradeQuiz3()" style="margin-top:18px;">Submit Quiz</button>
+        
+        <button type="button" class="btn" onclick="gradeQuiz3()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz3-result" style="font-weight:bold;margin-top:20px;"></div>
+      <div id="quiz3-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
     </div>
+    
     <script>
       function gradeQuiz3() {
         const correct = {
-          q1: 'b', q2: 'b', q3: 'a', q4: 'a', q5: 'b',
-          q6: 'b', q7: 'b', q8: 'a'
+          q1: 'b', q2: 'b', q3: 'a', q4: 'a',
+          q5: 'b', q6: 'b', q7: 'a', q8: 'b'
         };
         let score = 0, total = 8;
         for(let i=1; i<=total; i++) {
           let ans = document.querySelector('input[name="q'+i+'"]:checked');
           if(ans && ans.value === correct['q'+i]) score++;
         }
-        let msg = `You scored ${score} out of ${total}. `;
-        if(score === total) msg += "Rockstar! You’re ready to sell like a pro! 🎉";
-        else if(score >= total-1) msg += "Great job! Review any missed questions above.";
-        else if(score >= total-3) msg += "Good effort! Practice and revisit the lesson for mastery.";
-        else msg += "Keep learning and try again!";
-        document.getElementById('quiz3-result').textContent = msg;
+        let msg = `🏆 You scored ${score} out of ${total}! `;
+        if(score === total) msg += "SELLING MASTER! You're ready to close like a pro! 🔥";
+        else if(score >= 7) msg += "Excellent! You've mastered advanced selling!";
+        else if(score >= 5) msg += "Good effort! Review key techniques for mastery.";
+        else msg += "Keep learning! Practice these techniques and try again.";
+        
+        const resultDiv = document.getElementById('quiz3-result');
+        resultDiv.textContent = msg;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     </script>
-    <!-- === LESSON 3 CONTENT ENDS HERE === -->
 
     <div id="lesson-completion">
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
-      <a id="nextLessonBtn" href="lesson4.html" class="btn" style="display:none; margin-left:20px;">Continue to Lesson 4 &rarr;</a>
-      <div id="completionMsg">🎉 Well done! This lesson is marked complete. You can continue to the next lesson.</div>
+      <a id="nextLessonBtn" href="lesson4.html" class="btn" style="display:none;">Continue to Lesson 4 →</a>
+      <div id="completionMsg">🎉 Lesson 3 Complete! You're now equipped with advanced selling techniques that convert!</div>
     </div>
+    
     <div class="dashboard-link">
-      <a href="progress.html">View Your Course Progress &rarr;</a>
+      <a href="progress.html">📊 View Your Progress →</a>
     </div>
   </div>
+  
   <script>
     const lessonNum = 3;
-    const totalLessons = 7;
+    const totalLessons = 8;
+    
     function markLessonComplete() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
+      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = "✅ Lesson Completed";
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
       updateProgressBar();
     }
+    
     function updateProgressBar() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       let completed = 0;
@@ -276,6 +415,7 @@
       document.getElementById('progressText').textContent =
         `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
+    
     window.onload = function() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if(progress[`lesson${lessonNum}`]) {
@@ -288,4 +428,4 @@
     };
   </script>
 </body>
-</html>
+  </html>
