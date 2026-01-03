@@ -3,40 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 2: Advanced Customer Profiling & Behavioral Segmentation | Retail Expert</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Lesson 2: Customer Profiling & Customer Types | Ultimate Black Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
-    header { background: linear-gradient(135deg, #000 0%, #434343 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
-    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: opacity 0.3s ease; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
-    #progressBarContainer { margin: 30px auto 40px auto; max-width: 400px; }
-    #progressBarContainer .progress-outer { background:#e2e8f0; border-radius:6px; overflow:hidden; height:14px; }
-    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#667eea,#764ba2); transition:width 0.7s; }
-    #progressText { text-align:center; font-size:1em; margin-top:6px; color:#667eea; font-weight:bold; }
-    #lesson-completion { margin:40px 0 30px 0; text-align:center; }
-    #completionMsg { margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); border: none; cursor: pointer; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
-    .dashboard-link { text-align:center; margin-bottom:40px; }
-    .dashboard-link a { color:#667eea; font-weight:500; text-decoration:underline; font-size:1em; }
-    h3 { margin-top:40px; color:#222;}
-    .section {margin-bottom: 34px;}
-    .section-icon {font-weight: bold; color: #764ba2; margin-right: 10px;}
-    .callout {background:linear-gradient(135deg,#f1f8e9 0%,#e8eaf6 100%);padding:18px 22px;border-radius:10px;margin:20px 0;}
-    .quiz-section {background:#fff8e1;padding:30px 25px;border-radius:16px;box-shadow:0 2px 10px rgba(200,180,80,0.07);margin:40px 0 0 0;}
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.7; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
+    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+    .profile-card { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 30px; border-radius: 15px; margin: 20px 0; border: 3px solid #FFD700; }
+    .profile-card h4 { color: #FFD700; font-size: 1.5em; margin-bottom: 15px; font-weight: 800; }
+    .profile-card .approach { background: rgba(255, 215, 0, 0.1); padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 3px solid #FFD700; }
+    ul { margin: 20px 0 20px 25px; }
+    li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
+    li strong { color: #FFD700; font-weight: 700; }
+    .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+    .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
+    .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
+    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
+    .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
+    .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
+    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .dashboard-link { text-align: center; margin: 40px 0; }
+    .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
     @media (max-width: 768px) {
-      #lesson-completion button, #lesson-completion a { display:block; width:90%; margin:12px auto; font-size:1em; padding:14px 0; }
-      #progressBarContainer {max-width:95vw;}
-      .quiz-section {padding:18px 10px;}
+      header h1 { font-size: 18px; }
+      .hero h2 { font-size: 2em; }
+      h3 { font-size: 1.5em; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Retail Expert Academy</h1>
+    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/course.html">Course</a>
@@ -48,168 +64,296 @@
       <div class="progress-outer">
         <div id="progressBarFill"></div>
       </div>
-      <div id="progressText">Lesson 2 of 7</div>
+      <div id="progressText">Lesson 2 of 8</div>
     </div>
 
-    <!-- === LESSON 2 CONTENT STARTS HERE === -->
     <div class="hero">
-      <h2>Advanced Customer Profiling & Behavioral Segmentation</h2>
-      <p>Decode your customers' psychological DNA in seconds. Learn to read micro-signals, predict buying patterns, and customize your approach for each personality type with surgical precision.</p>
+      <h2>🎯 Lesson 2: Customer Profiling & Customer Types</h2>
+      <p>Decode your customers' psychological DNA in seconds. Learn to read micro-signals, predict buying patterns, and customize your approach for each personality type with surgical precision. Sell smarter, not harder.</p>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">1</span>Understanding Customer Profiling</h3>
-      <div class="callout">
-        <b>Why profile?</b> Retail is never “one-size-fits-all.” The best retailers know exactly who is in front of them and instantly adapt their approach, products, and messaging.
+      <div class="golden-box">
+        <h4>Why Profile? The Strategic Advantage</h4>
+        <p>Retail is never "one-size-fits-all." Elite performers know exactly who is in front of them within 5-10 seconds and instantly adapt their approach, products, and messaging. This is the difference between average sales and mastery.</p>
       </div>
+      
+      <h4 style="color: #FFD700; margin-top: 30px;">The Three Layers of Customer Intelligence</h4>
       <ul>
-        <li><b>Demographics:</b> Age, gender, occupation, income, marital status.</li>
-        <li><b>Psychographics:</b> Values, lifestyle, aspirations, motivators, fears.</li>
-        <li><b>Behavioral Data:</b> Shopping frequency, average spend, preferred channels, purchase triggers.</li>
+        <li><strong>Demographics:</strong> Age, gender, occupation, income, marital status—the surface data</li>
+        <li><strong>Psychographics:</strong> Values, lifestyle, aspirations, motivators, fears—the deep drivers</li>
+        <li><strong>Behavioral Data:</strong> Shopping frequency, average spend, preferred channels, purchase triggers—the patterns</li>
       </ul>
-      <div class="callout" style="background:#e3fcec;">
-        <b>Knowledge Boost:</b> According to a 2023 Deloitte study, retailers who personalize based on psychographics see a 30% increase in repeat purchases compared to those who only use demographics.
+
+      <div class="golden-box" style="background: rgba(227, 252, 236, 0.1); border-left-color: #48bb78;">
+        <h4 style="color: #48bb78;">📊 Knowledge Boost</h4>
+        <p>According to a 2023 Deloitte study, retailers who personalize based on psychographics see a <strong style="color: #FFD700;">30% increase in repeat purchases</strong> compared to those who only use demographics. Understanding WHY someone buys is more powerful than knowing WHO they are.</p>
       </div>
-      <div class="callout">
-        <b>Pro Tip:</b> Ask open-ended questions: “What brings you in today?” or “What are you hoping to find?” Listen for both words AND non-verbal cues.
+
+      <div class="golden-box">
+        <h4>🎯 Pro Tip: The Opening Question Strategy</h4>
+        <p>Ask open-ended questions within the first 30 seconds:</p>
+        <ul>
+          <li>"What brings you in today?"</li>
+          <li>"How will you use this?"</li>
+          <li>"What's been your biggest frustration with [category]?"</li>
+        </ul>
+        <p>Listen for both words AND non-verbal cues. Their answer + body language = instant profile.</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">2</span>The 8 Primary Retail Personality Types</h3>
-      <ul>
-        <li><b>The Mission Shopper:</b> On a mission, wants efficiency. <i>Approach:</i> Be direct, offer fast solutions.</li>
-        <li><b>The Browser:</b> No clear goal, open to discovery. <i>Approach:</i> Spark curiosity, offer suggestions.</li>
-        <li><b>The Value Seeker:</b> Motivated by deals. <i>Approach:</i> Highlight promotions, loyalty programs.</li>
-        <li><b>The Quality Connoisseur:</b> Seeks best-in-class. <i>Approach:</i> Focus on craftsmanship, warranties.</li>
-        <li><b>The Social Shopper:</b> Buys for others, wants validation. <i>Approach:</i> Use social proof, stories.</li>
-        <li><b>The Researcher:</b> Already informed, detail-oriented. <i>Approach:</i> Provide expert info, specs.</li>
-        <li><b>The Impulse Buyer:</b> Responds to emotion, urgency. <i>Approach:</i> Use scarcity, FOMO language.</li>
-        <li><b>The Loyalist:</b> Repeat customer, expects recognition. <i>Approach:</i> Personalize, give VIP perks.</li>
-      </ul>
-      <div class="callout" style="background:#e3fcec;">
-        <b>Knowledge Boost:</b> Harvard research shows that “Value Seekers” are 2.8x more likely to share positive experiences on social media than “Mission Shoppers.”
+
+      <div class="profile-card">
+        <h4>1. 🎯 The Mission Shopper</h4>
+        <p><strong>Profile:</strong> On a mission, knows what they want, values efficiency and speed</p>
+        <p><strong>Body Language:</strong> Purposeful walk, scanning for items, checks watch/phone, minimal eye contact</p>
+        <p><strong>What They Say:</strong> "Where can I find...?" "I'm looking for..." "Do you have...?"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Be direct and efficient—no small talk</li>
+            <li>Offer fast solutions: "It's right this way"</li>
+            <li>Suggest quick add-ons only if highly relevant</li>
+            <li>Respect their time—they'll remember your efficiency</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>2. 🔍 The Browser</h4>
+        <p><strong>Profile:</strong> No clear goal, open to discovery, enjoys the shopping experience</p>
+        <p><strong>Body Language:</strong> Relaxed pace, touches products, lingers at displays, makes eye contact</p>
+        <p><strong>What They Say:</strong> "Just looking" "What's new?" "I'm browsing"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Give space initially, don't pounce</li>
+            <li>Spark curiosity: "Have you seen our new collection?"</li>
+            <li>Tell stories about products—browsers love narratives</li>
+            <li>Offer suggestions based on what they touch/look at</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>3. 💰 The Value Seeker</h4>
+        <p><strong>Profile:</strong> Motivated by deals, compares prices, budget-conscious</p>
+        <p><strong>Body Language:</strong> Checks price tags immediately, compares items, asks about discounts</p>
+        <p><strong>What They Say:</strong> "Is this on sale?" "Do you have anything cheaper?" "What's your best price?"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Lead with value propositions and promotions</li>
+            <li>Show price-per-wear or long-term savings</li>
+            <li>Highlight loyalty programs and future discounts</li>
+            <li>Bundle items for perceived better value</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>4. 👑 The Quality Connoisseur</h4>
+        <p><strong>Profile:</strong> Seeks best-in-class, willing to pay for quality, knowledgeable</p>
+        <p><strong>Body Language:</strong> Examines products closely, reads labels, asks detailed questions</p>
+        <p><strong>What They Say:</strong> "What's the quality like?" "Where is this made?" "What's the warranty?"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Focus on craftsmanship, materials, and durability</li>
+            <li>Share product origin stories and manufacturing details</li>
+            <li>Emphasize warranties, guarantees, and after-sales support</li>
+            <li>Never compete on price—compete on value and quality</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>5. 🤝 The Social Shopper</h4>
+        <p><strong>Profile:</strong> Buys for others, seeks validation, wants to make right choice</p>
+        <p><strong>Body Language:</strong> Shopping with others, asks opinions, takes photos to send</p>
+        <p><strong>What They Say:</strong> "What do you think?" "Would this work for...?" "Is this popular?"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Use social proof: "This is our bestseller"</li>
+            <li>Share testimonials and customer stories</li>
+            <li>Help them imagine the recipient's reaction</li>
+            <li>Offer gift-wrapping or presentation suggestions</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>6. 📚 The Researcher</h4>
+        <p><strong>Profile:</strong> Already informed, detail-oriented, wants to verify information</p>
+        <p><strong>Body Language:</strong> Takes notes, compares specs, asks technical questions</p>
+        <p><strong>What They Say:</strong> "I've been reading about..." "Can you confirm..." "What about [specific detail]?"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Match their knowledge level—don't oversimplify</li>
+            <li>Provide expert information and specifications</li>
+            <li>Respect their research—add insights they may have missed</li>
+            <li>Offer to answer any remaining questions thoroughly</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>7. ⚡ The Impulse Buyer</h4>
+        <p><strong>Profile:</strong> Responds to emotion and urgency, makes quick decisions</p>
+        <p><strong>Body Language:</strong> Excited energy, grabs items quickly, doesn't overthink</p>
+        <p><strong>What They Say:</strong> "I love this!" "This is perfect!" "I'll take it!"</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Use scarcity and urgency language naturally</li>
+            <li>Show complementary items immediately</li>
+            <li>Make checkout fast before they second-guess</li>
+            <li>Celebrate their choice—reinforce positive feelings</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <h4>8. 💎 The Loyalist</h4>
+        <p><strong>Profile:</strong> Repeat customer, expects recognition, brand advocate</p>
+        <p><strong>Body Language:</strong> Comfortable in store, knows layout, seeks familiar faces</p>
+        <p><strong>What They Say:</strong> "Good to see you!" "What's new since last time?" "My usual..."</p>
+        <div class="approach">
+          <strong style="color: #FFD700;">Your Approach:</strong>
+          <ul style="margin-top: 10px;">
+            <li>Personalize the experience—use their name</li>
+            <li>Show new items based on past purchases</li>
+            <li>Give VIP treatment and exclusive previews</li>
+            <li>Ask for feedback—make them feel valued and heard</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="golden-box" style="background: rgba(227, 252, 236, 0.1); border-left-color: #48bb78;">
+        <h4 style="color: #48bb78;">📊 Knowledge Boost</h4>
+        <p>Harvard research shows that <strong style="color: #FFD700;">"Value Seekers" are 2.8x more likely</strong> to share positive experiences on social media than "Mission Shoppers." Understanding personality types helps you predict not just purchases, but also word-of-mouth marketing!</p>
       </div>
     </div>
 
     <div class="section">
-      <h3><span class="section-icon">3</span>Behavioral Segmentation in Action</h3>
-      <div class="callout">
-        <b>Case Study:</b> Sephora segments shoppers by “Explorers,” “Planners,” and “Quick-In-&-Out” types. They use in-store tech to tailor recommendations, changing music and displays based on customer type and time of day.
+      <h3><span class="section-icon">3</span>Micro-Signals: Reading Customers in Seconds</h3>
+      
+      <div class="golden-box">
+        <h4>The Body Language Decoder</h4>
+        <p>Words lie. Bodies don't. Master these micro-signals to read true intent.</p>
       </div>
-      <ul>
-        <li>Track how different profiles react to greetings, displays, and promotions.</li>
-        <li>Adjust your approach in real-time: If a “Mission Shopper” is browsing too long, offer fast help; if a “Browser” seems stuck, invite them to a demo.</li>
-      </ul>
-      <div class="callout" style="background:#e3fcec;">
-        <b>Expert Insight:</b> Brands like Nike use purchase history, app behavior, and in-store interactions to predict and recommend the next best offer for each segment. This increases cross-sell opportunities by 25%.
-      </div>
-    </div>
 
-    <div class="section">
-      <h3><span class="section-icon">4</span>Micro-Signals: The Psychology of Reading Customers</h3>
+      <h4 style="color: #FFD700; margin-top: 30px;">Critical Signals to Watch:</h4>
       <ul>
-        <li><b>Body Language:</b> Crossed arms = resistance. Leaning in = interest. Glancing at exit = disengaged.</li>
-        <li><b>Touch:</b> Customers touching products are 40% more likely to buy. Encourage interaction.</li>
-        <li><b>Facial Cues:</b> Surprised = new; smiling = engaged; frowning = confused.</li>
+        <li><strong>Crossed Arms:</strong> Resistance, skepticism, or discomfort—need to build trust</li>
+        <li><strong>Leaning In:</strong> Interest and engagement—they're considering the purchase</li>
+        <li><strong>Glancing at Exit:</strong> Disengagement or feeling pressured—give space</li>
+        <li><strong>Touching Products (40% rule):</strong> Customers who touch are 40% more likely to buy—encourage interaction</li>
+        <li><strong>Facial Cues:</strong> Surprised = new discovery; Smiling = engaged; Frowning = confused or skeptical</li>
+        <li><strong>Eye Contact:</strong> Strong = confident buyer; Avoiding = uncertain or browsing</li>
       </ul>
-      <div class="callout">
-        <b>Exercise:</b> Spend 10 minutes observing customers. Categorize by type and note their micro-signals.
-      </div>
-      <div class="callout" style="background:#e3fcec;">
-        <b>Knowledge Boost:</b> Eye-tracking studies show that the first 5 seconds in-store determine 60% of a customer’s “approach or avoid” decision.
-      </div>
-    </div>
 
-    <div class="section">
-      <h3>Lesson 2 Mastery Summary</h3>
-      <ul>
-        <li>Customer profiles are dynamic—adapt, don’t stereotype.</li>
-        <li>Use behavioral cues for real-time segmentation.</li>
-        <li>Personalization = higher sales, loyalty, and satisfaction.</li>
-      </ul>
-      <div class="callout" style="background:linear-gradient(135deg,#ffeaa7 0%,#fab1a0 100%);">
-        <b>Challenge:</b> Profile 10 customers this week. Record their type, interaction, and what closed the sale. Share top insights in your next team meeting!
+      <div class="golden-box">
+        <h4>💪 Exercise: The 10-Minute Observation Challenge</h4>
+        <p>Spend 10 minutes today observing customers without approaching. Categorize by type (Mission, Browser, etc.) and note their micro-signals. How accurate were you when you finally engaged? This builds your profiling instinct.</p>
       </div>
     </div>
 
     <div class="quiz-section">
-      <h3>Mini-Quiz: Customer Profiling Mastery</h3>
+      <h3>🎯 Customer Profiling Mastery Quiz</h3>
       <form id="quiz2">
-        <div>
+        <div class="quiz-question">
           <b>1. Which customer type responds best to urgency and limited-time offers?</b><br/>
           <label><input type="radio" name="q1" value="a"/> The Loyalist</label><br/>
           <label><input type="radio" name="q1" value="b"/> The Impulse Buyer</label><br/>
           <label><input type="radio" name="q1" value="c"/> The Researcher</label>
         </div>
-        <div style="margin-top:15px;">
+        
+        <div class="quiz-question">
           <b>2. True or False: Behavioral segmentation should only use data from loyalty programs.</b><br/>
           <label><input type="radio" name="q2" value="a"/> True</label><br/>
-          <label><input type="radio" name="q2" value="b"/> False</label>
+          <label><input type="radio" name="q2" value="b"/> False - it includes shopping patterns, triggers, and preferences from all sources</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>3. What’s the best first step to profile a new customer?</b><br/>
+        
+        <div class="quiz-question">
+          <b>3. What's the best first step to profile a new customer?</b><br/>
           <label><input type="radio" name="q3" value="a"/> Offer them a discount immediately</label><br/>
-          <label><input type="radio" name="q3" value="b"/> Ask open-ended questions about their needs</label><br/>
+          <label><input type="radio" name="q3" value="b"/> Ask open-ended questions about their needs and observe body language</label><br/>
           <label><input type="radio" name="q3" value="c"/> Wait for them to approach you</label>
         </div>
-        <div style="margin-top:15px;">
+        
+        <div class="quiz-question">
           <b>4. Which of the following is a psychographic trait?</b><br/>
           <label><input type="radio" name="q4" value="a"/> Preferred payment method</label><br/>
           <label><input type="radio" name="q4" value="b"/> Age</label><br/>
-          <label><input type="radio" name="q4" value="c"/> Personal values</label>
+          <label><input type="radio" name="q4" value="c"/> Personal values and lifestyle motivators</label>
         </div>
-        <div style="margin-top:15px;">
+        
+        <div class="quiz-question">
           <b>5. What physical action in-store is most closely linked to purchase intent?</b><br/>
           <label><input type="radio" name="q5" value="a"/> Looking at price tags</label><br/>
-          <label><input type="radio" name="q5" value="b"/> Touching the product</label><br/>
+          <label><input type="radio" name="q5" value="b"/> Touching the product (40% more likely to buy)</label><br/>
           <label><input type="radio" name="q5" value="c"/> Standing near entrance</label>
         </div>
-        <button type="button" class="btn" onclick="gradeQuiz2()" style="margin-top:18px;">Submit Quiz</button>
+        
+        <button type="button" class="btn" onclick="gradeQuiz2()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz2-result" style="font-weight:bold;margin-top:20px;"></div>
+      <div id="quiz2-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
     </div>
+    
     <script>
       function gradeQuiz2() {
         const correct = { q1: 'b', q2: 'b', q3: 'b', q4: 'c', q5: 'b' };
-        let score = 0;
-        let total = 5;
+        let score = 0, total = 5;
         for(let i=1; i<=total; i++) {
           let ans = document.querySelector('input[name="q'+i+'"]:checked');
           if(ans && ans.value === correct['q'+i]) score++;
         }
-        let msg = `You scored ${score} out of ${total}. `;
-        if(score === total) msg += "Excellent! 🎉";
-        else if(score >= total-1) msg += "Great job! Review any missed questions above.";
-        else msg += "Keep practicing and review the lesson above.";
-        document.getElementById('quiz2-result').textContent = msg;
+        let msg = `🏆 You scored ${score} out of ${total}! `;
+        if(score === total) msg += "PROFILING MASTER! You can read customers like a book! 🔥";
+        else if(score >= 4) msg += "Excellent! You understand customer psychology at a deep level!";
+        else if(score >= 3) msg += "Good foundation! Review the 8 types for mastery.";
+        else msg += "Keep learning! Customer profiling is an art—review and try again.";
+        
+        const resultDiv = document.getElementById('quiz2-result');
+        resultDiv.textContent = msg;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     </script>
 
-    <!-- === LESSON 2 CONTENT ENDS HERE === -->
-
     <div id="lesson-completion">
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
-      <a id="nextLessonBtn" href="lesson3.html" class="btn" style="display:none; margin-left:20px;">Continue to Lesson 3 &rarr;</a>
-      <div id="completionMsg">🎉 Well done! This lesson is marked complete. You can continue to the next lesson.</div>
+      <a id="nextLessonBtn" href="lesson3.html" class="btn" style="display:none;">Continue to Lesson 3 →</a>
+      <div id="completionMsg">🎉 Lesson 2 Complete! You can now read and adapt to any customer type!</div>
     </div>
+    
     <div class="dashboard-link">
-      <a href="progress.html">View Your Course Progress &rarr;</a>
+      <a href="progress.html">📊 View Your Progress →</a>
     </div>
   </div>
+  
   <script>
     const lessonNum = 2;
-    const totalLessons = 7;
+    const totalLessons = 8;
+    
     function markLessonComplete() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
+      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = "✅ Lesson Completed";
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
       updateProgressBar();
     }
+    
     function updateProgressBar() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       let completed = 0;
@@ -219,6 +363,7 @@
       document.getElementById('progressText').textContent =
         `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
+    
     window.onload = function() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if(progress[`lesson${lessonNum}`]) {
@@ -231,4 +376,4 @@
     };
   </script>
 </body>
-</html>
+  </html>
