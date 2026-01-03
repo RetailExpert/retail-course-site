@@ -3,45 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 1: The Hidden Psychology of Retail Mastery | Retail Expert</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Lesson 1: Retail Mindset & Professional Identity | Ultimate Black Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
-    header { background: linear-gradient(135deg, #000 0%, #434343 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
-    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: opacity 0.3s ease; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
-    #progressBarContainer { margin: 30px auto 40px auto; max-width: 400px; }
-    #progressBarContainer .progress-outer { background:#e2e8f0; border-radius:6px; overflow:hidden; height:14px; }
-    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#667eea,#764ba2); transition:width 0.7s; }
-    #progressText { text-align:center; font-size:1em; margin-top:6px; color:#667eea; font-weight:bold; }
-    #lesson-completion { margin:40px 0 30px 0; text-align:center; }
-    #completionMsg { margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); border: none; cursor: pointer; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
-    .dashboard-link { text-align:center; margin-bottom:40px; }
-    .dashboard-link a { color:#667eea; font-weight:500; text-decoration:underline; font-size:1em; }
-    h3 { margin-top:40px; color:#222;}
-    .section {margin-bottom: 34px;}
-    .section-icon {font-weight: bold; color: #764ba2; margin-right: 10px;}
-    .callout {background:linear-gradient(135deg,#f1f8e9 0%,#e8eaf6 100%);padding:18px 22px;border-radius:10px;margin:20px 0;}
-    .quiz-section {background:#fff8e1;padding:30px 25px;border-radius:16px;box-shadow:0 2px 10px rgba(200,180,80,0.07);margin:40px 0 0 0;}
-    .fun-fact {background:#c7f9cc;color:#222;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
-    .emoji {font-size:1.5em;vertical-align:middle;}
-    .case-study {background:#f7e1fc;color:#422160;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
-    .activity {background:#fffbe7;color:#5c4000;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
-    .expert-tip {background:#e0c3fc;color:#4b2360;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.7; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
+    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+    .fun-fact { background: linear-gradient(135deg, rgba(199, 249, 204, 0.15) 0%, rgba(147, 250, 165, 0.15) 100%); color: #F5F5F5; font-weight: 600; padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
+    .case-study { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 25px 0; border: 3px solid #FFD700; }
+    .expert-tip { background: linear-gradient(135deg, rgba(224, 195, 252, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%); color: #F5F5F5; font-weight: 500; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #9f7aea; }
+    .activity { background: linear-gradient(135deg, rgba(255, 251, 231, 0.1) 0%, rgba(255, 237, 160, 0.1) 100%); color: #F5F5F5; font-weight: 500; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #ecc94b; }
+    ul { margin: 20px 0 20px 25px; }
+    li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
+    li strong { color: #FFD700; font-weight: 700; }
+    .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+    .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
+    .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
+    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
+    .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
+    .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
+    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .dashboard-link { text-align: center; margin: 40px 0; }
+    .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
+    .emoji { font-size: 1.5em; vertical-align: middle; }
     @media (max-width: 768px) {
-      #lesson-completion button, #lesson-completion a { display:block; width:90%; margin:12px auto; font-size:1em; padding:14px 0; }
-      #progressBarContainer {max-width:95vw;}
-      .quiz-section {padding:18px 10px;}
+      header h1 { font-size: 18px; }
+      .hero h2 { font-size: 2em; }
+      h3 { font-size: 1.5em; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Retail Expert Academy</h1>
+    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/course.html">Course</a>
@@ -53,198 +66,272 @@
       <div class="progress-outer">
         <div id="progressBarFill"></div>
       </div>
-      <div id="progressText">Lesson 1 of 7</div>
+      <div id="progressText">Lesson 1 of 8</div>
     </div>
-    <!-- === LESSON 1 CONTENT STARTS HERE === -->
+
     <div class="hero">
-      <h2>The Hidden Psychology of Retail Mastery</h2>
+      <h2>🧠 Lesson 1: Retail Mindset & Professional Identity</h2>
       <p>
-        Unlock the secret mental triggers that transform browsers into buyers and casual shoppers into loyal customers. Master the invisible forces that drive purchasing decisions.
+        Master the mental foundation of elite retail performance. Transform from task-executor to professional. Build the mindset that separates top performers from everyone else on the shop floor.
       </p>
     </div>
 
-    <div class="fun-fact"><span class="emoji">🤩</span> <b>Did you know?</b> 95% of purchase decisions are made subconsciously. <span class="emoji">🧠</span></div>
+    <div class="fun-fact">
+      <span class="emoji">🤩</span> <b>Did you know?</b> 95% of purchase decisions are made subconsciously—and customers mirror YOUR energy and professionalism. <span class="emoji">🧠</span>
+    </div>
 
     <div class="section">
-      <h3><span class="section-icon">1</span>The Neuroscience of First Impressions</h3>
-      <div class="callout">
-        <b>Brain Science Fact:</b> The human brain processes visual information 60,000 times faster than text. Within 7 seconds, customers decide if they trust you!
+      <h3><span class="section-icon">1</span>The Professional vs. Task-Doer Mindset</h3>
+      <div class="golden-box">
+        <h4>The Difference That Changes Everything</h4>
+        <p>Most people in retail see themselves as "just staff." Professionals see themselves differently. This single shift in identity determines your income, opportunities, and career trajectory.</p>
       </div>
+      
+      <h4 style="color: #FFD700; margin-top: 30px;">Task-Doer Thinking:</h4>
       <ul>
-        <li><b>Thin-Slicing:</b> Our brains make snap judgments. Greet every customer within 3 seconds—even if you’re busy, wave or nod!</li>
-        <li><b>Decompression Zone:</b> The first 5-10 feet inside your entrance should be clutter-free so the brain can “reset.”</li>
-        <li><b>Mirror Neurons:</b> Happy staff = happy customers. Smile, and your energy will spread!</li>
+        <li>"I'm here to get through my shift"</li>
+        <li>"That's not my job"</li>
+        <li>"I just work here"</li>
+        <li>"Why should I care? They don't pay me enough"</li>
+        <li>Waits to be told what to do</li>
+        <li>Does the minimum required</li>
       </ul>
-      <div class="case-study">
-        <b>Case Study: Apple Stores</b><br>
-        Apple’s famous “decompression zone” at the entrance, clean tables, and staff who greet instantly are proven to boost dwell time and sales per visitor!
-      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Professional Thinking:</h4>
+      <ul>
+        <li>"I'm building my reputation and skills"</li>
+        <li>"How can I add value here?"</li>
+        <li>"I represent this brand professionally"</li>
+        <li>"Excellence is my standard, regardless of pay"</li>
+        <li>Sees problems and solves them proactively</li>
+        <li>Goes beyond expectations consistently</li>
+      </ul>
+
       <div class="expert-tip">
-        <b>Expert Tip:</b> Place a subtle scent diffuser near your entrance. Scents like citrus or vanilla increase positive first impressions and can raise average basket size by 10%.
-      </div>
-      <div class="activity">
-        <b>Micro-Activity:</b> Try a “greeting experiment” for one day—track how many customers smile back or linger longer!
+        <b>Expert Insight:</b> Your mindset creates your reality. Managers promote professionals, not task-doers. Customers remember professionals. Your income follows your identity.
       </div>
     </div>
 
     <div class="section">
-      <h3><span class="section-icon">2</span>The Limbic Hijack: How Emotions Drive Purchases</h3>
-      <div class="callout">
-        <b>Brain Science Fact:</b> People buy with emotion and justify with logic. If a shopper “feels good,” their brain will find a reason to spend.
+      <h3><span class="section-icon">2</span>Ownership Mindset: Act Like You Own the Place</h3>
+      <div class="golden-box">
+        <h4>The Owner vs. Employee Mental Game</h4>
+        <p>What if this was YOUR store? YOUR brand? YOUR reputation on the line? That's the ownership mindset—and it's the secret of every top performer.</p>
       </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Employee Mindset:</h4>
       <ul>
-        <li><b>FOMO:</b> “Only 2 left!” or “This is the last one in your size!” triggers action.</li>
-        <li><b>Social Proof:</b> “This is our bestseller!” or “You have great taste—others love this too.”</li>
-        <li><b>Touch:</b> Invite customers to touch or try products. Touching increases purchase probability by 40%!</li>
-        <li><b>Priming:</b> Play upbeat music in the morning, calming music in the evening. Tempo affects how fast people shop and what they buy.</li>
+        <li><strong>Sees problems:</strong> "Someone should fix that"</li>
+        <li><strong>Sees mess:</strong> "Not my section"</li>
+        <li><strong>Sees opportunity:</strong> "That's above my pay grade"</li>
+        <li><strong>When things go wrong:</strong> "Not my fault"</li>
       </ul>
-      <div class="fun-fact"><span class="emoji">😲</span> <b>Fun Fact:</b> Apple Stores are designed for maximum touching. That’s why everything is out in the open!</div>
-      <div class="expert-tip">
-        <b>Expert Tip:</b> Use positive “future self” language: “Imagine yourself using this every day—how would that feel?”
-      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Ownership Mindset:</h4>
+      <ul>
+        <li><strong>Sees problems:</strong> "I'll handle it"</li>
+        <li><strong>Sees mess:</strong> "I'll fix it—customer experience matters"</li>
+        <li><strong>Sees opportunity:</strong> "How can I contribute?"</li>
+        <li><strong>When things go wrong:</strong> "What can I do to solve this?"</li>
+      </ul>
+
       <div class="case-study">
-        <b>Case Study: IKEA’s Maze Layout</b><br>
-        IKEA’s winding path and staged “rooms” tap into emotional storytelling, making customers imagine the products in their own lives. This boosts average basket size by 22%!
+        <h4 style="color: #FFD700;">📖 Case Study: The Ritz-Carlton $2,000 Rule</h4>
+        <p>Every Ritz-Carlton employee—from housekeeping to concierge—can spend up to $2,000 per guest, per day to solve problems. No manager approval needed. Why? Because they hire people with ownership mindset and trust them to protect the brand. Result: Industry-leading loyalty and the highest customer satisfaction scores in hospitality.</p>
+        <p><strong>Your Takeaway:</strong> Even without a $2,000 budget, you can adopt the MINDSET. Act like the brand's reputation depends on you—because it does.</p>
       </div>
     </div>
 
     <div class="section">
-      <h3><span class="section-icon">3</span>More Hidden Triggers: Senses, Anchoring, & Fun!</h3>
-      <div class="fun-fact"><span class="emoji">👃</span> <b>Did you know?</b> Scent branding is so powerful that Abercrombie & Fitch is recognized by smell alone in blind mall tests!</div>
+      <h3><span class="section-icon">3</span>Your Personal Brand on the Shop Floor</h3>
+      <div class="golden-box">
+        <h4>You Are a Brand—Whether You Know It or Not</h4>
+        <p>Customers don't remember "the store." They remember YOU. "That helpful person," "the one who knew everything," "the rude guy." Your personal brand determines tips, repeat customers, and management opportunities.</p>
+      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Building Your Professional Brand:</h4>
       <ul>
-        <li><b>Anchoring:</b> Show a high-priced item next to your main offer. The main offer will feel “cheaper” and sales can rise by 30%.</li>
-        <li><b>Gamification:</b> Add a “spin to win” wheel or mystery discounts at checkout. This triggers dopamine and makes the experience fun and memorable.</li>
-        <li><b>Color Psychology:</b> Blue = trust, red = urgency, yellow = optimism. Use colors purposefully in signage and displays.</li>
+        <li><strong>Consistency:</strong> Show up the same way every day—reliable, professional, positive</li>
+        <li><strong>Expertise:</strong> Become the go-to person for product knowledge</li>
+        <li><strong>Energy:</strong> Your vibe is contagious—make it positive</li>
+        <li><strong>Problem-Solving:</strong> Be known as someone who finds solutions, not excuses</li>
+        <li><strong>Authenticity:</strong> Be genuinely helpful, not fake-nice</li>
       </ul>
-      <div class="activity">
-        <b>Quick Game:</b> Next time you shop, count how many “emotional triggers” you spot—FOMO, social proof, touch, scent, color, music, or gamification. Which one influenced you most?
-      </div>
-    </div>
 
-    <div class="section">
-      <h3><span class="section-icon">4</span>Mini-Game: Spot the Psychology in Real Life!</h3>
-      <div class="callout" style="background:#d0f4de;">
-        <b>In-Store Scavenger Hunt:</b>
+      <div class="activity">
+        <h4 style="color: #FFD700;">💪 Exercise: Define Your Professional Brand</h4>
+        <p><strong>Answer these:</strong></p>
         <ol>
-          <li>Did staff greet you right away?</li>
-          <li>Was there a clutter-free entrance?</li>
-          <li>Did you see “bestseller” or “last one” signs?</li>
-          <li>Were you invited to touch or try anything?</li>
-          <li>Was a particular scent or music noticeable?</li>
+          <li>How do I want customers to describe me? (3 words)</li>
+          <li>How do I want managers to see me? (3 words)</li>
+          <li>What's one thing I can do tomorrow to build that brand?</li>
         </ol>
-        <b>Write down what you noticed and how it made you feel!</b>
       </div>
     </div>
 
     <div class="section">
-      <h3>Lesson 1 Mastery Summary</h3>
+      <h3><span class="section-icon">4</span>Discipline, Consistency & Accountability</h3>
+      <div class="golden-box">
+        <h4>The Unsexy Truth About Success</h4>
+        <p>Talent is overrated. Discipline wins. The best retail professionals aren't necessarily the most charismatic—they're the most consistent.</p>
+      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">The Professional's Daily Disciplines:</h4>
       <ul>
-        <li>First impressions happen in 7 seconds—make them count!</li>
-        <li>Emotions drive almost all buying decisions—trigger them with senses, social proof, and FOMO.</li>
-        <li>Touch, scent, music, and fun make your store memorable and profitable!</li>
+        <li><strong>Show up early:</strong> Never rushed, always prepared</li>
+        <li><strong>Uniform immaculate:</strong> First impressions happen in 7 seconds</li>
+        <li><strong>Product knowledge review:</strong> 10 minutes daily learning inventory</li>
+        <li><strong>Store walk:</strong> Check displays, fix issues before customers notice</li>
+        <li><strong>Greet EVERY customer:</strong> No exceptions, no bad moods</li>
+        <li><strong>End-of-shift ritual:</strong> Tidy your section, prep for tomorrow</li>
       </ul>
-      <div class="callout" style="background:linear-gradient(135deg,#ffeaa7 0%,#fab1a0 100%);">
-        <b>Challenge:</b> Greet every customer within 3 seconds for one day. Use at least one new emotional trigger. Count how many extra smiles, conversations, and sales you make!
+
+      <div class="expert-tip">
+        <b>Pro Tip:</b> Professionals don't need supervision to do their job well. They hold themselves to a higher standard than their manager does. This is how you get promoted—by making management's job easier, not harder.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">5</span>How Mindset Affects Sales, Service & Promotions</h3>
+      
+      <div class="golden-box">
+        <h4>The Mindset-Performance Connection</h4>
+        <p>Your internal state determines your external results. Professional mindset → Professional behavior → Professional outcomes.</p>
+      </div>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Mindset → Sales:</h4>
+      <ul>
+        <li><strong>Fixed mindset:</strong> "I'm not good at sales" → Avoids customers → Low numbers</li>
+        <li><strong>Growth mindset:</strong> "I can learn to sell better" → Practices daily → Top performer</li>
+      </ul>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Mindset → Service:</h4>
+      <ul>
+        <li><strong>Task mindset:</strong> "Process transactions" → Mechanical, cold → Customers feel it</li>
+        <li><strong>Service mindset:</strong> "Create experiences" → Warm, helpful → Customers remember you</li>
+      </ul>
+
+      <h4 style="color: #FFD700; margin-top: 30px;">Mindset → Promotions:</h4>
+      <ul>
+        <li><strong>Victim mindset:</strong> "They never promote people like me" → Stays stuck</li>
+        <li><strong>Ownership mindset:</strong> "I'll make myself indispensable" → Gets promoted</li>
+      </ul>
+
+      <div class="case-study">
+        <h4 style="color: #FFD700;">📖 Case Study: Nordstrom's "Use Your Best Judgment"</h4>
+        <p>Nordstrom's entire employee handbook is one sentence: "Use your best judgment in all situations." They hire for mindset, not just skills. They trust professionals to make decisions. Result: Legendary customer service, low turnover, and employees who act like owners. The mindset creates the culture, and the culture creates the results.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">6</span>The Professional's Code</h3>
+      
+      <div class="golden-box">
+        <h4>Your Daily Commitment to Excellence</h4>
+        <p>Print this. Read it daily. Live it.</p>
+        <ul style="margin-top: 20px; font-size: 1.1em; line-height: 2;">
+          <li>I show up prepared, present, and professional—every single day</li>
+          <li>I treat this business like it's mine—because my reputation IS mine</li>
+          <li>I solve problems instead of complaining about them</li>
+          <li>I make customers feel valued, seen, and helped</li>
+          <li>I'm constantly learning and improving my craft</li>
+          <li>I hold myself to a higher standard than anyone else holds me</li>
+          <li>I build others up—customers, teammates, brand</li>
+          <li>I am a professional—and it shows in everything I do</li>
+        </ul>
       </div>
     </div>
 
     <div class="quiz-section">
-      <h3>Mini-Quiz: Retail Psychology Fun!</h3>
+      <h3>🎯 Mindset Mastery Quiz</h3>
       <form id="quiz1">
-        <div>
-          <b>1. How long does it take for a customer to form a first impression?</b><br/>
-          <label><input type="radio" name="q1" value="a"/> 30 seconds</label><br/>
-          <label><input type="radio" name="q1" value="b"/> 7 seconds</label><br/>
-          <label><input type="radio" name="q1" value="c"/> 1 minute</label>
+        <div class="quiz-question">
+          <b>1. What is the key difference between a professional and a task-doer?</b><br/>
+          <label><input type="radio" name="q1" value="a"/> Professionals get paid more</label><br/>
+          <label><input type="radio" name="q1" value="b"/> Professionals take ownership and go beyond minimum requirements</label><br/>
+          <label><input type="radio" name="q1" value="c"/> Professionals work longer hours</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>2. True or False: Touching a product can increase the chance a customer will buy it.</b><br/>
-          <label><input type="radio" name="q2" value="a"/> True</label><br/>
-          <label><input type="radio" name="q2" value="b"/> False</label>
+        
+        <div class="quiz-question">
+          <b>2. What does "ownership mindset" mean in retail?</b><br/>
+          <label><input type="radio" name="q2" value="a"/> Actually owning the store</label><br/>
+          <label><input type="radio" name="q2" value="b"/> Acting like the brand's reputation depends on you and solving problems proactively</label><br/>
+          <label><input type="radio" name="q2" value="c"/> Bossing other employees around</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>3. What should you do if you’re busy and can’t greet a customer right away?</b><br/>
-          <label><input type="radio" name="q3" value="a"/> Ignore them until you’re free</label><br/>
-          <label><input type="radio" name="q3" value="b"/> Wave, nod, or smile to acknowledge them</label><br/>
-          <label><input type="radio" name="q3" value="c"/> Let them wait in silence</label>
+        
+        <div class="quiz-question">
+          <b>3. True or False: Your personal brand on the shop floor affects customer loyalty and promotion opportunities.</b><br/>
+          <label><input type="radio" name="q3" value="a"/> True</label><br/>
+          <label><input type="radio" name="q3" value="b"/> False</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>4. Which emotion is most likely to trigger a purchase?</b><br/>
-          <label><input type="radio" name="q4" value="a"/> Boredom</label><br/>
-          <label><input type="radio" name="q4" value="b"/> Excitement</label><br/>
-          <label><input type="radio" name="q4" value="c"/> Confusion</label>
+        
+        <div class="quiz-question">
+          <b>4. What separates top retail performers from average ones?</b><br/>
+          <label><input type="radio" name="q4" value="a"/> Natural charisma</label><br/>
+          <label><input type="radio" name="q4" value="b"/> Consistent discipline and daily professional habits</label><br/>
+          <label><input type="radio" name="q4" value="c"/> Luck</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>5. What’s a “decompression zone”?</b><br/>
-          <label><input type="radio" name="q5" value="a"/> The cash register area</label><br/>
-          <label><input type="radio" name="q5" value="b"/> The uncluttered space at the entrance where customers adjust</label><br/>
-          <label><input type="radio" name="q5" value="c"/> The staff break room</label>
+        
+        <div class="quiz-question">
+          <b>5. According to the Ritz-Carlton case study, what enables employees to spend up to $2,000 per guest?</b><br/>
+          <label><input type="radio" name="q5" value="a"/> They hire wealthy employees</label><br/>
+          <label><input type="radio" name="q5" value="b"/> They trust people with ownership mindset to protect the brand</label><br/>
+          <label><input type="radio" name="q5" value="c"/> It's a marketing gimmick</label>
         </div>
-        <div style="margin-top:15px;">
-          <b>6. What does “anchoring” mean in retail psychology?</b><br/>
-          <label><input type="radio" name="q6" value="a"/> Making sure doors are secure</label><br/>
-          <label><input type="radio" name="q6" value="b"/> Showing a high-priced item to make the main item seem cheaper</label><br/>
-          <label><input type="radio" name="q6" value="c"/> Placing products on the floor</label>
-        </div>
-        <div style="margin-top:15px;">
-          <b>7. Which of these is NOT a proven sensory trigger in stores?</b><br/>
-          <label><input type="radio" name="q7" value="a"/> Scent</label><br/>
-          <label><input type="radio" name="q7" value="b"/> Music</label><br/>
-          <label><input type="radio" name="q7" value="c"/> Silent videos</label>
-        </div>
-        <div style="margin-top:15px;">
-          <b>8. What color is most often associated with trust?</b><br/>
-          <label><input type="radio" name="q8" value="a"/> Red</label><br/>
-          <label><input type="radio" name="q8" value="b"/> Blue</label><br/>
-          <label><input type="radio" name="q8" value="c"/> Yellow</label>
-        </div>
-        <button type="button" class="btn" onclick="gradeQuiz1()" style="margin-top:18px;">Submit Quiz</button>
+        
+        <button type="button" class="btn" onclick="gradeQuiz1()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz1-result" style="font-weight:bold;margin-top:20px;"></div>
+      <div id="quiz1-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
     </div>
+    
     <script>
       function gradeQuiz1() {
-        const correct = {
-          q1: 'b', q2: 'a', q3: 'b', q4: 'b', q5: 'b',
-          q6: 'b', q7: 'c', q8: 'b'
-        };
-        let score = 0, total = 8;
+        const correct = { q1: 'b', q2: 'b', q3: 'a', q4: 'b', q5: 'b' };
+        let score = 0, total = 5;
         for(let i=1; i<=total; i++) {
           let ans = document.querySelector('input[name="q'+i+'"]:checked');
           if(ans && ans.value === correct['q'+i]) score++;
         }
-        let msg = `You scored ${score} out of ${total}. `;
-        if(score === total) msg += "Amazing! You're a retail psychology pro! 🎉";
-        else if(score >= total-1) msg += "Great job! Review any missed questions above.";
-        else if(score >= total-3) msg += "Good effort! Revisit the fun facts for even more mastery.";
-        else msg += "Keep learning and try again!";
-        document.getElementById('quiz1-result').textContent = msg;
+        let msg = `🏆 You scored ${score} out of ${total}! `;
+        if(score === total) msg += "PERFECT! You've mastered the professional mindset! 🔥";
+        else if(score >= 4) msg += "Excellent! You understand what separates professionals from task-doers!";
+        else if(score >= 3) msg += "Good start! Review the key concepts for mastery.";
+        else msg += "Keep learning! This foundational mindset is critical—review and try again.";
+        
+        const resultDiv = document.getElementById('quiz1-result');
+        resultDiv.textContent = msg;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     </script>
-    <!-- === LESSON 1 CONTENT ENDS HERE === -->
 
     <div id="lesson-completion">
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
-      <a id="nextLessonBtn" href="lesson2.html" class="btn" style="display:none; margin-left:20px;">Continue to Lesson 2 &rarr;</a>
-      <div id="completionMsg">🎉 Well done! This lesson is marked complete. You can continue to the next lesson.</div>
+      <a id="nextLessonBtn" href="lesson2.html" class="btn" style="display:none;">Continue to Lesson 2 →</a>
+      <div id="completionMsg">🎉 Lesson 1 Complete! You've built the foundational mindset of a retail professional!</div>
     </div>
+    
     <div class="dashboard-link">
-      <a href="progress.html">View Your Course Progress &rarr;</a>
+      <a href="progress.html">📊 View Your Progress →</a>
     </div>
   </div>
+  
   <script>
     const lessonNum = 1;
-    const totalLessons = 7;
+    const totalLessons = 8;
+    
     function markLessonComplete() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
+      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = "✅ Lesson Completed";
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
       updateProgressBar();
     }
+    
     function updateProgressBar() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       let completed = 0;
@@ -254,6 +341,7 @@
       document.getElementById('progressText').textContent =
         `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
+    
     window.onload = function() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if(progress[`lesson${lessonNum}`]) {
