@@ -3,279 +3,474 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Complete Guide to Omnichannel Retail Excellence</title>
+  <title>Lesson 6: Omnichannel Retail Mastery | Ultimate Black Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.7; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #2c3e50; min-height: 100vh; }
-    .container { max-width: 1200px; margin: 0 auto; background: white; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border-radius: 20px; overflow: hidden; margin-top: 20px; margin-bottom: 20px; }
-    .hero { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>'); opacity: 0.3; }
-    .hero h1 { font-size: 3.5em; margin-bottom: 20px; font-weight: 700; position: relative; z-index: 1; }
-    .hero .subtitle { font-size: 1.3em; opacity: 0.9; margin-bottom: 30px; position: relative; z-index: 1; }
-    .hero .stats { display: flex; justify-content: center; gap: 40px; margin-top: 40px; position: relative; z-index: 1; }
-    .stat { text-align: center; }
-    .stat-number { font-size: 2.5em; font-weight: bold; display: block; }
-    .stat-label { font-size: 0.9em; opacity: 0.8; }
-    .content { padding: 60px 40px; }
-    .section { margin-bottom: 60px; scroll-margin-top: 100px; }
-    .section h2 { font-size: 2.5em; color: #1e3c72; margin-bottom: 30px; position: relative; padding-bottom: 15px; }
-    .section h2::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 2px; }
-    .section h3 { font-size: 1.8em; color: #2c3e50; margin: 30px 0 20px 0; }
-    .section p { font-size: 1.1em; margin-bottom: 20px; text-align: justify; }
-    .highlight-box { background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); padding: 30px; border-radius: 15px; margin: 30px 0; border-left: 5px solid #667eea; position: relative; }
-    .highlight-box::before { content: '💡'; position: absolute; top: 15px; right: 20px; font-size: 1.5em; }
-    .case-study { background: #f8f9fa; padding: 40px; border-radius: 20px; margin: 40px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .case-study h4 { color: #1e3c72; font-size: 1.5em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .case-study-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; }
-    .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
-    .comparison-table th { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 20px; font-size: 1.1em; font-weight: 600; }
-    .comparison-table td { padding: 20px; border-bottom: 1px solid #eee; font-size: 1em; }
-    .comparison-table tr:nth-child(even) { background: #f8f9fa; }
-    .comparison-table tr:hover { background: #e3f2fd; transition: all 0.3s ease; }
-    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
-    .tool-card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; transition: all 0.3s ease; }
-    .tool-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-    .tool-card h4 { color: #1e3c72; font-size: 1.4em; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .tool-icon { font-size: 1.5em; }
-    .interactive-quiz { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 40px; border-radius: 20px; margin: 50px 0; color: white; }
-    .quiz-question { margin: 25px 0; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px; backdrop-filter: blur(10px); }
-    .quiz-options { margin: 15px 0; }
-    .quiz-option { display: block; margin: 10px 0; padding: 10px 15px; background: rgba(255,255,255,0.1); border: none; border-radius: 8px; color: white; cursor: pointer; transition: all 0.3s ease; width: 100%; text-align: left; }
-    .quiz-option:hover { background: rgba(255,255,255,0.2); transform: translateX(10px); }
-    .quiz-option.selected { background: rgba(255,255,255,0.3); transform: translateX(10px); border: 2px solid white; }
-    .quiz-option.correct { background: rgba(76, 175, 80, 0.8); border: 2px solid #4CAF50; }
-    .quiz-option.incorrect { background: rgba(244, 67, 54, 0.8); border: 2px solid #f44336; }
-    .quiz-results { background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin-top: 30px; text-align: center; backdrop-filter: blur(10px); display: none; }
-    .score-display { font-size: 3em; font-weight: bold; margin: 20px 0; }
-    .quiz-submit { background: linear-gradient(135deg,#38e54d 0%, #0fc2c0 100%); color:white; font-weight:bold; font-size:1.15em; border:none; cursor:pointer; padding:18px 44px; border-radius:28px; box-shadow:0 4px 18px rgba(56,229,77,0.16); transition: background 0.3s; }
-    .quiz-submit:hover { background: linear-gradient(135deg,#0fc2c0 0%, #38e54d 100%);}
-    .quiz-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-    .next-btn { background: linear-gradient(135deg,#667eea 0%, #764ba2 100%); color:white; font-weight:bold; font-size:1.15em; border:none; cursor:pointer; padding:18px 44px; border-radius:28px; box-shadow:0 4px 18px rgba(102,126,234,0.16); margin-left:22px; text-decoration:none; display:none; transition: background 0.3s;}
-    .challenge-box { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; font-weight: bold; padding: 18px 22px; border-radius: 12px; margin: 18px 0; border-left: 6px solid #f44336; }
-    .pro-tip { background: linear-gradient(135deg, #fffbe7 0%, #ffeaa7 100%); color: #5c4000; font-weight: 500; padding: 18px 22px; border-radius: 12px; margin: 18px 0; border-left: 6px solid #ffd600; }
-    .myth-buster { background: linear-gradient(135deg, #fbeee6 0%, #f8d7da 100%); color: #a94442; font-weight: 500; padding: 18px 22px; border-radius: 12px; margin: 18px 0; border-left: 6px solid #e53935; }
-    .team-debate { background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); color: #263859; font-weight: 500; padding: 18px 22px; border-radius: 12px; margin: 18px 0; border-left: 6px solid #667eea; }
-    .deep-dive { background: linear-gradient(135deg, #d1ffd6 0%, #b5fffc 100%); color: #155724; font-weight: 500; padding: 18px 22px; border-radius: 12px; margin: 18px 0; border-left: 6px solid #1de9b6; }
-    @media (max-width: 768px) { .hero h1 { font-size: 2.5em; } .hero .stats { flex-direction: column; gap: 20px; } .content { padding: 40px 20px; } .section h2 { font-size: 2em; } }
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.7; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
+    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
+    .hero .stats { display: flex; justify-content: center; gap: 40px; margin-top: 40px; position: relative; z-index: 1; flex-wrap: wrap; }
+    .stat { text-align: center; min-width: 150px; }
+    .stat-number { font-size: 2.5em; font-weight: 900; display: block; color: #FFD700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+    .stat-label { font-size: 0.9em; color: #B0B0B0; margin-top: 8px; display: block; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+    .pro-tip { background: linear-gradient(135deg, rgba(236, 201, 75, 0.15) 0%, rgba(236, 201, 75, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ECC94B; color: #F5F5F5; font-weight: 500; }
+    .myth-buster { background: linear-gradient(135deg, rgba(245, 101, 101, 0.15) 0%, rgba(245, 101, 101, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #F56565; color: #F5F5F5; font-weight: 500; }
+    .deep-dive { background: linear-gradient(135deg, rgba(72, 187, 120, 0.15) 0%, rgba(72, 187, 120, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; color: #F5F5F5; font-weight: 500; }
+    .team-debate { background: linear-gradient(135deg, rgba(159, 122, 234, 0.15) 0%, rgba(159, 122, 234, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #9f7aea; color: #F5F5F5; font-weight: 500; }
+    .challenge-box { background: linear-gradient(135deg, rgba(237, 100, 166, 0.15) 0%, rgba(237, 100, 166, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ED64A6; color: #F5F5F5; font-weight: 500; }
+    .case-study { background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); padding: 30px; border-radius: 15px; margin: 30px 0; border: 2px solid rgba(255, 215, 0, 0.4); }
+    .case-study h4 { color: #FFD700; font-size: 1.4em; margin-bottom: 15px; font-weight: 800; }
+    .comparison-table { width: 100%; border-collapse: collapse; margin: 30px 0; background: #1a1a1a; border-radius: 15px; overflow: hidden; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .comparison-table th { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px; font-size: 1.1em; font-weight: 800; }
+    .comparison-table td { padding: 20px; border-bottom: 1px solid rgba(255, 215, 0, 0.2); font-size: 1em; color: #E0E0E0; }
+    .comparison-table tr:nth-child(even) { background: rgba(255, 215, 0, 0.03); }
+    .comparison-table tr:hover { background: rgba(255, 215, 0, 0.08); transition: all 0.3s ease; }
+    .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 40px 0; }
+    .tool-card { background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); padding: 25px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); transition: all 0.3s ease; }
+    .tool-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3); border-color: #FFD700; }
+    .tool-card h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 12px; font-weight: 800; }
+    ul { margin: 20px 0 20px 25px; }
+    li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
+    li strong { color: #FFD700; font-weight: 700; }
+    p { font-size: 1.1em; margin-bottom: 20px; line-height: 1.8; color: #E0E0E0; }
+    .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+    .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
+    .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
+    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
+    .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
+    .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    .quiz-options input[type="radio"] { margin-right: 10px; }
+    #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
+    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .dashboard-link { text-align: center; margin: 40px 0; }
+    .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
+    @media (max-width: 768px) {
+      header { flex-direction: column; gap: 15px; text-align: center; }
+      header h1 { font-size: 20px; }
+      nav { display: flex; gap: 15px; }
+      nav a { margin-left: 0; }
+      .container { padding: 30px 15px; margin-top: 10px; }
+      .hero h2 { font-size: 2em; }
+      .hero p { font-size: 1.1em; }
+      .hero .stats { gap: 20px; }
+      h3 { font-size: 1.6em; }
+      .section { padding: 25px 20px; }
+      .golden-box, .pro-tip, .myth-buster, .deep-dive, .team-debate, .challenge-box { padding: 18px 20px; }
+      .comparison-table { font-size: 0.9em; }
+      .comparison-table th, .comparison-table td { padding: 12px 8px; }
+      .tools-grid { grid-template-columns: 1fr; }
+      .quiz-section { padding: 25px 20px; }
+      .btn { padding: 15px 30px; font-size: 1em; display: block; width: 90%; margin: 12px auto; }
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/course.html">Course</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+  </header>
   <div class="container">
+    <div id="progressBarContainer">
+      <div class="progress-outer">
+        <div id="progressBarFill"></div>
+      </div>
+      <div id="progressText">Lesson 6 of 8</div>
+    </div>
+
     <div class="hero">
-      <h1>Omnichannel Retail Mastery</h1>
-      <p class="subtitle">The Complete Guide to Creating Seamless Customer Experiences Across All Touchpoints</p>
+      <h2>🌐 Lesson 6: Omnichannel Retail Mastery</h2>
+      <p>Master the art of creating seamless customer experiences across every touchpoint. Online, offline, mobile, social—it all works together as one unified ecosystem.</p>
       <div class="stats">
         <div class="stat"><span class="stat-number">73%</span><span class="stat-label">Research online first</span></div>
         <div class="stat"><span class="stat-number">90%</span><span class="stat-label">Expect consistency</span></div>
         <div class="stat"><span class="stat-number">3x</span><span class="stat-label">Higher lifetime value</span></div>
       </div>
     </div>
-    <div class="content">
-      <!-- Knowledge Boxes -->
-      <div class="pro-tip">
-        <b>Pro Tip:</b> Secret-shop your own brand: start on social, buy online, try in-store pickup, and attempt a return. This is the fastest way to find friction points and wow moments across channels!
-      </div>
-      <div class="myth-buster">
-        <b>Myth Buster:</b> "Omnichannel is just for big brands." <br>
-        Small retailers can often outperform giants by being nimble, integrating experiences, and using their size for personal touch.
-      </div>
-      <div class="deep-dive">
-        <b>Deep Dive: Omnichannel KPIs</b><br>
-        <ul>
-          <li><b>Cross-Channel Conversion:</b> How many customers start in one channel and finish in another?</li>
-          <li><b>Time-to-Resolution:</b> How fast are issues resolved, regardless of where the complaint started?</li>
-          <li><b>Personalization Rate:</b> % of communications or recommendations that are targeted based on customer data (higher = more loyalty!)</li>
-        </ul>
-      </div>
-      <div class="team-debate">
-        <b>Team Debate:</b> Is it better to be everywhere (every channel) or to do fewer channels with true excellence? Discuss real examples!
-      </div>
-      <div class="challenge-box">
-        <b>Challenge:</b> Find a brand (big or small) that you think does omnichannel best. List 3 standout practices—and 1 thing you’d improve!
-      </div>
-      <!-- (Keep all your original, rich omnichannel content and scenarios here as before) -->
-      <!-- ... (Sections, tables, timelines, grids, case studies, etc.) ... -->
 
-      <!-- Expanded Quiz Section -->
-      <div class="interactive-quiz">
-        <h2>Omnichannel Mastery Challenge</h2>
-        <div id="quiz-container">
-          <div class="quiz-question">
-            <h4>1. What’s the primary difference between multichannel and omnichannel retail?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="0" data-answer="A">A) Multichannel uses more platforms</button>
-              <button class="quiz-option" data-question="0" data-answer="B">B) Omnichannel creates unified, seamless experiences</button>
-              <button class="quiz-option" data-question="0" data-answer="C">C) Multichannel is more expensive to implement</button>
-              <button class="quiz-option" data-question="0" data-answer="D">D) There's no significant difference</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>2. A customer finds a product on Instagram, checks stock online, then buys in-store. What’s the most important tech for making this seamless?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="1" data-answer="A">A) Real-time integrated inventory visibility</button>
-              <button class="quiz-option" data-question="1" data-answer="B">B) A loyalty program</button>
-              <button class="quiz-option" data-question="1" data-answer="C">C) Store-only promotions</button>
-              <button class="quiz-option" data-question="1" data-answer="D">D) Separate websites for each channel</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>3. Which of these is NOT a true omnichannel feature?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="2" data-answer="A">A) Unified return policy for online and in-store</button>
-              <button class="quiz-option" data-question="2" data-answer="B">B) Staff can pull up customer history from any location</button>
-              <button class="quiz-option" data-question="2" data-answer="C">C) Inventory is visible across all channels</button>
-              <button class="quiz-option" data-question="2" data-answer="D">D) Customers must use separate accounts for each channel</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>4. What is the biggest risk of not integrating data across channels?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="3" data-answer="A">A) Reduced staff workload</button>
-              <button class="quiz-option" data-question="3" data-answer="B">B) Incomplete customer profiles and lost sales opportunities</button>
-              <button class="quiz-option" data-question="3" data-answer="C">C) More social media followers</button>
-              <button class="quiz-option" data-question="3" data-answer="D">D) Faster checkout</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>5. Scenario: A customer starts a return online and finishes it in-store. What’s the most important to make this smooth?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="4" data-answer="A">A) Staff training on omnichannel policies and tools</button>
-              <button class="quiz-option" data-question="4" data-answer="B">B) A printed return slip</button>
-              <button class="quiz-option" data-question="4" data-answer="C">C) Separate systems for online and in-store</button>
-              <button class="quiz-option" data-question="4" data-answer="D">D) Only allow returns in the channel of purchase</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>6. True or False: Omnichannel excellence requires both technology and strong team culture.</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="5" data-answer="A">A) True</button>
-              <button class="quiz-option" data-question="5" data-answer="B">B) False</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>7. Which KPI best measures cross-channel loyalty?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="6" data-answer="A">A) Net Promoter Score (NPS)</button>
-              <button class="quiz-option" data-question="6" data-answer="B">B) Customer Lifetime Value (CLV) for multi-channel shoppers</button>
-              <button class="quiz-option" data-question="6" data-answer="C">C) Average transaction value</button>
-              <button class="quiz-option" data-question="6" data-answer="D">D) Staff turnover rate</button>
-            </div>
-          </div>
-          <div class="quiz-question">
-            <h4>8. Advanced: Which is the most powerful strategy for omnichannel personalization?</h4>
-            <div class="quiz-options">
-              <button class="quiz-option" data-question="7" data-answer="A">A) Segmenting by channel</button>
-              <button class="quiz-option" data-question="7" data-answer="B">B) Using unified customer profiles to personalize in every channel</button>
-              <button class="quiz-option" data-question="7" data-answer="C">C) Using generic email campaigns</button>
-              <button class="quiz-option" data-question="7" data-answer="D">D) Only personalizing for online customers</button>
-            </div>
-          </div>
-          <button id="markComplete" class="quiz-submit" style="margin-top:30px;">Mark Lesson Complete</button>
-          <a id="nextLessonBtn" href="lesson7.html" class="next-btn">Continue to Lesson 7 &rarr;</a>
-          <div id="completionMsg" style="margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none;">
-            🎉 Well done! This lesson is marked complete. You can continue to the next lesson.
-          </div>
-          <div id="quiz-results" class="quiz-results">
-            <h3>Quiz Results</h3>
-            <div id="score-display" class="score-display"></div>
-            <div id="score-message"></div>
-            <div id="score-breakdown"></div>
-          </div>
-        </div>
+    <div class="pro-tip">
+      <b>💡 Pro Tip:</b> Secret-shop your own brand: start on social, buy online, try in-store pickup, and attempt a return. This is the fastest way to find friction points and wow moments across channels!
+    </div>
+
+    <div class="myth-buster">
+      <b>🚫 Myth Buster:</b> "Omnichannel is just for big brands."<br>
+      Small retailers can often outperform giants by being nimble, integrating experiences, and using their size for personal touch.
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">1</span>Multichannel vs Omnichannel: The Critical Difference</h3>
+      <div class="golden-box">
+        <h4>Understanding the Evolution</h4>
+        <p><strong>Multichannel</strong> means being present on multiple platforms—website, store, app, social media. But each operates independently.</p>
+        <p><strong>Omnichannel</strong> means these platforms are deeply integrated, creating ONE seamless experience. Customer data, inventory, and messaging flow between all channels.</p>
       </div>
-      <div class="challenge-box">
-        <b>Final Challenge:</b> Mystery shop your own business or a competitor: start on social, buy online, pick up in-store, and try a return. Note every point of delight and every friction. Share your findings and propose one bold improvement!
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Multichannel</th>
+            <th>Omnichannel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Customer View</strong></td>
+            <td>Separate experiences per channel</td>
+            <td>One unified brand experience</td>
+          </tr>
+          <tr>
+            <td><strong>Data Integration</strong></td>
+            <td>Siloed data per channel</td>
+            <td>Unified customer profiles across all touchpoints</td>
+          </tr>
+          <tr>
+            <td><strong>Inventory</strong></td>
+            <td>Separate stock systems</td>
+            <td>Real-time visibility across all channels</td>
+          </tr>
+          <tr>
+            <td><strong>Returns</strong></td>
+            <td>Return to original channel only</td>
+            <td>Return anywhere (buy online, return in-store)</td>
+          </tr>
+          <tr>
+            <td><strong>Staff Training</strong></td>
+            <td>Channel-specific knowledge</td>
+            <td>Cross-channel expertise and access</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="case-study">
+        <h4>📱 Case Study: Nike's Omnichannel Excellence</h4>
+        <p>Nike allows customers to browse online, reserve in-store, try on, and buy through their app while in the physical store. Their staff can pull up customer history, preferences, and even past online browsing to create personalized recommendations.</p>
+        <p><strong>Result:</strong> 30% higher customer retention and 40% increase in average order value for omnichannel shoppers.</p>
       </div>
     </div>
-  </div>
-  <script>
-    // Quiz Logic
-    const correctAnswers = [
-      "B", // Q1
-      "A", // Q2
-      "D", // Q3 (Not a true omnichannel feature)
-      "B", // Q4
-      "A", // Q5
-      "A", // Q6
-      "B", // Q7
-      "B"  // Q8
-    ];
-    let selectedAnswers = Array(correctAnswers.length).fill(null);
 
-    document.querySelectorAll('.quiz-option').forEach(option => {
-      option.addEventListener('click', function() {
-        const q = parseInt(this.dataset.question);
-        document.querySelectorAll(`.quiz-option[data-question="${q}"]`).forEach(btn => btn.classList.remove('selected'));
-        this.classList.add('selected');
-        selectedAnswers[q] = this.dataset.answer;
-        const allAnswered = selectedAnswers.every(ans => ans !== null);
-        document.getElementById('markComplete').disabled = !allAnswered;
-        document.getElementById('submit-quiz')?.setAttribute('disabled', !allAnswered); // for compatibility
-      });
-    });
-    // Show score, highlight answers
-    document.getElementById('markComplete').addEventListener('click', function() {
-      let score = 0;
-      let breakdown = "";
-      selectedAnswers.forEach((ans, i) => {
-        const correct = correctAnswers[i];
-        const qBtns = document.querySelectorAll(`.quiz-option[data-question="${i}"]`);
-        qBtns.forEach(btn => {
-          btn.classList.remove('correct', 'incorrect');
-          if(btn.dataset.answer === correct) btn.classList.add('correct');
-          else if(btn.classList.contains('selected')) btn.classList.add('incorrect');
-        });
-        if(ans === correct) {
-          score++;
-          breakdown += `<div>Q${i+1}: ✅ Correct</div>`;
-        } else {
-          breakdown += `<div>Q${i+1}: ❌ Incorrect (Correct: ${correct})</div>`;
+    <div class="section">
+      <h3><span class="section-icon">2</span>The 5 Pillars of Omnichannel Excellence</h3>
+      
+      <div class="golden-box">
+        <h4>Pillar 1: Unified Customer Data</h4>
+        <ul>
+          <li><strong>Single Customer View:</strong> One profile containing all interactions, purchases, preferences, and history</li>
+          <li><strong>Cross-Channel Recognition:</strong> Customer is recognized whether they're shopping online, in-app, or in-store</li>
+          <li><strong>Personalization at Scale:</strong> Use data to personalize recommendations, offers, and communication everywhere</li>
+        </ul>
+      </div>
+
+      <div class="golden-box">
+        <h4>Pillar 2: Integrated Inventory Management</h4>
+        <ul>
+          <li><strong>Real-Time Visibility:</strong> Staff and customers can see stock levels across all locations</li>
+          <li><strong>Ship-from-Store:</strong> Stores become fulfillment centers for online orders</li>
+          <li><strong>Endless Aisle:</strong> If out of stock in-store, order for home delivery on the spot</li>
+        </ul>
+      </div>
+
+      <div class="golden-box">
+        <h4>Pillar 3: Flexible Fulfillment Options</h4>
+        <ul>
+          <li><strong>BOPIS:</strong> Buy Online, Pick Up In Store</li>
+          <li><strong>BORIS:</strong> Buy Online, Return In Store</li>
+          <li><strong>Ship-to-Store:</strong> Free shipping to nearest location</li>
+          <li><strong>Same-Day Delivery:</strong> Leverage local inventory for rapid fulfillment</li>
+        </ul>
+      </div>
+
+      <div class="golden-box">
+        <h4>Pillar 4: Consistent Brand Experience</h4>
+        <ul>
+          <li><strong>Visual Consistency:</strong> Same branding, messaging, and aesthetics everywhere</li>
+          <li><strong>Price Consistency:</strong> No "gotcha" moments with different prices per channel</li>
+          <li><strong>Service Standards:</strong> Same level of excellence whether online chat or in-store</li>
+        </ul>
+      </div>
+
+      <div class="golden-box">
+        <h4>Pillar 5: Empowered, Connected Staff</h4>
+        <ul>
+          <li><strong>Mobile POS:</strong> Staff can check out customers anywhere in store</li>
+          <li><strong>Customer History Access:</strong> See what customers viewed online, past purchases, preferences</li>
+          <li><strong>Cross-Channel Training:</strong> Staff understand and can fulfill requests across all channels</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="deep-dive">
+      <b>🎯 Deep Dive: Omnichannel KPIs</b><br>
+      <ul style="margin-top: 15px;">
+        <li><strong>Cross-Channel Conversion:</strong> How many customers start in one channel and finish in another?</li>
+        <li><strong>Time-to-Resolution:</strong> How fast are issues resolved, regardless of where the complaint started?</li>
+        <li><strong>Personalization Rate:</strong> % of communications or recommendations that are targeted based on customer data (higher = more loyalty!)</li>
+        <li><strong>Customer Lifetime Value (CLV):</strong> Omnichannel shoppers typically have 3x higher CLV</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">3</span>Technology Stack for Omnichannel</h3>
+      
+      <div class="tools-grid">
+        <div class="tool-card">
+          <h4>🛒 E-Commerce Platform</h4>
+          <p>Shopify, Magento, WooCommerce—your online storefront that integrates with everything else</p>
+        </div>
+        <div class="tool-card">
+          <h4>📊 CRM System</h4>
+          <p>Salesforce, HubSpot—centralizes customer data and interactions across all touchpoints</p>
+        </div>
+        <div class="tool-card">
+          <h4>📦 Inventory Management</h4>
+          <p>Real-time tracking across warehouses, stores, and online—visibility is everything</p>
+        </div>
+        <div class="tool-card">
+          <h4>💳 Unified POS</h4>
+          <p>Square, Lightspeed—connects in-store sales to your online ecosystem</p>
+        </div>
+        <div class="tool-card">
+          <h4>📱 Mobile App</h4>
+          <p>Native shopping experience with barcode scanning, AR try-on, loyalty integration</p>
+        </div>
+        <div class="tool-card">
+          <h4>📧 Marketing Automation</h4>
+          <p>Klaviyo, Mailchimp—triggered emails based on cross-channel behavior</p>
+        </div>
+      </div>
+
+      <div class="case-study">
+        <h4>🎯 Case Study: Sephora's Beauty Insider</h4>
+        <p>Sephora's loyalty program is fully integrated across web, mobile, and in-store. Customers earn points everywhere, get personalized product recommendations based on past purchases (any channel), and can use virtual try-on in-app before buying in-store.</p>
+        <p><strong>Result:</strong> Beauty Insider members spend 15x more than non-members and show 80% higher retention rates.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">4</span>Building Customer Journeys Across Channels</h3>
+      
+      <div class="golden-box">
+        <h4>Example Journey: The Research-to-Purchase Path</h4>
+        <ol style="margin-left: 20px; margin-top: 15px;">
+          <li><strong>Discovery (Instagram):</strong> Customer sees product in influencer post, clicks to brand profile</li>
+          <li><strong>Research (Website):</strong> Reads reviews, watches video, adds to cart but doesn't buy</li>
+          <li><strong>Retargeting (Email):</strong> Automated cart abandonment email with 10% discount code</li>
+          <li><strong>Consideration (Mobile App):</strong> Downloads app, uses AR to visualize product, checks store stock</li>
+          <li><strong>Purchase (In-Store):</strong> Visits store, tries product, staff pulls up online cart and applies discount</li>
+          <li><strong>Post-Purchase (Email + App):</strong> Receives care instructions, loyalty points, personalized recommendations</li>
+        </ol>
+        <p style="margin-top: 20px;"><strong>Key:</strong> Each step is tracked, data flows between channels, and the experience feels seamless to the customer.</p>
+      </div>
+
+      <div class="challenge-box">
+        <b>🔥 Mapping Exercise:</b> Map out YOUR customer's journey across channels. Where are the friction points? Where do you lose them? Where can you add delight?
+      </div>
+    </div>
+
+    <div class="team-debate">
+      <b>💬 Team Debate:</b> Is it better to be everywhere (every channel) or to do fewer channels with true excellence? Discuss real examples!
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">5</span>Omnichannel Best Practices</h3>
+      <ul>
+        <li><strong>Start with Data Integration:</strong> Before adding channels, make sure your data flows between existing ones</li>
+        <li><strong>Mobile-First Mindset:</strong> 70% of retail research now happens on mobile devices</li>
+        <li><strong>Empower Your Team:</strong> Give staff tablets, access to customer data, and authority to solve problems across channels</li>
+        <li><strong>Test the Experience:</strong> Mystery shop your own brand regularly across all touchpoints</li>
+        <li><strong>Measure What Matters:</strong> Track cross-channel metrics, not just channel-specific ones</li>
+        <li><strong>Personalize Everything:</strong> Use the data you're collecting to make every interaction feel custom</li>
+        <li><strong>Remove Friction:</strong> Every extra click, form field, or step is a chance to lose the sale</li>
+      </ul>
+
+      <div class="pro-tip">
+        <b>💡 Advanced Tip:</b> Create a "Channel Migration Strategy"—deliberately move customers from expensive channels (phone support) to cheaper ones (self-service app) by making the experience better, not just pushing them away.
+      </div>
+    </div>
+
+    <div class="challenge-box">
+      <b>🔥 Challenge:</b> Find a brand (big or small) that you think does omnichannel best. List 3 standout practices—and 1 thing you'd improve!
+    </div>
+
+    <div class="quiz-section">
+      <h3>🎯 Omnichannel Mastery Challenge</h3>
+      <form id="quiz6">
+        <div class="quiz-question">
+          <b>1. What's the primary difference between multichannel and omnichannel retail?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="a"/> A) Multichannel uses more platforms</label><br/>
+            <label><input type="radio" name="q1" value="b"/> B) Omnichannel creates unified, seamless experiences</label><br/>
+            <label><input type="radio" name="q1" value="c"/> C) Multichannel is more expensive to implement</label><br/>
+            <label><input type="radio" name="q1" value="d"/> D) There's no significant difference</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>2. A customer finds a product on Instagram, checks stock online, then buys in-store. What's the most important tech for making this seamless?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="a"/> A) Real-time integrated inventory visibility</label><br/>
+            <label><input type="radio" name="q2" value="b"/> B) A loyalty program</label><br/>
+            <label><input type="radio" name="q2" value="c"/> C) Store-only promotions</label><br/>
+            <label><input type="radio" name="q2" value="d"/> D) Separate websites for each channel</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>3. Which of these is NOT a true omnichannel feature?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="a"/> A) Unified return policy for online and in-store</label><br/>
+            <label><input type="radio" name="q3" value="b"/> B) Staff can pull up customer history from any location</label><br/>
+            <label><input type="radio" name="q3" value="c"/> C) Inventory is visible across all channels</label><br/>
+            <label><input type="radio" name="q3" value="d"/> D) Customers must use separate accounts for each channel</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>4. What is the biggest risk of not integrating data across channels?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="a"/> A) Reduced staff workload</label><br/>
+            <label><input type="radio" name="q4" value="b"/> B) Incomplete customer profiles and lost sales opportunities</label><br/>
+            <label><input type="radio" name="q4" value="c"/> C) More social media followers</label><br/>
+            <label><input type="radio" name="q4" value="d"/> D) Faster checkout</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>5. Scenario: A customer starts a return online and finishes it in-store. What's the most important to make this smooth?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" value="a"/> A) Staff training on omnichannel policies and tools</label><br/>
+            <label><input type="radio" name="q5" value="b"/> B) A printed return slip</label><br/>
+            <label><input type="radio" name="q5" value="c"/> C) Separate systems for online and in-store</label><br/>
+            <label><input type="radio" name="q5" value="d"/> D) Only allow returns in the channel of purchase</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>6. True or False: Omnichannel excellence requires both technology and strong team culture.</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" value="a"/> A) True</label><br/>
+            <label><input type="radio" name="q6" value="b"/> B) False</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>7. Which KPI best measures cross-channel loyalty?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" value="a"/> A) Net Promoter Score (NPS)</label><br/>
+            <label><input type="radio" name="q7" value="b"/> B) Customer Lifetime Value (CLV) for multi-channel shoppers</label><br/>
+            <label><input type="radio" name="q7" value="c"/> C) Average transaction value</label><br/>
+            <label><input type="radio" name="q7" value="d"/> D) Staff turnover rate</label>
+          </div>
+        </div>
+        
+        <div class="quiz-question">
+          <b>8. Advanced: Which is the most powerful strategy for omnichannel personalization?</b><br/>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> A) Segmenting by channel</label><br/>
+            <label><input type="radio" name="q8" value="b"/> B) Using unified customer profiles to personalize in every channel</label><br/>
+            <label><input type="radio" name="q8" value="c"/> C) Using generic email campaigns</label><br/>
+            <label><input type="radio" name="q8" value="d"/> D) Only personalizing for online customers</label>
+          </div>
+        </div>
+        
+        <button type="button" class="btn" onclick="gradeQuiz6()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
+      </form>
+      <div id="quiz6-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
+    </div>
+    
+    <script>
+      function gradeQuiz6() {
+        const correct = { q1: 'b', q2: 'a', q3: 'd', q4: 'b', q5: 'a', q6: 'a', q7: 'b', q8: 'b' };
+        let score = 0, total = 8;
+        for(let i=1; i<=total; i++) {
+          let ans = document.querySelector('input[name="q'+i+'"]:checked');
+          if(ans && ans.value === correct['q'+i]) score++;
         }
-      });
-      document.getElementById('score-display').innerText = `${score} / ${correctAnswers.length}`;
-      let msg = "";
-      if(score === correctAnswers.length) msg = "Omnichannel Genius! 🎉";
-      else if(score >= correctAnswers.length - 1) msg = "So close! Review your answers for mastery.";
-      else if(score >= correctAnswers.length - 3) msg = "Great effort! Review the knowledge boxes for deeper insight.";
-      else msg = "Keep learning—review the lesson and try again!";
-      document.getElementById('score-message').innerText = msg;
-      document.getElementById('score-breakdown').innerHTML = breakdown;
-      document.getElementById('quiz-results').style.display = 'block';
+        let msg = `🏆 You scored ${score} out of ${total}! `;
+        if(score === total) msg += "OMNICHANNEL GENIUS! You've mastered the future of retail! 🔥";
+        else if(score >= 7) msg += "EXCELLENT! You're ready to lead omnichannel transformation!";
+        else if(score >= 5) msg += "Solid foundation! Review the 5 pillars for mastery.";
+        else msg += "Keep learning! Omnichannel is complex—review the lesson and try again.";
+        
+        const resultDiv = document.getElementById('quiz6-result');
+        resultDiv.textContent = msg;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    </script>
 
-      // Mark lesson complete logic
+    <div class="challenge-box">
+      <b>🔥 Final Challenge:</b> Mystery shop your own business or a competitor: start on social, buy online, pick up in-store, and try a return. Note every point of delight and every friction. Share your findings and propose one bold improvement!
+    </div>
+
+    <div id="lesson-completion">
+      <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
+      <a id="nextLessonBtn" href="lesson7.html" class="btn" style="display:none;">Continue to Lesson 7 →</a>
+      <div id="completionMsg">🎉 Lesson 6 Complete! You're now an omnichannel master!</div>
+    </div>
+    
+    <div class="dashboard-link">
+      <a href="progress.html">📊 View Your Progress →</a>
+    </div>
+  </div>
+  
+  <script>
+    const lessonNum = 6;
+    const totalLessons = 8;
+    
+    function markLessonComplete() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      progress[`lesson6`] = true;
+      progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
+      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = "✅ Lesson Completed";
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
       updateProgressBar();
-    });
-
-    // Progress bar update logic (optional, for course-wide bar)
+    }
+    
     function updateProgressBar() {
-      const lessonNum = 6, totalLessons = 7;
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       let completed = 0;
       for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
       let percent = Math.round((completed/totalLessons)*100);
-      if(document.getElementById('progressBarFill')) {
-        document.getElementById('progressBarFill').style.width = percent + '%';
-        document.getElementById('progressText').textContent =
-          `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
-      }
+      document.getElementById('progressBarFill').style.width = percent + '%';
+      document.getElementById('progressText').textContent =
+        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
-    window.addEventListener('DOMContentLoaded', function() {
+    
+    window.onload = function() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      if(progress[`lesson6`]) {
+      if(progress[`lesson${lessonNum}`]) {
         document.getElementById('nextLessonBtn').style.display = 'inline-block';
         document.getElementById('markComplete').textContent = "✅ Lesson Completed";
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
       }
       updateProgressBar();
-    });
+    };
   </script>
 </body>
-</html>
+      </html>
