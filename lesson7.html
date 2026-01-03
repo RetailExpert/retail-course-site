@@ -3,343 +3,488 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 7: Legendary Customer Service – Final Mastery</title>
+    <title>Lesson 7: Legendary Customer Service | Ultimate Black Book</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* [Keep all styles as in the expanded lesson and quizzes/exam] */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            color: #2d3748;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; background: white; margin-top: 20px; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.15);}
-        h1 { color: #2d3748; text-align: center; margin-bottom: 15px; font-size: 2.5em; font-weight: 700;}
-        .subtitle { text-align: center; color: #4a5568; margin-bottom: 40px; font-style: italic; font-size: 1.2em; line-height: 1.4; }
-        .section { margin-bottom: 50px; padding: 35px; background: #f8fafc; border-radius: 12px; border-left: 6px solid #667eea; position: relative;}
-        .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #667eea, #764ba2); border-radius: 12px 12px 0 0;}
-        .section h2 { color: #2d3748; margin-bottom: 25px; font-size: 1.8em; font-weight: 600;}
-        .section h3 { color: #4a5568; margin-bottom: 20px; font-size: 1.3em; font-weight: 600;}
-        .deep-dive, .knowledge-depth, .psychology-box, .case-study, .expert-tip, .scenario-container, .reflection-journal, .quiz-container, .final-exam-container, .completion-badge {margin-bottom: 20px;}
-        .deep-dive, .knowledge-depth { background: linear-gradient(135deg, #e6fffa 0%, #b2f5ea 100%); padding: 25px; border-radius: 10px; border-left: 4px solid #38b2ac; }
-        .psychology-box { background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%); padding: 25px; border-radius: 10px; border-left: 4px solid #f6ad55; }
-        .strategy-grid, .advanced-techniques { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 25px 0;}
-        .strategy-card, .technique-card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);}
-        .scenario-container { background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%); color: white; padding: 30px; border-radius: 12px;}
-        .scenario-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 25px 0;}
-        .scenario-step { background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; border-left: 4px solid #38b2ac;}
-        .case-study { background: linear-gradient(135deg, #edf2f7 0%, #cbd5e0 100%); padding: 25px; border-radius: 10px; border-left: 4px solid #4299e1;}
-        .expert-tip { background: linear-gradient(135deg, #fffaf0 0%, #fef5e7 100%); padding: 20px; border-radius: 8px; margin: 15px 0; border-left: 4px solid #f6ad55; position: relative; padding-left: 35px; }
-        .expert-tip::before { content: "💡"; position: absolute; top: 10px; left: -15px; background: #f6ad55; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px;}
-        .quiz-container { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 35px; border-radius: 12px; margin: 25px 0;}
-        .quiz-question { margin-bottom: 30px; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px;}
-        .quiz-question h4 { margin-bottom: 15px; font-size: 1.1em; font-weight: 600;}
-        .quiz-options label { display: block; margin-bottom: 10px; cursor: pointer; color: #fff;}
-        .quiz-options input[type="radio"] { margin-right: 10px;}
-        .final-exam-container { background: linear-gradient(135deg, #f7fafc 0%, #d6e4ff 100%); padding: 40px 30px; border-radius: 16px; border-left: 6px solid #667eea; margin: 40px 0; box-shadow: 0 12px 32px rgba(102,126,234,0.10);}
-        .exam-title { color: #2d3748; font-size: 2em; font-weight: bold; text-align: center; margin-bottom: 25px;}
-        .exam-section { margin-bottom: 30px;}
-        .exam-question { margin-bottom: 20px; background: #edf2f7; padding: 18px; border-radius: 8px; border-left: 4px solid #38b2ac;}
-        .exam-options label { display: block; margin-bottom: 10px; cursor: pointer;}
-        .exam-options input[type="radio"] { margin-right: 10px;}
-        .exam-free-response { margin-top: 8px; width: 100%; min-height: 48px; border-radius: 6px; border: 2px solid #e2e8f0; padding: 10px; font-size: 16px;}
-        .exam-submit-btn { background: #48bb78; color: white; padding: 18px 40px; border: none; border-radius: 30px; font-weight: 700; font-size: 1.3em; cursor: pointer; transition: 0.3s; display: block; margin: 32px auto 0 auto;}
-        .exam-submit-btn:hover { background: #38a169;}
-        .exam-result { background: #f0fff4; border: 2px solid #48bb78; color: #22543d; padding: 28px; border-radius: 12px; margin: 36px 0; font-size: 1.2em; text-align: center; display: none;}
-        .completion-badge { text-align: center; margin-top: 50px; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 15px;}
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
+        header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+        header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+        nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
+        nav a:hover { opacity: 0.7; }
+        .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
+        #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
+        #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
+        #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+        .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
+        .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+        .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
+        h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+        .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); position: relative; }
+        .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #FFD700, #FFA500); border-radius: 15px 15px 0 0; }
+        .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+        .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+        .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+        .psychology-box { background: linear-gradient(135deg, rgba(236, 201, 75, 0.15) 0%, rgba(236, 201, 75, 0.05) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ECC94B; }
+        .psychology-box h4 { color: #ECC94B; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+        .deep-dive { background: linear-gradient(135deg, rgba(72, 187, 120, 0.15) 0%, rgba(72, 187, 120, 0.05) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
+        .deep-dive h4 { color: #48bb78; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+        .strategy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin: 30px 0; }
+        .strategy-card { background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); padding: 25px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); transition: all 0.3s ease; }
+        .strategy-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3); border-color: #FFD700; }
+        .strategy-card h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 12px; font-weight: 800; }
+        .expert-tip { background: linear-gradient(135deg, rgba(237, 137, 54, 0.15) 0%, rgba(237, 137, 54, 0.05) 100%); padding: 20px 25px 20px 50px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ED8936; position: relative; }
+        .expert-tip::before { content: '💡'; position: absolute; left: 15px; top: 50%; transform: translateY(-50%); font-size: 1.8em; }
+        .scenario-container { background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%); padding: 30px; border-radius: 15px; margin: 30px 0; border: 2px solid rgba(255, 215, 0, 0.4); }
+        .scenario-container h4 { color: #FFD700; font-size: 1.4em; margin-bottom: 20px; font-weight: 800; }
+        .case-study { background: linear-gradient(135deg, rgba(159, 122, 234, 0.15) 0%, rgba(159, 122, 234, 0.05) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #9f7aea; }
+        .case-study h4 { color: #9f7aea; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+        .reflection-journal { background: linear-gradient(135deg, rgba(237, 100, 166, 0.15) 0%, rgba(237, 100, 166, 0.05) 100%); padding: 30px; border-radius: 15px; margin: 30px 0; border: 2px solid rgba(237, 100, 166, 0.3); }
+        .reflection-journal h4 { color: #ED64A6; font-size: 1.4em; margin-bottom: 20px; font-weight: 800; }
+        .journal-field { margin: 20px 0; }
+        .journal-field label { display: block; color: #B0B0B0; margin-bottom: 10px; font-weight: 600; }
+        .journal-field textarea { width: 100%; min-height: 80px; background: rgba(255, 255, 255, 0.05); border: 2px solid rgba(255, 215, 0, 0.3); border-radius: 8px; padding: 12px; color: #F5F5F5; font-family: 'Inter', sans-serif; font-size: 1em; resize: vertical; }
+        .journal-field textarea:focus { outline: none; border-color: #FFD700; box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+        ul { margin: 20px 0 20px 25px; }
+        ol { margin: 20px 0 20px 25px; }
+        li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
+        li strong { color: #FFD700; font-weight: 700; }
+        p { font-size: 1.1em; margin-bottom: 20px; line-height: 1.8; color: #E0E0E0; }
+        .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+        .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
+        .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
+        .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
+        .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
+        .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+        .quiz-options input[type="radio"] { margin-right: 10px; }
+        .final-exam-container { background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 165, 0, 0.15) 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; border: 3px solid #FFD700; }
+        .exam-title { color: #FFD700; font-size: 2.2em; font-weight: 900; text-align: center; margin-bottom: 30px; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); }
+        .exam-question { margin: 25px 0; background: rgba(0, 0, 0, 0.2); padding: 25px; border-radius: 12px; border-left: 4px solid #FFD700; }
+        .exam-question strong { color: #FFD700; font-size: 1.1em; }
+        .exam-free-response { width: 100%; min-height: 100px; background: rgba(255, 255, 255, 0.9); border: 2px solid #FFD700; border-radius: 8px; padding: 12px; font-family: 'Inter', sans-serif; font-size: 1em; margin-top: 12px; color: #000; }
+        .exam-options label { display: block; margin: 12px 0; cursor: pointer; padding: 12px; background: rgba(0, 0, 0, 0.2); border-radius: 8px; transition: background 0.3s; color: #F5F5F5; }
+        .exam-options label:hover { background: rgba(0, 0, 0, 0.3); }
+        .exam-options input[type="radio"] { margin-right: 10px; }
+        .exam-result { background: rgba(72, 187, 120, 0.2); border: 3px solid #48bb78; color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 30px 0; font-size: 1.2em; text-align: center; display: none; }
+        .completion-badge { text-align: center; margin: 50px 0; padding: 40px; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; border-radius: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4); }
+        .completion-badge h2 { font-size: 2.5em; margin-bottom: 20px; font-weight: 900; }
+        #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
+        #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+        .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+        .dashboard-link { text-align: center; margin: 40px 0; }
+        .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
         @media (max-width: 768px) {
-            .container { margin: 10px; padding: 20px;}
-            .section { padding: 25px 20px;}
-            .strategy-grid, .advanced-techniques { grid-template-columns: 1fr;}
-            h1 { font-size: 2em;}
-            .role-selector { flex-direction: column;}
+            header { flex-direction: column; gap: 15px; text-align: center; }
+            header h1 { font-size: 20px; }
+            nav { display: flex; gap: 15px; }
+            nav a { margin-left: 0; }
+            .container { padding: 30px 15px; margin-top: 10px; }
+            .hero h2 { font-size: 2em; }
+            .hero p { font-size: 1.1em; }
+            h3 { font-size: 1.6em; }
+            .section { padding: 25px 20px; }
+            .strategy-grid { grid-template-columns: 1fr; }
+            .btn { padding: 15px 30px; font-size: 1em; display: block; width: 90%; margin: 12px auto; }
         }
     </style>
 </head>
 <body>
-<div class="container">
-<h1>Lesson 7: Legendary Customer Service – Final Mastery</h1>
-   <p class="subtitle">The Unshakable Professional – Advanced Psychology, Strategic Communication, Crisis Mastery, and Commercial Law for Retail Excellence</p>
-<div class="progress-bar" style="background:#e2e8f0; border-radius: 8px; height: 18px; margin: 24px 0; overflow: hidden;">
-<div id="progressBarFill" style="height: 100%; width: 0%; background: linear-gradient(90deg, #667eea, #764ba2); transition: width 0.6s;"></div>
-</div> <div id="progressText" style="margin-bottom:16px; color:#2c3e50; font-weight:500;">Lesson 6 of 7 • 0% Complete</div>
-<div class="progress-bar">
-    <div class="progress-fill" id="progressBar"></div>
-</div>
+    <header>
+        <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/course.html">Course</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="progressBarContainer">
+            <div class="progress-outer">
+                <div id="progressBarFill"></div>
+            </div>
+            <div id="progressText">Lesson 7 of 8</div>
+        </div>
 
-<!-- 1. FULL LESSON CONTENT -->
-<div class="section">
-    <h2>🧠 The Psychology of Service Excellence</h2>
-    <div class="psychology-box">
-        <h3>The Neuroscience Behind Customer Interactions</h3>
-        <ul>
-            <li><strong>Mirror Neurons:</strong> Customers mirror your emotional state. Your calm confidence becomes theirs.</li>
-            <li><strong>Amygdala Hijack:</strong> Stress activates the brain's alarm system. Your professional response can calm their nervous system.</li>
-            <li><strong>Cognitive Load Theory:</strong> Frustrated customers have reduced mental capacity. Simplify options and guide their decisions.</li>
-            <li><strong>Social Proof Principle:</strong> People look for behavioral cues. Your professional demeanor signals how they should respond.</li>
-        </ul>
-        <div class="expert-tip">
-            <strong>Deeper Dive:</strong> Micro-expressions and subtle body language shifts can signal a customer's emotional state. Advanced professionals learn to regulate their own presence to de-escalate tension.
+        <div class="hero">
+            <h2>🏆 Lesson 7: Legendary Customer Service</h2>
+            <p>Master the psychology, strategy, and legal framework behind world-class customer service. Transform conflicts into loyalty, stress into strength, and every interaction into a legendary experience.</p>
         </div>
-    </div>
-    <div class="deep-dive">
-        <h3>The Service Professional's Mindset Framework</h3>
-        <div class="strategy-grid">
-            <div class="strategy-card">
-                <h4>🎯 Solution Architect</h4>
-                <p>Design solutions, not just process complaints. Every interaction is a chance for a positive outcome.</p>
-            </div>
-            <div class="strategy-card">
-                <h4>🛡️ Emotional Firewall</h4>
-                <p>Professional boundaries protect your energy while maintaining empathy. Care without carrying the burden.</p>
-            </div>
-            <div class="strategy-card">
-                <h4>📈 Relationship Builder</h4>
-                <p>Each difficult interaction is a trust-building opportunity. Customers remember how you made them feel.</p>
-            </div>
-        </div>
-        <div class="expert-tip">
-            <strong>Commercial Law Angle:</strong> Know your obligations under consumer law (e.g., implied warranties, refund/return periods). Never make offers that violate legal or company policy.
-        </div>
-    </div>
-</div>
-<div class="section">
-    <h2>🗣️ Advanced Communication Psychology</h2>
-    <div class="knowledge-depth">
-        <h3>The PEACE Method for Difficult Conversations</h3>
-        <ul>
-            <li><strong>P</strong>ause & Presence: Use mindfulness to reset your own nervous system, and set the emotional tone for the conversation.</li>
-            <li><strong>E</strong>mpathetic Acknowledgment: Make the customer feel heard, which is often more important to them than being right.</li>
-            <li><strong>A</strong>ssess & Align: Deepen your understanding of both the facts and the feelings involved.</li>
-            <li><strong>C</strong>reate Solutions: Offer choices, not ultimatums, to empower the customer within legal and company policy limits.</li>
-            <li><strong>E</strong>xecute & Exceed: Deliver on your promises and look for small ways to add value.</li>
-        </ul>
-        <div class="expert-tip">
-            <strong>Legal Note:</strong> When creating solutions, ensure any compensation or offer made is within your company's legal authority and does not set a precedent that could violate company policy or consumer law.
-        </div>
-    </div>
-    <div class="advanced-techniques">
-        <div class="technique-card">
-            <h4><strong>P</strong> - Pause & Presence</h4>
-            <p><strong>Psychology:</strong> A 3-second pause activates your prefrontal cortex, engaging rational thinking over emotional reaction.</p>
-            <div class="expert-tip">
-                <strong>Legal Consideration:</strong> Pausing before responding also reduces the risk of saying something that could later be interpreted as an admission of liability.
-            </div>
-        </div>
-        <div class="technique-card">
-            <h4><strong>E</strong> - Empathetic Acknowledgment</h4>
-            <p><strong>Psychology:</strong> Feeling heard activates the brain's reward center, reducing defensive responses.</p>
-            <div class="expert-tip">
-                <strong>Legal Consideration:</strong> Acknowledge feelings without admitting fault or making unauthorized promises.
-            </div>
-        </div>
-        <div class="technique-card">
-            <h4><strong>A</strong> - Assess & Align</h4>
-            <p><strong>Psychology:</strong> Collaborative problem-solving shifts the dynamic from adversarial to partnership.</p>
-            <div class="expert-tip">
-                <strong>Legal Consideration:</strong> Always clarify expectations, but never promise outcomes that might violate law or store policy.
-            </div>
-        </div>
-        <div class="technique-card">
-            <h4><strong>C</strong> - Create Solutions</h4>
-            <p><strong>Psychology:</strong> Offering choices gives customers a sense of control, reducing anxiety and resistance.</p>
-            <div class="expert-tip">
-                <strong>Legal Consideration:</strong> All options must comply with consumer rights law and be consistent.
-            </div>
-        </div>
-        <div class="technique-card">
-            <h4><strong>E</strong> - Execute & Exceed</h4>
-            <p><strong>Psychology:</strong> Following through builds trust; exceeding expectations creates advocates.</p>
-            <div class="expert-tip">
-                <strong>Legal Consideration:</strong> Document every action and communication for legal protection.
-            </div>
-        </div>
-    </div>
-</div>
-<!-- ... [Insert all other lesson sections: interactive practice, case studies, stress science, recovery, crisis management, legal reminders, role-specific mastery, reflection journal, etc.] ... -->
-<div class="section">
-    <h2>🚨 Crisis Management & De-escalation Mastery</h2>
-    <div class="scenario-container">
-        <h3>🛡️ The De-escalation Decision Tree</h3>
-        <ol>
-            <li><strong>Identify Threat Level:</strong> Are there verbal threats, physical danger, or policy violations?</li>
-            <li><strong>Personal Safety First:</strong> If you feel unsafe, disengage and notify security or law enforcement as per company protocol.</li>
-            <li><strong>De-escalation Tactics:</strong> Lower your voice, use open body language, acknowledge the emotion, and offer choices within policy.</li>
-            <li><strong>Legal Escalation:</strong> If a customer threatens legal action, politely inform them you are escalating to management and document the interaction immediately.</li>
-            <li><strong>Documentation:</strong> Record all details of the interaction for legal protection and future training.</li>
-        </ol>
-        <div class="expert-tip">
-            <strong>Commercial Law:</strong> Statements made during escalated situations can become part of legal evidence. Stick to facts, avoid personal opinions, and follow incident reporting procedures.
-        </div>
-    </div>
-    <div class="knowledge-depth">
-        <h3>Understanding Legal Boundaries in Crisis</h3>
-        <ul>
-            <li>Never detain a customer unless you have been trained in "shopkeeper’s privilege" and only when theft is suspected.</li>
-            <li>Never physically touch a customer unless it is in self-defense.</li>
-            <li>Always comply with privacy laws when handling customer information during disputes.</li>
-            <li>If law enforcement is involved, cooperate fully but do not offer opinions—stick to observed facts.</li>
-        </ul>
-    </div>
-</div>
-<div class="reflection-journal">
-    <h3>📝 Reflection Journal: Integrating Psychology, Strategy, and Law</h3>
-    <div class="journal-field">
-        <label for="journalReflection1">Reflect on a time when understanding customer psychology improved a difficult interaction. What did you notice, and how did you adjust your approach?</label>
-        <textarea id="journalReflection1" rows="3"></textarea>
-    </div>
-    <div class="journal-field">
-        <label for="journalReflection2">Describe a situation where you or a team member nearly crossed a legal or policy line. What did you learn about the importance of commercial law in customer service?</label>
-        <textarea id="journalReflection2" rows="3"></textarea>
-    </div>
-    <div class="journal-field">
-        <label for="journalReflection3">How will you use advanced communication and legal awareness to create legendary service experiences in the future?</label>
-        <textarea id="journalReflection3" rows="3"></textarea>
-    </div>
-</div>
 
-<!-- 2. SECTION QUIZZES -->
-<div class="quiz-container">
-    <h2>🧠 Section Quiz: Psychology, Strategy & Law</h2>
-    <div class="quiz-question">
-        <h4>1. What is the main reason for using the PEACE method in customer service?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q1" value="a">To speed up customer interactions</label>
-            <label><input type="radio" name="q1" value="b">To transform conflicts into collaborative problem-solving and trust-building</label>
-            <label><input type="radio" name="q1" value="c">To avoid company policies</label>
-        </div>
-    </div>
-    <div class="quiz-question">
-        <h4>2. Which commercial law concept protects employees and the business when handling customer complaints?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q2" value="a">Apparent Authority</label>
-            <label><input type="radio" name="q2" value="b">Strict Liability</label>
-            <label><input type="radio" name="q2" value="c">Emotional Intelligence</label>
-        </div>
-    </div>
-    <div class="quiz-question">
-        <h4>3. In a high-stress customer situation, which approach is NOT recommended?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q3" value="a">Lower your voice and use open body language</label>
-            <label><input type="radio" name="q3" value="b">Use legal jargon to intimidate the customer</label>
-            <label><input type="radio" name="q3" value="c">Offer choices within policy</label>
-        </div>
-    </div>
-    <div class="quiz-question">
-        <h4>4. Why is documentation so crucial in customer service, especially after disputes?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q4" value="a">It helps with marketing</label>
-            <label><input type="radio" name="q4" value="b">It protects you and the business legally in case of future disputes</label>
-            <label><input type="radio" name="q4" value="c">It is only needed for refunds</label>
-        </div>
-    </div>
-    <div class="quiz-question">
-        <h4>5. Which is a correct legal response when a customer threatens legal action?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q5" value="a">Argue with the customer</label>
-            <label><input type="radio" name="q5" value="b">Politely inform them you will escalate to management and document the interaction</label>
-            <label><input type="radio" name="q5" value="c">Offer a large discount immediately</label>
-        </div>
-    </div>
-</div>
-<div class="quiz-container">
-    <h2>🧑‍💼 Scenario Practice Quiz</h2>
-    <div class="quiz-question">
-        <h4>6. A customer demands a full cash refund after 45 days for a used product, citing a defect, but your policy is 30 days. What is the best course of action?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q6" value="a">Refuse outright and tell them to leave</label>
-            <label><input type="radio" name="q6" value="b">Use the PEACE method to explore solutions (e.g., store credit, exchange, or escalation), staying within policy and documenting everything</label>
-            <label><input type="radio" name="q6" value="c">Give a full refund to avoid confrontation</label>
-        </div>
-    </div>
-    <div class="quiz-question">
-        <h4>7. An angry customer claims an employee promised a special price that is not in the system. What should you do?</h4>
-        <div class="quiz-options">
-            <label><input type="radio" name="q7" value="a">Dismiss their claim and move on</label>
-            <label><input type="radio" name="q7" value="b">Calmly gather facts, clarify what was promised, consult your supervisor, and never make unauthorized offers</label>
-            <label><input type="radio" name="q7" value="c">Immediately apply the discount regardless of policy</label>
-        </div>
-    </div>
-</div>
-
-<!-- 3. FINAL EXAM -->
-<div class="final-exam-container" id="finalExam">
-    <div class="exam-title">📝 Final Exam: Legendary Service Certification</div>
-    <form id="finalExamForm">
-        <div class="exam-section">
-            <div class="exam-question">
-                <strong>1. Free Response:</strong> <br>
-                Describe a challenging real-world customer service situation you have faced (or imagine one if you are new). Apply the PEACE method step-by-step, and explain any legal or policy considerations you would keep in mind.
-                <textarea class="exam-free-response" name="exam1" required></textarea>
-            </div>
-            <div class="exam-question">
-                <strong>2. Multiple Choice:</strong> <br>
-                Which of the following best describes the Service Recovery Paradox?
-                <div class="exam-options">
-                    <label><input type="radio" name="exam2" value="a">Customers are always less loyal after a problem, regardless of resolution.</label>
-                    <label><input type="radio" name="exam2" value="b">Customers may become more loyal if their problems are resolved exceptionally well.</label>
-                    <label><input type="radio" name="exam2" value="c">Only discounts increase loyalty.</label>
+        <div class="section">
+            <h3><span class="section-icon">1</span>The Psychology of Service Excellence</h3>
+            <div class="psychology-box">
+                <h4>🧠 The Neuroscience Behind Customer Interactions</h4>
+                <ul>
+                    <li><strong>Mirror Neurons:</strong> Customers mirror your emotional state. Your calm confidence becomes theirs.</li>
+                    <li><strong>Amygdala Hijack:</strong> Stress activates the brain's alarm system. Your professional response can calm their nervous system.</li>
+                    <li><strong>Cognitive Load Theory:</strong> Frustrated customers have reduced mental capacity. Simplify options and guide their decisions.</li>
+                    <li><strong>Social Proof Principle:</strong> People look for behavioral cues. Your professional demeanor signals how they should respond.</li>
+                </ul>
+                <div class="expert-tip">
+                    <strong>Deeper Dive:</strong> Micro-expressions and subtle body language shifts can signal a customer's emotional state. Advanced professionals learn to regulate their own presence to de-escalate tension.
                 </div>
             </div>
-            <div class="exam-question">
-                <strong>3. Multiple Choice:</strong> <br>
-                What should you always do after a customer service crisis or dispute?
-                <div class="exam-options">
-                    <label><input type="radio" name="exam3" value="a">Forget it and move on</label>
-                    <label><input type="radio" name="exam3" value="b">Document the interaction and escalate if needed per commercial law and company policy</label>
-                    <label><input type="radio" name="exam3" value="c">Promise the customer anything they want</label>
+
+            <div class="deep-dive">
+                <h4>🎯 The Service Professional's Mindset Framework</h4>
+                <div class="strategy-grid">
+                    <div class="strategy-card">
+                        <h4>🎯 Solution Architect</h4>
+                        <p>Design solutions, not just process complaints. Every interaction is a chance for a positive outcome.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4>🛡️ Emotional Firewall</h4>
+                        <p>Professional boundaries protect your energy while maintaining empathy. Care without carrying the burden.</p>
+                    </div>
+                    <div class="strategy-card">
+                        <h4>📈 Relationship Builder</h4>
+                        <p>Each difficult interaction is a trust-building opportunity. Customers remember how you made them feel.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="exam-question">
-                <strong>4. Free Response:</strong> <br>
-                List two commercial law principles that directly affect customer service. Briefly explain how each applies in your daily work.
-                <textarea class="exam-free-response" name="exam4" required></textarea>
-            </div>
-            <div class="exam-question">
-                <strong>5. Multiple Choice:</strong> <br>
-                When is it appropriate to physically detain a customer in a retail setting?
-                <div class="exam-options">
-                    <label><input type="radio" name="exam5" value="a">Only if you suspect theft and have been trained in "shopkeeper’s privilege," following exact legal protocols</label>
-                    <label><input type="radio" name="exam5" value="b">Whenever you feel annoyed</label>
-                    <label><input type="radio" name="exam5" value="c">To make a point about store rules</label>
+                <div class="expert-tip">
+                    <strong>Commercial Law Angle:</strong> Know your obligations under consumer law (e.g., implied warranties, refund/return periods). Never make offers that violate legal or company policy.
                 </div>
             </div>
         </div>
-        <button type="submit" class="exam-submit-btn">Submit Final Exam</button>
-    </form>
-    <div class="exam-result" id="examResult"></div>
-</div>
 
-<!-- 4. COMPLETION BADGE -->
-<div class="completion-badge">
-    <h2>🏆 Legendary Service Certification: Final Lesson Complete!</h2>
-    <p>Congratulations! You have completed the Legendary Customer Service Mastery curriculum, integrating advanced psychology, strategy, and commercial law. <br>
-    You are now equipped to create legendary experiences while protecting yourself and your company. <br>
-    Keep practicing, stay legally aware, and always aim for legendary!</p>
-</div>
-</div>
-<script>
-    // Final Exam grading (for demonstration, checks MC only; free responses require manual review)
-    document.getElementById('finalExamForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        let score = 0;
-        const answers = { exam2: 'b', exam3: 'b', exam5: 'a' };
-        if(document.querySelector('input[name="exam2"]:checked')?.value === answers.exam2) score++;
-        if(document.querySelector('input[name="exam3"]:checked')?.value === answers.exam3) score++;
-        if(document.querySelector('input[name="exam5"]:checked')?.value === answers.exam5) score++;
-        let resultText = `You answered ${score} out of 3 multiple-choice questions correctly!<br>`;
-        resultText += `Your free responses will be reviewed for certification.`;
-        document.getElementById('examResult').innerHTML = resultText;
-        document.getElementById('examResult').style.display = 'block';
-        window.scrollTo({top: document.getElementById('examResult').offsetTop - 40, behavior: 'smooth'});
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        setTimeout(function(){
-            document.getElementById('progressBar').style.width = '100%';
-        }, 400);
-    });
-</script>
+        <div class="section">
+            <h3><span class="section-icon">2</span>The PEACE Method for Difficult Conversations</h3>
+            <div class="golden-box">
+                <h4>The 5-Step Framework</h4>
+                <ul>
+                    <li><strong>P - Pause & Presence:</strong> Use mindfulness to reset your own nervous system, and set the emotional tone for the conversation.</li>
+                    <li><strong>E - Empathetic Acknowledgment:</strong> Make the customer feel heard, which is often more important to them than being right.</li>
+                    <li><strong>A - Assess & Align:</strong> Deepen your understanding of both the facts and the feelings involved.</li>
+                    <li><strong>C - Create Solutions:</strong> Offer choices, not ultimatums, to empower the customer within legal and company policy limits.</li>
+                    <li><strong>E - Execute & Exceed:</strong> Deliver on your promises and look for small ways to add value.</li>
+                </ul>
+            </div>
+
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <h4>P - Pause & Presence</h4>
+                    <p><strong>Psychology:</strong> A 3-second pause activates your prefrontal cortex, engaging rational thinking over emotional reaction.</p>
+                    <p style="margin-top: 12px; font-size: 0.95em; color: #B0B0B0;"><strong>Legal Consideration:</strong> Pausing before responding also reduces the risk of saying something that could later be interpreted as an admission of liability.</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>E - Empathetic Acknowledgment</h4>
+                    <p><strong>Psychology:</strong> Feeling heard activates the brain's reward center, reducing defensive responses.</p>
+                    <p style="margin-top: 12px; font-size: 0.95em; color: #B0B0B0;"><strong>Legal Consideration:</strong> Acknowledge feelings without admitting fault or making unauthorized promises.</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>A - Assess & Align</h4>
+                    <p><strong>Psychology:</strong> Collaborative problem-solving shifts the dynamic from adversarial to partnership.</p>
+                    <p style="margin-top: 12px; font-size: 0.95em; color: #B0B0B0;"><strong>Legal Consideration:</strong> Always clarify expectations, but never promise outcomes that might violate law or store policy.</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>C - Create Solutions</h4>
+                    <p><strong>Psychology:</strong> Offering choices gives customers a sense of control, reducing anxiety and resistance.</p>
+                    <p style="margin-top: 12px; font-size: 0.95em; color: #B0B0B0;"><strong>Legal Consideration:</strong> All options must comply with consumer rights law and be consistent.</p>
+                </div>
+                <div class="strategy-card">
+                    <h4>E - Execute & Exceed</h4>
+                    <p><strong>Psychology:</strong> Following through builds trust; exceeding expectations creates advocates.</p>
+                    <p style="margin-top: 12px; font-size: 0.95em; color: #B0B0B0;"><strong>Legal Consideration:</strong> Document every action and communication for legal protection.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3><span class="section-icon">3</span>Crisis Management & De-escalation Mastery</h3>
+            <div class="scenario-container">
+                <h4>🛡️ The De-escalation Decision Tree</h4>
+                <ol>
+                    <li><strong>Identify Threat Level:</strong> Are there verbal threats, physical danger, or policy violations?</li>
+                    <li><strong>Personal Safety First:</strong> If you feel unsafe, disengage and notify security or law enforcement as per company protocol.</li>
+                    <li><strong>De-escalation Tactics:</strong> Lower your voice, use open body language, acknowledge the emotion, and offer choices within policy.</li>
+                    <li><strong>Legal Escalation:</strong> If a customer threatens legal action, politely inform them you are escalating to management and document the interaction immediately.</li>
+                    <li><strong>Documentation:</strong> Record all details of the interaction for legal protection and future training.</li>
+                </ol>
+                <div class="expert-tip">
+                    <strong>Commercial Law:</strong> Statements made during escalated situations can become part of legal evidence. Stick to facts, avoid personal opinions, and follow incident reporting procedures.
+                </div>
+            </div>
+
+            <div class="deep-dive">
+                <h4>⚖️ Understanding Legal Boundaries in Crisis</h4>
+                <ul>
+                    <li>Never detain a customer unless you have been trained in "shopkeeper's privilege" and only when theft is suspected.</li>
+                    <li>Never physically touch a customer unless it is in self-defense.</li>
+                    <li>Always comply with privacy laws when handling customer information during disputes.</li>
+                    <li>If law enforcement is involved, cooperate fully but do not offer opinions—stick to observed facts.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3><span class="section-icon">4</span>The Service Recovery Paradox</h3>
+            <div class="case-study">
+                <h4>💜 The Power of Exceptional Recovery</h4>
+                <p>Research shows that customers who experience a problem that is resolved exceptionally well often become MORE loyal than customers who never had a problem at all.</p>
+                <p style="margin-top: 15px;"><strong>Why?</strong> Because exceptional service recovery:</p>
+                <ul style="margin-top: 10px;">
+                    <li>Demonstrates genuine care and commitment</li>
+                    <li>Exceeds expectations at a critical moment</li>
+                    <li>Creates an emotional connection through adversity</li>
+                    <li>Proves the brand's values through action, not just words</li>
+                </ul>
+            </div>
+
+            <div class="golden-box">
+                <h4>The 4-Stage Recovery Framework</h4>
+                <ol>
+                    <li><strong>Acknowledge Immediately:</strong> "I understand this is frustrating. Let's fix this together."</li>
+                    <li><strong>Apologize Sincerely:</strong> Own the situation without making excuses or blaming others.</li>
+                    <li><strong>Action with Empowerment:</strong> Solve the problem quickly, within policy, and look for ways to exceed expectations.</li>
+                    <li><strong>Follow-Up:</strong> Check in after resolution to ensure satisfaction and rebuild trust.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="reflection-journal">
+            <h4>📝 Reflection Journal: Integrating Psychology, Strategy, and Law</h4>
+            <div class="journal-field">
+                <label for="journalReflection1">Reflect on a time when understanding customer psychology improved a difficult interaction. What did you notice, and how did you adjust your approach?</label>
+                <textarea id="journalReflection1" rows="3"></textarea>
+            </div>
+            <div class="journal-field">
+                <label for="journalReflection2">Describe a situation where you or a team member nearly crossed a legal or policy line. What did you learn about the importance of commercial law in customer service?</label>
+                <textarea id="journalReflection2" rows="3"></textarea>
+            </div>
+            <div class="journal-field">
+                <label for="journalReflection3">How will you use advanced communication and legal awareness to create legendary service experiences in the future?</label>
+                <textarea id="journalReflection3" rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h3>🎯 Section Quiz: Psychology, Strategy & Law</h3>
+            <form id="quiz7">
+                <div class="quiz-question">
+                    <b>1. What is the main reason for using the PEACE method in customer service?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q1" value="a"/> A) To speed up customer interactions</label><br/>
+                        <label><input type="radio" name="q1" value="b"/> B) To transform conflicts into collaborative problem-solving and trust-building</label><br/>
+                        <label><input type="radio" name="q1" value="c"/> C) To avoid company policies</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <b>2. Which concept explains why customers may become MORE loyal after a well-resolved problem?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q2" value="a"/> A) Discount Theory</label><br/>
+                        <label><input type="radio" name="q2" value="b"/> B) Service Recovery Paradox</label><br/>
+                        <label><input type="radio" name="q2" value="c"/> C) Customer Fatigue</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <b>3. In a high-stress customer situation, which approach is NOT recommended?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q3" value="a"/> A) Lower your voice and use open body language</label><br/>
+                        <label><input type="radio" name="q3" value="b"/> B) Use legal jargon to intimidate the customer</label><br/>
+                        <label><input type="radio" name="q3" value="c"/> C) Offer choices within policy</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <b>4. Why is documentation so crucial in customer service, especially after disputes?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q4" value="a"/> A) It helps with marketing</label><br/>
+                        <label><input type="radio" name="q4" value="b"/> B) It protects you and the business legally in case of future disputes</label><br/>
+                        <label><input type="radio" name="q4" value="c"/> C) It is only needed for refunds</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <b>5. Which is a correct legal response when a customer threatens legal action?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q5" value="a"/> A) Argue with the customer</label><br/>
+                        <label><input type="radio" name="q5" value="b"/> B) Politely inform them you will escalate to management and document the interaction</label><br/>
+                        <label><input type="radio" name="q5" value="c"/> C) Offer a large discount immediately</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <b>6. A customer demands a full cash refund after 45 days for a used product, but your policy is 30 days. What is the best course of action?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q6" value="a"/> A) Refuse outright and tell them to leave</label><br/>
+                        <label><input type="radio" name="q6" value="b"/> B) Use the PEACE method to explore solutions (e.g., store credit, exchange, or escalation), staying within policy</label><br/>
+                        <label><input type="radio" name="q6" value="c"/> C) Give a full refund to avoid confrontation</label>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <b>7. An angry customer claims an employee promised a special price that is not in the system. What should you do?</b><br/>
+                    <div class="quiz-options">
+                        <label><input type="radio" name="q7" value="a"/> A) Dismiss their claim and move on</label><br/>
+                        <label><input type="radio" name="q7" value="b"/> B) Calmly gather facts, clarify what was promised, consult your supervisor, and never make unauthorized offers</label><br/>
+                        <label><input type="radio" name="q7" value="c"/> C) Immediately apply the discount regardless of policy</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <button type="button" class="btn" onclick="gradeQuiz7()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
+        <div id="quiz7-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
+        
+        <script>
+          function gradeQuiz7() {
+            const correct = { q1: 'b', q2: 'b', q3: 'b', q4: 'b', q5: 'b', q6: 'b', q7: 'b' };
+            let score = 0, total = 7;
+            for(let i=1; i<=total; i++) {
+              let ans = document.querySelector('input[name="q'+i+'"]:checked');
+              if(ans && ans.value === correct['q'+i]) score++;
+            }
+            let msg = `🏆 You scored ${score} out of ${total}! `;
+            if(score === total) msg += "LEGENDARY SERVICE MASTER! You've achieved excellence! 🔥";
+            else if(score >= 6) msg += "OUTSTANDING! You're ready to handle any customer situation!";
+            else if(score >= 5) msg += "Strong performance! Review the PEACE method for mastery.";
+            else msg += "Keep learning! Customer service mastery requires practice—review and try again.";
+            
+            const resultDiv = document.getElementById('quiz7-result');
+            resultDiv.textContent = msg;
+            resultDiv.style.display = 'block';
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        </script>
+
+        <div class="final-exam-container" id="finalExam">
+            <div class="exam-title">📝 Final Exam: Legendary Service Certification</div>
+            <form id="finalExamForm">
+                <div class="exam-question">
+                    <strong>1. Free Response:</strong><br>
+                    Describe a challenging real-world customer service situation you have faced (or imagine one if you are new). Apply the PEACE method step-by-step, and explain any legal or policy considerations you would keep in mind.
+                    <textarea class="exam-free-response" name="exam1" required></textarea>
+                </div>
+                
+                <div class="exam-question">
+                    <strong>2. Multiple Choice:</strong><br>
+                    Which of the following best describes the Service Recovery Paradox?
+                    <div class="exam-options">
+                        <label><input type="radio" name="exam2" value="a" required/> A) Customers are always less loyal after a problem, regardless of resolution</label>
+                        <label><input type="radio" name="exam2" value="b"/> B) Customers may become more loyal if their problems are resolved exceptionally well</label>
+                        <label><input type="radio" name="exam2" value="c"/> C) Only discounts increase loyalty</label>
+                    </div>
+                </div>
+                
+                <div class="exam-question">
+                    <strong>3. Multiple Choice:</strong><br>
+                    What should you always do after a customer service crisis or dispute?
+                    <div class="exam-options">
+                        <label><input type="radio" name="exam3" value="a" required/> A) Forget it and move on</label>
+                        <label><input type="radio" name="exam3" value="b"/> B) Document the interaction and escalate if needed per commercial law and company policy</label>
+                        <label><input type="radio" name="exam3" value="c"/> C) Promise the customer anything they want</label>
+                    </div>
+                </div>
+                
+                <div class="exam-question">
+                    <strong>4. Free Response:</strong><br>
+                    List two commercial law principles that directly affect customer service. Briefly explain how each applies in your daily work.
+                    <textarea class="exam-free-response" name="exam4" required></textarea>
+                </div>
+                
+                <div class="exam-question">
+                    <strong>5. Multiple Choice:</strong><br>
+                    When is it appropriate to physically detain a customer in a retail setting?
+                    <div class="exam-options">
+                        <label><input type="radio" name="exam5" value="a" required/> A) Only if you suspect theft and have been trained in "shopkeeper's privilege," following exact legal protocols</label>
+                        <label><input type="radio" name="exam5" value="b"/> B) Whenever you feel annoyed</label>
+                        <label><input type="radio" name="exam5" value="c"/> C) To make a point about store rules</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn" style="margin-top: 35px;">Submit Final Exam</button>
+            </form>
+            <div class="exam-result" id="examResult"></div>
+        </div>
+
+        <script>
+            document.getElementById('finalExamForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                let score = 0;
+                const answers = { exam2: 'b', exam3: 'b', exam5: 'a' };
+                
+                if(document.querySelector('input[name="exam2"]:checked')?.value === answers.exam2) score++;
+                if(document.querySelector('input[name="exam3"]:checked')?.value === answers.exam3) score++;
+                if(document.querySelector('input[name="exam5"]:checked')?.value === answers.exam5) score++;
+                
+                let resultText = `<strong>🎉 Exam Complete!</strong><br><br>`;
+                resultText += `You answered <strong>${score} out of 3</strong> multiple-choice questions correctly!<br><br>`;
+                
+                if(score === 3) {
+                    resultText += `<strong style="color: #FFD700;">🏆 PERFECT SCORE!</strong> You've mastered the principles of legendary customer service!<br>`;
+                } else if(score >= 2) {
+                    resultText += `<strong style="color: #48bb78;">⭐ EXCELLENT!</strong> You have a strong grasp of customer service excellence!<br>`;
+                } else {
+                    resultText += `<strong>📚 Keep Learning!</strong> Review the lesson materials for deeper understanding.<br>`;
+                }
+                
+                resultText += `<br>Your free responses demonstrate your understanding and will be evaluated for full certification.`;
+                
+                document.getElementById('examResult').innerHTML = resultText;
+                document.getElementById('examResult').style.display = 'block';
+                document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
+        </script>
+
+        <div class="completion-badge">
+            <h2>🏆 Legendary Service Certification Complete!</h2>
+            <p style="font-size: 1.2em; line-height: 1.8; margin-top: 20px;">
+                Congratulations! You have completed the Legendary Customer Service Mastery curriculum, integrating advanced psychology, strategy, and commercial law.<br><br>
+                You are now equipped to create legendary experiences while protecting yourself and your company.<br><br>
+                <strong>Keep practicing, stay legally aware, and always aim for legendary!</strong>
+            </p>
+        </div>
+
+        <div id="lesson-completion">
+            <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
+            <a id="nextLessonBtn" href="certificate.html" class="btn" style="display:none;">Download Your Certificate 🎓</a>
+            <div id="completionMsg">🎉 Lesson 7 Complete! You are now a certified master of legendary customer service!</div>
+        </div>
+        
+        <div class="dashboard-link">
+            <a href="progress.html">📊 View Your Progress →</a>
+        </div>
+    </div>
+    
+    <script>
+        const lessonNum = 7;
+        const totalLessons = 8;
+        
+        function markLessonComplete() {
+            let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+            progress[`lesson${lessonNum}`] = true;
+            localStorage.setItem('retailProgress', JSON.stringify(progress));
+            
+            document.getElementById('nextLessonBtn').style.display = 'inline-block';
+            document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+            document.getElementById('markComplete').disabled = true;
+            document.getElementById('completionMsg').style.display = 'block';
+            updateProgressBar();
+        }
+        
+        function updateProgressBar() {
+            let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+            let completed = 0;
+            for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
+            let percent = Math.round((completed/totalLessons)*100);
+            document.getElementById('progressBarFill').style.width = percent + '%';
+            document.getElementById('progressText').textContent =
+                `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+        }
+        
+        window.onload = function() {
+            let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+            if(progress[`lesson${lessonNum}`]) {
+                document.getElementById('nextLessonBtn').style.display = 'inline-block';
+                document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+                document.getElementById('markComplete').disabled = true;
+                document.getElementById('completionMsg').style.display = 'block';
+            }
+            updateProgressBar();
+        };
+    </script>
 </body>
-</html>
-<a href="certificate.html" target="_blank" class="btn">Download Your Certificate</a>
+                    </html>
