@@ -3,48 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lesson 4: Visual Merchandising Mastery | Retail Expert</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>Lesson 4: Visual Merchandising Mastery | Ultimate Black Book</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); color: #333; line-height: 1.6; }
-    header { background: linear-gradient(135deg, #000 0%, #434343 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
-    header h1 { margin: 0; font-size: 24px; font-weight: 700; }
-    nav a { color: white; margin-left: 25px; text-decoration: none; font-weight: 500; transition: opacity 0.3s ease; }
-    nav a:hover { opacity: 0.8; }
-    .container { max-width: 1200px; margin: auto; padding: 50px 20px; }
-    #progressBarContainer { margin: 30px auto 40px auto; max-width: 400px; }
-    #progressBarContainer .progress-outer { background:#e2e8f0; border-radius:6px; overflow:hidden; height:14px; }
-    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#667eea,#764ba2); transition:width 0.7s; }
-    #progressText { text-align:center; font-size:1em; margin-top:6px; color:#667eea; font-weight:bold; }
-    #lesson-completion { margin:40px 0 30px 0; text-align:center; }
-    #completionMsg { margin:25px auto 0 auto; max-width:420px; font-size:1.1em; color:#38a169; font-weight:600; display:none; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 40px; text-decoration: none; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2); border: none; cursor: pointer; }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3); }
-    .dashboard-link { text-align:center; margin-bottom:40px; }
-    .dashboard-link a { color:#667eea; font-weight:500; text-decoration:underline; font-size:1em; }
-    h3 { margin-top:40px; color:#222;}
-    .section {margin-bottom: 34px;}
-    .section-icon {font-weight: bold; color: #764ba2; margin-right: 10px;}
-    .callout {background:linear-gradient(135deg,#f1f8e9 0%,#e8eaf6 100%);padding:18px 22px;border-radius:10px;margin:20px 0;}
-    .quiz-section {background:#fff8e1;padding:30px 25px;border-radius:16px;box-shadow:0 2px 10px rgba(200,180,80,0.07);margin:40px 0 0 0;}
-    .fun-fact {background:#c7f9cc;color:#222;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
-    .case-study {background:#f7e1fc;color:#422160;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
-    .expert-tip {background:#e0c3fc;color:#4b2360;font-weight:500;padding:12px 18px;border-radius:12px;margin:18px 0;}
-    .activity {background:#fffbe7;color:#5c4000;font-weight:500;padding:15px 20px;border-radius:12px;margin:18px 0;}
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+    nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
+    nav a:hover { opacity: 0.7; }
+    .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
+    #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
+    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
+    .golden-box b { color: #FFD700; font-weight: 700; }
+    .fun-fact { background: linear-gradient(135deg, rgba(72, 187, 120, 0.15) 0%, rgba(72, 187, 120, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; color: #F5F5F5; font-weight: 500; }
+    .case-study { background: linear-gradient(135deg, rgba(159, 122, 234, 0.15) 0%, rgba(159, 122, 234, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #9f7aea; color: #F5F5F5; font-weight: 500; }
+    .expert-tip { background: linear-gradient(135deg, rgba(236, 201, 75, 0.15) 0%, rgba(236, 201, 75, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ECC94B; color: #F5F5F5; font-weight: 500; }
+    .activity { background: linear-gradient(135deg, rgba(237, 137, 54, 0.15) 0%, rgba(237, 137, 54, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ED8936; color: #F5F5F5; font-weight: 500; }
+    ul { margin: 20px 0 20px 25px; }
+    li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
+    li strong { color: #FFD700; font-weight: 700; }
     .visual { display:block; margin: 20px auto; max-width: 500px; }
-    .vis-caption { text-align:center; color:#555; font-size:0.98em; margin-bottom:8px; margin-top:4px;}
+    .vis-caption { text-align:center; color: #B0B0B0; font-size: 1.05em; margin-bottom: 15px; margin-top: 10px; font-weight: 600; }
     .icon { font-size: 1.4em; vertical-align: middle; }
+    .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+    .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
+    .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
+    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
+    .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
+    .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
+    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .dashboard-link { text-align: center; margin: 40px 0; }
+    .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
+    .fixture-grid { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin: 30px 0; }
+    .fixture-card { flex: 1 1 180px; text-align: center; background: rgba(255, 215, 0, 0.05); padding: 20px; border-radius: 12px; border: 2px solid rgba(255, 215, 0, 0.3); }
+    .fixture-card b { color: #FFD700; }
+    .pos-grid { display: flex; gap: 22px; flex-wrap: wrap; align-items: flex-end; margin: 30px 0; justify-content: center; }
+    .pos-item { flex: 1 1 150px; text-align: center; }
+    .pos-item b { color: #FFD700; }
     @media (max-width: 768px) {
-      #lesson-completion button, #lesson-completion a { display:block; width:90%; margin:12px auto; font-size:1em; padding:14px 0; }
-      #progressBarContainer {max-width:95vw;}
-      .quiz-section {padding:18px 10px;}
-      .visual {max-width:95vw;}
+      header h1 { font-size: 18px; }
+      .hero h2 { font-size: 2em; }
+      h3 { font-size: 1.5em; }
+      .visual { max-width: 95vw; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Retail Expert Academy</h1>
+    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
     <nav>
       <a href="/">Home</a>
       <a href="/course.html">Course</a>
@@ -56,142 +76,136 @@
       <div class="progress-outer">
         <div id="progressBarFill"></div>
       </div>
-      <div id="progressText">Lesson 4 of 7</div>
+      <div id="progressText">Lesson 4 of 8</div>
     </div>
 
-    <!-- === LESSON 4 CONTENT STARTS HERE === -->
     <div class="hero">
-      <h2>Visual Merchandising Mastery</h2>
-      <p>
-        Transform your store into a buying magnet. Learn the secrets of visual storytelling, layout psychology, fixtures, POS, price callouts, mannequins, and more—with real-world visuals and actionable tips!
-      </p>
+      <h2>🎨 Lesson 4: Visual Merchandising Mastery</h2>
+      <p>Transform your store into a buying magnet. Learn the secrets of visual storytelling, layout psychology, fixtures, POS, price callouts, mannequins, and more—with real-world strategies and actionable tactics!</p>
     </div>
 
     <div class="fun-fact"><span class="icon">🛒</span> <b>Did you know?</b> 83% of purchase decisions are influenced by how products are displayed, not just by price or brand! <span class="icon">👀</span></div>
 
     <div class="section">
-      <h3><span class="section-icon">1</span>Store Layouts: The Shopper’s Journey</h3>
-      <div class="callout">
+      <h3><span class="section-icon">1</span>Store Layouts: The Shopper's Journey</h3>
+      <div class="golden-box">
         <b>Layout is your silent salesperson.</b> Great design leads customers, increases dwell time, and boosts basket size.
       </div>
       <div class="vis-caption">Common Retail Layouts</div>
       <svg class="visual" viewBox="0 0 500 120">
-        <!-- Racetrack/Loop -->
-        <rect x="10" y="10" width="140" height="90" rx="20" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2"/>
-        <text x="80" y="60" font-size="16" text-anchor="middle" fill="#3730a3">Racetrack</text>
-        <!-- Grid -->
-        <rect x="180" y="10" width="100" height="90" fill="#f0fdfa" stroke="#059669" stroke-width="2"/>
-        <line x1="205" y1="10" x2="205" y2="100" stroke="#059669" stroke-width="2"/>
-        <line x1="230" y1="10" x2="230" y2="100" stroke="#059669" stroke-width="2"/>
-        <line x1="255" y1="10" x2="255" y2="100" stroke="#059669" stroke-width="2"/>
-        <text x="230" y="60" font-size="16" text-anchor="middle" fill="#047857">Grid</text>
-        <!-- Freeform -->
-        <rect x="320" y="10" width="150" height="90" rx="30" fill="#fdf6b2" stroke="#b45309" stroke-width="2"/>
-        <ellipse cx="375" cy="60" rx="20" ry="10" fill="#fde68a"/>
-        <ellipse cx="415" cy="40" rx="18" ry="8" fill="#fde68a"/>
-        <ellipse cx="450" cy="80" rx="15" ry="7" fill="#fde68a"/>
-        <text x="395" y="100" font-size="16" text-anchor="middle" fill="#b45309">Freeform</text>
+        <rect x="10" y="10" width="140" height="90" rx="20" fill="#2d2d2d" stroke="#FFD700" stroke-width="3"/>
+        <text x="80" y="60" font-size="16" font-weight="700" text-anchor="middle" fill="#FFD700">Racetrack</text>
+        <rect x="180" y="10" width="100" height="90" fill="#2d2d2d" stroke="#FFD700" stroke-width="3"/>
+        <line x1="205" y1="10" x2="205" y2="100" stroke="#FFD700" stroke-width="2"/>
+        <line x1="230" y1="10" x2="230" y2="100" stroke="#FFD700" stroke-width="2"/>
+        <line x1="255" y1="10" x2="255" y2="100" stroke="#FFD700" stroke-width="2"/>
+        <text x="230" y="60" font-size="16" font-weight="700" text-anchor="middle" fill="#FFD700">Grid</text>
+        <rect x="320" y="10" width="150" height="90" rx="30" fill="#2d2d2d" stroke="#FFD700" stroke-width="3"/>
+        <ellipse cx="375" cy="60" rx="20" ry="10" fill="#FFA500"/>
+        <ellipse cx="415" cy="40" rx="18" ry="8" fill="#FFA500"/>
+        <ellipse cx="450" cy="80" rx="15" ry="7" fill="#FFA500"/>
+        <text x="395" y="100" font-size="16" font-weight="700" text-anchor="middle" fill="#FFD700">Freeform</text>
       </svg>
       <div class="vis-caption" style="margin-bottom:24px;">🌀 Racetrack (IKEA), ⬛ Grid (grocery), ☁️ Freeform (boutiques)</div>
       <ul>
-        <li><b>Racetrack/Loop:</b> Directs customers around the entire store, maximizing exposure (think IKEA).</li>
-        <li><b>Grid:</b> Efficient, familiar. Used in supermarkets for easy navigation.</li>
-        <li><b>Freeform:</b> Encourages exploration; great for fashion or specialty boutiques.</li>
+        <li><strong>Racetrack/Loop:</strong> Directs customers around the entire store, maximizing exposure (think IKEA).</li>
+        <li><strong>Grid:</strong> Efficient, familiar. Used in supermarkets for easy navigation.</li>
+        <li><strong>Freeform:</strong> Encourages exploration; great for fashion or specialty boutiques.</li>
       </ul>
       <div class="activity">
-        <b>Sketch your store layout</b> or use the diagram above. Are there “dead zones” or untapped corners?
+        <b>💪 Action Step:</b> Sketch your store layout or use the diagram above. Are there "dead zones" or untapped corners? Plan how to activate them.
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">2</span>Fixtures: The Stage for Your Products</h3>
       <div class="vis-caption">Key Fixture Types</div>
-      <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;margin-bottom:18px;">
-        <div style="flex:1 1 180px;text-align:center;">
+      <div class="fixture-grid">
+        <div class="fixture-card">
           <span class="icon">🪑</span><br>
           <b>Gondolas</b><br>
           <span style="font-size:0.97em;">Double-sided shelving for aisles<br>(supermarkets, drugstores)</span>
         </div>
-        <div style="flex:1 1 180px;text-align:center;">
+        <div class="fixture-card">
           <span class="icon">🗄️</span><br>
           <b>Wall Units</b><br>
           <span style="font-size:0.97em;">Tall shelving or racks<br>(maximize vertical space)</span>
         </div>
-        <div style="flex:1 1 180px;text-align:center;">
+        <div class="fixture-card">
           <span class="icon">🛍️</span><br>
           <b>Tables & Nests</b><br>
-          <span style="font-size:0.97em;">Feature new/seasonal goods<br> (boutiques, fashion)</span>
+          <span style="font-size:0.97em;">Feature new/seasonal goods<br>(boutiques, fashion)</span>
         </div>
-        <div style="flex:1 1 180px;text-align:center;">
+        <div class="fixture-card">
           <span class="icon">🎡</span><br>
           <b>Rounders/4-Ways</b><br>
-          <span style="font-size:0.97em;">Maximize hanging space<br> (apparel)</span>
+          <span style="font-size:0.97em;">Maximize hanging space<br>(apparel)</span>
         </div>
-        <div style="flex:1 1 180px;text-align:center;">
+        <div class="fixture-card">
           <span class="icon">🏷️</span><br>
           <b>Endcaps</b><br>
-          <span style="font-size:0.97em;">Display at aisle ends<br> (impulse & promo)</span>
+          <span style="font-size:0.97em;">Display at aisle ends<br>(impulse & promo)</span>
         </div>
       </div>
       <ul>
-        <li><b>Gondolas:</b> Use for staple products; keep top-selling items at eye level.</li>
-        <li><b>Tables/Nests:</b> Feature new arrivals or themed collections; use the “Rule of Three” for displays.</li>
-        <li><b>Endcaps:</b> Best for promotions, seasonal, or high-margin items. Sales here can be 4x higher than other shelves!</li>
-        <li><b>Wall Units:</b> Place high-demand or premium goods at hand/eye level.</li>
-        <li><b>Rounders/4-Ways:</b> Perfect for maximizing space and showing variety.</li>
+        <li><strong>Gondolas:</strong> Use for staple products; keep top-selling items at eye level.</li>
+        <li><strong>Tables/Nests:</strong> Feature new arrivals or themed collections; use the "Rule of Three" for displays.</li>
+        <li><strong>Endcaps:</strong> Best for promotions, seasonal, or high-margin items. Sales here can be 4x higher than other shelves!</li>
+        <li><strong>Wall Units:</strong> Place high-demand or premium goods at hand/eye level.</li>
+        <li><strong>Rounders/4-Ways:</strong> Perfect for maximizing space and showing variety.</li>
       </ul>
       <div class="expert-tip">
-        <b>Pro Tip:</b> Rotate endcap and table displays weekly to keep the store feeling fresh and exciting!
+        <b>🎯 Pro Tip:</b> Rotate endcap and table displays weekly to keep the store feeling fresh and exciting!
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">3</span>POS, Price Callouts & Signage: Make Buying Easy</h3>
       <div class="vis-caption">POS & Price Callout Examples</div>
-      <div style="display:flex;gap:22px;flex-wrap:wrap;align-items:flex-end;margin-bottom:18px;">
-        <div style="flex:1 1 150px;text-align:center;">
+      <div class="pos-grid">
+        <div class="pos-item">
           <span class="icon" style="font-size:2.1em;">💳</span><br>
           <b>POS Zone</b>
         </div>
-        <div style="flex:1 1 180px;text-align:center;">
-          <svg width="60" height="38">
-            <rect x="0" y="0" width="60" height="38" rx="8" fill="#fde68a" stroke="#b45309" stroke-width="2"/>
-            <text x="30" y="24" font-size="18" text-anchor="middle" fill="#b45309">$19.99</text>
+        <div class="pos-item">
+          <svg width="80" height="48">
+            <rect x="0" y="0" width="80" height="48" rx="8" fill="#FFD700" stroke="#FFA500" stroke-width="2"/>
+            <text x="40" y="30" font-size="20" font-weight="900" text-anchor="middle" fill="#000">$19.99</text>
           </svg><br>
           <span style="font-size:0.97em;"><b>Bold Price Callout</b></span>
         </div>
-        <div style="flex:1 1 150px;text-align:center;">
+        <div class="pos-item">
           <span class="icon" style="font-size:2.1em;">📣</span><br>
           <b>Signage</b>
         </div>
       </div>
       <ul>
-        <li><b>POS (Point of Sale) Zones:</b> Should be visible, uncluttered, and have impulse items (gum, batteries, mini-products) nearby.</li>
-        <li><b>Price Callouts:</b> Big, bold, contrasting labels. Use “was/now” tags for offers. Highlight value, not just price!</li>
-        <li><b>Signage:</b> Use clear, concise, benefit-driven language (“Save 20%,” “Shop New Arrivals”). Mix pictograms/emojis for quick recognition.</li>
+        <li><strong>POS (Point of Sale) Zones:</strong> Should be visible, uncluttered, and have impulse items (gum, batteries, mini-products) nearby.</li>
+        <li><strong>Price Callouts:</strong> Big, bold, contrasting labels. Use "was/now" tags for offers. Highlight value, not just price!</li>
+        <li><strong>Signage:</strong> Use clear, concise, benefit-driven language ("Save 20%," "Shop New Arrivals"). Mix pictograms/emojis for quick recognition.</li>
       </ul>
       <div class="expert-tip">
-        <b>POS Tip:</b> Place “add-on” suggestions (“Don’t forget batteries!”) right at checkout for a 15%+ boost in impulse sales.
+        <b>🎯 POS Tip:</b> Place "add-on" suggestions ("Don't forget batteries!") right at checkout for a 15%+ boost in impulse sales.
       </div>
       <div class="activity">
-        <b>Audit:</b> Walk your store and review every price tag and sign. Is it visible from 6 feet away? Does it create urgency, value, or clarity?
+        <b>💪 Audit Challenge:</b> Walk your store and review every price tag and sign. Is it visible from 6 feet away? Does it create urgency, value, or clarity?
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">4</span>Mannequins: The Silent Sales Team</h3>
       <div class="vis-caption">Mannequin Inspiration</div>
-      <div style="text-align:center;margin-bottom:14px;">
-        <span style="font-size:2.2em;">🧍‍♂️🧍‍♀️🧍</span>
+      <div style="text-align:center;margin-bottom:20px;">
+        <span style="font-size:2.5em;">🧍‍♂️🧍‍♀️🧍</span>
       </div>
       <ul>
-        <li><b>Outfit Storytelling:</b> Dress mannequins in full looks, including accessories. “Head-to-toe” increases multiple item sales.</li>
-        <li><b>Action Poses:</b> Use dynamic or lifestyle poses (e.g., running, sitting, “in action”) to inspire imagination.</li>
-        <li><b>Diversity:</b> Use mannequins of different shapes, sizes, and skin tones for inclusivity and relatability.</li>
-        <li><b>Positioning:</b> Place at entrances, power walls, or near new arrivals. Rotate outfits at least weekly.</li>
+        <li><strong>Outfit Storytelling:</strong> Dress mannequins in full looks, including accessories. "Head-to-toe" increases multiple item sales.</li>
+        <li><strong>Action Poses:</strong> Use dynamic or lifestyle poses (e.g., running, sitting, "in action") to inspire imagination.</li>
+        <li><strong>Diversity:</strong> Use mannequins of different shapes, sizes, and skin tones for inclusivity and relatability.</li>
+        <li><strong>Positioning:</strong> Place at entrances, power walls, or near new arrivals. Rotate outfits at least weekly.</li>
       </ul>
       <div class="case-study">
-        <b>Case Study: Nike Flagship Stores</b><br>
+        <b>📊 Case Study: Nike Flagship Stores</b><br>
         Nike uses mannequins in action poses (jumping, running) with full gear. This boosts basket size and inspires social media sharing.
       </div>
     </div>
@@ -199,9 +213,9 @@
     <div class="section">
       <h3><span class="section-icon">5</span>Color, Lighting, and Sensory Secrets</h3>
       <ul>
-        <li><b>Color Psychology:</b> Blue = trust; red = urgency; green = freshness; yellow = optimism. Use color to drive feelings and focus.</li>
-        <li><b>Lighting:</b> Spotlight new or premium products. Warm lighting = inviting; cool lighting = modern/fresh. Use accent lighting on displays and mannequins.</li>
-        <li><b>Scents & Sounds:</b> Scented zones and curated playlists can increase time in-store by 18%.</li>
+        <li><strong>Color Psychology:</strong> Blue = trust; red = urgency; green = freshness; yellow = optimism. Use color to drive feelings and focus.</li>
+        <li><strong>Lighting:</strong> Spotlight new or premium products. Warm lighting = inviting; cool lighting = modern/fresh. Use accent lighting on displays and mannequins.</li>
+        <li><strong>Scents & Sounds:</strong> Scented zones and curated playlists can increase time in-store by 18%.</li>
       </ul>
       <div class="fun-fact"><span class="icon">🌈</span> <b>Fun Fact:</b> Stores with music matching their brand (tempo, genre) see a 9% higher average spend!</div>
     </div>
@@ -209,15 +223,15 @@
     <div class="section">
       <h3><span class="section-icon">6</span>Interactive, Seasonal & Social Displays</h3>
       <ul>
-        <li><b>Interactive Displays:</b> Testers, touchable products, digital screens, or “spin to win” games boost engagement.</li>
-        <li><b>Seasonal Themes:</b> Rotate displays for holidays, local events, weather. Props make stories pop!</li>
-        <li><b>Instagrammable Moments:</b> Create displays so fun or beautiful people want to take photos—free marketing!</li>
+        <li><strong>Interactive Displays:</strong> Testers, touchable products, digital screens, or "spin to win" games boost engagement.</li>
+        <li><strong>Seasonal Themes:</strong> Rotate displays for holidays, local events, weather. Props make stories pop!</li>
+        <li><strong>Instagrammable Moments:</strong> Create displays so fun or beautiful people want to take photos—free marketing!</li>
       </ul>
       <div class="activity">
-        <b>Challenge:</b> Design a mini “photo spot” in your store. Encourage customers to share on social for a small reward!
+        <b>💪 Challenge:</b> Design a mini "photo spot" in your store. Encourage customers to share on social for a small reward!
       </div>
       <div class="expert-tip">
-        <b>Pro Tip:</b> Change something in your visual merchandising every week, no matter how small. Shoppers notice freshness subconsciously.
+        <b>🎯 Pro Tip:</b> Change something in your visual merchandising every week, no matter how small. Shoppers notice freshness subconsciously.
       </div>
     </div>
 
@@ -227,97 +241,123 @@
         <li>Store layout and fixtures guide behavior and maximize exposure.</li>
         <li>POS, price callouts, and signage make buying easy and fun.</li>
         <li>Mannequins, color, and lighting tell a story and inspire action.</li>
-        <li>Interactivity, seasonal refresh, and “Instagrammable” moments drive loyalty and buzz.</li>
+        <li>Interactivity, seasonal refresh, and "Instagrammable" moments drive loyalty and buzz.</li>
       </ul>
-      <div class="callout" style="background:linear-gradient(135deg,#ffeaa7 0%,#fab1a0 100%);">
-        <b>Challenge:</b> Update a display, price sign, or photo spot this week. Track engagement, photos, and sales from that area!
+      <div class="golden-box">
+        <h4>🔥 Master Challenge</h4>
+        <p>Update a display, price sign, or photo spot this week. Track engagement, photos, and sales from that area!</p>
       </div>
     </div>
 
     <div class="quiz-section">
-      <h3>Mini-Quiz: Visual Merchandising Mastery</h3>
+      <h3>🎯 Visual Merchandising Mastery Quiz</h3>
       <form id="quiz4">
-        <div>
-          <b>1. Which layout is best for maximizing exposure to all store areas?</b><br/>
-          <label><input type="radio" name="q1" value="a"/> Grid</label><br/>
-          <label><input type="radio" name="q1" value="b"/> Racetrack/Loop</label><br/>
-          <label><input type="radio" name="q1" value="c"/> Freeform</label>
+        <div class="quiz-question">
+          <b>1. Which layout is best for maximizing exposure to all store areas?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="a"/> Grid</label>
+            <label><input type="radio" name="q1" value="b"/> Racetrack/Loop</label>
+            <label><input type="radio" name="q1" value="c"/> Freeform</label>
+          </div>
         </div>
-        <div style="margin-top:15px;">
-          <b>2. Endcaps are most effective for:</b><br/>
-          <label><input type="radio" name="q2" value="a"/> Clearance items only</label><br/>
-          <label><input type="radio" name="q2" value="b"/> New, high-margin, or seasonal goods</label><br/>
-          <label><input type="radio" name="q2" value="c"/> Storing supplies</label>
+        
+        <div class="quiz-question">
+          <b>2. Endcaps are most effective for:</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="a"/> Clearance items only</label>
+            <label><input type="radio" name="q2" value="b"/> New, high-margin, or seasonal goods</label>
+            <label><input type="radio" name="q2" value="c"/> Storing supplies</label>
+          </div>
         </div>
-        <div style="margin-top:15px;">
-          <b>3. What visual merchandising element is proven to boost multiple item sales?</b><br/>
-          <label><input type="radio" name="q3" value="a"/> Mannequins in full outfits</label><br/>
-          <label><input type="radio" name="q3" value="b"/> Unlabeled shelves</label><br/>
-          <label><input type="radio" name="q3" value="c"/> Empty corners</label>
+        
+        <div class="quiz-question">
+          <b>3. What visual merchandising element is proven to boost multiple item sales?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="a"/> Mannequins in full outfits</label>
+            <label><input type="radio" name="q3" value="b"/> Unlabeled shelves</label>
+            <label><input type="radio" name="q3" value="c"/> Empty corners</label>
+          </div>
         </div>
-        <div style="margin-top:15px;">
-          <b>4. What’s the ideal frequency for changing key displays?</b><br/>
-          <label><input type="radio" name="q4" value="a"/> Every month or more often</label><br/>
-          <label><input type="radio" name="q4" value="b"/> Twice a year</label><br/>
-          <label><input type="radio" name="q4" value="c"/> Only when a manager says so</label>
+        
+        <div class="quiz-question">
+          <b>4. What's the ideal frequency for changing key displays?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="a"/> Weekly or more often</label>
+            <label><input type="radio" name="q4" value="b"/> Twice a year</label>
+            <label><input type="radio" name="q4" value="c"/> Only when a manager says so</label>
+          </div>
         </div>
-        <div style="margin-top:15px;">
-          <b>5. True or False: Scent and music have little impact on shopping behavior.</b><br/>
-          <label><input type="radio" name="q5" value="a"/> True</label><br/>
-          <label><input type="radio" name="q5" value="b"/> False</label>
+        
+        <div class="quiz-question">
+          <b>5. True or False: Scent and music have little impact on shopping behavior.</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" value="a"/> True</label>
+            <label><input type="radio" name="q5" value="b"/> False</label>
+          </div>
         </div>
-        <div style="margin-top:15px;">
-          <b>6. What’s a quick way to make your store “Instagrammable”?</b><br/>
-          <label><input type="radio" name="q6" value="a"/> Create a fun, photo-friendly display or prop area</label><br/>
-          <label><input type="radio" name="q6" value="b"/> Hide your best products</label><br/>
-          <label><input type="radio" name="q6" value="c"/> Turn off the lights</label>
+        
+        <div class="quiz-question">
+          <b>6. What's a quick way to make your store "Instagrammable"?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" value="a"/> Create a fun, photo-friendly display or prop area</label>
+            <label><input type="radio" name="q6" value="b"/> Hide your best products</label>
+            <label><input type="radio" name="q6" value="c"/> Turn off the lights</label>
+          </div>
         </div>
-        <button type="button" class="btn" onclick="gradeQuiz4()" style="margin-top:18px;">Submit Quiz</button>
+        
+        <button type="button" class="btn" onclick="gradeQuiz4()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz4-result" style="font-weight:bold;margin-top:20px;"></div>
+      <div id="quiz4-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
     </div>
+    
     <script>
       function gradeQuiz4() {
-        const correct = {
-          q1: 'b', q2: 'b', q3: 'a', q4: 'a', q5: 'b', q6: 'a'
-        };
+        const correct = { q1: 'b', q2: 'b', q3: 'a', q4: 'a', q5: 'b', q6: 'a' };
         let score = 0, total = 6;
         for(let i=1; i<=total; i++) {
           let ans = document.querySelector('input[name="q'+i+'"]:checked');
           if(ans && ans.value === correct['q'+i]) score++;
         }
-        let msg = `You scored ${score} out of ${total}. `;
-        if(score === total) msg += "Brilliant! You’re a visual merchandising pro! 🎉";
-        else if(score >= total-1) msg += "Great job! Review any missed questions above.";
-        else if(score >= total-3) msg += "Good effort! Review key lessons and try the quiz again.";
-        else msg += "Keep learning and practicing!";
-        document.getElementById('quiz4-result').textContent = msg;
+        let msg = `🏆 You scored ${score} out of ${total}! `;
+        if(score === total) msg += "VISUAL MERCHANDISING MASTER! Your store will be a showstopper! 🔥";
+        else if(score >= 5) msg += "Brilliant! You understand visual merchandising at an elite level!";
+        else if(score >= 4) msg += "Great job! Review any missed questions for mastery.";
+        else msg += "Keep learning! Visual merchandising is powerful—review and try again.";
+        
+        const resultDiv = document.getElementById('quiz4-result');
+        resultDiv.textContent = msg;
+        resultDiv.style.display = 'block';
+        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     </script>
-    <!-- === LESSON 4 CONTENT ENDS HERE === -->
 
     <div id="lesson-completion">
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
-      <a id="nextLessonBtn" href="lesson5.html" class="btn" style="display:none; margin-left:20px;">Continue to Lesson 5 &rarr;</a>
-      <div id="completionMsg">🎉 Well done! This lesson is marked complete. You can continue to the next lesson.</div>
+      <a id="nextLessonBtn" href="lesson5.html" class="btn" style="display:none;">Continue to Lesson 5 →</a>
+      <div id="completionMsg">🎉 Lesson 4 Complete! Your store is now a visual masterpiece!</div>
     </div>
+    
     <div class="dashboard-link">
-      <a href="progress.html">View Your Course Progress &rarr;</a>
+      <a href="progress.html">📊 View Your Progress →</a>
     </div>
   </div>
+  
   <script>
     const lessonNum = 4;
-    const totalLessons = 7;
+    const totalLessons = 8;
+    
     function markLessonComplete() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
+      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = "✅ Lesson Completed";
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
       updateProgressBar();
     }
+    
     function updateProgressBar() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       let completed = 0;
@@ -327,6 +367,7 @@
       document.getElementById('progressText').textContent =
         `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
+    
     window.onload = function() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if(progress[`lesson${lessonNum}`]) {
@@ -339,4 +380,4 @@
     };
   </script>
 </body>
-</html>
+          </html>
