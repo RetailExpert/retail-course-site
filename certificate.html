@@ -1,201 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Legendary Customer Service Certificate</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            background: #f7fafc;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-        .certificate-container {
-            background: #fff;
-            border: 8px solid #667eea;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
-            width: 800px;
-            max-width: 95vw;
-            padding: 48px 36px;
-            text-align: center;
-            position: relative;
-        }
-        .certificate-header {
-            font-size: 2.2em;
-            color: #764ba2;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: 1px;
-        }
-        .certificate-subtitle {
-            font-size: 1.2em;
-            color: #667eea;
-            margin-bottom: 24px;
-            font-style: italic;
-        }
-        .certificate-body {
-            margin: 36px 0 24px 0;
-            color: #2d3748;
-            font-size: 1.18em;
-        }
-        .certificate-name {
-            font-size: 2em;
-            color: #4a5568;
-            font-weight: 600;
-            border-bottom: 2px solid #b2f5ea;
-            width: 60%;
-            margin: 0 auto 16px auto;
-            letter-spacing: 1px;
-        }
-        .certificate-course {
-            font-size: 1.15em;
-            color: #4a5568;
-            margin-bottom: 12px;
-        }
-        .certificate-date {
-            color: #718096;
-            font-size: 1em;
-            margin-top: 8px;
-        }
-        .certificate-signature {
-            margin-top: 48px;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .signature-block {
-            text-align: left;
-        }
-        .signature-line {
-            border-bottom: 2px solid #667eea;
-            width: 210px;
-            margin-bottom: 6px;
-            font-family: "Pacifico", cursive, "Segoe Script", sans-serif;
-            color: #764ba2;
-            font-size: 1.3em;
-        }
-        .signature-label {
-            font-size: 0.95em;
-            color: #4a5568;
-        }
-        .seal {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            border-radius: 50%;
-            width: 90px;
-            height: 90px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.3em;
-            font-weight: bold;
-            position: absolute;
-            right: 36px;
-            bottom: 36px;
-            box-shadow: 0 3px 12px rgba(118, 75, 162, 0.17);
-            border: 4px solid #fff;
-            letter-spacing: 2px;
-        }
-        .download-btn {
-            margin: 32px auto 0 auto;
-            display: block;
-            padding: 14px 38px;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            font-size: 1.2em;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: background 0.2s;
-        }
-        .download-btn:hover {
-            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
-        }
-        @media (max-width: 600px) {
-            .certificate-container { padding: 18px 3vw; }
-            .certificate-header { font-size: 1.4em; }
-            .seal { width: 65px; height: 65px; font-size: 1.2em; right: 8px; bottom: 8px;}
-            .signature-block .signature-line { width: 120px; }
-        }
-    </style>
-    <!-- Optional: Google Fonts for signature style -->
-    <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="certificate-container" id="certificate">
-        <div class="certificate-header">Certificate of Completion</div>
-        <div class="certificate-subtitle">Legendary Customer Service – Advanced Mastery</div>
-        <div class="certificate-body">
-            This certificate is proudly presented to<br>
-            <div class="certificate-name" id="certName">[Your Name]</div>
-            for successfully completing the<br>
-            <div class="certificate-course">
-                Legendary Customer Service Mastery <br>
-                <span style="font-size:0.9em;">(Advanced Psychology, Strategic Communication, Crisis Management & Commercial Law)</span>
-            </div>
-            <div class="certificate-date" id="certDate"></div>
-        </div>
-        <div class="certificate-signature">
-            <div class="signature-block">
-                <div class="signature-line" style="font-family:Pacifico, cursive;">RetailExpert</div>
-                <div class="signature-label">Instructor / Program Director</div>
-            </div>
-            <div class="signature-block" style="text-align:right;">
-                <div class="signature-line"></div>
-                <div class="signature-label">Participant</div>
-            </div>
-        </div>
-        <div class="seal">🏅</div>
-        <button class="download-btn" onclick="downloadCertificate()">Download Certificate</button>
-    </div>
-    <script>
-        // Autofill certificate name and date
-        document.getElementById('certDate').textContent =
-            "Date: " + new Date().toLocaleDateString();
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
-        // Optionally prompt for user name or use login if available
-        let userName = "";
-        try {
-            userName = localStorage.getItem('legendary_service_name') || "";
-        } catch(e) { userName = ""; }
-        if(!userName) {
-            userName = prompt("Enter your name as you want it to appear on the certificate:", "Your Name");
-            if(userName) {
-                document.getElementById('certName').textContent = userName;
-                try { localStorage.setItem('legendary_service_name', userName); } catch(e) {}
-            }
-        } else {
-            document.getElementById('certName').textContent = userName;
-        }
+<script>
+/* ===============================
+   CERTIFICATE CORE LOGIC
+================================ */
 
-        // Download certificate as PNG using html2canvas
-        function downloadCertificate() {
-            importHtml2Canvas(() => {
-                html2canvas(document.getElementById('certificate'), { scale: 2 }).then(canvas => {
-                    const link = document.createElement('a');
-                    link.download = 'Legendary_Customer_Service_Certificate.png';
-                    link.href = canvas.toDataURL("image/png");
-                    link.click();
-                });
-            });
-        }
+// 1. LIVE NAME (editable + saved)
+const nameEl = document.getElementById('certName');
+const savedName = localStorage.getItem('ultimate_blackbook_name');
 
-        // Dynamically load html2canvas if not present
-        function importHtml2Canvas(callback) {
-            if (typeof html2canvas !== "undefined") {
-                callback();
-                return;
-            }
-            const script = document.createElement('script');
-            script.src = "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
-            script.onload = callback;
-            document.body.appendChild(script);
-        }
-    </script>
-</body>
-</html>
+if (savedName) {
+    nameEl.textContent = savedName;
+}
+
+nameEl.addEventListener('input', () => {
+    localStorage.setItem(
+        'ultimate_blackbook_name',
+        nameEl.textContent.trim()
+    );
+});
+
+// 2. COMPLETION DATE (auto + locked)
+let completionDate = localStorage.getItem('ubb_completion_date');
+
+if (!completionDate) {
+    completionDate = new Date().toISOString();
+    localStorage.setItem('ubb_completion_date', completionDate);
+}
+
+const dateObj = new Date(completionDate);
+document.getElementById('certDate').textContent =
+    `Completed: ${dateObj.toLocaleDateString('en-ZA', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    })}`;
+
+// 3. CERTIFICATE NUMBER (unique + persistent)
+let certNumber = localStorage.getItem('ubb_cert_number');
+
+if (!certNumber) {
+    certNumber = `UBB-${Date.now().toString(36).toUpperCase()}`;
+    localStorage.setItem('ubb_cert_number', certNumber);
+}
+
+document.getElementById('certNumber').textContent =
+    `Certificate No: ${certNumber}`;
+
+// 4. QR CODE (auto-generated + live)
+const qrContainer = document.getElementById('qrcode');
+qrContainer.innerHTML = ''; // reset if reload
+
+const verifyPayload = JSON.stringify({
+    cert: certNumber,
+    name: nameEl.textContent.trim(),
+    date: completionDate
+});
+
+new QRCode(qrContainer, {
+    text: verifyPayload,
+    width: 90,
+    height: 90,
+    colorDark: "#000000",
+    colorLight: "#ffffff"
+});
+
+// 5. UPDATE QR WHEN NAME CHANGES (LIVE)
+nameEl.addEventListener('input', () => {
+    qrContainer.innerHTML = '';
+
+    const updatedPayload = JSON.stringify({
+        cert: certNumber,
+        name: nameEl.textContent.trim(),
+        date: completionDate
+    });
+
+    new QRCode(qrContainer, {
+        text: updatedPayload,
+        width: 90,
+        height: 90
+    });
+});
+</script>
