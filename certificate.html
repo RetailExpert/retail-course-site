@@ -1,26 +1,18 @@
+
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 
 <script>
 /* ===============================
-   CERTIFICATE CORE LOGIC
+   CERTIFICATE CORE LOGIC (FINAL)
 ================================ */
 
-// 1. LIVE NAME (editable + saved)
+// 1. STUDENT NAME (from Lesson 8)
 const nameEl = document.getElementById('certName');
-const savedName = localStorage.getItem('ultimate_blackbook_name');
+const savedName = localStorage.getItem('studentName'); // from lesson 8
 
-if (savedName) {
-    nameEl.textContent = savedName;
-}
+nameEl.textContent = savedName ? savedName : "—";
 
-nameEl.addEventListener('input', () => {
-    localStorage.setItem(
-        'ultimate_blackbook_name',
-        nameEl.textContent.trim()
-    );
-});
-
-// 2. COMPLETION DATE (auto + locked)
+// 2. COMPLETION DATE (auto + persistent)
 let completionDate = localStorage.getItem('ubb_completion_date');
 
 if (!completionDate) {
@@ -47,13 +39,13 @@ if (!certNumber) {
 document.getElementById('certNumber').textContent =
     `Certificate No: ${certNumber}`;
 
-// 4. QR CODE (auto-generated + live)
+// 4. QR CODE (auto-generated)
 const qrContainer = document.getElementById('qrcode');
-qrContainer.innerHTML = ''; // reset if reload
+qrContainer.innerHTML = '';
 
 const verifyPayload = JSON.stringify({
     cert: certNumber,
-    name: nameEl.textContent.trim(),
+    name: savedName || "",
     date: completionDate
 });
 
@@ -63,22 +55,5 @@ new QRCode(qrContainer, {
     height: 90,
     colorDark: "#000000",
     colorLight: "#ffffff"
-});
-
-// 5. UPDATE QR WHEN NAME CHANGES (LIVE)
-nameEl.addEventListener('input', () => {
-    qrContainer.innerHTML = '';
-
-    const updatedPayload = JSON.stringify({
-        cert: certNumber,
-        name: nameEl.textContent.trim(),
-        date: completionDate
-    });
-
-    new QRCode(qrContainer, {
-        text: updatedPayload,
-        width: 90,
-        height: 90
-    });
 });
 </script>
