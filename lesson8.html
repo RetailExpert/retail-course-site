@@ -60,9 +60,9 @@
   <header>
     <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
     <nav>
-      <a href="/">Home</a>
-      <a href="/course.html">Course</a>
-      <a href="/contact.html">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="course.html">Course</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
   <div class="container">
@@ -486,32 +486,53 @@
   <script>
     const lessonNum = 8;
     const totalLessons = 8;
-    
+
     function markLessonComplete() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
-      
+
+      /* ===============================
+         FINAL CERTIFICATE LOCK-IN
+      ================================ */
+
+      // 1. Lock completion date (once only)
+      if (!localStorage.getItem('ubb_completion_date')) {
+        localStorage.setItem('ubb_completion_date', new Date().toISOString());
+      }
+
+      // 2. Generate certificate number (once only)
+      if (!localStorage.getItem('ubb_cert_number')) {
+        const certNumber = `UBB-${Date.now().toString(36).toUpperCase()}`;
+        localStorage.setItem('ubb_cert_number', certNumber);
+      }
+
+      /* ===============================
+         UI UPDATES
+      ================================ */
       document.getElementById('certificateBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = "✅ Course Completed!";
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
+
       updateProgressBar();
     }
-    
+
     function updateProgressBar() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       let completed = 0;
-      for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
-      let percent = Math.round((completed/totalLessons)*100);
+      for (let i = 1; i <= totalLessons; i++) {
+        if (progress[`lesson${i}`]) completed++;
+      }
+      let percent = Math.round((completed / totalLessons) * 100);
       document.getElementById('progressBarFill').style.width = percent + '%';
       document.getElementById('progressText').textContent =
         `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
-    
-    window.onload = function() {
+
+    window.onload = function () {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      if(progress[`lesson${lessonNum}`]) {
+      if (progress[`lesson${lessonNum}`]) {
         document.getElementById('certificateBtn').style.display = 'inline-block';
         document.getElementById('markComplete').textContent = "✅ Course Completed!";
         document.getElementById('markComplete').disabled = true;
