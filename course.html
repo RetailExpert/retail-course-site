@@ -1,0 +1,164 @@
+<!-- PREMIUM BLACK & GOLD COURSE HOME – STRONG CONTRAST VERSION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ultimate Black Book – Course Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#000000;
+  --deep-black:#050505;
+  --gold:#FFD700;
+  --gold-dark:#C9A400;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at top,#111 0%,#000 55%);
+  color:#f5f5f5;
+}
+header{
+  background:linear-gradient(135deg,#000,#0d0d0d);
+  border-bottom:3px solid var(--gold);
+  padding:28px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+header h1{
+  margin:0;
+  font-weight:900;
+  color:var(--gold);
+  letter-spacing:2px;
+  text-shadow:0 0 18px rgba(255,215,0,.6);
+}
+nav a{
+  color:var(--gold);
+  margin-left:26px;
+  text-decoration:none;
+  font-weight:700;
+}
+nav a:hover{opacity:.7}
+.container{
+  max-width:1200px;
+  margin:50px auto;
+  padding:45px;
+  background:linear-gradient(180deg,#0a0a0a,#000);
+  border-radius:22px;
+  box-shadow:0 30px 80px rgba(255,215,0,.15);
+}
+.section-title{
+  font-size:2.4em;
+  font-weight:900;
+  color:var(--gold);
+  margin-bottom:20px;
+  text-shadow:0 0 14px rgba(255,215,0,.5);
+}
+.progress-wrap{
+  border:2px solid var(--gold);
+  border-radius:10px;
+  overflow:hidden;
+  margin-bottom:30px;
+}
+.progress-bar{
+  height:18px;
+  width:0%;
+  background:linear-gradient(90deg,var(--gold),#ffae00);
+  box-shadow:0 0 18px rgba(255,215,0,.8);
+}
+.lesson-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+.lesson-card{
+  background:linear-gradient(145deg,#111,#050505);
+  border:2px solid rgba(255,215,0,.35);
+  border-radius:18px;
+  padding:26px;
+  transition:.3s;
+}
+.lesson-card:hover{
+  transform:translateY(-6px);
+  border-color:var(--gold);
+  box-shadow:0 18px 45px rgba(255,215,0,.35);
+}
+.lesson-card h3{
+  margin:0 0 10px 0;
+  color:var(--gold);
+  font-weight:800;
+}
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 28px;
+  border-radius:40px;
+  font-weight:900;
+  text-decoration:none;
+  color:#000;
+  background:linear-gradient(135deg,var(--gold),#ffae00);
+  box-shadow:0 10px 30px rgba(255,215,0,.7);
+}
+.btn:hover{transform:translateY(-3px)}
+.contact{
+  margin-top:60px;
+  padding:35px;
+  border-radius:18px;
+  background:linear-gradient(160deg,#0f0f0f,#000);
+  border:2px solid var(--gold);
+}
+.contact p{
+  font-size:1.1em;
+}
+@media(max-width:768px){
+  header{flex-direction:column;gap:15px}
+  nav a{margin-left:0;margin-right:15px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>THE ULTIMATE BLACK BOOK</h1>
+  <nav>
+    <a href="course.html">Home</a>
+    <a href="#progress">View Progress</a>
+    <a href="#contact">Contacts</a>
+  </nav>
+</header>
+<div class="container">
+  <div id="progress">
+    <div class="section-title">Your Progress</div>
+    <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+  </div>
+
+  <div class="section-title">Course Lessons</div>
+  <div class="lesson-grid">
+    <div class="lesson-card"><h3>Lesson 1</h3><a class="btn" href="lesson1.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 2</h3><a class="btn" href="lesson2.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 3</h3><a class="btn" href="lesson3.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 4</h3><a class="btn" href="lesson4.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 5</h3><a class="btn" href="lesson5.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 6</h3><a class="btn" href="lesson6.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 7</h3><a class="btn" href="lesson7.html">Open</a></div>
+    <div class="lesson-card"><h3>Lesson 8</h3><a class="btn" href="lesson8.html">Open</a></div>
+  </div>
+
+  <div id="contact" class="contact">
+    <div class="section-title">Contact</div>
+    <p><strong>Course Creator & Director:</strong> Phiwokuhle Makapela</p>
+    <p>📧 masteringretail@gmail.com</p>
+    <p>💬 WhatsApp: +27 74 831 5232</p>
+  </div>
+</div>
+<script>
+let completed=0;
+for(let i=1;i<=8;i++){
+ if(localStorage.getItem(`lesson_${i}_completed`)) completed++;
+}
+document.getElementById('progressBar').style.width=`${(completed/8)*100}%`;
+</script>
+</body>
+</html>
