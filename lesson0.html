@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Free Lesson: Shopkeeper's Privilege - The most misunderstood concept in retail. Learn the legal boundaries that protect your career." />
+  <meta name="keywords" content="retail training, shopkeeper's privilege, retail management, professional development, retail career" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Lesson 0: Shopkeeper's Privilege | The Ultimate Black Book" />
+  <meta property="og:description" content="The legal power you have in retail that no one taught you about. Free lesson + quiz." />
+  <meta property="og:type" content="website" />
+
+  <title>Lesson 0: Shopkeeper's Privilege | The Ultimate Black Book</title>
+
+  <!-- Premium font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#000000;
+      --panel:#0b0b0f;
+      --panel2:#101018;
+      --text:#f2f2f2;
+      --muted:#bdbdbd;
+      --gold:#ffd700;
+      --gold2:#c9a227;
+      --line:rgba(255,215,0,.22);
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
+      --radius:18px;
+      --radius2:26px;
+      --ok:#20c997;
+      --bad:#ff4d4d;
+      --blue:#4facfe;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(900px 420px at 12% 10%, rgba(255,215,0,.10), transparent 55%),
+        radial-gradient(900px 420px at 88% 18%, rgba(79,172,254,.08), transparent 55%),
+        radial-gradient(900px 420px at 60% 95%, rgba(255,215,0,.06), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.75;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:1100px; margin:0 auto; padding:22px 18px 80px; }
+
+    /* Topbar */
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.65);
+      border-bottom:1px solid rgba(255,215,0,.15);
+    }
+    .topbar-inner{
+      max-width:1100px; margin:0 auto;
+      padding:14px 18px;
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.4px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      background: linear-gradient(135deg, rgba(255,215,0,.16), rgba(255,215,0,.06));
+      border:1px solid rgba(255,215,0,.25);
+      color: var(--gold);
+      font-weight:700;
+      font-size:.86rem;
+      white-space:nowrap;
+    }
+    .pill{
+      display:inline-flex;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,215,0,.18);
+      background: rgba(16,16,24,.8);
+      color: var(--muted);
+      font-weight:600;
+      font-size:.86rem;
+      white-space:nowrap;
+    }
+    .nav-actions{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    /* Hero */
+    .hero{
+      margin-top:18px;
+      background: linear-gradient(135deg, rgba(255,215,0,.12), rgba(16,16,24,.92));
+      border:1px solid rgba(255,215,0,.18);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:-120px -120px auto auto;
+      width:340px; height:340px; border-radius:50%;
+      background: radial-gradient(circle, rgba(255,215,0,.16), transparent 60%);
+      filter: blur(2px);
+      pointer-events:none;
+    }
+    .hero-inner{ padding:28px 22px; display:grid; grid-template-columns: 1.25fr .85fr; gap:18px; }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:8px 12px; border-radius:999px;
+      border:1px solid rgba(255,215,0,.22);
+      background: rgba(0,0,0,.45);
+      color: var(--gold);
+      font-weight:800;
+      font-size:.86rem;
+      letter-spacing:.2px;
+      width:fit-content;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      line-height:1.15;
+      letter-spacing:-.4px;
+    }
+    .sub{
+      color: var(--muted);
+      margin:0 0 12px;
+      font-size: 1.02rem;
+    }
+    .hero-cards{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:12px;
+      align-content:start;
+    }
+    .mini-card{
+      border-radius:16px;
+      border:1px solid rgba(255,215,0,.16);
+      background: rgba(0,0,0,.35);
+      padding:14px 14px;
+    }
+    .mini-title{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .mini-title span{
+      color: var(--gold);
+      font-size:.9rem;
+    }
+    .mini-card p{ margin:10px 0 0; color: var(--muted); font-size:.95rem; }
+
+    /* Layout */
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:18px;
+      align-items:start;
+    }
+
+    .card{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,215,0,.16);
+      background: linear-gradient(180deg, rgba(16,16,24,.92), rgba(8,8,12,.92));
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card-h{
+      padding:16px 18px;
+      border-bottom:1px solid rgba(255,215,0,.14);
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+    }
+    .card-h h2{
+      margin:0;
+      font-size:1.05rem;
+      letter-spacing:.2px;
+    }
+    .card-b{ padding:18px; }
+    .muted{ color: var(--muted); }
+
+    .section{
+      padding:16px 0;
+      border-bottom:1px dashed rgba(255,215,0,.16);
+    }
+    .section:last-child{ border-bottom:none; padding-bottom:0; }
+    .section h3{
+      margin:0 0 10px;
+      font-size:1.02rem;
+      letter-spacing:.2px;
+    }
+    .callout{
+      margin-top:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,215,0,.20);
+      background: rgba(255,215,0,.06);
+      color: #f7e48a;
+      font-weight:600;
+    }
+    .callout.blue{
+      border-color: rgba(79,172,254,.25);
+      background: rgba(79,172,254,.08);
+      color:#cfe9ff;
+    }
+
+    /* Quote */
+    .quote{
+      margin:14px 0 0;
+      padding:14px 14px;
+      border-left:4px solid var(--gold);
+      background: rgba(0,0,0,.28);
+      border-radius: 14px;
+      color: var(--text);
+      font-weight:650;
+      letter-spacing:.1px;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,215,0,.24);
+      background: linear-gradient(135deg, rgba(255,215,0,.22), rgba(255,215,0,.08));
+      color: var(--gold);
+      font-weight:800;
+      cursor:pointer;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); box-shadow:0 14px 45px rgba(0,0,0,.45); }
+    .btn:active{ transform: translateY(0px); opacity:.92; }
+    .btn.secondary{
+      color: var(--text);
+      background: rgba(16,16,24,.85);
+      border:1px solid rgba(255,215,0,.14);
+      font-weight:750;
+    }
+    .btn.blue{
+      color:#eaf6ff;
+      background: linear-gradient(135deg, rgba(79,172,254,.22), rgba(79,172,254,.08));
+      border:1px solid rgba(79,172,254,.22);
+      font-weight:850;
+    }
+    .btn[disabled]{
+      opacity:.45;
+      cursor:not-allowed;
+      transform:none !important;
+      box-shadow:none !important;
+    }
+
+    /* Quiz */
+    .progress{
+      width:100%;
+      height:10px;
+      border-radius:999px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,215,0,.12);
+      overflow:hidden;
+    }
+    .bar{
+      height:100%;
+      width:0%;
+      background: linear-gradient(90deg, rgba(255,215,0,.75), rgba(201,162,39,.95));
+      transition: width .35s ease;
+    }
+    .status{
+      margin-top:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(255,215,0,.18);
+      background: rgba(0,0,0,.28);
+      color: var(--muted);
+      font-weight:650;
+    }
+    .status.ok{
+      border-color: rgba(32,201,151,.35);
+      background: rgba(32,201,151,.10);
+      color: #bff5e4;
+    }
+    .status.bad{
+      border-color: rgba(255,77,77,.35);
+      background: rgba(255,77,77,.10);
+      color: #ffd6d6;
+    }
+
+    .q{
+      padding:16px 0;
+      border-bottom:1px dashed rgba(255,215,0,.14);
+    }
+    .q:last-child{ border-bottom:none; padding-bottom:0; }
+    .q-title{ margin:0 0 10px; font-weight:800; letter-spacing:.1px; }
+    .opt{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(255,215,0,.14);
+      background: rgba(0,0,0,.25);
+      margin:8px 0;
+      transition: all 0.2s ease;
+    }
+    .opt:hover{
+      border-color: rgba(255,215,0,.3);
+      background: rgba(255,215,0,.05);
+    }
+    .opt input{ margin-top:4px; cursor:pointer; }
+    .opt label{ cursor:pointer; color: var(--text); flex:1; }
+
+    /* Redirect box */
+    .nextbox{
+      border-radius: var(--radius);
+      border:1px solid rgba(255,215,0,.18);
+      background: linear-gradient(135deg, rgba(255,215,0,.08), rgba(16,16,24,.92));
+      padding:16px 16px;
+      margin-top:14px;
+    }
+    .nextbox h3{ margin:0 0 8px; }
+    .tiny{
+      font-size:.92rem;
+      color: var(--muted);
+      margin:0;
+    }
+    .fine{
+      font-size:.86rem;
+      color: rgba(189,189,189,.9);
+      margin:10px 0 0;
+    }
+
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns:1fr; }
+      .nav-actions{ justify-content:center; }
+    }
+    @media (max-width: 640px){
+      h1{ font-size:1.8rem; }
+      .topbar-inner{ flex-direction:column; text-align:center; }
+      .brand{ flex-direction:column; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <span class="badge">⚡ ULTIMATE BLACK BOOK</span>
+        <span class="pill">🎓 Lesson 0 (Free)</span>
+      </div>
+
+      <div class="nav-actions">
+        <!-- Best practice: keep internal navigation inside your site -->
+        <a class="btn secondary" href="index.html" aria-label="Go to landing page">🏠 Landing Page</a>
+        <a class="btn secondary" href="#quiz" aria-label="Jump to quiz">📝 Go to Quiz</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="hero" aria-label="Lesson header">
+      <div class="hero-inner">
+        <div>
+          <div class="kicker">🔐 Authority Lesson • Career Protection</div>
+          <h1>Shopkeeper's Privilege: Authority, Responsibility & Retail Power</h1>
+
+          <!-- ✅ Option A -->
+          <p class="sub">
+            Built by <b>Phiwokuhle Makapela</b> • Retail Manager • Creator of <b>The Ultimate Black Book</b>
+          </p>
+
+          <p class="sub" style="margin-top:-4px;">
+            The most misunderstood concept in retail — and the fastest way to end a career if handled wrong.
+          </p>
+
+          <div class="quote">
+            "Authority without understanding is dangerous."
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="#lesson" aria-label="Start lesson">▶ Start Lesson</a>
+            <a class="btn secondary" href="#unlock" aria-label="See unlock rules">🔒 How it works</a>
+          </div>
+        </div>
+
+        <div class="hero-cards">
+          <div class="mini-card">
+            <div class="mini-title">What you'll learn <span>✓</span></div>
+            <p class="muted">
+              What Shopkeeper's Privilege is, what it is NOT, how "reasonable suspicion" protects careers,
+              and how true authority is shown on the floor.
+            </p>
+          </div>
+
+          <div class="mini-card">
+            <div class="mini-title">Pass mark <span>80%</span></div>
+            <p class="muted">
+              Score at least <b>80%</b> to pass. After passing, you will be redirected to the full course landing page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card" id="lesson" aria-label="Lesson content">
+        <div class="card-h">
+          <h2>📖 Lesson 0 Content</h2>
+          <span class="pill">Premium Read</span>
+        </div>
+
+        <div class="card-b">
+          <div class="section">
+            <h3>🎯 Lesson Purpose</h3>
+            <p class="muted">
+              This lesson exists to <b>protect you</b>. Not the business. Not the customer. <b>You</b>.
+              Because many retail careers don’t end because of theft — they end because people misunderstand authority and procedure.
+            </p>
+            <div class="callout">
+              If you want to lead in retail, you must understand where your authority starts — and where it ends.
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>1️⃣ What Is Shopkeeper's Privilege?</h3>
+            <p class="muted">
+              Shopkeeper's Privilege is a <b>limited legal concept</b> that (in some jurisdictions) allows a retailer to
+              <b>temporarily detain</b> a person when there is <b>reasonable suspicion of theft</b>, for the purpose of protecting store property.
+            </p>
+            <ul class="muted">
+              <li><b>Temporary</b> - Not indefinite detention</li>
+              <li><b>Conditional</b> - Only with reasonable suspicion</li>
+              <li><b>Procedural</b> - Must follow proper steps</li>
+            </ul>
+            <div class="quote">"It is not power. It is responsibility."</div>
+            <div class="callout blue">
+              Important: exact rules depend on your country and your company policy. Always follow official procedures and local law.
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>2️⃣ What It Is NOT</h3>
+            <p class="muted">Shopkeeper's Privilege is <b>NOT</b>:</p>
+            <ul class="muted">
+              <li>❌ Permission to embarrass customers publicly</li>
+              <li>❌ Permission to use physical force</li>
+              <li>❌ Permission to shout, threaten, or act emotionally</li>
+              <li>❌ Permission to profile people based on appearance</li>
+              <li>❌ Permission to "play hero" or feed your ego</li>
+            </ul>
+            <div class="callout">
+              Hard truth: most dismissals happen <b>after</b> the incident — because ego takes over and procedure is ignored.
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>3️⃣ Reasonable Suspicion (The Career-Saving Line)</h3>
+            <p class="muted">
+              "Reasonable suspicion" is <b>not a feeling</b>. It’s observation, consistency, and procedure.
+              If you didn’t see it, didn’t confirm it, or acted alone — you are exposed.
+            </p>
+            <div class="quote">"Professionals don’t guess. They observe, document, and follow procedure."</div>
+            <p class="muted"><b>Reasonable suspicion requires:</b></p>
+            <ul class="muted">
+              <li>Direct observation of suspicious behaviour</li>
+              <li>Consistent monitoring (not profiling)</li>
+              <li>Following store policy and legal guidelines</li>
+              <li>Witness corroboration when possible</li>
+            </ul>
+          </div>
+
+          <div class="section">
+            <h3>4️⃣ The Psychology of Authority</h3>
+            <p class="muted">
+              Authority is <b>felt, not announced</b>. Thieves test confidence and awareness. Innocent customers respond to tone and respect.
+            </p>
+            <ul class="muted">
+              <li>Aggression creates resistance and legal risk</li>
+              <li>Calm professionalism creates compliance</li>
+              <li>Your tone often determines the outcome</li>
+            </ul>
+            <div class="quote">"Control is quiet. Ego is loud."</div>
+          </div>
+
+          <div class="section">
+            <h3>5️⃣ Staff vs Manager — Know Your Lane</h3>
+            <p class="muted"><b>👤 Staff role:</b></p>
+            <ul class="muted">
+              <li>Observe suspicious behaviour</li>
+              <li>Communicate to management immediately</li>
+              <li>Escalate, don’t confront</li>
+              <li>Protect yourself first</li>
+            </ul>
+            <p class="muted" style="margin-top:12px;">
+              You are <b>never</b> paid to risk your safety or your future.
+            </p>
+            <p class="muted" style="margin-top:16px;"><b>👔 Manager role:</b></p>
+            <ul class="muted">
+              <li>Control escalation</li>
+              <li>Protect brand reputation</li>
+              <li>Protect staff from legal exposure</li>
+              <li>Make final call on action (per policy)</li>
+              <li>Carry ultimate responsibility</li>
+            </ul>
+            <div class="callout">
+              A strong manager doesn’t “fight customers” — a strong manager prevents situations from escalating.
+            </div>
+          </div>
+
+          <div class="section">
+            <h3>6️⃣ Real Retail Scenarios</h3>
+            <p class="muted">
+              <b>Scenario 1: Suspected Concealment</b><br/>
+              ✅ Professionals: Observe calmly → Document → Inform management → Follow procedure<br/>
+              ❌ Amateurs: Confront immediately → Create a scene → Risk disciplinary action
+            </p>
+            <p class="muted" style="margin-top:12px;">
+              <b>Scenario 2: Wrong Customer Stopped</b><br/>
+              One mistake can undo years of reputation. That’s why you need observation + policy, not emotions.
+            </p>
+            <p class="muted" style="margin-top:12px;">
+              <b>Scenario 3: Aggressive Customer Response</b><br/>
+              ✅ Lower your tone → Slow down → Stay procedural → De-escalate<br/>
+              ❌ Match their energy → Argue → Escalate conflict
+            </p>
+          </div>
+
+          <div class="section" id="unlock">
+            <h3>🔒 Why This Lesson Is Free</h3>
+            <p class="muted">
+              Retail mastery is discipline, control, and responsibility — not loudness.
+              This lesson is free so you can taste the standard and see what this course is built on.
+            </p>
+            <div class="callout">
+              Pass the quiz (80%+) and you’ll be redirected to the full course landing page to continue the journey.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card" id="quiz" aria-label="Lesson quiz">
+        <div class="card-h">
+          <h2>📝 Lesson 0 Quiz</h2>
+          <span class="pill">Pass mark: 80%</span>
+        </div>
+
+        <div class="card-b">
+          <div class="progress" aria-label="Quiz progress">
+            <div id="progressBar" class="bar"></div>
+          </div>
+
+          <div id="quizStatus" class="status" role="status" aria-live="polite">
+            Answer all <b>8 questions</b>, then click Submit Quiz.
+          </div>
+
+          <form id="quizForm">
+            <div class="q">
+              <p class="q-title">Q1) What is Shopkeeper's Privilege?</p>
+              <div class="opt"><input type="radio" name="q1" id="q1a" value="A" /><label for="q1a">A. The right to stop and search any suspicious customer</label></div>
+              <div class="opt"><input type="radio" name="q1" id="q1b" value="B" /><label for="q1b">B. A temporary right to detain a person with reasonable suspicion of theft</label></div>
+              <div class="opt"><input type="radio" name="q1" id="q1c" value="C" /><label for="q1c">C. Permission to use force to protect stock</label></div>
+              <div class="opt"><input type="radio" name="q1" id="q1d" value="D" /><label for="q1d">D. Authority to confront customers publicly</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q2) Which is NOT part of Shopkeeper's Privilege?</p>
+              <div class="opt"><input type="radio" name="q2" id="q2a" value="A" /><label for="q2a">A. Temporary detention</label></div>
+              <div class="opt"><input type="radio" name="q2" id="q2b" value="B" /><label for="q2b">B. Reasonable suspicion</label></div>
+              <div class="opt"><input type="radio" name="q2" id="q2c" value="C" /><label for="q2c">C. Emotional reaction</label></div>
+              <div class="opt"><input type="radio" name="q2" id="q2d" value="D" /><label for="q2d">D. Protecting store property</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q3) What does "reasonable suspicion" mean?</p>
+              <div class="opt"><input type="radio" name="q3" id="q3a" value="A" /><label for="q3a">A. A feeling that someone looks suspicious</label></div>
+              <div class="opt"><input type="radio" name="q3" id="q3b" value="B" /><label for="q3b">B. Profiling based on appearance</label></div>
+              <div class="opt"><input type="radio" name="q3" id="q3c" value="C" /><label for="q3c">C. Clear observation and behaviour over time</label></div>
+              <div class="opt"><input type="radio" name="q3" id="q3d" value="D" /><label for="q3d">D. A guess made under pressure</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q4) Who carries the main responsibility when Shopkeeper's Privilege is exercised?</p>
+              <div class="opt"><input type="radio" name="q4" id="q4a" value="A" /><label for="q4a">A. Any staff member on duty</label></div>
+              <div class="opt"><input type="radio" name="q4" id="q4b" value="B" /><label for="q4b">B. The customer</label></div>
+              <div class="opt"><input type="radio" name="q4" id="q4c" value="C" /><label for="q4c">C. Security personnel only</label></div>
+              <div class="opt"><input type="radio" name="q4" id="q4d" value="D" /><label for="q4d">D. Store management / leadership</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q5) What is the correct role of a sales staff member?</p>
+              <div class="opt"><input type="radio" name="q5" id="q5a" value="A" /><label for="q5a">A. Confront the customer immediately</label></div>
+              <div class="opt"><input type="radio" name="q5" id="q5b" value="B" /><label for="q5b">B. Observe, report, and escalate to management</label></div>
+              <div class="opt"><input type="radio" name="q5" id="q5c" value="C" /><label for="q5c">C. Block the exit</label></div>
+              <div class="opt"><input type="radio" name="q5" id="q5d" value="D" /><label for="q5d">D. Search the customer's belongings</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q6) Why do retail careers often end after theft situations?</p>
+              <div class="opt"><input type="radio" name="q6" id="q6a" value="A" /><label for="q6a">A. Theft itself is always the reason</label></div>
+              <div class="opt"><input type="radio" name="q6" id="q6b" value="B" /><label for="q6b">B. Poor handling: ego, aggression, and ignoring procedure</label></div>
+              <div class="opt"><input type="radio" name="q6" id="q6c" value="C" /><label for="q6c">C. Customers always report staff even when staff are correct</label></div>
+              <div class="opt"><input type="radio" name="q6" id="q6d" value="D" /><label for="q6d">D. Managers prefer firing staff after every incident</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q7) What is the best tone when dealing with a suspected theft situation?</p>
+              <div class="opt"><input type="radio" name="q7" id="q7a" value="A" /><label for="q7a">A. Loud and aggressive to show dominance</label></div>
+              <div class="opt"><input type="radio" name="q7" id="q7b" value="B" /><label for="q7b">B. Calm, professional, and procedural</label></div>
+              <div class="opt"><input type="radio" name="q7" id="q7c" value="C" /><label for="q7c">C. Sarcastic to embarrass the person</label></div>
+              <div class="opt"><input type="radio" name="q7" id="q7d" value="D" /><label for="q7d">D. Emotional so the person feels guilty</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q8) What should you do FIRST if you notice suspicious behaviour?</p>
+              <div class="opt"><input type="radio" name="q8" id="q8a" value="A" /><label for="q8a">A. Accuse the customer immediately</label></div>
+              <div class="opt"><input type="radio" name="q8" id="q8b" value="B" /><label for="q8b">B. Observe, confirm, and follow store procedure (report/escalate)</label></div>
+              <div class="opt"><input type="radio" name="q8" id="q8c" value="C" /><label for="q8c">C. Record them on your phone and post it</label></div>
+              <div class="opt"><input type="radio" name="q8" id="q8d" value="D" /><label for="q8d">D. Physically block the exit</label></div>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+              <button class="btn" type="button" id="submitBtn">✅ Submit Quiz</button>
+              <button class="btn secondary" type="button" id="resetBtn">🔄 Reset</button>
+            </div>
+          </form>
+
+          <div class="nextbox" aria-label="Next step">
+            <h3>➡ Next Step</h3>
+            <p class="tiny" id="nextText">Pass the quiz to continue to the full course landing page.</p>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+              <a class="btn blue" id="goLandingBtn" href="index.html" aria-label="Go to landing page">View Full Course (Landing Page)</a>
+            </div>
+
+            <p class="fine">
+              If you passed already and refreshed the page, your score is saved in this browser.
+            </p>
+          </div>
+
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const PASS_MARK = 80;
+    const TOTAL = 8;
+    const REDIRECT_TO = "index.html"; // landing page
+
+    const answers = {
+      q1: "B",
+      q2: "C",
+      q3: "C",
+      q4: "D",
+      q5: "B",
+      q6: "B",
+      q7: "B",
+      q8: "B"
+    };
+
+    const form = document.getElementById("quizForm");
+    const statusEl = document.getElementById("quizStatus");
+    const progressBar = document.getElementById("progressBar");
+    const submitBtn = document.getElementById("submitBtn");
+    const resetBtn = document.getElementById("resetBtn");
+
+    const nextText = document.getElementById("nextText");
+    const goLandingBtn = document.getElementById("goLandingBtn");
+
+    function countAnswered() {
+      let count = 0;
+      for (let i = 1; i <= TOTAL; i++) {
+        const name = "q" + i;
+        if (form.querySelector(`input[name="${name}"]:checked`)) count++;
+      }
+      return count;
+    }
+
+    function updateProgress() {
+      const answered = countAnswered();
+      const pct = Math.round((answered / TOTAL) * 100);
+      progressBar.style.width = pct + "%";
+      statusEl.className = "status";
+      statusEl.innerHTML = `Answered <b>${answered}/${TOTAL}</b> questions.`;
+    }
+
+    function gradeQuiz() {
+      const answered = countAnswered();
+      if (answered < TOTAL) {
+        statusEl.className = "status bad";
+        statusEl.innerHTML = `⚠️ Please answer all <b>${TOTAL}</b> questions before submitting.`;
+        return;
+      }
+
+      let correct = 0;
+      for (let i = 1; i <= TOTAL; i++) {
+        const name = "q" + i;
+        const picked = form.querySelector(`input[name="${name}"]:checked`).value;
+        if (picked === answers[name]) correct++;
+      }
+
+      const score = Math.round((correct / TOTAL) * 100);
+      const passed = score >= PASS_MARK;
+
+      localStorage.setItem("lesson0_score", String(score));
+      localStorage.setItem("lesson0_passed", passed ? "true" : "false");
+
+      if (passed) {
+        statusEl.className = "status ok";
+        statusEl.innerHTML = `✅ You scored <b>${score}%</b> (${correct}/${TOTAL}). Pass mark is <b>${PASS_MARK}%</b>. Redirecting you to the full course...`;
+        nextText.innerHTML = `✅ Passed! Redirecting to the landing page now...`;
+
+        // Auto redirect after a short moment (so they see the pass message)
+        setTimeout(() => {
+          window.location.href = REDIRECT_TO;
+        }, 1400);
+
+      } else {
+        statusEl.className = "status bad";
+        statusEl.innerHTML = `❌ You scored <b>${score}%</b> (${correct}/${TOTAL}). Pass mark is <b>${PASS_MARK}%</b>. Try again.`;
+        nextText.innerHTML = `Pass the quiz (80%+) to continue to the landing page.`;
+      }
+    }
+
+    function resetQuiz() {
+      form.reset();
+      statusEl.className = "status";
+      statusEl.innerHTML = `Answer all <b>${TOTAL}</b> questions, then click Submit Quiz.`;
+      progressBar.style.width = "0%";
+      localStorage.removeItem("lesson0_score");
+      localStorage.setItem("lesson0_passed", "false");
+      nextText.innerHTML = `Pass the quiz to continue to the full course landing page.`;
+    }
+
+    form.addEventListener("change", updateProgress);
+    submitBtn.addEventListener("click", gradeQuiz);
+    resetBtn.addEventListener("click", resetQuiz);
+
+    (function init(){
+      updateProgress();
+
+      // If they already passed before, show it (but we don't auto-redirect on load)
+      const passed = localStorage.getItem("lesson0_passed") === "true";
+      const score = localStorage.getItem("lesson0_score");
+      if (passed && score) {
+        nextText.innerHTML = `✅ You already passed this free lesson (<b>${score}%</b>). You can continue to the landing page anytime.`;
+      }
+    })();
+  </script>
+</body>
+</html>
