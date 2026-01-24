@@ -1,337 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lesson 0: Shopkeeper's Privilege | The Ultimate Black Book</title>
-
-  <meta name="description" content="Free Lesson 0 by Phiwokuhle Makapela. Shopkeeper's Privilege — master retail authority without losing your career. Includes quiz + marks." />
-  <meta name="author" content="Phiwokuhle Makapela" />
-  <link rel="canonical" href="https://retailexpert.xyz/lesson0.html" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 0: The Authority No One Teaches You | Black Book</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-
   <style>
-    :root{
-      --black:#050505;
-      --panel:#0c0c10;
-      --panel2:#101016;
-
-      --white:#ffffff;
-      --text:#f2f2f2;
-      --muted:#b7b7b7;
-
-      --gold:#d4af37;
-      --gold2:#c9a227;
-      --gold-line: rgba(212,175,55,.26);
-      --gold-soft: rgba(212,175,55,.08);
-
-      --ok:#21c99a;
-      --bad:#ff4d4d;
-
-      --radius:20px;
-      --radius-lg:28px;
-      --shadow: 0 26px 90px rgba(0,0,0,.85);
-    }
-
-    *{ box-sizing:border-box; }
-    html, body { height:100%; }
-    body{
-      margin:0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(700px 340px at 14% 10%, rgba(212,175,55,.12), transparent 60%),
-        radial-gradient(700px 340px at 86% 20%, rgba(212,175,55,.08), transparent 60%),
-        radial-gradient(700px 340px at 55% 95%, rgba(212,175,55,.06), transparent 60%),
-        var(--black);
-      color: var(--text);
-      line-height: 1.75;
-    }
-
-    a{ text-decoration:none; color:inherit; }
-    .wrap{ max-width:1100px; margin:0 auto; padding:22px 18px 90px; }
-
-    /* Topbar */
-    .topbar{
-      position:sticky; top:0; z-index:50;
-      background: rgba(5,5,5,.86);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--gold-line);
-    }
-    .topbar-inner{
-      max-width:1100px; margin:0 auto;
-      padding:14px 18px;
-      display:flex; align-items:center; justify-content:space-between; gap:14px;
-    }
-    .brand{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
-    .badge{
-      display:inline-flex; align-items:center; gap:10px;
-      padding:7px 14px;
-      border-radius:999px;
-      background: linear-gradient(135deg, rgba(212,175,55,.28), rgba(212,175,55,.08));
-      border:1px solid rgba(212,175,55,.45);
-      color: var(--gold);
-      font-size:.85rem;
-      font-weight:900;
-      letter-spacing:.2px;
-    }
-    .pill{
-      display:inline-flex;
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid rgba(212,175,55,.20);
-      background: rgba(16,16,20,.72);
-      color: var(--muted);
-      font-size:.85rem;
-      font-weight:800;
-    }
-    .nav-actions{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-
-    /* Buttons */
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:12px 16px;
-      border-radius:14px;
-      border:1px solid rgba(212,175,55,.45);
-      background: linear-gradient(135deg, rgba(212,175,55,.30), rgba(212,175,55,.10));
-      color: var(--gold);
-      font-weight:900;
-      cursor:pointer;
-      transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease, border-color .16s ease;
-      user-select:none;
-    }
-    .btn:hover{
-      transform: translateY(-1px);
-      box-shadow: 0 16px 55px rgba(0,0,0,.75);
-      border-color: rgba(212,175,55,.70);
-    }
-    .btn:active{ transform: translateY(0); opacity:.92; }
-    .btn.secondary{
-      background: rgba(10,10,10,.85);
-      border:1px solid rgba(212,175,55,.22);
-      color: var(--text);
-      font-weight:850;
-    }
-    .btn[disabled]{ opacity:.45; cursor:not-allowed; pointer-events:none; }
-
-    /* Hero */
-    .hero{
-      margin-top:22px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(180deg, rgba(16,16,20,.96), rgba(7,7,7,.96));
-      border:1px solid rgba(212,175,55,.26);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .hero::after{
-      content:"";
-      position:absolute; inset:-130px -120px auto auto;
-      width:360px; height:360px; border-radius:50%;
-      background: radial-gradient(circle, rgba(212,175,55,.20), transparent 62%);
-      pointer-events:none;
-      filter: blur(1px);
-    }
-    .hero-inner{
-      padding:30px 24px;
-      display:grid;
-      grid-template-columns: 1.25fr .85fr;
-      gap:22px;
-    }
-    .kicker{
-      display:inline-flex; gap:10px; align-items:center;
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid rgba(212,175,55,.35);
-      background: rgba(5,5,5,.55);
-      color: var(--gold);
-      font-weight:900;
-      font-size:.85rem;
-      width:fit-content;
-    }
-    h1{
-      margin:16px 0 12px;
-      font-size: clamp(1.7rem, 2.4vw, 2.7rem);
-      line-height:1.12;
-      letter-spacing:-.3px;
-      color: var(--white);
-    }
-    .sub{ color: var(--muted); margin:0 0 12px; }
-    .quote{
-      margin:16px 0 0;
-      padding:16px 16px;
-      border-left:4px solid var(--gold);
-      background: rgba(0,0,0,.38);
-      border-radius: 14px;
-      font-weight:850;
-    }
-
-    .mini-card{
-      border-radius:18px;
-      border:1px solid rgba(212,175,55,.18);
-      background: rgba(0,0,0,.35);
-      padding:16px 16px;
-    }
-    .mini-title{
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-      font-weight:900;
-      letter-spacing:.1px;
-    }
-    .mini-title span{ color: var(--gold); font-size:.9rem; }
-    .mini-card p{ margin:12px 0 0; color: var(--muted); font-size:.97rem; }
-
-    /* Layout */
-    .grid{
-      margin-top:20px;
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:20px;
-      align-items:start;
-    }
-
-    .card{
-      border-radius: var(--radius);
-      border:1px solid rgba(212,175,55,.18);
-      background: linear-gradient(180deg, rgba(16,16,20,.96), rgba(8,8,10,.96));
-      box-shadow: var(--shadow);
-      overflow:hidden;
-    }
-    .card-h{
-      padding:16px 18px;
-      border-bottom:1px solid rgba(212,175,55,.14);
-      display:flex; align-items:center; justify-content:space-between; gap:10px;
-    }
-    .card-h h2{ margin:0; font-size:1.05rem; letter-spacing:.2px; }
-    .card-b{ padding:20px; }
-
-    .section{
-      padding:20px 0;
-      border-bottom:1px dashed rgba(212,175,55,.18);
-    }
-    .section:last-child{ border-bottom:none; padding-bottom:0; }
-    .section h3{ margin:0 0 12px; font-size:1.05rem; letter-spacing:.2px; color: var(--white); }
-
-    .callout{
-      margin-top:14px;
-      padding:14px 14px;
-      border-radius:14px;
-      border:1px solid rgba(212,175,55,.26);
-      background: rgba(212,175,55,.07);
-      color: #f2e6b6;
-      font-weight:800;
-    }
-    .callout.dim{
-      border-color: rgba(212,175,55,.18);
-      background: rgba(0,0,0,.25);
-      color: var(--muted);
-      font-weight:750;
-    }
-
-    /* Quiz */
-    .progress{
-      width:100%;
-      height:10px;
-      border-radius:999px;
-      background: rgba(255,255,255,.08);
-      border:1px solid rgba(212,175,55,.16);
-      overflow:hidden;
-      margin-bottom:14px;
-    }
-    .bar{
-      height:100%;
-      width:0%;
-      background: linear-gradient(90deg, rgba(212,175,55,.85), rgba(201,162,39,.98));
-      transition: width .35s ease;
-    }
-
-    .status{
-      padding:14px;
-      border-radius:14px;
-      border:1px solid rgba(212,175,55,.18);
-      background: rgba(0,0,0,.30);
-      color: var(--muted);
-      font-weight:800;
-      margin-bottom:18px;
-    }
-    .status.ok{
-      border-color: rgba(33,201,154,.40);
-      background: rgba(33,201,154,.12);
-      color: #bff5e4;
-    }
-    .status.bad{
-      border-color: rgba(255,77,77,.40);
-      background: rgba(255,77,77,.12);
-      color: #ffd6d6;
-    }
-
-    .q{
-      padding:22px 0;
-      border-bottom:1px dashed rgba(212,175,55,.16);
-    }
-    .q:last-child{ border-bottom:none; padding-bottom:0; }
-    .q-title{ margin:0 0 14px; font-weight:900; letter-spacing:.1px; font-size:1.02rem; }
-
-    .opt{
-      display:flex; gap:12px; align-items:flex-start;
-      padding:14px 14px;
-      border-radius:16px;
-      border:1px solid rgba(212,175,55,.16);
-      background: rgba(0,0,0,.28);
-      margin:12px 0;
-      transition: all .18s ease;
-    }
-    .opt:hover{
-      border-color: rgba(212,175,55,.45);
-      background: rgba(212,175,55,.07);
-      transform: translateY(-1px);
-    }
-    .opt input{ margin-top:4px; cursor:pointer; accent-color: var(--gold); }
-    .opt label{ cursor:pointer; flex:1; color: var(--text); }
-
-    .actions{
-      display:flex; gap:10px; flex-wrap:wrap;
-      margin-top:18px;
-      padding-top:10px;
-    }
-
-    .nextbox{
-      border-radius: var(--radius);
-      border:1px solid rgba(212,175,55,.18);
-      background: linear-gradient(135deg, rgba(212,175,55,.08), rgba(16,16,20,.96));
-      padding:16px 16px;
-      margin-top:18px;
-    }
-    .nextbox h3{ margin:0 0 8px; color: var(--white); }
-    .tiny{ font-size:.95rem; color: var(--muted); margin:0; }
-    .fine{ font-size:.88rem; color: rgba(179,179,179,.9); margin:10px 0 0; }
-
-    footer{
-      margin-top:46px;
-      text-align:center;
-      font-size:.9rem;
-      color: rgba(179,179,179,.9);
-    }
-
-    @media (max-width: 980px){
-      .hero-inner{ grid-template-columns:1fr; }
-      .grid{ grid-template-columns:1fr; }
-      .nav-actions{ justify-content:center; }
-    }
+    :root{--black:#050505;--white:#fff;--text:#f2f2f2;--muted:#b7b7b7;--gold:#d4af37;--gold-line:rgba(212,175,55,.26);--ok:#21c99a;--bad:#ff4d4d;--radius:20px;--radius-lg:28px;--shadow:0 26px 90px rgba(0,0,0,.85)}
+    *{box-sizing:border-box}html,body{height:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;background:radial-gradient(700px 340px at 14% 10%,rgba(212,175,55,.12),transparent 60%),radial-gradient(700px 340px at 86% 20%,rgba(212,175,55,.08),transparent 60%),var(--black);color:var(--text);line-height:1.75}
+    a{text-decoration:none;color:inherit}.wrap{max-width:1200px;margin:0 auto;padding:22px 18px 90px}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(5,5,5,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--gold-line)}
+    .topbar-inner{max-width:1200px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;background:linear-gradient(135deg,rgba(212,175,55,.28),rgba(212,175,55,.08));border:1px solid rgba(212,175,55,.45);color:var(--gold);font-size:.85rem;font-weight:900}
+    .pill{display:inline-flex;padding:7px 12px;border-radius:999px;border:1px solid rgba(212,175,55,.20);background:rgba(16,16,20,.72);color:var(--muted);font-size:.85rem;font-weight:800}
+    .nav-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid rgba(212,175,55,.45);background:linear-gradient(135deg,rgba(212,175,55,.30),rgba(212,175,55,.10));color:var(--gold);font-weight:900;cursor:pointer;transition:transform .16s,box-shadow .16s,opacity .16s;user-select:none}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 16px 55px rgba(0,0,0,.75);border-color:rgba(212,175,55,.70)}
+    .btn:active{transform:translateY(0);opacity:.92}
+    .btn.secondary{background:rgba(10,10,10,.85);border:1px solid rgba(212,175,55,.22);color:var(--text);font-weight:850}
+    .hero{margin-top:22px;border-radius:var(--radius-lg);background:linear-gradient(180deg,rgba(16,16,20,.96),rgba(7,7,7,.96));border:1px solid var(--gold-line);box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .hero::after{content:"";position:absolute;inset:-130px -120px auto auto;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.20),transparent 62%);pointer-events:none;filter:blur(1px)}
+    .hero-inner{padding:30px 24px;position:relative;z-index:1}
+    .kicker{display:inline-flex;gap:10px;align-items:center;padding:7px 12px;border-radius:999px;border:1px solid rgba(212,175,55,.35);background:rgba(5,5,5,.55);color:var(--gold);font-weight:900;font-size:.85rem;width:fit-content}
+    h1{margin:16px 0 12px;font-size:clamp(1.9rem,3vw,3.2rem);line-height:1.1;letter-spacing:-.4px;color:var(--white);max-width:900px}
+    .sub{color:var(--muted);margin:0 0 12px;max-width:800px}
+    .quote{margin:16px 0 0;padding:18px;border-left:4px solid var(--gold);background:rgba(0,0,0,.38);border-radius:14px;font-weight:850;font-size:1.05rem;max-width:750px}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:22px}
+    .stat-card{border-radius:16px;border:1px solid rgba(212,175,55,.18);background:rgba(0,0,0,.35);padding:16px 18px;text-align:center}
+    .stat-num{font-size:2rem;font-weight:900;color:var(--gold);letter-spacing:-.5px}
+    .stat-label{font-size:.9rem;color:var(--muted);margin-top:4px;font-weight:800}
+    .content-wrap{margin-top:30px;display:grid;grid-template-columns:1fr;gap:24px}
+    .card{border-radius:var(--radius);border:1px solid rgba(212,175,55,.18);background:linear-gradient(180deg,rgba(16,16,20,.96),rgba(8,8,10,.96));box-shadow:var(--shadow);overflow:hidden}
+    .card-h{padding:18px 20px;border-bottom:1px solid rgba(212,175,55,.14);display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .card-h h2{margin:0;font-size:1.15rem}
+    .card-b{padding:24px}
+    .section{padding:24px 0;border-bottom:1px dashed rgba(212,175,55,.18)}
+    .section:last-child{border-bottom:none;padding-bottom:0}
+    .section h3{margin:0 0 16px;font-size:1.25rem;color:var(--white);display:flex;align-items:center;gap:10px}
+    .section p{color:var(--muted)}
+    .callout{margin-top:16px;padding:16px;border-radius:14px;border:1px solid rgba(212,175,55,.26);background:rgba(212,175,55,.07);color:#f2e6b6;font-weight:800;line-height:1.6}
+    .callout.dim{border-color:rgba(212,175,55,.18);background:rgba(0,0,0,.25);color:var(--muted);font-weight:750}
+    .callout.story{border-color:rgba(212,175,55,.35);background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(0,0,0,.45));color:var(--text)}
+    .pattern-break{margin:24px 0;padding:20px;border-radius:16px;background:linear-gradient(135deg,rgba(212,175,55,.18),rgba(0,0,0,.55));border:2px solid var(--gold-line);text-align:center}
+    .pattern-break h4{margin:0 0 8px;font-size:1.3rem;color:var(--gold)}
+    .pattern-break p{margin:0;font-size:1.05rem;color:var(--text)}
+    .bonus-pack{margin-top:30px;border-radius:var(--radius-lg);border:2px solid rgba(212,175,55,.35);background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(16,16,20,.96));box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .bonus-pack::before{content:"🎁";position:absolute;top:20px;right:20px;font-size:4rem;opacity:.15}
+    .bonus-header{padding:24px 26px;border-bottom:1px solid rgba(212,175,55,.22);background:rgba(0,0,0,.35)}
+    .bonus-header h2{margin:0 0 8px;font-size:1.6rem;color:var(--white)}
+    .bonus-header .tagline{color:var(--gold);font-weight:900;font-size:.95rem}
+    .bonus-body{padding:26px}
+    .modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin:20px 0}
+    .module-item{padding:14px 16px;border-radius:12px;border:1px solid rgba(212,175,55,.16);background:rgba(0,0,0,.28)}
+    .module-item strong{color:var(--gold);display:block;margin-bottom:6px}
+    .module-item span{color:var(--muted);font-size:.92rem;line-height:1.5}
+    .download-cta{margin-top:24px;padding:20px;border-radius:14px;background:rgba(0,0,0,.45);border:1px solid rgba(212,175,55,.25);text-align:center}
+    .download-cta p{margin:0 0 16px;font-size:1.05rem;color:var(--text)}
+    .email-gate{margin-top:30px;border-radius:var(--radius-lg);border:2px solid rgba(212,175,55,.30);background:linear-gradient(180deg,rgba(16,16,20,.98),rgba(7,7,7,.98));box-shadow:var(--shadow);overflow:hidden}
+    .email-gate-header{padding:22px 24px;background:linear-gradient(135deg,rgba(212,175,55,.16),rgba(0,0,0,.55));border-bottom:1px solid rgba(212,175,55,.22);text-align:center}
+    .email-gate-header h2{margin:0 0 10px;font-size:1.5rem;color:var(--white)}
+    .email-gate-header p{margin:0;color:var(--muted);font-size:.95rem}
+    .email-gate-body{padding:26px}
+    .form-embed{width:100%;min-height:600px;border:none;border-radius:12px;background:rgba(255,255,255,.02)}
+    .progress{width:100%;height:10px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(212,175,55,.16);overflow:hidden;margin-bottom:14px}
+    .bar{height:100%;width:0%;background:linear-gradient(90deg,rgba(212,175,55,.85),rgba(201,162,39,.98));transition:width .35s}
+    .status{padding:16px;border-radius:14px;border:1px solid rgba(212,175,55,.18);background:rgba(0,0,0,.30);color:var(--muted);font-weight:800;margin-bottom:18px}
+    .status.ok{border-color:rgba(33,201,154,.40);background:rgba(33,201,154,.12);color:#bff5e4}
+    .status.bad{border-color:rgba(255,77,77,.40);background:rgba(255,77,77,.12);color:#ffd6d6}
+    .q{padding:24px 0;border-bottom:1px dashed rgba(212,175,55,.16)}
+    .q:last-child{border-bottom:none;padding-bottom:0}
+    .q-title{margin:0 0 16px;font-weight:900;font-size:1.05rem;color:var(--white)}
+    .opt{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:16px;border:1px solid rgba(212,175,55,.16);background:rgba(0,0,0,.28);margin:12px 0;transition:all .18s;cursor:pointer}
+    .opt:hover{border-color:rgba(212,175,55,.45);background:rgba(212,175,55,.07);transform:translateY(-1px)}
+    .opt input{margin-top:4px;cursor:pointer;accent-color:var(--gold)}
+    .opt label{cursor:pointer;flex:1;color:var(--text)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;padding-top:12px}
+    .nextbox{border-radius:var(--radius);border:1px solid rgba(212,175,55,.18);background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(16,16,20,.96));padding:18px;margin-top:20px}
+    .nextbox h3{margin:0 0 10px;color:var(--white)}
+    .tiny{font-size:.95rem;color:var(--muted);margin:0}
+    .fine{font-size:.88rem;color:rgba(179,179,179,.9);margin:10px 0 0}
+    footer{margin-top:50px;text-align:center;font-size:.9rem;color:rgba(179,179,179,.9);padding:20px}
+    @media(max-width:980px){.stats{grid-template-columns:repeat(2,1fr)}.modules-grid{grid-template-columns:1fr}h1{font-size:1.8rem}}
   </style>
 </head>
-
 <body>
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand">
-        <span class="badge">ULTIMATE BLACK BOOK</span>
+        <span class="badge">⚫ THE ULTIMATE BLACK BOOK</span>
         <span class="pill">Lesson 0 • Free</span>
       </div>
       <div class="nav-actions">
-        <a class="btn secondary" href="index.html">🏠 Landing Page</a>
-        <a class="btn secondary" href="#quiz">📝 Go to Quiz</a>
+        <a class="btn secondary" href="index.html">🏠 Main Course</a>
+        <a class="btn secondary" href="#email">📧 Unlock Quiz</a>
       </div>
     </div>
   </div>
@@ -339,389 +104,388 @@
   <main class="wrap">
     <section class="hero">
       <div class="hero-inner">
-        <div>
-          <div class="kicker">🔐 Authority Lesson • Career Protection</div>
-          <h1>Shopkeeper's Privilege: Authority, Responsibility & Retail Power</h1>
-          <p class="sub">Built by <b>Phiwokuhle Makapela</b> • Retail Manager • Creator of <b>The Ultimate Black Book</b></p>
-          <p class="sub" style="margin-top:-6px;">The most misunderstood concept in retail — and the fastest way to end a career if handled wrong.</p>
-          <div class="quote">“Authority without understanding is dangerous.”</div>
-
-          <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#lesson">▶ Start Lesson</a>
-            <a class="btn secondary" href="#quiz">📝 Go to Quiz</a>
-          </div>
+        <div class="kicker">⚠️ The Authority Lesson That Ends Careers When Misunderstood</div>
+        <h1>Shopkeeper's Privilege: The Power You Have (And The Line You Never Cross)</h1>
+        <p class="sub">By <b>Phiwokuhle Makapela</b> • Retail Manager • Creator of <b>The Ultimate Black Book</b></p>
+        <p class="sub" style="margin-top:-6px;font-size:1.05rem">Most people lose their jobs <i>after</i> they stop the thief — not during. This lesson teaches you why.</p>
+        <div class="quote">"Authority without understanding is dangerous. Ego without procedure is career suicide."</div>
+        <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#lesson">▶ Start Lesson</a>
+          <a class="btn secondary" href="#bonus">🎁 Get Hired Pack</a>
         </div>
-
-        <div style="display:grid; gap:14px;">
-          <div class="mini-card">
-            <div class="mini-title">What you'll learn <span>✓</span></div>
-            <p>Authority, responsibility, procedure, and how to protect your name under pressure.</p>
-          </div>
-          <div class="mini-card">
-            <div class="mini-title">Pass mark <span>80%</span></div>
-            <p>Marks will show after you submit: <b>Score = Correct/8</b> and percentage.</p>
-          </div>
+        <div class="stats">
+          <div class="stat-card"><div class="stat-num">18</div><div class="stat-label">Quiz Questions</div></div>
+          <div class="stat-card"><div class="stat-num">85%</div><div class="stat-label">Pass Mark</div></div>
+          <div class="stat-card"><div class="stat-num">16</div><div class="stat-label">Page Bonus PDF</div></div>
         </div>
       </div>
     </section>
 
-    <section class="grid">
+    <div class="content-wrap">
       <article class="card" id="lesson">
-        <div class="card-h"><h2>📖 Lesson 0 Content</h2><span class="pill">Premium Read</span></div>
-
-        <!-- ✅ LONG CONTENT INTEGRATED -->
+        <div class="card-h"><h2>📖 Lesson 0: The Authority No One Teaches You</h2><span class="pill">Premium Read</span></div>
         <div class="card-b">
           <div class="section">
-            <h3>🎯 Lesson Purpose</h3>
-            <p style="color:var(--muted); margin:0;">
-              This lesson exists to protect <b>you</b>. Careers don’t end because theft happens — they end because authority is misunderstood
-              and people act emotionally, skip procedure, or embarrass the wrong person.
-            </p>
-            <div class="callout">
-              Real authority is calm, procedural, and controlled — even when the situation is hot.
-            </div>
+            <h3>🎯 Why This Lesson Exists</h3>
+            <p>Let me be clear: This lesson isn't here to teach you how to "catch thieves." It's here to teach you how to <b>protect your name, your career, and your future</b> when pressure hits the floor.</p>
+            <p>I've seen good people — respectful, hardworking, professional — lose everything because they misunderstood one concept: <b>Shopkeeper's Privilege</b>.</p>
+            <div class="callout story"><b>Real Story:</b> A floor manager at a national chain stopped a customer he "knew" was stealing. He was confident. Loud. Public. The customer wasn't stealing — they were a regional executive doing an undercover store check. The manager was dismissed within 48 hours. Not for suspicion. For <b>embarrassment</b>.</div>
+            <div class="callout">Careers don't end because theft happens. They end because <b>ego</b> takes over, <b>procedure</b> gets ignored, and the wrong person gets embarrassed.</div>
           </div>
 
-          <div class="section">
-            <h3>1️⃣ What it is (in simple retail language)</h3>
-            <p style="color:var(--muted); margin:0;">
-              “Shopkeeper’s Privilege” is commonly used to describe a store’s limited ability to respond when theft is reasonably suspected —
-              using <b>policy + procedure</b> to protect the store while still respecting customer rights.
-            </p>
-            <div class="callout dim">
-              Important: Rules differ by country and company. You must always follow your official store policy and local law.
-              This lesson teaches the professional mindset + safest procedure.
-            </div>
-          </div>
+          <div class="pattern-break"><h4>Hard Truth #1</h4><p>Most dismissals happen <i>after</i> the incident — not during it.</p></div>
 
           <div class="section">
-            <h3>2️⃣ What it is NOT</h3>
-            <ul style="color:var(--muted); margin:0;">
-              <li>Not permission to embarrass customers publicly</li>
-              <li>Not permission to use force or “be a hero”</li>
-              <li>Not permission to accuse without clear observation</li>
-              <li>Not permission to profile people based on clothing/age/race</li>
-              <li>Not permission to search bags or touch personal items</li>
+            <h3>1️⃣ What Shopkeeper's Privilege Actually Is</h3>
+            <p>"Shopkeeper's Privilege" refers to the limited legal right a store has to respond when theft is <b>reasonably suspected</b>. It's not carte blanche. It's not permission to be a hero. It's a <b>procedural framework</b> to protect the store while respecting customer rights.</p>
+            <div class="callout dim"><b>Critical Note:</b> Rules vary by country, province, and company policy. <b>Always</b> follow your official store procedures and local law. This lesson teaches the <b>professional mindset</b> and safest universal approach.</div>
+            <p style="margin-top:16px">In simple retail language: It means you can <b>observe, report, and escalate</b> when you have clear reason to believe theft is happening. What it does NOT mean:</p>
+            <ul style="color:var(--muted);margin-top:10px">
+              <li>You cannot publicly embarrass customers</li>
+              <li>You cannot use force or "be a hero"</li>
+              <li>You cannot accuse without clear observation</li>
+              <li>You cannot profile people based on clothing, age, or race</li>
+              <li>You cannot search bags or touch personal items</li>
+              <li>You cannot act on "feelings" — only documented behaviour</li>
             </ul>
-            <div class="callout">
-              Hard truth: Most dismissals happen <b>after</b> the incident — because ego takes over and procedure gets ignored.
-            </div>
           </div>
 
           <div class="section">
-            <h3>3️⃣ Reasonable Suspicion (the career-saving line)</h3>
-            <p style="color:var(--muted); margin:0;">
-              “Reasonable suspicion” is not a feeling. It’s <b>what you saw</b>, <b>what you can explain</b>, and <b>what you can document</b>.
-              Professionals don’t guess. They observe.
-            </p>
-
-            <div class="callout dim">
-              Think of it like this: If your Area Manager asked you, “Why did you act?” — could you answer clearly in 10 seconds?
-            </div>
-
-            <ul style="color:var(--muted); margin-top:12px;">
-              <li><b>Observe</b> patterns (not profiles)</li>
+            <h3>2️⃣ The Career-Saving Line: Reasonable Suspicion</h3>
+            <p>"Reasonable suspicion" is the most misunderstood phrase in retail. It's not a gut feeling. It's not profiling. It's <b>what you saw</b>, <b>what you can explain</b>, and <b>what you can document</b>.</p>
+            <div class="callout">Think of it like this: If your Area Manager called you 10 minutes later and asked, <b>"Why did you act?"</b> — could you answer clearly in 10 seconds without stuttering or guessing?</div>
+            <p style="margin-top:14px"><b>Professionals observe. Amateurs assume.</b></p>
+            <p>Here's the framework:</p>
+            <ul style="color:var(--muted);margin-top:10px">
+              <li><b>Observe</b> behaviour patterns (not profiles)</li>
               <li><b>Confirm</b> with a witness or camera where possible</li>
               <li><b>Escalate</b> to management/security immediately</li>
-              <li><b>Document</b> what happened (time, item, behaviour)</li>
+              <li><b>Document</b> what happened: time, item, specific actions seen</li>
             </ul>
+            <div class="callout story" style="margin-top:16px"><b>Case Study:</b> A cashier once saw a customer putting items into a bag near the fitting room. She didn't accuse. She calmly informed the manager, who reviewed the cameras and confirmed concealment. Security handled it procedurally. The cashier? Promoted 6 months later for <b>composure under pressure</b>.</div>
+          </div>
+
+          <div class="pattern-break"><h4>Hard Truth #2</h4><p>You can't control bias. But you can make yourself harder to ignore.</p></div>
+
+          <div class="section">
+            <h3>3️⃣ The Professional Procedure</h3>
+            <p>This is the safest retail method — the one that protects your brand, your job, and your reputation:</p>
+            <div class="callout"><b>Step 1:</b> Stay calm. No accusations. No drama.<br/><b>Step 2:</b> Offer service: <i>"Hi, can I help you find anything?"</i><br/><b>Step 3:</b> Alert manager/security discreetly (radio, text, eye contact).<br/><b>Step 4:</b> Follow store policy <b>strictly</b>. No freelancing.<br/><b>Step 5:</b> Document the event immediately after (time, description, witnesses).</div>
+            <p style="margin-top:16px">Why does service pressure work? Because real thieves get uncomfortable when you're close and attentive. Innocent customers? They feel respected and helped.</p>
+            <div class="callout dim" style="margin-top:14px"><b>Pro Tip:</b> The louder you are, the weaker your position. Calm is control. Control is authority.</div>
           </div>
 
           <div class="section">
-            <h3>4️⃣ The Professional Procedure (safe & premium)</h3>
-            <p style="color:var(--muted); margin:0;">
-              Here’s the safest retail method that protects your brand and your job:
-            </p>
-
-            <div class="callout">
-              <b>Step 1:</b> Stay calm (no accusations)<br/>
-              <b>Step 2:</b> Offer service (“Can I help you?”)<br/>
-              <b>Step 3:</b> Alert manager/security discreetly<br/>
-              <b>Step 4:</b> Follow store policy strictly<br/>
-              <b>Step 5:</b> Document the event immediately
-            </div>
-
-            <p style="color:var(--muted); margin-top:12px;">
-              Why this works? Because service pressure makes real thieves uncomfortable, while innocent customers feel respected.
-            </p>
+            <h3>4️⃣ Real Scenarios: Pro vs Amateur</h3>
+            <div class="callout story"><b>Scenario 1: Concealment Near Fitting Room</b><br/><br/>You notice a customer constantly moving between racks and the fitting room. Items seem to disappear from sight.<br/><br/>✅ <b>Pro Move:</b> Offer service → inform manager quietly → check cameras → follow policy.<br/>❌ <b>Amateur Move:</b> Block the exit. Accuse loudly. Touch their bag.</div>
+            <div class="callout story" style="margin-top:14px"><b>Scenario 2: Wrong Customer Stopped</b><br/><br/>Stopping the wrong person is career death. One moment destroys years of trust.<br/><br/>✅ <b>Pro Move:</b> Ask neutral questions. Stay respectful. Verify via cameras first. Escalate to management ONLY.<br/>❌ <b>Amateur Move:</b> Public embarrassment. Threats. Physical blocking.</div>
+            <div class="callout story" style="margin-top:14px"><b>Scenario 3: Aggressive Customer</b><br/><br/>Customer becomes loud and emotional when approached.<br/><br/>✅ <b>Pro Move:</b> Lower your voice → slow down → bring manager/security → stay procedural.<br/>❌ <b>Amateur Move:</b> Match the energy → argue → create a scene → make it about ego.</div>
+            <div class="callout" style="margin-top:18px">Remember: You're protecting the <b>brand</b>, not your pride. The brand pays you. Pride doesn't.</div>
           </div>
 
           <div class="section">
-            <h3>5️⃣ Real-life Scenarios (what pros do vs what amateurs do)</h3>
-
-            <div class="callout dim">
-              <b>Scenario 1: “Concealment near the fitting room”</b><br/>
-              You notice a customer constantly moving between racks and the fitting room, with items disappearing from sight.
-              <br/><br/>
-              ✅ <b>Pro move:</b> Offer service → inform manager → watch cameras → follow policy.<br/>
-              ❌ <b>Amateur move:</b> Accuse loudly or block the customer’s path.
-            </div>
-
-            <div class="callout dim" style="margin-top:12px;">
-              <b>Scenario 2: “Wrong customer stopped”</b><br/>
-              The worst mistake in retail is stopping the wrong person — one moment can destroy your reputation and career.
-              <br/><br/>
-              ✅ <b>Pro move:</b> Ask neutral questions, stay respectful, verify via cameras, escalate to management only.<br/>
-              ❌ <b>Amateur move:</b> Public embarrassment, threats, grabbing — even if you “think” you’re right.
-            </div>
-
-            <div class="callout dim" style="margin-top:12px;">
-              <b>Scenario 3: “Aggressive reaction”</b><br/>
-              A customer becomes loud and emotional when approached.
-              <br/><br/>
-              ✅ <b>Pro move:</b> Lower your voice → slow down → bring manager/security → stay procedural.<br/>
-              ❌ <b>Amateur move:</b> Match the energy → argue → create a scene.
-            </div>
+            <h3>5️⃣ Staff vs Manager: Know Your Lane</h3>
+            <p><b>Sales Staff Lane:</b> Observe → Report → Escalate. Your job is <b>not</b> to fight battles. Your job is to protect your future by acting professionally and following the chain of command.</p>
+            <p style="margin-top:16px"><b>Manager Lane:</b> Control escalation. Protect staff. Protect brand reputation. Ensure policy is followed. Record the incident. Handle police/security interface if needed.</p>
+            <div class="callout" style="margin-top:16px">A great manager doesn't "catch" thieves. A great manager prevents escalation, protects the team, and maintains standards under pressure.</div>
           </div>
+
+          <div class="pattern-break"><h4>Hard Truth #3</h4><p>Authority is earned through control, not volume.</p></div>
 
           <div class="section">
-            <h3>6️⃣ Staff vs Manager — Know your lane</h3>
-
-            <p style="color:var(--muted); margin:0;">
-              <b>Sales Staff lane:</b> Observe → Report → Escalate. Your job is not to fight battles. Your job is to protect your future.
-            </p>
-
-            <div class="callout dim" style="margin-top:12px;">
-              <b>Manager lane:</b> Control escalation, protect staff, protect brand reputation, ensure policy is followed, and record the incident.
-            </div>
-
-            <div class="callout">
-              A great manager doesn’t “catch” thieves. A great manager prevents escalation and protects the team.
-            </div>
-          </div>
-
-          <div class="section" id="unlock">
-            <h3>🔒 Why this lesson is free</h3>
-            <p style="color:var(--muted); margin:0;">
-              Because people who know you must taste the standard first. This is not “theory” — it’s real floor discipline.
-              Pass the quiz and you’ll be redirected to the landing page for the full course.
-            </p>
-            <div class="callout">
-              Pass mark: <b>80%</b> — professional standard. ✅
-            </div>
+            <h3>🔒 Why This Lesson Is Free</h3>
+            <p>Simple: You need to <b>taste the standard</b> before you commit. This isn't theory pulled from Google. This is real floor discipline, written by someone who's managed teams, handled escalations, and seen careers rise and fall over small decisions.</p>
+            <div class="callout">If this free lesson taught you something you didn't know — imagine what the full course contains.</div>
+            <p style="margin-top:16px">Pass mark: <b>85%</b>. Professional standard. No shortcuts.</p>
           </div>
         </div>
       </article>
-      
-<!-- ✅ BONUS PDF DOWNLOAD (ADD THIS) -->
-<div class="section" id="bonus">
-  <h3>🎁 Bonus: Get Hired Pack (PDF)</h3>
 
-  <p style="color:var(--muted); margin:0;">
-    Download the <b>Retail Expert Get Hired Pack</b> — a bonus PDF to help you sharpen your CV, interview mindset, and job-seeker strategy.
-  </p>
+      <section class="bonus-pack" id="bonus">
+        <div class="bonus-header">
+          <h2>🎁 Bonus: The Get Hired Pack (16-Page PDF)</h2>
+          <p class="tagline">THE EXACT HIRING PLAYBOOK THAT GETS YOU PAST THE 6-SECOND CV SCAN</p>
+        </div>
+        <div class="bonus-body">
+          <p style="color:var(--text);font-size:1.05rem;margin:0 0 16px">Most people apply to 50+ stores and hear nothing. Why? Because their CV looks like everyone else's — and their interview sounds like fear.</p>
+          <p style="color:var(--muted);margin:0 0 20px">This pack fixes both in 30 minutes.</p>
+          <h3 style="margin:0 0 16px;color:var(--white);font-size:1.2rem">📚 What's Inside (Real Content Preview):</h3>
+          <div class="modules-grid">
+            <div class="module-item"><strong>Module 1: Hiring Psychology</strong><span>How managers think. The 6-second CV scan. The silent questions they ask before they hire you.</span></div>
+            <div class="module-item"><strong>Module 2: CV Mastery</strong><span>CV mistakes that silently kill chances. Formatting rules. What to include (and what kills credibility).</span></div>
+            <div class="module-item"><strong>Module 3: Interview Framework</strong><span>The 4-part answer structure. Pressure control in 20 seconds. How to sound calm when you're nervous.</span></div>
+            <div class="module-item"><strong>Module 3A: 12 Retail Q&A Scripts</strong><span>Word-for-word answers to the most common retail interview questions. Copy, customize, practice.</span></div>
+            <div class="module-item"><strong>Module 4: Visibility Strategy</strong><span>LinkedIn + Indeed setup. How to be discoverable (not just searchable). Weekly 10-minute activity plan.</span></div>
+            <div class="module-item"><strong>Module 5: Profile Setup Guide</strong><span>Beginner-friendly platform setup. Photo rules. Headline formulas. What NOT to post (avoid cringe).</span></div>
+            <div class="module-item"><strong>Module 6: 30-Day Job Plan</strong><span>Week-by-week job hunting structure. Application tracker. Follow-up templates. Momentum system.</span></div>
+            <div class="module-item"><strong>BONUS: Manager's Checklist</strong><span>The silent signals managers notice before you speak: posture, tone, control, professionalism.</span></div>
+          </div>
+          <div class="callout" style="margin-top:20px"><b>Real Talk:</b> This isn't motivation. This is preparation. Hiring managers judge you in seconds — this pack teaches you how to control those seconds.</div>
+          <div class="download-cta">
+            <p><b>Download the full 16-page Get Hired Pack now (PDF format):</b></p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+              <a class="btn" href="Retail_Expert_Get_Hired_Pack.pdf" download>📄 Download Get Hired Pack (PDF)</a>
+              <a class="btn secondary" href="#email">📧 Unlock Quiz Access</a>
+            </div>
+            <p class="fine" style="margin-top:14px">If download doesn't work, try: Right-click → "Save Link As" or refresh the page. Chrome/Edge work best.</p>
+          </div>
+        </div>
+      </section>
 
-  <div class="callout" style="margin-top:14px;">
-    ✅ Free Bonus Download — <b>Retail_Expert_Get_Hired_Pack.pdf</b>
-  </div>
+      <section class="email-gate" id="email">
+        <div class="email-gate-header">
+          <h2>🔓 Unlock Quiz Access + Bonus Checklist</h2>
+          <p>Submit your email below to unlock the 18-question quiz and get the bonus "Manager's Hiring Checklist" sent directly to you.</p>
+        </div>
+        <div class="email-gate-body">
+          <p style="color:var(--muted);margin:0 0 16px;text-align:center">No spam. No daily emails. Just the quiz unlock + one bonus resource to help you get hired.</p>
+          <div style="text-align:center">
+            <p style="color:var(--text);margin:0 0 20px;font-size:1.05rem">Click the button below to open the form in a new tab. After you submit, come back and click "Unlock Quiz".</p>
+            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSeIv2rGAel2odKdY_wkcw-efxt4mF7pYZCvApKS9o8gzvrycA/viewform" target="_blank" rel="noopener" style="margin-bottom:16px">
+              📧 Open Email Form (New Tab)
+            </a>
+            <div class="callout dim" style="margin-top:16px;text-align:left"><b>Instructions:</b><br/>1. Click the button above to open the form<br/>2. Fill in your email and submit<br/>3. Come back to this page<br/>4. Click "Unlock Quiz" below</div>
+            <button class="btn" id="unlockQuizBtn" style="margin-top:20px">✅ I Submitted the Form — Unlock Quiz Now</button>
+          </div>
+        </div>
+      </section>
 
-  <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-    <a class="btn" href="Retail_Expert_Get_Hired_Pack.pdf" target="_blank" rel="noopener">
-      📄 Download Get Hired Pack
-    </a>
-
-    <a class="btn secondary" href="#quiz">
-      📝 Take the Quiz
-    </a>
-  </div>
-
-  <div class="callout dim" style="margin-top:12px;">
-    Tip: If the download doesn’t open, refresh the page or try another browser (Chrome works best).
-  </div>
-</div>
-      <aside class="card" id="quiz">
-        <div class="card-h"><h2>📝 Lesson 0 Quiz</h2><span class="pill">Pass: 80%</span></div>
+      <aside class="card" id="quiz" style="display:none">
+        <div class="card-h"><h2>📝 Lesson 0 Quiz: Authority & Procedure</h2><span class="pill">Pass: 85%</span></div>
         <div class="card-b">
           <div class="progress"><div id="progressBar" class="bar"></div></div>
-
-          <div id="quizStatus" class="status">
-            Answer all <b>8 questions</b>, then click <b>Submit Quiz</b>.
-          </div>
+          <div id="quizStatus" class="status">Answer all <b>18 questions</b>, then click <b>Submit Quiz</b>.</div>
 
           <form id="quizForm">
             <div class="q">
               <p class="q-title">Q1) What is Shopkeeper's Privilege?</p>
               <div class="opt"><input type="radio" name="q1" id="q1a" value="A"><label for="q1a">A. The right to stop and search any suspicious customer</label></div>
-              <div class="opt"><input type="radio" name="q1" id="q1b" value="B"><label for="q1b">B. A temporary right to detain a person with reasonable suspicion of theft</label></div>
+              <div class="opt"><input type="radio" name="q1" id="q1b" value="B"><label for="q1b">B. A limited legal right to respond when theft is reasonably suspected</label></div>
               <div class="opt"><input type="radio" name="q1" id="q1c" value="C"><label for="q1c">C. Permission to use force to protect stock</label></div>
-              <div class="opt"><input type="radio" name="q1" id="q1d" value="D"><label for="q1d">D. Authority to confront customers publicly</label></div>
+              <div class="opt"><input type="radio" name="q1" id="q1d" value="D"><label for="q1d">D. Authority to publicly confront customers</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q2) Which is NOT part of it?</p>
-              <div class="opt"><input type="radio" name="q2" id="q2a" value="A"><label for="q2a">A. Temporary detention</label></div>
+              <p class="q-title">Q2) Which is NOT part of Shopkeeper's Privilege?</p>
+              <div class="opt"><input type="radio" name="q2" id="q2a" value="A"><label for="q2a">A. Temporary observation</label></div>
               <div class="opt"><input type="radio" name="q2" id="q2b" value="B"><label for="q2b">B. Reasonable suspicion</label></div>
-              <div class="opt"><input type="radio" name="q2" id="q2c" value="C"><label for="q2c">C. Emotional reaction</label></div>
-              <div class="opt"><input type="radio" name="q2" id="q2d" value="D"><label for="q2d">D. Protecting store property</label></div>
+              <div class="opt"><input type="radio" name="q2" id="q2c" value="C"><label for="q2c">C. Emotional reaction and public embarrassment</label></div>
+              <div class="opt"><input type="radio" name="q2" id="q2d" value="D"><label for="q2d">D. Following store policy</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q3) "Reasonable suspicion" means?</p>
-              <div class="opt"><input type="radio" name="q3" id="q3a" value="A"><label for="q3a">A. A feeling that someone looks suspicious</label></div>
-              <div class="opt"><input type="radio" name="q3" id="q3b" value="B"><label for="q3b">B. Profiling based on appearance</label></div>
-              <div class="opt"><input type="radio" name="q3" id="q3c" value="C"><label for="q3c">C. Clear observation and behaviour over time</label></div>
-              <div class="opt"><input type="radio" name="q3" id="q3d" value="D"><label for="q3d">D. A guess made under pressure</label></div>
+              <p class="q-title">Q3) "Reasonable suspicion" means:</p>
+              <div class="opt"><input type="radio" name="q3" id="q3a" value="A"><label for="q3a">A. A gut feeling that someone looks suspicious</label></div>
+              <div class="opt"><input type="radio" name="q3" id="q3b" value="B"><label for="q3b">B. Profiling based on appearance or clothing</label></div>
+              <div class="opt"><input type="radio" name="q3" id="q3c" value="C"><label for="q3c">C. Clear observation of specific behaviour you can document</label></div>
+              <div class="opt"><input type="radio" name="q3" id="q3d" value="D"><label for="q3d">D. A quick guess made under pressure</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q4) Who carries the main responsibility?</p>
+              <p class="q-title">Q4) Who carries the main responsibility in theft situations?</p>
               <div class="opt"><input type="radio" name="q4" id="q4a" value="A"><label for="q4a">A. Any staff member on duty</label></div>
               <div class="opt"><input type="radio" name="q4" id="q4b" value="B"><label for="q4b">B. The customer</label></div>
-              <div class="opt"><input type="radio" name="q4" id="q4c" value="C"><label for="q4c">C. Security only</label></div>
-              <div class="opt"><input type="radio" name="q4" id="q4d" value="D"><label for="q4d">D. Store leadership/management</label></div>
+              <div class="opt"><input type="radio" name="q4" id="q4c" value="C"><label for="q4c">C. Security guards only</label></div>
+              <div class="opt"><input type="radio" name="q4" id="q4d" value="D"><label for="q4d">D. Store leadership and management</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q5) Correct role of sales staff?</p>
-              <div class="opt"><input type="radio" name="q5" id="q5a" value="A"><label for="q5a">A. Confront immediately</label></div>
+              <p class="q-title">Q5) What is the correct role of sales staff when they suspect theft?</p>
+              <div class="opt"><input type="radio" name="q5" id="q5a" value="A"><label for="q5a">A. Confront the customer immediately</label></div>
               <div class="opt"><input type="radio" name="q5" id="q5b" value="B"><label for="q5b">B. Observe, report, and escalate to management</label></div>
-              <div class="opt"><input type="radio" name="q5" id="q5c" value="C"><label for="q5c">C. Block the exit</label></div>
-              <div class="opt"><input type="radio" name="q5" id="q5d" value="D"><label for="q5d">D. Search belongings</label></div>
+              <div class="opt"><input type="radio" name="q5" id="q5c" value="C"><label for="q5c">C. Block the exit and demand answers</label></div>
+              <div class="opt"><input type="radio" name="q5" id="q5d" value="D"><label for="q5d">D. Search their belongings</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q6) Why do careers end after these situations?</p>
-              <div class="opt"><input type="radio" name="q6" id="q6a" value="A"><label for="q6a">A. Theft itself</label></div>
-              <div class="opt"><input type="radio" name="q6" id="q6b" value="B"><label for="q6b">B. Ego, aggression, and ignoring procedure</label></div>
-              <div class="opt"><input type="radio" name="q6" id="q6c" value="C"><label for="q6c">C. Customers always lie</label></div>
-              <div class="opt"><input type="radio" name="q6" id="q6d" value="D"><label for="q6d">D. Managers always blame staff</label></div>
+              <p class="q-title">Q6) Why do careers typically end after theft incidents?</p>
+              <div class="opt"><input type="radio" name="q6" id="q6a" value="A"><label for="q6a">A. Because theft itself occurred</label></div>
+              <div class="opt"><input type="radio" name="q6" id="q6b" value="B"><label for="q6b">B. Ego, aggression, and ignoring procedure caused embarrassment</label></div>
+              <div class="opt"><input type="radio" name="q6" id="q6c" value="C"><label for="q6c">C. Customers always lie to protect themselves</label></div>
+              <div class="opt"><input type="radio" name="q6" id="q6d" value="D"><label for="q6d">D. Managers always blame frontline staff</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q7) Best tone to use?</p>
-              <div class="opt"><input type="radio" name="q7" id="q7a" value="A"><label for="q7a">A. Loud and aggressive</label></div>
-              <div class="opt"><input type="radio" name="q7" id="q7b" value="B"><label for="q7b">B. Calm, professional, procedural</label></div>
-              <div class="opt"><input type="radio" name="q7" id="q7c" value="C"><label for="q7c">C. Sarcastic</label></div>
-              <div class="opt"><input type="radio" name="q7" id="q7d" value="D"><label for="q7d">D. Emotional</label></div>
+              <p class="q-title">Q7) What tone should professionals use in high-pressure situations?</p>
+              <div class="opt"><input type="radio" name="q7" id="q7a" value="A"><label for="q7a">A. Loud and aggressive to show authority</label></div>
+              <div class="opt"><input type="radio" name="q7" id="q7b" value="B"><label for="q7b">B. Calm, professional, and procedural</label></div>
+              <div class="opt"><input type="radio" name="q7" id="q7c" value="C"><label for="q7c">C. Sarcastic to reduce tension</label></div>
+              <div class="opt"><input type="radio" name="q7" id="q7d" value="D"><label for="q7d">D. Emotional to show you care</label></div>
             </div>
 
             <div class="q">
-              <p class="q-title">Q8) What should you do first when you notice suspicious behaviour?</p>
-              <div class="opt"><input type="radio" name="q8" id="q8a" value="A"><label for="q8a">A. Accuse immediately</label></div>
-              <div class="opt"><input type="radio" name="q8" id="q8b" value="B"><label for="q8b">B. Observe, confirm, follow policy (report/escalate)</label></div>
-              <div class="opt"><input type="radio" name="q8" id="q8c" value="C"><label for="q8c">C. Record on phone and post</label></div>
-              <div class="opt"><input type="radio" name="q8" id="q8d" value="D"><label for="q8d">D. Block the exit</label></div>
+              <p class="q-title">Q8) First step when you notice suspicious behaviour?</p>
+              <div class="opt"><input type="radio" name="q8" id="q8a" value="A"><label for="q8a">A. Accuse immediately to prevent loss</label></div>
+              <div class="opt"><input type="radio" name="q8" id="q8b" value="B"><label for="q8b">B. Observe, confirm with witness/camera, follow policy, escalate</label></div>
+              <div class="opt"><input type="radio" name="q8" id="q8c" value="C"><label for="q8c">C. Record on your phone and post to social media</label></div>
+              <div class="opt"><input type="radio" name="q8" id="q8d" value="D"><label for="q8d">D. Block the exit physically</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q9) A customer becomes loud and aggressive. What's the professional response?</p>
+              <div class="opt"><input type="radio" name="q9" id="q9a" value="A"><label for="q9a">A. Match their energy to show you won't back down</label></div>
+              <div class="opt"><input type="radio" name="q9" id="q9b" value="B"><label for="q9b">B. Lower your voice, slow down, bring manager/security, stay procedural</label></div>
+              <div class="opt"><input type="radio" name="q9" id="q9c" value="C"><label for="q9c">C. Argue back to defend yourself</label></div>
+              <div class="opt"><input type="radio" name="q9" id="q9d" value="D"><label for="q9d">D. Walk away without documenting</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q10) Why does "service pressure" work as a deterrent?</p>
+              <div class="opt"><input type="radio" name="q10" id="q10a" value="A"><label for="q10a">A. It embarrasses customers publicly</label></div>
+              <div class="opt"><input type="radio" name="q10" id="q10b" value="B"><label for="q10b">B. Real thieves get uncomfortable when you're close; innocent customers feel helped</label></div>
+              <div class="opt"><input type="radio" name="q10" id="q10c" value="C"><label for="q10c">C. It gives you an excuse to follow them</label></div>
+              <div class="opt"><input type="radio" name="q10" id="q10d" value="D"><label for="q10d">D. It scares everyone equally</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q11) What should you do if you stop the wrong person?</p>
+              <div class="opt"><input type="radio" name="q11" id="q11a" value="A"><label for="q11a">A. Double down to save face</label></div>
+              <div class="opt"><input type="radio" name="q11" id="q11b" value="B"><label for="q11b">B. Apologize professionally, escalate to management, document the incident</label></div>
+              <div class="opt"><input type="radio" name="q11" id="q11c" value="C"><label for="q11c">C. Blame the customer for looking suspicious</label></div>
+              <div class="opt"><input type="radio" name="q11" id="q11d" value="D"><label for="q11d">D. Pretend it didn't happen</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q12) What's the difference between a pro and an amateur?</p>
+              <div class="opt"><input type="radio" name="q12" id="q12a" value="A"><label for="q12a">A. Pros act on feelings; amateurs wait for proof</label></div>
+              <div class="opt"><input type="radio" name="q12" id="q12b" value="B"><label for="q12b">B. Pros observe and document; amateurs assume and react emotionally</label></div>
+              <div class="opt"><input type="radio" name="q12" id="q12c" value="C"><label for="q12c">C. Pros are louder and more aggressive</label></div>
+              <div class="opt"><input type="radio" name="q12" id="q12d" value="D"><label for="q12d">D. Pros ignore theft to avoid conflict</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q13) SCENARIO: You see someone putting items in their bag near the fitting room. What do you do?</p>
+              <div class="opt"><input type="radio" name="q13" id="q13a" value="A"><label for="q13a">A. Confront them immediately and demand they open the bag</label></div>
+              <div class="opt"><input type="radio" name="q13" id="q13b" value="B"><label for="q13b">B. Offer service, inform manager quietly, check cameras, follow store policy</label></div>
+              <div class="opt"><input type="radio" name="q13" id="q13c" value="C"><label for="q13c">C. Follow them around obviously to intimidate them</label></div>
+              <div class="opt"><input type="radio" name="q13" id="q13d" value="D"><label for="q13d">D. Do nothing because it's not your problem</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q14) SCENARIO: A manager asks why you acted. You can't explain clearly. What went wrong?</p>
+              <div class="opt"><input type="radio" name="q14" id="q14a" value="A"><label for="q14a">A. The manager doesn't understand retail</label></div>
+              <div class="opt"><input type="radio" name="q14" id="q14b" value="B"><label for="q14b">B. You acted on feeling/assumption instead of clear observation</label></div>
+              <div class="opt"><input type="radio" name="q14" id="q14c" value="C"><label for="q14c">C. The customer was dishonest</label></div>
+              <div class="opt"><input type="radio" name="q14" id="q14d" value="D"><label for="q14d">D. Nothing — managers always blame staff</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q15) Why is documentation critical after an incident?</p>
+              <div class="opt"><input type="radio" name="q15" id="q15a" value="A"><label for="q15a">A. To protect yourself legally and procedurally</label></div>
+              <div class="opt"><input type="radio" name="q15" id="q15b" value="B"><label for="q15b">B. To gossip with other staff</label></div>
+              <div class="opt"><input type="radio" name="q15" id="q15c" value="C"><label for="q15c">C. It's not critical — memory is enough</label></div>
+              <div class="opt"><input type="radio" name="q15" id="q15d" value="D"><label for="q15d">D. To blame the customer later</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q16) What's the biggest risk of acting without following procedure?</p>
+              <div class="opt"><input type="radio" name="q16" id="q16a" value="A"><label for="q16a">A. The thief might escape</label></div>
+              <div class="opt"><input type="radio" name="q16" id="q16b" value="B"><label for="q16b">B. You protect the brand and get promoted</label></div>
+              <div class="opt"><input type="radio" name="q16" id="q16c" value="C"><label for="q16c">C. Public embarrassment, brand damage, dismissal</label></div>
+              <div class="opt"><input type="radio" name="q16" id="q16d" value="D"><label for="q16d">D. Nothing — managers appreciate initiative</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q17) SCENARIO: You realize mid-confrontation you stopped the wrong person. What now?</p>
+              <div class="opt"><input type="radio" name="q17" id="q17a" value="A"><label for="q17a">A. Keep going to save face</label></div>
+              <div class="opt"><input type="radio" name="q17" id="q17b" value="B"><label for="q17b">B. Apologize sincerely, bring manager immediately, document what happened</label></div>
+              <div class="opt"><input type="radio" name="q17" id="q17c" value="C"><label for="q17c">C. Blame them for looking suspicious</label></div>
+              <div class="opt"><input type="radio" name="q17" id="q17d" value="D"><label for="q17d">D. Walk away quietly and hope they forget</label></div>
+            </div>
+
+            <div class="q">
+              <p class="q-title">Q18) What separates professionals from amateurs under pressure?</p>
+              <div class="opt"><input type="radio" name="q18" id="q18a" value="A"><label for="q18a">A. Volume and aggression</label></div>
+              <div class="opt"><input type="radio" name="q18" id="q18b" value="B"><label for="q18b">B. Control, composure, and following procedure calmly</label></div>
+              <div class="opt"><input type="radio" name="q18" id="q18c" value="C"><label for="q18c">C. Speed of reaction</label></div>
+              <div class="opt"><input type="radio" name="q18" id="q18d" value="D"><label for="q18d">D. Being right every time</label></div>
             </div>
 
             <div class="actions">
               <button class="btn" type="button" id="submitBtn">✅ Submit Quiz</button>
-              <button class="btn secondary" type="button" id="resetBtn">🔄 Reset</button>
+              <button class="btn secondary" type="button" id="resetBtn">🔄 Reset Quiz</button>
             </div>
           </form>
 
           <div class="nextbox">
             <h3>➡ Next Step</h3>
-            <p class="tiny" id="nextText">Pass the quiz (80%+) and you’ll be redirected to the landing page.</p>
-            <p class="fine">Marks show after submit: <b>Correct/8</b> + percentage.</p>
+            <p class="tiny" id="nextText">Pass the quiz (85%+) and you'll be redirected to the full course landing page.</p>
+            <p class="fine">Your marks will show after submit: <b>Correct/18</b> + percentage.</p>
           </div>
         </div>
       </aside>
-    </section>
+    </div>
 
-    <footer>
-      © <span id="yr"></span> Phiwokuhle Makapela • The Ultimate Black Book for Mastering Retail
-    </footer>
+    <footer>© <span id="yr"></span> Phiwokuhle Makapela • The Ultimate Black Book for Mastering Retail<br/><span style="font-size:.85rem;color:rgba(179,179,179,.7)">Authority. Discipline. Career Protection.</span></footer>
   </main>
 
   <script>
-    const PASS_MARK = 80;
-    const TOTAL = 8;
-    const REDIRECT_TO = "index.html";
-
-    const answers = { q1:"B", q2:"C", q3:"C", q4:"D", q5:"B", q6:"B", q7:"B", q8:"B" };
-
-    const form = document.getElementById("quizForm");
-    const statusEl = document.getElementById("quizStatus");
-    const progressBar = document.getElementById("progressBar");
-    const submitBtn = document.getElementById("submitBtn");
-    const resetBtn = document.getElementById("resetBtn");
-    const nextText = document.getElementById("nextText");
-
-    document.getElementById("yr").textContent = new Date().getFullYear();
-
-    function countAnswered() {
-      let count = 0;
-      for (let i = 1; i <= TOTAL; i++) {
-        const name = "q" + i;
-        if (form.querySelector(`input[name="${name}"]:checked`)) count++;
-      }
-      return count;
+    const PASS=85,TOTAL=18,REDIR="index.html";
+    const ans={q1:"B",q2:"C",q3:"C",q4:"D",q5:"B",q6:"B",q7:"B",q8:"B",q9:"B",q10:"B",q11:"B",q12:"B",q13:"B",q14:"B",q15:"A",q16:"C",q17:"B",q18:"B"};
+    const form=document.getElementById("quizForm"),statusEl=document.getElementById("quizStatus"),bar=document.getElementById("progressBar"),submitBtn=document.getElementById("submitBtn"),resetBtn=document.getElementById("resetBtn"),nextText=document.getElementById("nextText"),unlockBtn=document.getElementById("unlockQuizBtn"),quiz=document.getElementById("quiz");
+    document.getElementById("yr").textContent=new Date().getFullYear();
+    
+    unlockBtn.addEventListener("click",()=>{
+      quiz.style.display="block";
+      quiz.scrollIntoView({behavior:"smooth",block:"start"});
+      localStorage.setItem("email_submitted","true");
+    });
+    
+    if(localStorage.getItem("email_submitted")==="true")quiz.style.display="block";
+    
+    function countAns(){let c=0;for(let i=1;i<=TOTAL;i++)if(form.querySelector(`input[name="q${i}"]:checked`))c++;return c}
+    
+    function updateProg(){
+      const a=countAns(),p=Math.round((a/TOTAL)*100);
+      bar.style.width=p+"%";
+      statusEl.className="status";
+      statusEl.innerHTML=`Answered <b>${a}/${TOTAL}</b> questions.`;
     }
-
-    function updateProgress() {
-      const answered = countAnswered();
-      const pct = Math.round((answered / TOTAL) * 100);
-      progressBar.style.width = pct + "%";
-      statusEl.className = "status";
-      statusEl.innerHTML = `Answered <b>${answered}/${TOTAL}</b> questions.`;
-    }
-
-    function scrollToQuizTop(){
-      document.getElementById("quiz").scrollIntoView({ behavior:"smooth", block:"start" });
-    }
-
-    function gradeQuiz() {
-      const answered = countAnswered();
-      if (answered < TOTAL) {
-        statusEl.className = "status bad";
-        statusEl.innerHTML = `⚠️ Answer all <b>${TOTAL}</b> questions first.`;
-        scrollToQuizTop();
-        return;
-      }
-
-      let correct = 0;
-      for (let i = 1; i <= TOTAL; i++) {
-        const name = "q" + i;
-        const picked = form.querySelector(`input[name="${name}"]:checked`).value;
-        if (picked === answers[name]) correct++;
-      }
-
-      const score = Math.round((correct / TOTAL) * 100);
-      const passed = score >= PASS_MARK;
-
-      localStorage.setItem("lesson0_score", String(score));
-      localStorage.setItem("lesson0_correct", String(correct));
-      localStorage.setItem("lesson0_passed", passed ? "true" : "false");
-
-      if (passed) {
-        statusEl.className = "status ok";
-        statusEl.innerHTML = `✅ <b>Passed</b> — Score: <b>${correct}/${TOTAL}</b> (<b>${score}%</b>). Redirecting to the full course...`;
-        nextText.innerHTML = `✅ Passed (${correct}/${TOTAL} • ${score}%). Redirecting to landing page...`;
-
-        setTimeout(() => { window.location.href = REDIRECT_TO; }, 1400);
-      } else {
-        statusEl.className = "status bad";
-        statusEl.innerHTML = `❌ <b>Not passed</b> — Score: <b>${correct}/${TOTAL}</b> (<b>${score}%</b>). Pass mark is <b>${PASS_MARK}%</b>. Reset and try again.`;
-        nextText.innerHTML = `Your marks: <b>${correct}/${TOTAL}</b> (${score}%). Pass mark is 80%.`;
-        scrollToQuizTop();
+    
+    function scrollQ(){quiz.scrollIntoView({behavior:"smooth",block:"start"})}
+    
+    function grade(){
+      const a=countAns();
+      if(a<TOTAL){statusEl.className="status bad";statusEl.innerHTML=`⚠️ Answer all <b>${TOTAL}</b> questions first.`;scrollQ();return}
+      let c=0;
+      for(let i=1;i<=TOTAL;i++){const n="q"+i,p=form.querySelector(`input[name="${n}"]:checked`).value;if(p===ans[n])c++}
+      const s=Math.round((c/TOTAL)*100),pass=s>=PASS;
+      localStorage.setItem("lesson0_score",String(s));
+      localStorage.setItem("lesson0_correct",String(c));
+      localStorage.setItem("lesson0_passed",pass?"true":"false");
+      if(pass){
+        statusEl.className="status ok";
+        statusEl.innerHTML=`✅ <b>PASSED</b> — Score: <b>${c}/${TOTAL}</b> (<b>${s}%</b>). Redirecting to the full course...`;
+        nextText.innerHTML=`✅ Passed with ${c}/${TOTAL} correct (${s}%). Premium standard met. Redirecting...`;
+        setTimeout(()=>{window.location.href=REDIR},2000);
+      }else{
+        statusEl.className="status bad";
+        statusEl.innerHTML=`❌ <b>Not passed</b> — Score: <b>${c}/${TOTAL}</b> (<b>${s}%</b>). Pass mark is <b>${PASS}%</b>. Reset and try again.`;
+        nextText.innerHTML=`Your marks: <b>${c}/${TOTAL}</b> (${s}%). Pass mark is ${PASS}%. Professional standard required.`;
+        scrollQ();
       }
     }
-
-    function resetQuiz() {
-      form.reset();
-      statusEl.className = "status";
-      statusEl.innerHTML = `Answer all <b>${TOTAL}</b> questions, then click <b>Submit Quiz</b>.`;
-      progressBar.style.width = "0%";
+    
+    function reset(){
+      form.reset();statusEl.className="status";
+      statusEl.innerHTML=`Answer all <b>${TOTAL}</b> questions, then click <b>Submit Quiz</b>.`;
+      bar.style.width="0%";
       localStorage.removeItem("lesson0_score");
       localStorage.removeItem("lesson0_correct");
-      localStorage.setItem("lesson0_passed", "false");
-      nextText.innerHTML = `Pass the quiz (80%+) and you’ll be redirected to the landing page.`;
-      scrollToQuizTop();
+      localStorage.setItem("lesson0_passed","false");
+      nextText.innerHTML=`Pass the quiz (85%+) and you'll be redirected to the full course landing page.`;
+      scrollQ();
     }
-
-    form.addEventListener("change", updateProgress);
-    submitBtn.addEventListener("click", gradeQuiz);
-    resetBtn.addEventListener("click", resetQuiz);
-
-    (function init(){
-      updateProgress();
-      const passed = localStorage.getItem("lesson0_passed") === "true";
-      const score = localStorage.getItem("lesson0_score");
-      const correct = localStorage.getItem("lesson0_correct");
-      if (passed && score && correct) {
-        nextText.innerHTML = `✅ Already passed on this device — Marks: <b>${correct}/${TOTAL}</b> (<b>${score}%</b>).`;
-      }
+    
+    form.addEventListener("change",updateProg);
+    submitBtn.addEventListener("click",grade);
+    resetBtn.addEventListener("click",reset);
+    
+    (function(){
+      updateProg();
+      const pass=localStorage.getItem("lesson0_passed")==="true",score=localStorage.getItem("lesson0_score"),correct=localStorage.getItem("lesson0_correct");
+      if(pass&&score&&correct)nextText.innerHTML=`✅ Already passed on this device — Marks: <b>${correct}/${TOTAL}</b> (<b>${score}%</b>).`;
     })();
   </script>
 </body>
-  </html>
+                </html>
