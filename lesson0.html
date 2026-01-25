@@ -422,16 +422,8 @@
   <script>
     const PASS=85,TOTAL=18,REDIR="index.html";
     const ans={q1:"B",q2:"C",q3:"C",q4:"D",q5:"B",q6:"B",q7:"B",q8:"B",q9:"B",q10:"B",q11:"B",q12:"B",q13:"B",q14:"B",q15:"A",q16:"C",q17:"B",q18:"B"};
-    const form=document.getElementById("quizForm"),statusEl=document.getElementById("quizStatus"),bar=document.getElementById("progressBar"),submitBtn=document.getElementById("submitBtn"),resetBtn=document.getElementById("resetBtn"),nextText=document.getElementById("nextText"),unlockBtn=document.getElementById("unlockQuizBtn"),quiz=document.getElementById("quiz");
+    const form=document.getElementById("quizForm"),statusEl=document.getElementById("quizStatus"),bar=document.getElementById("progressBar"),submitBtn=document.getElementById("submitBtn"),resetBtn=document.getElementById("resetBtn"),nextText=document.getElementById("nextText");
     document.getElementById("yr").textContent=new Date().getFullYear();
-    
-    unlockBtn.addEventListener("click",()=>{
-      quiz.style.display="block";
-      quiz.scrollIntoView({behavior:"smooth",block:"start"});
-      localStorage.setItem("email_submitted","true");
-    });
-    
-    if(localStorage.getItem("email_submitted")==="true")quiz.style.display="block";
     
     function countAns(){let c=0;for(let i=1;i<=TOTAL;i++)if(form.querySelector(`input[name="q${i}"]:checked`))c++;return c}
     
@@ -488,4 +480,4 @@
     })();
   </script>
 </body>
-                                                                                             </html>
+                                   </html>
