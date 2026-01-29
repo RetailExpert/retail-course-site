@@ -6,53 +6,186 @@
   <title>Lesson 3: Advanced Selling Techniques | Ultimate Black Book</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
-    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
-    header h1 { margin: 0; font-size: 24px; font-weight: 900; color:_queries not needed. You have the full updated file content already.
+    :root{
+      --gold:#FFD700;
+      --gold2:#FFA500;
+      --black:#000;
+      --panel:#0a0a0a;
+      --panel2:#1a1a1a;
+      --text:#F5F5F5;
+    }
 
-    nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
-    nav a:hover { opacity: 0.7; }
-    .container { max-width: 1200px; margin: auto; padding: 50px 20px; background: #0a0a0a; border-radius: 20px; margin-top: 20px; box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1); }
-    #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
-    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
-    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
-    .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
-    .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
-    .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
-    .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
-    .fun-fact { background: linear-gradient(135deg, rgba(199, 249, 204, 0.15) 0%, rgba(147, 250, 165, 0.15) 100%); color: #F5F5F5; font-weight: 600; padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
-    .case-study { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 25px 0; border: 3px solid #FFD700; }
-    .expert-tip { background: linear-gradient(135deg, rgba(224, 195, 252, 0.1) 0%, rgba(189, 147, 249, 0.1) 100%); color: #F5F5F5; font-weight: 500; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #9f7aea; }
-    .activity { background: linear-gradient(135deg, rgba(255, 251, 231, 0.1) 0%, rgba(255, 237, 160, 0.1) 100%); color: #F5F5F5; font-weight: 500; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #ecc94b; }
-    ul { margin: 20px 0 20px 25px; }
-    li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
-    li strong { color: #FFD700; font-weight: 700; }
-    .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3); }
+    *{box-sizing:border-box}
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: var(--black); color: var(--text); line-height: 1.7; }
+
+    header {
+      background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+      color: white;
+      padding: 25px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2);
+      border-bottom: 3px solid var(--gold);
+      gap:16px;
+    }
+    header h1 { margin: 0; font-size: 24px; font-weight: 900; color: var(--gold); text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
+
+    nav a { color: var(--gold); margin-left: 25px; text-decoration: none; font-weight: 700; transition: opacity 0.2s ease; }
+    nav a:hover { opacity: 0.75; }
+    nav a:visited { color: var(--gold); } /* ✅ stops purple visited links */
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 50px 20px;
+      background: var(--panel);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(255, 215, 0, 0.1);
+    }
+
+    #progressBarContainer { margin: 10px auto 40px auto; max-width: 560px; }
+    #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:10px; overflow:hidden; height:16px; border: 2px solid var(--gold); }
+    #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,var(--gold),var(--gold2)); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+    #progressText { text-align:center; font-size:1.05em; margin-top:10px; color:var(--gold); font-weight:900; text-shadow: 0 0 5px rgba(255, 215, 0, 0.25); }
+
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 50px 40px;
+      border-radius: 20px;
+      margin-bottom: 40px;
+      border: 3px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.12) 0%, transparent 70%);
+    }
+    .hero h2 { color: var(--gold); font-size: 2.6em; margin: 0 0 14px 0; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.35); position: relative; z-index: 1; }
+    .hero p { font-size: 1.15em; color: var(--text); line-height: 1.8; position: relative; z-index: 1; margin:0; }
+
+    h3 {
+      margin-top: 50px;
+      color: var(--gold);
+      font-size: 1.9em;
+      font-weight: 900;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.25);
+      border-bottom: 3px solid var(--gold);
+      padding-bottom: 10px;
+    }
+
+    .section {
+      margin-bottom: 50px;
+      background: var(--panel2);
+      padding: 40px;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 215, 0, 0.3);
+    }
+    .section-icon { font-weight: 900; color: var(--gold); margin-right: 12px; font-size: 1.15em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.35); }
+
+    .golden-box {
+      background: linear-gradient(135deg, rgba(255, 215, 0, 0.10) 0%, rgba(255, 165, 0, 0.10) 100%);
+      padding: 25px 30px;
+      border-radius: 12px;
+      margin: 25px 0;
+      border-left: 5px solid var(--gold);
+      box-shadow: 0 5px 20px rgba(255, 215, 0, 0.08);
+    }
+    .golden-box h4 { color: var(--gold); font-size: 1.2em; margin: 0 0 12px 0; font-weight: 900; }
+
+    .fun-fact { background: linear-gradient(135deg, rgba(199, 249, 204, 0.15) 0%, rgba(147, 250, 165, 0.15) 100%); color: var(--text); font-weight: 700; padding: 18px 22px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
+    .case-study { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: var(--text); padding: 26px; border-radius: 15px; margin: 25px 0; border: 3px solid var(--gold); }
+    .expert-tip { background: linear-gradient(135deg, rgba(224, 195, 252, 0.10) 0%, rgba(189, 147, 249, 0.10) 100%); color: var(--text); font-weight: 600; padding: 18px 22px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #9f7aea; }
+    .activity { background: linear-gradient(135deg, rgba(255, 251, 231, 0.10) 0%, rgba(255, 237, 160, 0.10) 100%); color: var(--text); font-weight: 600; padding: 18px 22px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #ecc94b; }
+
+    ul { margin: 18px 0 18px 22px; }
+    li { margin: 10px 0; color: #E0E0E0; font-size: 1.02em; line-height: 1.75; }
+    li strong { color: var(--gold); font-weight: 900; }
+
+    .quiz-section {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%);
+      padding: 40px 35px;
+      border-radius: 20px;
+      margin: 50px 0;
+      color: #000;
+      box-shadow: 0 15px 50px rgba(255, 215, 0, 0.25);
+    }
     .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
-    .quiz-question { margin: 25px 0; background: rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; }
-    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
-    .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
-    .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
-    #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
-    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
-    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
-    .dashboard-link { text-align: center; margin: 40px 0; }
-    .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
-    .emoji { font-size: 1.5em; vertical-align: middle; }
+
+    .quiz-question { margin: 18px 0; background: rgba(0, 0, 0, 0.12); padding: 18px; border-radius: 12px; }
+    .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.05em; }
+
+    /* ✅ FIX: you didn’t have .quiz-options wrapper, so style ALL labels inside .quiz-question */
+    .quiz-question label{
+      display:block;
+      margin: 10px 0;
+      cursor:pointer;
+      padding: 10px 12px;
+      background: rgba(255,255,255,0.32);
+      border-radius: 10px;
+      transition: 0.2s;
+      font-weight: 700;
+    }
+    .quiz-question label:hover{ background: rgba(255,255,255,0.5); }
+    .quiz-question input{ margin-right:10px; transform: translateY(1px); }
+
+    #lesson-completion { margin: 40px 0 20px 0; text-align: center; }
+    #completionMsg { margin: 18px auto 0 auto; max-width: 700px; font-size: 1.1em; color: #48bb78; font-weight: 900; display: none; background: rgba(72, 187, 120, 0.10); padding: 16px; border-radius: 12px; border: 2px solid #48bb78; }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 100%);
+      color: #000;
+      padding: 18px 44px;
+      text-decoration: none;
+      border-radius: 50px;
+      margin: 12px 10px;
+      font-weight: 900;
+      font-size: 1.05em;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 0 8px 30px rgba(255, 215, 0, 0.35);
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.55); }
+
+    /* ✅ disabled look */
+    .btn:disabled{
+      background:#2c2c2c;
+      color:#bdbdbd;
+      box-shadow:none;
+      cursor:not-allowed;
+      opacity:0.85;
+      transform:none;
+    }
+
+    .dashboard-link { text-align: center; margin: 30px 0 10px; }
+    .dashboard-link a { color: var(--gold); font-weight: 800; text-decoration: underline; font-size: 1.05em; }
+    .dashboard-link a:visited{ color: var(--gold); }
+
+    .emoji { font-size: 1.3em; vertical-align: middle; }
+
     @media (max-width: 768px) {
+      header{padding:18px 16px; flex-direction:column; align-items:flex-start}
+      nav a { margin-left: 0; margin-right: 16px; }
       header h1 { font-size: 18px; }
-      .hero h2 { font-size: 2em; }
-      h3 { font-size: 1.5em; }
+      .container{padding:26px 14px}
+      .hero{padding:28px 18px}
+      .hero h2 { font-size: 1.8em; }
+      h3 { font-size: 1.35em; }
+      .section{padding:22px 16px}
+      .btn{padding:16px 28px; font-size: 0.95em;}
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
@@ -78,40 +211,169 @@
       </p>
     </div>
 
-    <!-- CONTENT OMITTED FOR BREVITY (keep your exact content here unchanged) -->
+    <div class="fun-fact">
+      <span class="emoji">🎯</span> <b>Pro Secret:</b> Top-performing salespeople spend 60% of their time listening, not talking! <span class="emoji">👂</span>
+    </div>
 
+    <!-- CONTENT KEPT THE SAME AS YOURS -->
+    <div class="section">
+      <h3><span class="section-icon">1</span>Consultative Selling: From Seller to Trusted Advisor</h3>
+
+      <div class="golden-box">
+        <h4>The Paradigm Shift</h4>
+        <p><strong>Old Way:</strong> "I pitch products to customers"<br>
+        <strong>New Way:</strong> "I diagnose needs and prescribe solutions"</p>
+        <p>Consultative selling means you're not just moving inventory—you're solving problems. This approach builds trust, increases average transaction value, and creates loyal customers who return specifically for YOU.</p>
+      </div>
+
+      <h4 style="color: var(--gold); margin-top: 30px;">The Consultative Framework</h4>
+      <ul>
+        <li><strong>Step 1 - Open-Ended Questions:</strong> "What brings you in today?" "How will you use this?" "What's been your biggest frustration with [category]?"</li>
+        <li><strong>Step 2 - Listen for "Why":</strong> The real reason people buy is often beneath the surface. Listen for emotions, not just facts.</li>
+        <li><strong>Step 3 - Solution Mapping:</strong> Connect features to emotional benefits—"This is lightweight, so you'll love carrying it everywhere!"</li>
+        <li><strong>Step 4 - Confirm Understanding:</strong> "So, you're looking for something durable and easy to clean, right?"</li>
+      </ul>
+
+      <div class="expert-tip">
+        <b>Pro Tip:</b> Repeat and summarize what you've heard. This shows you're listening AND gives the customer a chance to correct or clarify. It builds massive trust.
+      </div>
+
+      <div class="activity">
+        <h4 style="color: var(--gold);">💪 Try This:</h4>
+        <p>For your next 5 customers, ask ONLY open-ended questions for the first 2 minutes. No pitching. Just questions and listening. Notice what deeper needs you discover.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">2</span>The Science of Influence: Cialdini's 6 Principles</h3>
+
+      <div class="golden-box">
+        <h4>Psychology-Based Selling</h4>
+        <p>Dr. Robert Cialdini identified 6 universal principles of influence. Master these and you become exponentially more persuasive—ethically.</p>
+      </div>
+
+      <h4 style="color: var(--gold); margin-top: 30px;">The 6 Weapons of Influence:</h4>
+
+      <ul>
+        <li><strong>1. Reciprocity:</strong> People feel obligated to give back when given something first
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Free samples, personalized tips, going above and beyond</li>
+            <li>Example: "Let me show you a little trick with this..."</li>
+          </ul>
+        </li>
+
+        <li><strong>2. Commitment & Consistency:</strong> People want to act consistently with their words and actions
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Get small "yeses" to build towards the big "yes"</li>
+            <li>Example: "Would you like to try this on?" → "Does it feel comfortable?" → "Should we get you checked out?"</li>
+          </ul>
+        </li>
+
+        <li><strong>3. Social Proof:</strong> People follow what others do
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Share what's popular, bestsellers, customer favorites</li>
+            <li>Example: "This is our #1 seller this month!" or "You have great taste—others love this too"</li>
+          </ul>
+        </li>
+
+        <li><strong>4. Authority:</strong> People defer to experts
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Display credentials, expert picks, professional endorsements</li>
+            <li>Example: "As someone who's worked with this brand for 3 years, I can tell you..."</li>
+          </ul>
+        </li>
+
+        <li><strong>5. Liking:</strong> We say yes to people we like
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Find genuine common ground, give compliments, mirror energy</li>
+            <li>Example: "I love that color too! Great choice"</li>
+          </ul>
+        </li>
+
+        <li><strong>6. Scarcity:</strong> We want what's rare or running out
+          <ul style="margin-left: 20px; color: #C0C0C0;">
+            <li>Honest scarcity creates urgency</li>
+            <li>Example: "This is our last one in this color!" or "Sale ends today"</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="case-study">
+        <h4 style="color: var(--gold);">📖 Case Study: Sephora's Influence Mastery</h4>
+        <p>Sephora's "Try Me" stations (Reciprocity) and "Staff Picks" tags (Authority + Social Proof) boost conversion by 22%. They layer multiple influence principles in every store experience.</p>
+      </div>
+
+      <div class="fun-fact">
+        <span class="emoji">🧲</span> <b>Fun Fact:</b> Customers are 3x more likely to buy when they see other shoppers holding the same item! (Social Proof in action)
+      </div>
+    </div>
+
+    <!-- QUIZ -->
     <div class="quiz-section">
       <h3>🎯 Advanced Selling Mastery Quiz</h3>
       <form id="quiz3">
-        <!-- keep your quiz HTML unchanged -->
-        <button type="button" class="btn" onclick="gradeQuiz3()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
+        <div class="quiz-question">
+          <b>1. What is the main goal of consultative selling?</b>
+          <label><input type="radio" name="q1" value="a"/> Pitching as many products as possible</label>
+          <label><input type="radio" name="q1" value="b"/> Diagnosing customer needs and tailoring solutions</label>
+          <label><input type="radio" name="q1" value="c"/> Offering the lowest price</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>2. Which Cialdini principle is used when you show "Staff Picks" or "Bestsellers"?</b>
+          <label><input type="radio" name="q2" value="a"/> Scarcity</label>
+          <label><input type="radio" name="q2" value="b"/> Social Proof</label>
+          <label><input type="radio" name="q2" value="c"/> Commitment</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>3. The "Feel-Felt-Found" method is best for:</b>
+          <label><input type="radio" name="q3" value="a"/> Handling objections</label>
+          <label><input type="radio" name="q3" value="b"/> Telling jokes</label>
+          <label><input type="radio" name="q3" value="c"/> Closing the sale</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>4. What is an "Option Close"?</b>
+          <label><input type="radio" name="q4" value="a"/> Offering two choices ("Would you like the blue or the grey?")</label>
+          <label><input type="radio" name="q4" value="b"/> Asking "Do you want this or not?"</label>
+          <label><input type="radio" name="q4" value="c"/> Telling a story</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>5. What's the best way to handle the objection "It's too expensive"?</b>
+          <label><input type="radio" name="q5" value="a"/> Argue about price</label>
+          <label><input type="radio" name="q5" value="b"/> Empathize and reframe the value or long-term benefit</label>
+          <label><input type="radio" name="q5" value="c"/> Ignore the objection</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>6. True or False: Asking "yes or no" questions is the best way to learn about your customer.</b>
+          <label><input type="radio" name="q6" value="a"/> True</label>
+          <label><input type="radio" name="q6" value="b"/> False - open-ended questions reveal deeper needs</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>7. What's a quick way to build rapport with a new customer?</b>
+          <label><input type="radio" name="q7" value="a"/> Find a genuine point of connection or share a little humor</label>
+          <label><input type="radio" name="q7" value="b"/> Dive into the sales pitch immediately</label>
+          <label><input type="radio" name="q7" value="c"/> Point out what they're doing wrong</label>
+        </div>
+
+        <div class="quiz-question">
+          <b>8. What do objections really signal?</b>
+          <label><input type="radio" name="q8" value="a"/> The customer hates you</label>
+          <label><input type="radio" name="q8" value="b"/> Buying signals - they're engaged enough to raise concerns</label>
+          <label><input type="radio" name="q8" value="c"/> You should give up</label>
+        </div>
+
+        <button type="button" class="btn" onclick="gradeQuiz3()" style="margin-top: 10px; background:#000; color: var(--gold); border: 3px solid var(--gold);">
+          Submit Quiz
+        </button>
       </form>
-      <div id="quiz3-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
+
+      <div id="quiz3-result" style="font-weight: 900; margin-top: 18px; padding: 18px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
     </div>
-
-    <script>
-      function gradeQuiz3() {
-        const correct = {
-          q1: 'b', q2: 'b', q3: 'a', q4: 'a',
-          q5: 'b', q6: 'b', q7: 'a', q8: 'b'
-        };
-        let score = 0, total = 8;
-        for(let i=1; i<=total; i++) {
-          let ans = document.querySelector('input[name="q'+i+'"]:checked');
-          if(ans && ans.value === correct['q'+i]) score++;
-        }
-        let msg = `🏆 You scored ${score} out of ${total}! `;
-        if(score === total) msg += "SELLING MASTER! You're ready to close like a pro! 🔥";
-        else if(score >= 7) msg += "Excellent! You've mastered advanced selling!";
-        else if(score >= 5) msg += "Good effort! Review key techniques for mastery.";
-        else msg += "Keep learning! Practice these techniques and try again.";
-
-        const resultDiv = document.getElementById('quiz3-result');
-        resultDiv.textContent = msg;
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    </script>
 
     <div id="lesson-completion">
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
@@ -124,16 +386,38 @@
     </div>
   </div>
 
-  <!-- ✅ FINAL: Completion & Progress Logic (updated) -->
+  <script>
+    function gradeQuiz3() {
+      const correct = { q1:'b', q2:'b', q3:'a', q4:'a', q5:'b', q6:'b', q7:'a', q8:'b' };
+      let score = 0, total = 8;
+
+      for(let i=1;i<=total;i++){
+        const ans = document.querySelector('input[name="q'+i+'"]:checked');
+        if(ans && ans.value === correct['q'+i]) score++;
+      }
+
+      let msg = `🏆 You scored ${score} out of ${total}! `;
+      if(score === total) msg += "SELLING MASTER! You're ready to close like a pro! 🔥";
+      else if(score >= 7) msg += "Excellent! You've mastered advanced selling!";
+      else if(score >= 5) msg += "Good effort! Review key techniques for mastery.";
+      else msg += "Keep learning! Practice these techniques and try again.";
+
+      const resultDiv = document.getElementById('quiz3-result');
+      resultDiv.textContent = msg;
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  </script>
+
   <script>
     const lessonNum = 3;
     const totalLessons = 8;
 
     function markLessonComplete() {
-      // ✅ NEW: key used by course.html to unlock Kasi chapter
+      // ✅ THIS is what unlocks bonus on course.html
       localStorage.setItem('lesson_3_completed', 'true');
 
-      // ✅ Keep your existing progress system
+      // keep your existing progress system too
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       progress[`lesson${lessonNum}`] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
@@ -151,23 +435,20 @@
       for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
       let percent = Math.round((completed/totalLessons)*100);
       document.getElementById('progressBarFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent =
-        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+      document.getElementById('progressText').textContent = `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
     }
 
     window.onload = function() {
       let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
 
-      // ✅ NEW: accept either completion system
-      const done =
-        progress[`lesson${lessonNum}`] === true ||
-        localStorage.getItem('lesson_3_completed') === 'true';
-
-      if(done) {
+      if(progress[`lesson${lessonNum}`]) {
         document.getElementById('nextLessonBtn').style.display = 'inline-block';
         document.getElementById('markComplete').textContent = "✅ Lesson Completed";
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
+
+        // ✅ ensure bonus stays unlocked if lesson already done
+        localStorage.setItem('lesson_3_completed', 'true');
       }
 
       updateProgressBar();
