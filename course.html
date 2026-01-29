@@ -91,6 +91,14 @@ nav a:hover{opacity:.7}
   color:var(--gold);
   font-weight:800;
 }
+.lesson-card p{
+  margin:0;
+  line-height:1.5;
+  font-size:0.95em;
+  opacity:0.9;
+}
+
+/* BUTTON */
 .btn{
   display:inline-block;
   margin-top:15px;
@@ -101,8 +109,32 @@ nav a:hover{opacity:.7}
   color:#000;
   background:linear-gradient(135deg,var(--gold),#ffae00);
   box-shadow:0 10px 30px rgba(255,215,0,.7);
+  transition:0.2s;
 }
 .btn:hover{transform:translateY(-3px)}
+
+/* DISABLED BUTTON */
+.btn.disabled{
+  background:#444;
+  color:#ddd;
+  box-shadow:none;
+  cursor:not-allowed;
+  pointer-events:none;
+  opacity:0.75;
+}
+
+/* RESTRICTED CHAPTER CARD (Premium Glow) */
+.lesson-card.restricted{
+  border:2px solid var(--gold);
+  background:rgba(255,215,0,0.06);
+  box-shadow:0 0 20px rgba(255,215,0,0.25);
+}
+.lesson-card.restricted:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 28px rgba(255,215,0,0.35);
+}
+
+/* CONTACT */
 .contact{
   margin-top:60px;
   padding:35px;
@@ -110,9 +142,8 @@ nav a:hover{opacity:.7}
   background:linear-gradient(160deg,#0f0f0f,#000);
   border:2px solid var(--gold);
 }
-.contact p{
-  font-size:1.1em;
-}
+.contact p{font-size:1.1em}
+
 @media(max-width:768px){
   header{flex-direction:column;gap:15px}
   nav a{margin-left:0;margin-right:15px}
@@ -128,6 +159,7 @@ nav a:hover{opacity:.7}
     <a href="#contact">Contacts</a>
   </nav>
 </header>
+
 <div class="container">
   <div id="progress">
     <div class="section-title">Your Progress</div>
@@ -136,14 +168,55 @@ nav a:hover{opacity:.7}
 
   <div class="section-title">Course Lessons</div>
   <div class="lesson-grid">
-    <div class="lesson-card"><h3>Lesson 1</h3><a class="btn" href="lesson1.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 2</h3><a class="btn" href="lesson2.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 3</h3><a class="btn" href="lesson3.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 4</h3><a class="btn" href="lesson4.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 5</h3><a class="btn" href="lesson5.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 6</h3><a class="btn" href="lesson6.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 7</h3><a class="btn" href="lesson7.html">Open</a></div>
-    <div class="lesson-card"><h3>Lesson 8</h3><a class="btn" href="lesson8.html">Open</a></div>
+
+    <div class="lesson-card">
+      <h3>Lesson 1: Retail Mindset & Professional Identity</h3>
+      <a class="btn" href="lesson1.html">Open</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 2: Customer Profiling & Customer Types</h3>
+      <a class="btn" href="lesson2.html">Open</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 3: Advanced Selling Techniques</h3>
+      <a class="btn" href="lesson3.html">Open</a>
+    </div>
+
+    <!-- RESTRICTED CHAPTER -->
+    <div class="lesson-card restricted">
+      <h3>🔒 Restricted Chapter</h3>
+      <p style="font-weight:800; color:#FFD700;">The Kasi Business Goldmine</p>
+      <p style="font-size:0.9em; opacity:0.85; margin-top:6px;">Unlocks after Lesson 3</p>
+      <a class="btn disabled" href="#">Locked</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 4: Visual Merchandising & Store Psychology</h3>
+      <a class="btn" href="lesson4.html">Open</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 5: Retail Marketing Campaigns & Activations</h3>
+      <a class="btn" href="lesson5.html">Open</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 6: Omnichannel Selling & The Future of Retail</h3>
+      <a class="btn" href="lesson6.html">Open</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 7: Customer Service Mastery & Difficult Situations</h3>
+      <a class="btn" href="lesson7.html">Open</a>
+    </div>
+
+    <div class="lesson-card">
+      <h3>Lesson 8: Stress Management, Cultural Awareness & Career Growth</h3>
+      <a class="btn" href="lesson8.html">Open</a>
+    </div>
+
   </div>
 
   <div id="contact" class="contact">
@@ -153,12 +226,13 @@ nav a:hover{opacity:.7}
     <p>💬 WhatsApp: +27 74 831 5232</p>
   </div>
 </div>
+
 <script>
 let completed=0;
 for(let i=1;i<=8;i++){
- if(localStorage.getItem(`lesson_${i}_completed`)) completed++;
+  if(localStorage.getItem(`lesson_${i}_completed`)) completed++;
 }
-document.getElementById('progressBar').style.width=`${(completed/8)*100}%`;
+document.getElementById('progressBar').style.width = `${(completed/8)*100}%`;
 </script>
 </body>
 </html>
