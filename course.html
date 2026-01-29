@@ -189,7 +189,7 @@ nav a:hover{opacity:.7}
       <h3>🔒 Restricted Chapter</h3>
       <p style="font-weight:800; color:#FFD700;">The Kasi Business Goldmine</p>
       <p style="font-size:0.9em; opacity:0.85; margin-top:6px;">Unlocks after Lesson 3</p>
-      <a class="btn disabled" href="#">Locked</a>
+      <a id="kasiBtn" class="btn disabled" href="#">Locked</a>
     </div>
 
     <div class="lesson-card">
@@ -228,11 +228,39 @@ nav a:hover{opacity:.7}
 </div>
 
 <script>
-let completed=0;
-for(let i=1;i<=8;i++){
-  if(localStorage.getItem(`lesson_${i}_completed`)) completed++;
+const totalLessons = 8;
+
+// ✅ Read progress from BOTH systems:
+// 1) retailProgress.lesson1..lesson8 (your lesson pages use this)
+// 2) lesson_1_completed..lesson_8_completed (older system)
+function getCompletedCount() {
+  const progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+  let completed = 0;
+
+  for (let i = 1; i <= totalLessons; i++) {
+    const doneByRetailProgress = progress[`lesson${i}`] === true;
+    const doneByLegacyKey = localStorage.getItem(`lesson_${i}_completed`) === 'true';
+    if (doneByRetailProgress || doneByLegacyKey) completed++;
+  }
+  return completed;
 }
-document.getElementById('progressBar').style.width = `${(completed/8)*100}%`;
+
+// ✅ Update progress bar
+const completedCount = getCompletedCount();
+document.getElementById('progressBar').style.width = `${(completedCount / totalLessons) * 100}%`;
+
+// ✅ Auto-unlock Restricted Chapter after Lesson 3
+const progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+const lesson3Done =
+  progress.lesson3 === true ||
+  localStorage.getItem('lesson_3_completed') === 'true';
+
+const kasiBtn = document.getElementById('kasiBtn');
+if (lesson3Done && kasiBtn) {
+  kasiBtn.classList.remove('disabled');
+  kasiBtn.textContent = 'Open';
+  kasiBtn.href = 'bonus-kasi-goldmine.html'; // make sure this file exists
+}
 </script>
 </body>
 </html>
