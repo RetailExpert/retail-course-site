@@ -123,6 +123,48 @@ nav a:hover{opacity:.7}
   opacity:0.75;
 }
 
+/* PRE-COURSE BUTTON — glowing outline style to stand out */
+.btn-precourse{
+  display:inline-block;
+  margin-top:15px;
+  padding:14px 28px;
+  border-radius:40px;
+  font-weight:900;
+  text-decoration:none;
+  color:var(--gold);
+  background:transparent;
+  border:2px solid var(--gold);
+  box-shadow:0 0 18px rgba(255,215,0,.4);
+  transition:0.2s;
+  font-family:'Inter',sans-serif;
+  font-size:1rem;
+  cursor:pointer;
+}
+.btn-precourse:hover{
+  background:rgba(255,215,0,.1);
+  box-shadow:0 0 28px rgba(255,215,0,.6);
+  transform:translateY(-3px);
+}
+
+/* LESSON 1 CARD — special glow to show it's the start */
+.lesson-card.start-here{
+  border:2px solid var(--gold);
+  box-shadow:0 0 28px rgba(255,215,0,.2);
+  position:relative;
+}
+.start-badge{
+  display:inline-block;
+  background:var(--gold);
+  color:#000;
+  font-size:0.65rem;
+  font-weight:900;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  padding:3px 10px;
+  border-radius:4px;
+  margin-bottom:10px;
+}
+
 /* RESTRICTED CHAPTER CARD (Premium Glow) */
 .lesson-card.restricted{
   border:2px solid var(--gold);
@@ -169,13 +211,21 @@ nav a:hover{opacity:.7}
   <div class="section-title">Course Lessons</div>
   <div class="lesson-grid">
 
-    <div class="lesson-card">
-      <h3>Lesson 1: Retail Mindset & Professional Identity</h3>
-      <a class="btn" href="lesson1.html">Open</a>
+    <!-- ═══════════════════════════════════════════
+         LESSON 1 — Pre-course assessment gate
+         • If student has completed assessment → goes to lesson1.html directly
+         • If not → goes to pre-course.html first
+         The JS below handles which link to use.
+    ═══════════════════════════════════════════ -->
+    <div class="lesson-card start-here">
+      <div class="start-badge" id="lesson1-badge">⚡ Start Here</div>
+      <h3>Lesson 1: Retail Mindset &amp; Professional Identity</h3>
+      <p id="lesson1-sub" style="font-size:0.82em;opacity:0.6;margin-bottom:0;"></p>
+      <a class="btn-precourse" id="lesson1-btn" href="pre-course.html">Begin Assessment</a>
     </div>
 
     <div class="lesson-card">
-      <h3>Lesson 2: Customer Profiling & Customer Types</h3>
+      <h3>Lesson 2: Customer Profiling &amp; Customer Types</h3>
       <a class="btn" href="lesson2.html">Open</a>
     </div>
 
@@ -193,27 +243,27 @@ nav a:hover{opacity:.7}
     </div>
 
     <div class="lesson-card">
-      <h3>Lesson 4: Visual Merchandising & Store Psychology</h3>
+      <h3>Lesson 4: Visual Merchandising &amp; Store Psychology</h3>
       <a class="btn" href="lesson4.html">Open</a>
     </div>
 
     <div class="lesson-card">
-      <h3>Lesson 5: Retail Marketing Campaigns & Activations</h3>
+      <h3>Lesson 5: Retail Marketing Campaigns &amp; Activations</h3>
       <a class="btn" href="lesson5.html">Open</a>
     </div>
 
     <div class="lesson-card">
-      <h3>Lesson 6: Omnichannel Selling & The Future of Retail</h3>
+      <h3>Lesson 6: Omnichannel Selling &amp; The Future of Retail</h3>
       <a class="btn" href="lesson6.html">Open</a>
     </div>
 
     <div class="lesson-card">
-      <h3>Lesson 7: Customer Service Mastery & Difficult Situations</h3>
+      <h3>Lesson 7: Customer Service Mastery &amp; Difficult Situations</h3>
       <a class="btn" href="lesson7.html">Open</a>
     </div>
 
     <div class="lesson-card">
-      <h3>Lesson 8: Stress Management, Cultural Awareness & Career Growth</h3>
+      <h3>Lesson 8: Stress Management, Cultural Awareness &amp; Career Growth</h3>
       <a class="btn" href="lesson8.html">Open</a>
     </div>
 
@@ -221,7 +271,7 @@ nav a:hover{opacity:.7}
 
   <div id="contact" class="contact">
     <div class="section-title">Contact</div>
-    <p><strong>Course Creator & Director:</strong> Phiwokuhle Makapela</p>
+    <p><strong>Course Creator &amp; Director:</strong> Phiwokuhle Makapela</p>
     <p>📧 masteringretail@gmail.com</p>
     <p>💬 WhatsApp: +27 74 831 5232</p>
   </div>
@@ -236,7 +286,6 @@ const totalLessons = 8;
 function getCompletedCount() {
   const progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
   let completed = 0;
-
   for (let i = 1; i <= totalLessons; i++) {
     const doneByRetailProgress = progress[`lesson${i}`] === true;
     const doneByLegacyKey = localStorage.getItem(`lesson_${i}_completed`) === 'true';
@@ -259,8 +308,52 @@ const kasiBtn = document.getElementById('kasiBtn');
 if (lesson3Done && kasiBtn) {
   kasiBtn.classList.remove('disabled');
   kasiBtn.textContent = 'Open';
-  kasiBtn.href = 'bonus-kasi-goldmine.html'; // make sure this file exists
+  kasiBtn.href = 'bonus-kasi-goldmine.html';
 }
+
+// ✅ LESSON 1 — Pre-course assessment gate
+// Checks if student has already completed the pre-course assessment.
+// If yes  → button goes straight to lesson1.html (gold filled, says "Open")
+// If no   → button goes to pre-course.html first (gold outline, says "Begin Assessment")
+(function() {
+  const done = localStorage.getItem('rr-precourse-done');
+  const btn  = document.getElementById('lesson1-btn');
+  const badge = document.getElementById('lesson1-badge');
+  const sub   = document.getElementById('lesson1-sub');
+
+  if (done) {
+    // Assessment already completed — go straight to lesson
+    try {
+      const entry = JSON.parse(done);
+      const code  = entry.completionCode || '';
+      btn.href        = 'lesson1.html';
+      btn.textContent = 'Open';
+      btn.className   = 'btn'; // filled gold button
+      badge.textContent = '✅ Assessment Complete';
+      badge.style.background = '#1a3d1a';
+      badge.style.color = '#8ec98a';
+      badge.style.border = '1px solid #4a6741';
+      if (code) {
+        sub.textContent = 'Code: ' + code;
+        sub.style.fontFamily = "'Courier New', monospace";
+        sub.style.color = 'rgba(255,215,0,0.5)';
+        sub.style.fontSize = '0.78em';
+        sub.style.marginTop = '4px';
+      }
+    } catch(e) {
+      // Fallback if stored data is malformed
+      btn.href        = 'lesson1.html';
+      btn.textContent = 'Open';
+      btn.className   = 'btn';
+    }
+  } else {
+    // Assessment not yet done — send to pre-course first
+    sub.textContent  = '🔒 Complete a short assessment to unlock';
+    sub.style.color  = 'rgba(255,215,0,0.55)';
+    sub.style.fontSize = '0.8em';
+    sub.style.marginTop = '6px';
+  }
+})();
 </script>
 </body>
 </html>
