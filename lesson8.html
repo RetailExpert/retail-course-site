@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
-    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700; }
     header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
     nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
     nav a:hover { opacity: 0.7; }
@@ -43,29 +43,35 @@
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
-    #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    #completionMsg { margin: 25px auto 0 auto; max-width: 600px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
+    #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
+    #quiz-required-notice.show { display: block; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; font-family: 'Inter', sans-serif; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .dashboard-link { text-align: center; margin: 40px 0; }
     .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
     @media (max-width: 768px) {
+      header { flex-direction: column; gap: 12px; padding: 16px 20px; }
       header h1 { font-size: 18px; }
       .hero h2 { font-size: 2em; }
       h3 { font-size: 1.5em; }
       .career-path { grid-template-columns: 1fr; }
+      .container { padding: 24px 14px; }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
-    <nav class="lesson-nav">
-  <a href="course.html">Home</a>
-  <a href="course.html#contact">Contact</a>
-  <a href="course.html#progress">View Progress</a>
-</nav>
-
+    <nav>
+      <a href="course.html">Home</a>
+      <a href="course.html#contact">Contact</a>
+      <a href="course.html#progress">View Progress</a>
+    </nav>
   </header>
+
   <div class="container">
     <div id="progressBarContainer">
       <div class="progress-outer">
@@ -79,25 +85,23 @@
       <p>Master the inner game of retail. Build resilience, navigate diversity with grace, and chart your path from shop floor to leadership. This is where professionals become unstoppable.</p>
     </div>
 
+    <!-- ══ PART 1 ══ -->
     <div class="section">
       <h3><span class="section-icon">🔥</span>Part 1: Stress Management for High-Performance Retail</h3>
-      
       <div class="golden-box">
         <h4>The Reality: Retail Stress is Real</h4>
-        <p>Peak seasons, difficult customers, standing for hours, hitting targets, managing inventory chaos—retail professionals face unique stressors that most careers never encounter. The difference between burnout and breakthrough is how you manage your energy.</p>
+        <p>Peak seasons, difficult customers, standing for hours, hitting targets, managing inventory chaos — retail professionals face unique stressors that most careers never encounter. The difference between burnout and breakthrough is how you manage your energy.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">The Retail Stress Cycle</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">The Retail Stress Cycle</h4>
       <ul>
         <li><strong>Physical Stress:</strong> Standing 8+ hours, irregular breaks, physical fatigue</li>
         <li><strong>Emotional Stress:</strong> Managing your emotions while absorbing others' frustration</li>
         <li><strong>Mental Stress:</strong> Multitasking, decision fatigue, remembering policies and products</li>
         <li><strong>Environmental Stress:</strong> Noise, crowds, sensory overload, temperature extremes</li>
       </ul>
-
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">⚡ Mastery Insight: The Energy Management Matrix</h4>
-        <p>Elite retail professionals don't manage time—they manage energy. You have four energy tanks:</p>
+        <h4 style="color:#FFD700;">⚡ Mastery Insight: The Energy Management Matrix</h4>
+        <p>Elite retail professionals don't manage time — they manage energy. You have four energy tanks:</p>
         <ul>
           <li><strong>Physical:</strong> Sleep, nutrition, movement, rest</li>
           <li><strong>Emotional:</strong> Positive relationships, boundaries, gratitude</li>
@@ -106,33 +110,26 @@
         </ul>
         <p><strong>Action:</strong> Identify which tank is lowest right now. Commit to one small refill action today.</p>
       </div>
-
-      <div class="pro-tip">
-        <strong>🎯 Pro Tip:</strong> The "5-Minute Reset" - Between difficult customers or during slow moments, use this sequence: 1) Deep breathing (4 counts in, 6 counts out), 2) Shake out your body physically, 3) Drink water, 4) Set one positive intention. This neurologically resets your stress response.
-      </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Tactical Stress Management Techniques</h4>
-      
+      <div class="pro-tip"><strong>🎯 Pro Tip:</strong> The "5-Minute Reset" — between difficult customers or during slow moments: 1) Deep breathing (4 counts in, 6 counts out), 2) Shake out your body physically, 3) Drink water, 4) Set one positive intention. This neurologically resets your stress response.</div>
+      <h4 style="color:#FFD700;margin-top:30px;">Tactical Stress Management Techniques</h4>
       <div class="golden-box">
         <h4>Before Your Shift</h4>
         <ul>
-          <li><strong>Prime Your Mindset:</strong> Set one intention—"Today I'm focused on connection" or "I'm resilient"</li>
+          <li><strong>Prime Your Mindset:</strong> Set one intention — "Today I'm focused on connection"</li>
           <li><strong>Fuel Properly:</strong> Eat protein + complex carbs for sustained energy</li>
-          <li><strong>Arrive Early:</strong> Give yourself 10 minutes to transition, not rushing</li>
+          <li><strong>Arrive Early:</strong> Give yourself 10 minutes to transition, not rush</li>
         </ul>
       </div>
-
       <div class="golden-box">
         <h4>During Your Shift</h4>
         <ul>
           <li><strong>Micro-Breaks:</strong> 30 seconds of deep breathing every hour</li>
           <li><strong>Movement:</strong> Walk, stretch, change positions when possible</li>
-          <li><strong>Hydration:</strong> Keep water nearby—dehydration amplifies stress</li>
-          <li><strong>Reframe:</strong> Difficult customer = opportunity to practice mastery</li>
-          <li><strong>Support System:</strong> Quick check-ins with teammates ("You good?")</li>
+          <li><strong>Hydration:</strong> Keep water nearby — dehydration amplifies stress</li>
+          <li><strong>Reframe:</strong> Difficult customer = opportunity to practise mastery</li>
+          <li><strong>Support System:</strong> Quick check-ins with teammates</li>
         </ul>
       </div>
-
       <div class="golden-box">
         <h4>After Your Shift</h4>
         <ul>
@@ -142,15 +139,12 @@
           <li><strong>Weekly Recovery:</strong> One full day off, completely unplugged</li>
         </ul>
       </div>
-
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: Nike Retail Wellness Program</h4>
-        <p>Nike implemented mandatory wellness breaks and mental health resources for retail staff. Results: 34% reduction in sick days, 28% improvement in customer satisfaction scores, 41% decrease in turnover. They found that investing in employee stress management directly impacted the bottom line.</p>
+        <h4 style="color:#FFD700;">📖 Case Study: Nike Retail Wellness Program</h4>
+        <p>Nike implemented mandatory wellness breaks and mental health resources for retail staff. Results: 34% reduction in sick days, 28% improvement in customer satisfaction scores, 41% decrease in turnover. Investing in employee stress management directly impacted the bottom line.</p>
       </div>
-
       <div class="exercise">
-        <h4 style="color: #FFD700;">💪 Exercise: Your Personal Stress Audit</h4>
-        <p><strong>This Week:</strong></p>
+        <h4 style="color:#FFD700;">💪 Exercise: Your Personal Stress Audit</h4>
         <ol>
           <li>Rate your stress level 1-10 at start and end of each shift</li>
           <li>Note what triggers your highest stress</li>
@@ -160,48 +154,39 @@
       </div>
     </div>
 
+    <!-- ══ PART 2 ══ -->
     <div class="section">
       <h3><span class="section-icon">🌍</span>Part 2: Cultural Awareness & Sensitivity</h3>
-      
       <div class="golden-box">
         <h4>Why This Matters More Than Ever</h4>
-        <p>Retail is the frontline of human diversity. Every day you interact with people from different cultures, religions, languages, abilities, and backgrounds. Cultural competence isn't just "nice to have"—it's a core professional skill that directly impacts sales, team dynamics, and your career trajectory.</p>
+        <p>Retail is the frontline of human diversity. Every day you interact with people from different cultures, religions, languages, abilities, and backgrounds. Cultural competence isn't just "nice to have" — it's a core professional skill that directly impacts sales, team dynamics, and your career trajectory.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">The 5 Dimensions of Cultural Intelligence</h4>
-
+      <h4 style="color:#FFD700;margin-top:30px;">The 5 Dimensions of Cultural Intelligence</h4>
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">1. Cultural Self-Awareness</h4>
+        <h4 style="color:#FFD700;">1. Cultural Self-Awareness</h4>
         <p>Understand your own cultural lens, biases, and assumptions. We all have them. The question is whether you're aware of them.</p>
-        <p><strong>Reflection:</strong> What cultural values did you grow up with? How do they affect how you judge "good" customer service or "professional" behavior?</p>
       </div>
-
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">2. Cultural Knowledge</h4>
+        <h4 style="color:#FFD700;">2. Cultural Knowledge</h4>
         <p>Learn about the major cultural groups in your area. What are their communication styles, holidays, shopping preferences, and values?</p>
         <ul>
           <li><strong>High-Context Cultures:</strong> Indirect communication, relationship-focused (many Asian, African, Middle Eastern cultures)</li>
           <li><strong>Low-Context Cultures:</strong> Direct communication, task-focused (Western European, North American cultures)</li>
         </ul>
       </div>
-
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">3. Cultural Curiosity</h4>
+        <h4 style="color:#FFD700;">3. Cultural Curiosity</h4>
         <p>Approach differences with genuine interest, not judgment. Ask questions respectfully. Learn names correctly. Show you care.</p>
       </div>
-
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">4. Cultural Flexibility</h4>
+        <h4 style="color:#FFD700;">4. Cultural Flexibility</h4>
         <p>Adapt your communication style, pace, and approach based on cultural cues. One size does NOT fit all.</p>
       </div>
-
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">5. Cultural Humility</h4>
-        <p>Recognize you'll make mistakes. When you do, apologize genuinely, learn, and do better. This builds trust.</p>
+        <h4 style="color:#FFD700;">5. Cultural Humility</h4>
+        <p>Recognise you'll make mistakes. When you do, apologise genuinely, learn, and do better. This builds trust.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 40px;">Practical Cultural Competence in Retail</h4>
-
+      <h4 style="color:#FFD700;margin-top:40px;">Practical Cultural Competence in Retail</h4>
       <div class="golden-box">
         <h4>Communication Across Cultures</h4>
         <ul>
@@ -212,147 +197,80 @@
           <li><strong>Religious Considerations:</strong> Be aware of holidays, dietary restrictions, modesty preferences.</li>
         </ul>
       </div>
-
-      <div class="pro-tip">
-        <strong>🎯 Pro Tip:</strong> Create a "Cultural Calendar" for your store—mark major holidays from different cultures (Ramadan, Diwali, Lunar New Year, etc.). Acknowledge these with customers. This small gesture builds massive goodwill.
-      </div>
-
+      <div class="pro-tip"><strong>🎯 Pro Tip:</strong> Create a "Cultural Calendar" for your store — mark major holidays from different cultures (Ramadan, Diwali, Lunar New Year). Acknowledging these with customers builds massive goodwill.</div>
       <div class="golden-box">
         <h4>Working with Diverse Teams</h4>
         <ul>
-          <li><strong>Inclusive Language:</strong> Avoid idioms that don't translate ("hit a home run")</li>
+          <li><strong>Inclusive Language:</strong> Avoid idioms that don't translate well</li>
           <li><strong>Meeting Styles:</strong> Some cultures value hierarchy, others equality. Adapt your approach.</li>
-          <li><strong>Conflict Resolution:</strong> Direct confrontation works in some cultures, indirect in others.</li>
           <li><strong>Feedback:</strong> Public praise is appreciated universally. Public criticism is not.</li>
         </ul>
       </div>
-
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: Sephora's Cultural Competence Training</h4>
+        <h4 style="color:#FFD700;">📖 Case Study: Sephora's Cultural Competence Training</h4>
         <p>After incidents involving racial profiling, Sephora closed all stores for diversity training. They implemented ongoing cultural competence education, diverse hiring practices, and clear anti-discrimination policies. Result: Improved brand reputation, increased customer trust, and better team culture.</p>
       </div>
-
       <div class="exercise">
-        <h4 style="color: #FFD700;">💪 Exercise: Cultural Intelligence in Action</h4>
-        <p><strong>This Month:</strong></p>
+        <h4 style="color:#FFD700;">💪 Exercise: Cultural Intelligence in Action</h4>
         <ol>
           <li>Learn to say "hello" and "thank you" in 3 languages spoken in your community</li>
           <li>Research one cultural holiday you're unfamiliar with</li>
-          <li>Have a conversation with a coworker from a different background—ask about their experience</li>
+          <li>Have a conversation with a coworker from a different background</li>
           <li>Identify one unconscious bias you have and actively work to counter it</li>
         </ol>
       </div>
     </div>
 
+    <!-- ══ PART 3 ══ -->
     <div class="section">
       <h3><span class="section-icon">🚀</span>Part 3: Professional Growth & Career Progression</h3>
-      
       <div class="golden-box">
         <h4>From Shop Floor to Leadership: Your Career Roadmap</h4>
         <p>Retail is one of the few industries where you can start at entry level and become a CEO. But it requires strategy, not just hard work. Here's how the best do it.</p>
       </div>
-
       <div class="career-path">
-        <div class="path-card">
-          <h4>Level 1: Sales Associate / Shop Floor</h4>
-          <p><strong>Focus:</strong> Master fundamentals, exceed targets, build reputation</p>
-          <p><strong>Timeline:</strong> 6-18 months</p>
-          <p><strong>Key Skills:</strong> Customer service, product knowledge, sales techniques, reliability</p>
-          <p><strong>Next Step:</strong> Express interest in growth, ask for feedback, volunteer for projects</p>
-        </div>
-
-        <div class="path-card">
-          <h4>Level 2: Senior Sales / Lead</h4>
-          <p><strong>Focus:</strong> Mentor others, take on responsibilities, demonstrate leadership</p>
-          <p><strong>Timeline:</strong> 1-2 years</p>
-          <p><strong>Key Skills:</strong> Training, problem-solving, consistency, peer influence</p>
-          <p><strong>Next Step:</strong> Ask about supervisor training, shadow managers</p>
-        </div>
-
-        <div class="path-card">
-          <h4>Level 3: Supervisor / Assistant Manager</h4>
-          <p><strong>Focus:</strong> Learn operations, scheduling, inventory, team management</p>
-          <p><strong>Timeline:</strong> 1-3 years</p>
-          <p><strong>Key Skills:</strong> Leadership, conflict resolution, analytics, accountability</p>
-          <p><strong>Next Step:</strong> Pursue management certifications, express store manager interest</p>
-        </div>
-
-        <div class="path-card">
-          <h4>Level 4: Store Manager</h4>
-          <p><strong>Focus:</strong> P&L responsibility, team building, strategy execution</p>
-          <p><strong>Timeline:</strong> 2-5 years</p>
-          <p><strong>Key Skills:</strong> Business acumen, hiring, coaching, financial management</p>
-          <p><strong>Next Step:</strong> Network with district managers, pursue multi-unit opportunities</p>
-        </div>
-
-        <div class="path-card">
-          <h4>Level 5: District / Regional Manager</h4>
-          <p><strong>Focus:</strong> Multiple locations, strategic planning, talent development</p>
-          <p><strong>Timeline:</strong> 3-7 years</p>
-          <p><strong>Key Skills:</strong> Strategic thinking, change management, scalable systems</p>
-          <p><strong>Next Step:</strong> Corporate roles, VP track, entrepreneurship</p>
-        </div>
-
-        <div class="path-card">
-          <h4>Level 6: Corporate Leadership / Executive</h4>
-          <p><strong>Focus:</strong> Brand strategy, organizational leadership, vision</p>
-          <p><strong>Timeline:</strong> 5-10+ years total</p>
-          <p><strong>Key Skills:</strong> Executive presence, industry expertise, innovation</p>
-          <p><strong>Options:</strong> VP of Retail, COO, CEO, or start your own brand</p>
-        </div>
+        <div class="path-card"><h4>Level 1: Sales Associate</h4><p><strong>Focus:</strong> Master fundamentals, exceed targets, build reputation</p><p><strong>Timeline:</strong> 6-18 months</p><p><strong>Next Step:</strong> Express interest in growth, ask for feedback, volunteer for projects</p></div>
+        <div class="path-card"><h4>Level 2: Senior Sales / Lead</h4><p><strong>Focus:</strong> Mentor others, take on responsibilities, demonstrate leadership</p><p><strong>Timeline:</strong> 1-2 years</p><p><strong>Next Step:</strong> Ask about supervisor training, shadow managers</p></div>
+        <div class="path-card"><h4>Level 3: Supervisor / Assistant Manager</h4><p><strong>Focus:</strong> Learn operations, scheduling, inventory, team management</p><p><strong>Timeline:</strong> 1-3 years</p><p><strong>Next Step:</strong> Pursue management certifications, express store manager interest</p></div>
+        <div class="path-card"><h4>Level 4: Store Manager</h4><p><strong>Focus:</strong> P&L responsibility, team building, strategy execution</p><p><strong>Timeline:</strong> 2-5 years</p><p><strong>Next Step:</strong> Network with district managers, pursue multi-unit opportunities</p></div>
+        <div class="path-card"><h4>Level 5: District / Regional Manager</h4><p><strong>Focus:</strong> Multiple locations, strategic planning, talent development</p><p><strong>Timeline:</strong> 3-7 years</p><p><strong>Next Step:</strong> Corporate roles, VP track, entrepreneurship</p></div>
+        <div class="path-card"><h4>Level 6: Corporate Leadership / Executive</h4><p><strong>Focus:</strong> Brand strategy, organisational leadership, vision</p><p><strong>Timeline:</strong> 5-10+ years total</p><p><strong>Options:</strong> VP of Retail, COO, CEO, or start your own brand</p></div>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 50px;">The 10 Accelerators for Rapid Career Growth</h4>
-
+      <h4 style="color:#FFD700;margin-top:50px;">The 10 Accelerators for Rapid Career Growth</h4>
       <div class="mastery-insight">
-        <ol style="margin-left: 20px;">
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Results Speak Louder Than Years:</strong> Consistently exceed targets. Be in the top 10% of performers. Numbers open doors.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Solve Problems Before They're Assigned:</strong> See what needs fixing and fix it. Initiative is the #1 trait managers look for.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Document Everything:</strong> Keep a "wins journal"—sales records, customer compliments, problems solved. Use this in reviews and promotions.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Become Irreplaceable:</strong> Master skills others avoid—inventory systems, visual merchandising, difficult situations. Be the go-to expert.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Build Your Brand:</strong> Be known for something specific—"the closer," "the trainer," "the problem solver." Reputation precedes promotion.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Network Upward:</strong> Build relationships with district managers, buyers, corporate. Opportunities come through people who know you.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Invest in Skills:</strong> Take courses (like this one!), earn certifications, learn new systems. Show you're serious about growth.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Ask for Stretch Assignments:</strong> Volunteer for inventory audits, training new hires, opening new stores. Experience trumps time-in-role.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Find a Mentor:</strong> Identify someone 2-3 levels above you who embodies your goals. Ask for guidance monthly.</li>
-          
-          <li style="margin: 20px 0;"><strong style="color: #FFD700;">Plan Your Exit (From Each Level):</strong> Know exactly what's required to move up. Ask your manager: "What do I need to demonstrate to be promoted?"</li>
+        <ol style="margin-left:20px;">
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Results Speak Louder Than Years:</strong> Consistently exceed targets. Be in the top 10% of performers.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Solve Problems Before They're Assigned:</strong> Initiative is the #1 trait managers look for.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Document Everything:</strong> Keep a "wins journal" — sales records, customer compliments, problems solved.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Become Irreplaceable:</strong> Master skills others avoid. Be the go-to expert.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Build Your Brand:</strong> Be known for something specific — "the closer," "the trainer," "the problem solver."</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Network Upward:</strong> Build relationships with district managers, buyers, corporate.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Invest in Skills:</strong> Take courses (like this one!), earn certifications, learn new systems.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Ask for Stretch Assignments:</strong> Volunteer for inventory audits, training new hires, opening new stores.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Find a Mentor:</strong> Identify someone 2-3 levels above you. Ask for guidance monthly.</li>
+          <li style="margin:20px 0;"><strong style="color:#FFD700;">Plan Your Exit (From Each Level):</strong> Ask your manager: "What do I need to demonstrate to be promoted?"</li>
         </ol>
       </div>
-
-      <div class="pro-tip">
-        <strong>🎯 Pro Tip:</strong> Every 6 months, schedule a "career conversation" with your manager. Don't wait for annual reviews. Drive your own development actively and visibly.
-      </div>
-
+      <div class="pro-tip"><strong>🎯 Pro Tip:</strong> Every 6 months, schedule a "career conversation" with your manager. Don't wait for annual reviews. Drive your own development actively and visibly.</div>
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: From Shelf Stocker to CEO</h4>
-        <p><strong>Hubert Joly</strong> became CEO of Best Buy. <strong>Doug McMillon</strong> started unloading trucks at Walmart and became CEO. <strong>Mary Dillon</strong> started in sales and became CEO of Ulta Beauty. The pattern? Consistent excellence, continuous learning, strategic visibility, and solving problems at every level. Retail rewards those who prove themselves.</p>
+        <h4 style="color:#FFD700;">📖 Case Study: From Shelf Stocker to CEO</h4>
+        <p><strong>Doug McMillon</strong> started unloading trucks at Walmart and became CEO. <strong>Mary Dillon</strong> started in sales and became CEO of Ulta Beauty. The pattern? Consistent excellence, continuous learning, strategic visibility, and solving problems at every level.</p>
       </div>
-
       <div class="exercise">
-        <h4 style="color: #FFD700;">💪 Exercise: Your 90-Day Career Sprint</h4>
-        <p><strong>Create Your Action Plan:</strong></p>
+        <h4 style="color:#FFD700;">💪 Exercise: Your 90-Day Career Sprint</h4>
         <ol>
           <li><strong>Define Your Target:</strong> Where do you want to be in 12 months? Be specific.</li>
-          <li><strong>Identify the Gap:</strong> What skills, experience, or results do you need to demonstrate?</li>
-          <li><strong>Schedule Your Conversation:</strong> Book time with your manager to discuss your goals and get their input.</li>
-          <li><strong>Choose 3 Accelerators:</strong> From the list above, commit to 3 actions this quarter.</li>
-          <li><strong>Track Progress Weekly:</strong> What did you do this week that moves you toward your goal?</li>
+          <li><strong>Identify the Gap:</strong> What skills or results do you need to demonstrate?</li>
+          <li><strong>Schedule Your Conversation:</strong> Book time with your manager to discuss your goals.</li>
+          <li><strong>Choose 3 Accelerators:</strong> Commit to 3 actions this quarter.</li>
+          <li><strong>Track Progress Weekly:</strong> What did you do this week to move toward your goal?</li>
         </ol>
       </div>
     </div>
 
+    <!-- ══ FINAL MASTERY ══ -->
     <div class="section">
       <h3><span class="section-icon">🎓</span>Final Mastery Principles</h3>
-      
       <div class="golden-box">
         <h4>The Ultimate Black Book Philosophy</h4>
         <ul>
@@ -363,184 +281,201 @@
           <li><strong>Excellence Over Average:</strong> In a world of mediocrity, commitment to mastery makes you unforgettable.</li>
         </ul>
       </div>
-
       <div class="mastery-insight">
-        <h4 style="color: #FFD700;">⚡ Your Next Chapter Starts Now</h4>
+        <h4 style="color:#FFD700;">⚡ Your Next Chapter Starts Now</h4>
         <p>You've completed The Ultimate Black Book for Mastering Retail. You now possess knowledge that 95% of retail workers never learn. But knowledge without action is just entertainment.</p>
         <p><strong>Your mission:</strong> Choose ONE thing from this lesson and implement it this week. Then choose another. Mastery is built through daily discipline, not overnight transformation.</p>
-        <p style="color: #FFD700; font-size: 1.2em; margin-top: 20px; font-weight: 700;">Welcome to the top 1% of retail professionals. Now go dominate the floor.</p>
+        <p style="color:#FFD700;font-size:1.2em;margin-top:20px;font-weight:700;">Welcome to the top 1% of retail professionals. Now go dominate the floor.</p>
       </div>
     </div>
 
+    <!-- ══ QUIZ ══ -->
     <div class="quiz-section">
       <h3>🏆 Final Mastery Assessment: Lesson 8</h3>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to complete the course and unlock your certificate.</p>
       <form id="quiz8">
         <div class="quiz-question">
-          <b>1. What are the four energy tanks that elite retail professionals manage?</b><br/>
-          <label><input type="radio" name="q1" value="a"/> Work, Home, Social, Rest</label><br/>
-          <label><input type="radio" name="q1" value="b"/> Physical, Emotional, Mental, Spiritual</label><br/>
-          <label><input type="radio" name="q1" value="c"/> Sales, Service, Inventory, Management</label>
+          <b>1. What are the four energy tanks that elite retail professionals manage?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="a"/> Work, Home, Social, Rest</label>
+            <label><input type="radio" name="q1" value="b"/> Physical, Emotional, Mental, Spiritual</label>
+            <label><input type="radio" name="q1" value="c"/> Sales, Service, Inventory, Management</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>2. What is the "5-Minute Reset" technique used for?</b><br/>
-          <label><input type="radio" name="q2" value="a"/> Taking breaks during slow times</label><br/>
-          <label><input type="radio" name="q2" value="b"/> Neurologically resetting your stress response between difficult situations</label><br/>
-          <label><input type="radio" name="q2" value="c"/> Counting inventory quickly</label>
+          <b>2. What is the "5-Minute Reset" technique used for?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="a"/> Taking breaks during slow times</label>
+            <label><input type="radio" name="q2" value="b"/> Neurologically resetting your stress response between difficult situations</label>
+            <label><input type="radio" name="q2" value="c"/> Counting inventory quickly</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>3. Which dimension of cultural intelligence involves understanding your own biases and assumptions?</b><br/>
-          <label><input type="radio" name="q3" value="a"/> Cultural Knowledge</label><br/>
-          <label><input type="radio" name="q3" value="b"/> Cultural Flexibility</label><br/>
-          <label><input type="radio" name="q3" value="c"/> Cultural Self-Awareness</label>
+          <b>3. Which dimension of cultural intelligence involves understanding your own biases and assumptions?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="a"/> Cultural Knowledge</label>
+            <label><input type="radio" name="q3" value="b"/> Cultural Flexibility</label>
+            <label><input type="radio" name="q3" value="c"/> Cultural Self-Awareness</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>4. True or False: Direct eye contact is considered respectful in all cultures.</b><br/>
-          <label><input type="radio" name="q4" value="a"/> True</label><br/>
-          <label><input type="radio" name="q4" value="b"/> False - it varies by culture and can be disrespectful in some</label>
+          <b>4. True or False: Direct eye contact is considered respectful in all cultures.</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="a"/> True</label>
+            <label><input type="radio" name="q4" value="b"/> False — it varies by culture and can be disrespectful in some</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>5. What is the typical timeline to move from Sales Associate to Senior Sales/Lead position?</b><br/>
-          <label><input type="radio" name="q5" value="a"/> 6-18 months</label><br/>
-          <label><input type="radio" name="q5" value="b"/> 1-2 years</label><br/>
-          <label><input type="radio" name="q5" value="c"/> 3-5 years</label>
+          <b>5. What is the typical timeline for the Senior Sales / Lead level?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" value="a"/> 6-18 months</label>
+            <label><input type="radio" name="q5" value="b"/> 1-2 years</label>
+            <label><input type="radio" name="q5" value="c"/> 3-5 years</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>6. Which of these is NOT one of the 10 Accelerators for Rapid Career Growth?</b><br/>
-          <label><input type="radio" name="q6" value="a"/> Document Everything</label><br/>
-          <label><input type="radio" name="q6" value="b"/> Wait for your manager to recognize your work</label><br/>
-          <label><input type="radio" name="q6" value="c"/> Network Upward</label>
+          <b>6. Which of these is NOT one of the 10 Accelerators for Rapid Career Growth?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" value="a"/> Document Everything</label>
+            <label><input type="radio" name="q6" value="b"/> Wait for your manager to recognise your work</label>
+            <label><input type="radio" name="q6" value="c"/> Network Upward</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>7. What should you do every 6 months to drive your career development?</b><br/>
-          <label><input type="radio" name="q7" value="a"/> Wait for annual review</label><br/>
-          <label><input type="radio" name="q7" value="b"/> Schedule a "career conversation" with your manager</label><br/>
-          <label><input type="radio" name="q7" value="c"/> Apply for jobs at other companies</label>
+          <b>7. What should you do every 6 months to drive your career development?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" value="a"/> Wait for annual review</label>
+            <label><input type="radio" name="q7" value="b"/> Schedule a "career conversation" with your manager</label>
+            <label><input type="radio" name="q7" value="c"/> Apply for jobs at other companies</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>8. According to Nike's retail wellness program case study, what was the impact of stress management?</b><br/>
-          <label><input type="radio" name="q8" value="a"/> No measurable change</label><br/>
-          <label><input type="radio" name="q8" value="b"/> 34% reduction in sick days, 28% improvement in customer satisfaction</label><br/>
-          <label><input type="radio" name="q8" value="c"/> Increased turnover</label>
+          <b>8. According to Nike's retail wellness program, what was the impact of stress management?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> No measurable change</label>
+            <label><input type="radio" name="q8" value="b"/> 34% reduction in sick days, 28% improvement in customer satisfaction</label>
+            <label><input type="radio" name="q8" value="c"/> Increased turnover</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>9. What is the #1 trait managers look for when considering promotions?</b><br/>
-          <label><input type="radio" name="q9" value="a"/> Years of experience</label><br/>
-          <label><input type="radio" name="q9" value="b"/> Initiative - solving problems before they're assigned</label><br/>
-          <label><input type="radio" name="q9" value="c"/> Being friends with the manager</label>
+          <b>9. What is the #1 trait managers look for when considering promotions?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> Years of experience</label>
+            <label><input type="radio" name="q9" value="b"/> Initiative — solving problems before they're assigned</label>
+            <label><input type="radio" name="q9" value="c"/> Being friends with the manager</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>10. What is the Ultimate Black Book philosophy on challenges?</b><br/>
-          <label><input type="radio" name="q10" value="a"/> Avoid them when possible</label><br/>
-          <label><input type="radio" name="q10" value="b"/> Every challenge is training for the next level - Growth Over Comfort</label><br/>
-          <label><input type="radio" name="q10" value="c"/> Challenges mean you're in the wrong job</label>
+          <b>10. What is the Ultimate Black Book philosophy on challenges?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> Avoid them when possible</label>
+            <label><input type="radio" name="q10" value="b"/> Every challenge is training for the next level — Growth Over Comfort</label>
+            <label><input type="radio" name="q10" value="c"/> Challenges mean you're in the wrong job</label>
+          </div>
         </div>
-        
-        <button type="button" class="btn" onclick="gradeQuiz8()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Final Quiz</button>
+        <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Final Quiz</button>
       </form>
-      <div id="quiz8-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
+      <div id="quiz8-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
-    
-    <script>
-      function gradeQuiz8() {
-        const correct = {
-          q1: 'b', q2: 'b', q3: 'c', q4: 'b', q5: 'b',
-          q6: 'b', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
-        };
-        let score = 0, total = 10;
-        for(let i=1; i<=total; i++) {
-          let ans = document.querySelector('input[name="q'+i+'"]:checked');
-          if(ans && ans.value === correct['q'+i]) score++;
-        }
-        let msg = `🏆 You scored ${score} out of ${total}! `;
-        if(score === total) msg += "LEGENDARY MASTERY! You've completed The Ultimate Black Book! 🔥";
-        else if(score >= 8) msg += "Outstanding! You're ready to dominate! Review any missed questions for perfection.";
-        else if(score >= 6) msg += "Strong performance! Review the lesson for mastery-level understanding.";
-        else msg += "Keep learning! This is advanced material - review and take the quiz again.";
-        
-        const resultDiv = document.getElementById('quiz8-result');
-        resultDiv.textContent = msg;
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    </script>
 
+    <!-- ══ COMPLETION ══ -->
     <div id="lesson-completion">
+      <div id="quiz-required-notice">
+        ⚠️ Score 8/10 or higher on the final quiz to complete the course and unlock your certificate.
+      </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">🎓 Complete The Ultimate Black Book</button>
-      <a id="certificateBtn" href="certificate.html" class="btn" style="display:none; background: #000; color: #FFD700; border: 3px solid #FFD700;">📜 Get Your Certificate</a>
+      <a id="certificateBtn" href="certificate.html" class="btn" style="display:none;background:#000;color:#FFD700;border:3px solid #FFD700;">📜 Get Your Certificate</a>
       <div id="completionMsg">🎉 CONGRATULATIONS! You've completed all 8 lessons of The Ultimate Black Book for Mastering Retail. You are now in the top 1% of retail professionals. Go dominate!</div>
     </div>
-    
+
     <div class="dashboard-link">
-      <a href="progress.html">📊 View Your Complete Journey →</a>
+      <a href="course.html">← Back to Course Home</a>
     </div>
   </div>
-  
+
   <script>
-    const lessonNum = 8;
-    const totalLessons = 8;
+    var lessonNum    = 8;
+    var totalLessons = 8;
+    var quizPassed   = false;
+
+    function gradeQuiz() {
+      var correct = { q1:'b', q2:'b', q3:'c', q4:'b', q5:'b', q6:'b', q7:'b', q8:'b', q9:'b', q10:'b' };
+      var score = 0;
+      for (var i = 1; i <= 10; i++) {
+        var ans = document.querySelector('input[name="q' + i + '"]:checked');
+        if (ans && ans.value === correct['q' + i]) score++;
+      }
+      var msg = '🏆 You scored ' + score + ' out of 10! ';
+      if (score === 10)    msg += 'LEGENDARY MASTERY! You\'ve completed The Ultimate Black Book! 🔥';
+      else if (score >= 8) msg += 'Outstanding! You\'re ready to dominate! Review any missed questions for perfection.';
+      else if (score >= 6) msg += 'Strong performance! Review the lesson and try again to unlock your certificate.';
+      else                 msg += 'Keep learning! This is advanced material — review and take the quiz again.';
+
+      var resultDiv = document.getElementById('quiz8-result');
+      resultDiv.textContent = msg;
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+
+      if (score >= 8) {
+        quizPassed = true;
+        document.getElementById('quiz-required-notice').classList.remove('show');
+      } else {
+        quizPassed = false;
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/10. Score 8 or higher to complete the course. Review and try again!';
+      }
+    }
 
     function markLessonComplete() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      progress[`lesson${lessonNum}`] = true;
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (!quizPassed && !progress['lesson' + lessonNum]) {
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Score 8/10 or higher on the final quiz first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        return;
+      }
+      progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
 
-      /* ===============================
-         FINAL CERTIFICATE LOCK-IN
-      ================================ */
-
-      // 1. Lock completion date (once only)
+      // Lock in completion date and certificate number (once only)
       if (!localStorage.getItem('ubb_completion_date')) {
         localStorage.setItem('ubb_completion_date', new Date().toISOString());
       }
-
-      // 2. Generate certificate number (once only)
       if (!localStorage.getItem('ubb_cert_number')) {
-        const certNumber = `UBB-${Date.now().toString(36).toUpperCase()}`;
-        localStorage.setItem('ubb_cert_number', certNumber);
+        localStorage.setItem('ubb_cert_number', 'UBB-' + Date.now().toString(36).toUpperCase());
       }
 
-      /* ===============================
-         UI UPDATES
-      ================================ */
       document.getElementById('certificateBtn').style.display = 'inline-block';
-      document.getElementById('markComplete').textContent = "✅ Course Completed!";
+      document.getElementById('markComplete').textContent = '✅ Course Completed!';
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
-
+      document.getElementById('quiz-required-notice').classList.remove('show');
       updateProgressBar();
     }
 
     function updateProgressBar() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      let completed = 0;
-      for (let i = 1; i <= totalLessons; i++) {
-        if (progress[`lesson${i}`]) completed++;
-      }
-      let percent = Math.round((completed / totalLessons) * 100);
+      var progress  = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      var completed = 0;
+      for (var i = 1; i <= totalLessons; i++) { if (progress['lesson' + i]) completed++; }
+      var percent = Math.round((completed / totalLessons) * 100);
       document.getElementById('progressBarFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent =
-        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+      document.getElementById('progressText').textContent = 'Lesson ' + lessonNum + ' of ' + totalLessons + ' • ' + percent + '% Complete';
     }
 
-    window.onload = function () {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      if (progress[`lesson${lessonNum}`]) {
+    window.onload = function() {
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (progress['lesson' + lessonNum]) {
+        quizPassed = true;
         document.getElementById('certificateBtn').style.display = 'inline-block';
-        document.getElementById('markComplete').textContent = "✅ Course Completed!";
+        document.getElementById('markComplete').textContent = '✅ Course Completed!';
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
+      } else {
+        document.getElementById('quiz-required-notice').classList.add('show');
       }
       updateProgressBar();
     };
   </script>
+
 </body>
 </html>
