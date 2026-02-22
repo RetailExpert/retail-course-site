@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
-    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700; }
     header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
     nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
     nav a:hover { opacity: 0.7; }
@@ -58,14 +58,17 @@
     .quiz-options input[type="radio"] { margin-right: 10px; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
+    #quiz-required-notice.show { display: block; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; font-family: 'Inter', sans-serif; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .dashboard-link { text-align: center; margin: 40px 0; }
     .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
     @media (max-width: 768px) {
       header { flex-direction: column; gap: 15px; text-align: center; }
       header h1 { font-size: 20px; }
-      nav { display: flex; gap: 15px; }
+      nav { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
       nav a { margin-left: 0; }
       .container { padding: 30px 15px; margin-top: 10px; }
       .hero h2 { font-size: 2em; }
@@ -73,7 +76,6 @@
       .hero .stats { gap: 20px; }
       h3 { font-size: 1.6em; }
       .section { padding: 25px 20px; }
-      .golden-box, .pro-tip, .myth-buster, .deep-dive, .team-debate, .challenge-box { padding: 18px 20px; }
       .comparison-table { font-size: 0.9em; }
       .comparison-table th, .comparison-table td { padding: 12px 8px; }
       .tools-grid { grid-template-columns: 1fr; }
@@ -83,15 +85,16 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
-    <nav class="lesson-nav">
-  <a href="course.html">Home</a>
-  <a href="course.html#contact">Contact</a>
-  <a href="course.html#progress">View Progress</a>
-</nav>
-
+    <nav>
+      <a href="course.html">Home</a>
+      <a href="course.html#contact">Contact</a>
+      <a href="course.html#progress">View Progress</a>
+    </nav>
   </header>
+
   <div class="container">
     <div id="progressBarContainer">
       <div class="progress-outer">
@@ -102,7 +105,7 @@
 
     <div class="hero">
       <h2>🌐 Lesson 6: Omnichannel Retail Mastery</h2>
-      <p>Master the art of creating seamless customer experiences across every touchpoint. Online, offline, mobile, social—it all works together as one unified ecosystem.</p>
+      <p>Master the art of creating seamless customer experiences across every touchpoint. Online, offline, mobile, social — it all works together as one unified ecosystem.</p>
       <div class="stats">
         <div class="stat"><span class="stat-number">73%</span><span class="stat-label">Research online first</span></div>
         <div class="stat"><span class="stat-number">90%</span><span class="stat-label">Expect consistency</span></div>
@@ -123,66 +126,38 @@
       <h3><span class="section-icon">1</span>Multichannel vs Omnichannel: The Critical Difference</h3>
       <div class="golden-box">
         <h4>Understanding the Evolution</h4>
-        <p><strong>Multichannel</strong> means being present on multiple platforms—website, store, app, social media. But each operates independently.</p>
+        <p><strong>Multichannel</strong> means being present on multiple platforms — website, store, app, social media. But each operates independently.</p>
         <p><strong>Omnichannel</strong> means these platforms are deeply integrated, creating ONE seamless experience. Customer data, inventory, and messaging flow between all channels.</p>
       </div>
-
       <table class="comparison-table">
         <thead>
-          <tr>
-            <th>Aspect</th>
-            <th>Multichannel</th>
-            <th>Omnichannel</th>
-          </tr>
+          <tr><th>Aspect</th><th>Multichannel</th><th>Omnichannel</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>Customer View</strong></td>
-            <td>Separate experiences per channel</td>
-            <td>One unified brand experience</td>
-          </tr>
-          <tr>
-            <td><strong>Data Integration</strong></td>
-            <td>Siloed data per channel</td>
-            <td>Unified customer profiles across all touchpoints</td>
-          </tr>
-          <tr>
-            <td><strong>Inventory</strong></td>
-            <td>Separate stock systems</td>
-            <td>Real-time visibility across all channels</td>
-          </tr>
-          <tr>
-            <td><strong>Returns</strong></td>
-            <td>Return to original channel only</td>
-            <td>Return anywhere (buy online, return in-store)</td>
-          </tr>
-          <tr>
-            <td><strong>Staff Training</strong></td>
-            <td>Channel-specific knowledge</td>
-            <td>Cross-channel expertise and access</td>
-          </tr>
+          <tr><td><strong>Customer View</strong></td><td>Separate experiences per channel</td><td>One unified brand experience</td></tr>
+          <tr><td><strong>Data Integration</strong></td><td>Siloed data per channel</td><td>Unified customer profiles across all touchpoints</td></tr>
+          <tr><td><strong>Inventory</strong></td><td>Separate stock systems</td><td>Real-time visibility across all channels</td></tr>
+          <tr><td><strong>Returns</strong></td><td>Return to original channel only</td><td>Return anywhere (buy online, return in-store)</td></tr>
+          <tr><td><strong>Staff Training</strong></td><td>Channel-specific knowledge</td><td>Cross-channel expertise and access</td></tr>
         </tbody>
       </table>
-
       <div class="case-study">
         <h4>📱 Case Study: Nike's Omnichannel Excellence</h4>
-        <p>Nike allows customers to browse online, reserve in-store, try on, and buy through their app while in the physical store. Their staff can pull up customer history, preferences, and even past online browsing to create personalized recommendations.</p>
+        <p>Nike allows customers to browse online, reserve in-store, try on, and buy through their app while in the physical store. Staff can pull up customer history, preferences, and past online browsing to create personalised recommendations.</p>
         <p><strong>Result:</strong> 30% higher customer retention and 40% increase in average order value for omnichannel shoppers.</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">2</span>The 5 Pillars of Omnichannel Excellence</h3>
-      
       <div class="golden-box">
         <h4>Pillar 1: Unified Customer Data</h4>
         <ul>
           <li><strong>Single Customer View:</strong> One profile containing all interactions, purchases, preferences, and history</li>
-          <li><strong>Cross-Channel Recognition:</strong> Customer is recognized whether they're shopping online, in-app, or in-store</li>
-          <li><strong>Personalization at Scale:</strong> Use data to personalize recommendations, offers, and communication everywhere</li>
+          <li><strong>Cross-Channel Recognition:</strong> Customer is recognised whether shopping online, in-app, or in-store</li>
+          <li><strong>Personalisation at Scale:</strong> Use data to personalise recommendations, offers, and communication everywhere</li>
         </ul>
       </div>
-
       <div class="golden-box">
         <h4>Pillar 2: Integrated Inventory Management</h4>
         <ul>
@@ -191,7 +166,6 @@
           <li><strong>Endless Aisle:</strong> If out of stock in-store, order for home delivery on the spot</li>
         </ul>
       </div>
-
       <div class="golden-box">
         <h4>Pillar 3: Flexible Fulfillment Options</h4>
         <ul>
@@ -201,7 +175,6 @@
           <li><strong>Same-Day Delivery:</strong> Leverage local inventory for rapid fulfillment</li>
         </ul>
       </div>
-
       <div class="golden-box">
         <h4>Pillar 4: Consistent Brand Experience</h4>
         <ul>
@@ -210,7 +183,6 @@
           <li><strong>Service Standards:</strong> Same level of excellence whether online chat or in-store</li>
         </ul>
       </div>
-
       <div class="golden-box">
         <h4>Pillar 5: Empowered, Connected Staff</h4>
         <ul>
@@ -222,76 +194,50 @@
     </div>
 
     <div class="deep-dive">
-      <b>🎯 Deep Dive: Omnichannel KPIs</b><br>
-      <ul style="margin-top: 15px;">
+      <b>🎯 Deep Dive: Omnichannel KPIs</b>
+      <ul style="margin-top:15px;">
         <li><strong>Cross-Channel Conversion:</strong> How many customers start in one channel and finish in another?</li>
         <li><strong>Time-to-Resolution:</strong> How fast are issues resolved, regardless of where the complaint started?</li>
-        <li><strong>Personalization Rate:</strong> % of communications or recommendations that are targeted based on customer data (higher = more loyalty!)</li>
+        <li><strong>Personalisation Rate:</strong> % of communications targeted based on customer data (higher = more loyalty!)</li>
         <li><strong>Customer Lifetime Value (CLV):</strong> Omnichannel shoppers typically have 3x higher CLV</li>
       </ul>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">3</span>Technology Stack for Omnichannel</h3>
-      
       <div class="tools-grid">
-        <div class="tool-card">
-          <h4>🛒 E-Commerce Platform</h4>
-          <p>Shopify, Magento, WooCommerce—your online storefront that integrates with everything else</p>
-        </div>
-        <div class="tool-card">
-          <h4>📊 CRM System</h4>
-          <p>Salesforce, HubSpot—centralizes customer data and interactions across all touchpoints</p>
-        </div>
-        <div class="tool-card">
-          <h4>📦 Inventory Management</h4>
-          <p>Real-time tracking across warehouses, stores, and online—visibility is everything</p>
-        </div>
-        <div class="tool-card">
-          <h4>💳 Unified POS</h4>
-          <p>Square, Lightspeed—connects in-store sales to your online ecosystem</p>
-        </div>
-        <div class="tool-card">
-          <h4>📱 Mobile App</h4>
-          <p>Native shopping experience with barcode scanning, AR try-on, loyalty integration</p>
-        </div>
-        <div class="tool-card">
-          <h4>📧 Marketing Automation</h4>
-          <p>Klaviyo, Mailchimp—triggered emails based on cross-channel behavior</p>
-        </div>
+        <div class="tool-card"><h4>🛒 E-Commerce Platform</h4><p>Shopify, Magento, WooCommerce — your online storefront that integrates with everything else</p></div>
+        <div class="tool-card"><h4>📊 CRM System</h4><p>Salesforce, HubSpot — centralises customer data and interactions across all touchpoints</p></div>
+        <div class="tool-card"><h4>📦 Inventory Management</h4><p>Real-time tracking across warehouses, stores, and online — visibility is everything</p></div>
+        <div class="tool-card"><h4>💳 Unified POS</h4><p>Square, Lightspeed — connects in-store sales to your online ecosystem</p></div>
+        <div class="tool-card"><h4>📱 Mobile App</h4><p>Native shopping experience with barcode scanning, AR try-on, loyalty integration</p></div>
+        <div class="tool-card"><h4>📧 Marketing Automation</h4><p>Klaviyo, Mailchimp — triggered emails based on cross-channel behaviour</p></div>
       </div>
-
       <div class="case-study">
         <h4>🎯 Case Study: Sephora's Beauty Insider</h4>
-        <p>Sephora's loyalty program is fully integrated across web, mobile, and in-store. Customers earn points everywhere, get personalized product recommendations based on past purchases (any channel), and can use virtual try-on in-app before buying in-store.</p>
+        <p>Sephora's loyalty program is fully integrated across web, mobile, and in-store. Customers earn points everywhere, get personalised recommendations based on past purchases from any channel, and can use virtual try-on in-app before buying in-store.</p>
         <p><strong>Result:</strong> Beauty Insider members spend 15x more than non-members and show 80% higher retention rates.</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">4</span>Building Customer Journeys Across Channels</h3>
-      
       <div class="golden-box">
         <h4>Example Journey: The Research-to-Purchase Path</h4>
-        <ol style="margin-left: 20px; margin-top: 15px;">
+        <ol style="margin-left:20px;margin-top:15px;">
           <li><strong>Discovery (Instagram):</strong> Customer sees product in influencer post, clicks to brand profile</li>
           <li><strong>Research (Website):</strong> Reads reviews, watches video, adds to cart but doesn't buy</li>
           <li><strong>Retargeting (Email):</strong> Automated cart abandonment email with 10% discount code</li>
-          <li><strong>Consideration (Mobile App):</strong> Downloads app, uses AR to visualize product, checks store stock</li>
+          <li><strong>Consideration (Mobile App):</strong> Downloads app, uses AR to visualise product, checks store stock</li>
           <li><strong>Purchase (In-Store):</strong> Visits store, tries product, staff pulls up online cart and applies discount</li>
-          <li><strong>Post-Purchase (Email + App):</strong> Receives care instructions, loyalty points, personalized recommendations</li>
+          <li><strong>Post-Purchase (Email + App):</strong> Receives care instructions, loyalty points, personalised recommendations</li>
         </ol>
-        <p style="margin-top: 20px;"><strong>Key:</strong> Each step is tracked, data flows between channels, and the experience feels seamless to the customer.</p>
+        <p style="margin-top:20px;"><strong>Key:</strong> Each step is tracked, data flows between channels, and the experience feels seamless to the customer.</p>
       </div>
-
-      <div class="challenge-box">
-        <b>🔥 Mapping Exercise:</b> Map out YOUR customer's journey across channels. Where are the friction points? Where do you lose them? Where can you add delight?
-      </div>
+      <div class="challenge-box"><b>🔥 Mapping Exercise:</b> Map out YOUR customer's journey across channels. Where are the friction points? Where do you lose them? Where can you add delight?</div>
     </div>
 
-    <div class="team-debate">
-      <b>💬 Team Debate:</b> Is it better to be everywhere (every channel) or to do fewer channels with true excellence? Discuss real examples!
-    </div>
+    <div class="team-debate"><b>💬 Team Debate:</b> Is it better to be everywhere (every channel) or to do fewer channels with true excellence? Discuss real examples!</div>
 
     <div class="section">
       <h3><span class="section-icon">5</span>Omnichannel Best Practices</h3>
@@ -301,177 +247,185 @@
         <li><strong>Empower Your Team:</strong> Give staff tablets, access to customer data, and authority to solve problems across channels</li>
         <li><strong>Test the Experience:</strong> Mystery shop your own brand regularly across all touchpoints</li>
         <li><strong>Measure What Matters:</strong> Track cross-channel metrics, not just channel-specific ones</li>
-        <li><strong>Personalize Everything:</strong> Use the data you're collecting to make every interaction feel custom</li>
+        <li><strong>Personalise Everything:</strong> Use the data you're collecting to make every interaction feel custom</li>
         <li><strong>Remove Friction:</strong> Every extra click, form field, or step is a chance to lose the sale</li>
       </ul>
-
-      <div class="pro-tip">
-        <b>💡 Advanced Tip:</b> Create a "Channel Migration Strategy"—deliberately move customers from expensive channels (phone support) to cheaper ones (self-service app) by making the experience better, not just pushing them away.
-      </div>
+      <div class="pro-tip"><b>💡 Advanced Tip:</b> Create a "Channel Migration Strategy" — deliberately move customers from expensive channels (phone support) to cheaper ones (self-service app) by making the experience better, not just pushing them away.</div>
     </div>
 
-    <div class="challenge-box">
-      <b>🔥 Challenge:</b> Find a brand (big or small) that you think does omnichannel best. List 3 standout practices—and 1 thing you'd improve!
-    </div>
+    <div class="challenge-box"><b>🔥 Challenge:</b> Find a brand (big or small) that you think does omnichannel best. List 3 standout practices — and 1 thing you'd improve!</div>
 
+    <!-- ══ QUIZ ══ -->
     <div class="quiz-section">
       <h3>🎯 Omnichannel Mastery Challenge</h3>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 6 out of 8 or higher to unlock the completion button.</p>
       <form id="quiz6">
         <div class="quiz-question">
-          <b>1. What's the primary difference between multichannel and omnichannel retail?</b><br/>
+          <b>1. What's the primary difference between multichannel and omnichannel retail?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q1" value="a"/> A) Multichannel uses more platforms</label><br/>
-            <label><input type="radio" name="q1" value="b"/> B) Omnichannel creates unified, seamless experiences</label><br/>
-            <label><input type="radio" name="q1" value="c"/> C) Multichannel is more expensive to implement</label><br/>
+            <label><input type="radio" name="q1" value="a"/> A) Multichannel uses more platforms</label>
+            <label><input type="radio" name="q1" value="b"/> B) Omnichannel creates unified, seamless experiences</label>
+            <label><input type="radio" name="q1" value="c"/> C) Multichannel is more expensive to implement</label>
             <label><input type="radio" name="q1" value="d"/> D) There's no significant difference</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>2. A customer finds a product on Instagram, checks stock online, then buys in-store. What's the most important tech for making this seamless?</b><br/>
+          <b>2. A customer finds a product on Instagram, checks stock online, then buys in-store. What's the most important tech for making this seamless?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q2" value="a"/> A) Real-time integrated inventory visibility</label><br/>
-            <label><input type="radio" name="q2" value="b"/> B) A loyalty program</label><br/>
-            <label><input type="radio" name="q2" value="c"/> C) Store-only promotions</label><br/>
+            <label><input type="radio" name="q2" value="a"/> A) Real-time integrated inventory visibility</label>
+            <label><input type="radio" name="q2" value="b"/> B) A loyalty program</label>
+            <label><input type="radio" name="q2" value="c"/> C) Store-only promotions</label>
             <label><input type="radio" name="q2" value="d"/> D) Separate websites for each channel</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>3. Which of these is NOT a true omnichannel feature?</b><br/>
+          <b>3. Which of these is NOT a true omnichannel feature?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q3" value="a"/> A) Unified return policy for online and in-store</label><br/>
-            <label><input type="radio" name="q3" value="b"/> B) Staff can pull up customer history from any location</label><br/>
-            <label><input type="radio" name="q3" value="c"/> C) Inventory is visible across all channels</label><br/>
+            <label><input type="radio" name="q3" value="a"/> A) Unified return policy for online and in-store</label>
+            <label><input type="radio" name="q3" value="b"/> B) Staff can pull up customer history from any location</label>
+            <label><input type="radio" name="q3" value="c"/> C) Inventory is visible across all channels</label>
             <label><input type="radio" name="q3" value="d"/> D) Customers must use separate accounts for each channel</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>4. What is the biggest risk of not integrating data across channels?</b><br/>
+          <b>4. What is the biggest risk of not integrating data across channels?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q4" value="a"/> A) Reduced staff workload</label><br/>
-            <label><input type="radio" name="q4" value="b"/> B) Incomplete customer profiles and lost sales opportunities</label><br/>
-            <label><input type="radio" name="q4" value="c"/> C) More social media followers</label><br/>
+            <label><input type="radio" name="q4" value="a"/> A) Reduced staff workload</label>
+            <label><input type="radio" name="q4" value="b"/> B) Incomplete customer profiles and lost sales opportunities</label>
+            <label><input type="radio" name="q4" value="c"/> C) More social media followers</label>
             <label><input type="radio" name="q4" value="d"/> D) Faster checkout</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>5. Scenario: A customer starts a return online and finishes it in-store. What's the most important to make this smooth?</b><br/>
+          <b>5. A customer starts a return online and finishes it in-store. What's most important to make this smooth?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q5" value="a"/> A) Staff training on omnichannel policies and tools</label><br/>
-            <label><input type="radio" name="q5" value="b"/> B) A printed return slip</label><br/>
-            <label><input type="radio" name="q5" value="c"/> C) Separate systems for online and in-store</label><br/>
+            <label><input type="radio" name="q5" value="a"/> A) Staff training on omnichannel policies and tools</label>
+            <label><input type="radio" name="q5" value="b"/> B) A printed return slip</label>
+            <label><input type="radio" name="q5" value="c"/> C) Separate systems for online and in-store</label>
             <label><input type="radio" name="q5" value="d"/> D) Only allow returns in the channel of purchase</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>6. True or False: Omnichannel excellence requires both technology and strong team culture.</b><br/>
+          <b>6. True or False: Omnichannel excellence requires both technology and strong team culture.</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q6" value="a"/> A) True</label><br/>
+            <label><input type="radio" name="q6" value="a"/> A) True</label>
             <label><input type="radio" name="q6" value="b"/> B) False</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>7. Which KPI best measures cross-channel loyalty?</b><br/>
+          <b>7. Which KPI best measures cross-channel loyalty?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q7" value="a"/> A) Net Promoter Score (NPS)</label><br/>
-            <label><input type="radio" name="q7" value="b"/> B) Customer Lifetime Value (CLV) for multi-channel shoppers</label><br/>
-            <label><input type="radio" name="q7" value="c"/> C) Average transaction value</label><br/>
+            <label><input type="radio" name="q7" value="a"/> A) Net Promoter Score (NPS)</label>
+            <label><input type="radio" name="q7" value="b"/> B) Customer Lifetime Value (CLV) for multi-channel shoppers</label>
+            <label><input type="radio" name="q7" value="c"/> C) Average transaction value</label>
             <label><input type="radio" name="q7" value="d"/> D) Staff turnover rate</label>
           </div>
         </div>
-        
         <div class="quiz-question">
-          <b>8. Advanced: Which is the most powerful strategy for omnichannel personalization?</b><br/>
+          <b>8. Which is the most powerful strategy for omnichannel personalisation?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q8" value="a"/> A) Segmenting by channel</label><br/>
-            <label><input type="radio" name="q8" value="b"/> B) Using unified customer profiles to personalize in every channel</label><br/>
-            <label><input type="radio" name="q8" value="c"/> C) Using generic email campaigns</label><br/>
-            <label><input type="radio" name="q8" value="d"/> D) Only personalizing for online customers</label>
+            <label><input type="radio" name="q8" value="a"/> A) Segmenting by channel</label>
+            <label><input type="radio" name="q8" value="b"/> B) Using unified customer profiles to personalise in every channel</label>
+            <label><input type="radio" name="q8" value="c"/> C) Using generic email campaigns</label>
+            <label><input type="radio" name="q8" value="d"/> D) Only personalising for online customers</label>
           </div>
         </div>
-        
-        <button type="button" class="btn" onclick="gradeQuiz6()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
+        <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz6-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
-    </div>
-    
-    <script>
-      function gradeQuiz6() {
-        const correct = { q1: 'b', q2: 'a', q3: 'd', q4: 'b', q5: 'a', q6: 'a', q7: 'b', q8: 'b' };
-        let score = 0, total = 8;
-        for(let i=1; i<=total; i++) {
-          let ans = document.querySelector('input[name="q'+i+'"]:checked');
-          if(ans && ans.value === correct['q'+i]) score++;
-        }
-        let msg = `🏆 You scored ${score} out of ${total}! `;
-        if(score === total) msg += "OMNICHANNEL GENIUS! You've mastered the future of retail! 🔥";
-        else if(score >= 7) msg += "EXCELLENT! You're ready to lead omnichannel transformation!";
-        else if(score >= 5) msg += "Solid foundation! Review the 5 pillars for mastery.";
-        else msg += "Keep learning! Omnichannel is complex—review the lesson and try again.";
-        
-        const resultDiv = document.getElementById('quiz6-result');
-        resultDiv.textContent = msg;
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    </script>
-
-    <div class="challenge-box">
-      <b>🔥 Final Challenge:</b> Mystery shop your own business or a competitor: start on social, buy online, pick up in-store, and try a return. Note every point of delight and every friction. Share your findings and propose one bold improvement!
+      <div id="quiz6-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
+    <div class="challenge-box"><b>🔥 Final Challenge:</b> Mystery shop your own business or a competitor: start on social, buy online, pick up in-store, and try a return. Note every point of delight and every friction. Propose one bold improvement!</div>
+
+    <!-- ══ COMPLETION ══ -->
     <div id="lesson-completion">
+      <div id="quiz-required-notice">
+        ⚠️ Complete the quiz and score 6/8 or higher to mark this lesson complete.
+      </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson7.html" class="btn" style="display:none;">Continue to Lesson 7 →</a>
       <div id="completionMsg">🎉 Lesson 6 Complete! You're now an omnichannel master!</div>
     </div>
-    
+
     <div class="dashboard-link">
-      <a href="progress.html">📊 View Your Progress →</a>
+      <a href="course.html">← Back to Course Home</a>
     </div>
   </div>
-  
+
   <script>
-    const lessonNum = 6;
-    const totalLessons = 8;
-    
+    var lessonNum    = 6;
+    var totalLessons = 8;
+    var quizPassed   = false;
+
+    function gradeQuiz() {
+      var correct = { q1:'b', q2:'a', q3:'d', q4:'b', q5:'a', q6:'a', q7:'b', q8:'b' };
+      var score = 0;
+      for (var i = 1; i <= 8; i++) {
+        var ans = document.querySelector('input[name="q' + i + '"]:checked');
+        if (ans && ans.value === correct['q' + i]) score++;
+      }
+      var msg = '🏆 You scored ' + score + ' out of 8! ';
+      if (score === 8)     msg += 'OMNICHANNEL GENIUS! You\'ve mastered the future of retail! 🔥';
+      else if (score >= 6) msg += 'Excellent! You\'re ready to lead omnichannel transformation.';
+      else if (score >= 5) msg += 'Solid foundation! Review the 5 pillars and try again to unlock completion.';
+      else                 msg += 'Keep learning! Omnichannel is complex — review the lesson and try again.';
+
+      var resultDiv = document.getElementById('quiz6-result');
+      resultDiv.textContent = msg;
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+
+      if (score >= 6) {
+        quizPassed = true;
+        document.getElementById('quiz-required-notice').classList.remove('show');
+      } else {
+        quizPassed = false;
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/8. Score 6 or higher to mark complete. Review the lesson and try again!';
+      }
+    }
+
     function markLessonComplete() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      progress[`lesson${lessonNum}`] = true;
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (!quizPassed && !progress['lesson' + lessonNum]) {
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 6/8 or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        return;
+      }
+      progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
-      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
-      document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+      document.getElementById('markComplete').textContent = '✅ Lesson Completed';
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
+      document.getElementById('quiz-required-notice').classList.remove('show');
       updateProgressBar();
     }
-    
+
     function updateProgressBar() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      let completed = 0;
-      for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
-      let percent = Math.round((completed/totalLessons)*100);
+      var progress  = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      var completed = 0;
+      for (var i = 1; i <= totalLessons; i++) { if (progress['lesson' + i]) completed++; }
+      var percent = Math.round((completed / totalLessons) * 100);
       document.getElementById('progressBarFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent =
-        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+      document.getElementById('progressText').textContent = 'Lesson ' + lessonNum + ' of ' + totalLessons + ' • ' + percent + '% Complete';
     }
-    
+
     window.onload = function() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      if(progress[`lesson${lessonNum}`]) {
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (progress['lesson' + lessonNum]) {
+        quizPassed = true;
         document.getElementById('nextLessonBtn').style.display = 'inline-block';
-        document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+        document.getElementById('markComplete').textContent = '✅ Lesson Completed';
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
+      } else {
+        document.getElementById('quiz-required-notice').classList.add('show');
       }
       updateProgressBar();
     };
   </script>
+
 </body>
-      </html>
+</html>
