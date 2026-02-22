@@ -5,776 +5,425 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Ultimate Black Book for Mastering Retail</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #000000;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-            border-bottom: 5px solid #FFD700;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.2) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        header h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: #FFD700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6), 0 0 40px rgba(255, 215, 0, 0.3);
-            position: relative;
-            z-index: 1;
-        }
-        
-        header .subtitle {
-            font-size: 1.5em;
-            margin-bottom: 30px;
-            opacity: 0.95;
-            font-weight: 300;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #f0f0f0;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            text-align: center;
-        }
-        
-        .stat-number {
-            font-size: 3.5em;
-            font-weight: 900;
-            display: block;
-            color: #FFD700;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
-        }
-        
-        .stat-label {
-            font-size: 0.95em;
-            opacity: 0.9;
-            color: #e0e0e0;
-        }
-        
-        .alert-banner {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            color: #1a1a1a;
-            padding: 18px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.1em;
-        }
-        
-        section {
-            padding: 80px 20px;
-            background: #ffffff;
-        }
-        
-        section:nth-child(even) {
-            background: #f8f8f8;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 30px;
-            color: #1a1a1a;
-            font-weight: 800;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.2em;
-            color: #4a5568;
-            max-width: 800px;
-            margin: 0 auto 60px;
-            line-height: 1.8;
-        }
-        
-        .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .problem-card {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            border-left: 5px solid #d4af37;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .problem-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-        
-        .problem-icon {
-            font-size: 2.8em;
-            margin-bottom: 20px;
-        }
-        
-        .problem-card h3 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-            font-weight: 700;
-        }
-        
-        .problem-card p {
-            color: #4a5568;
-            line-height: 1.8;
-            font-size: 1.05em;
-        }
-        
-        .solution-section {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .solution-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
-        .solution-section .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .solution-section .section-title {
-            color: #FFD700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            font-weight: 900;
-        }
-        
-        .solution-section .section-subtitle {
-            color: #e0e0e0;
-        }
-        
-        .modules-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        
-        .module-card {
-            background: rgba(20, 20, 20, 0.95);
-            padding: 40px;
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            border: 3px solid #FFD700;
-            transition: transform 0.3s, border-color 0.3s, background 0.3s, box-shadow 0.3s;
-        }
-        
-        .module-card:hover {
-            transform: translateY(-8px);
-            border-color: #FFF700;
-            background: rgba(255, 215, 0, 0.15);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
-        }
-        
-        .module-number {
-            font-size: 1.3em;
-            color: #FFD700;
-            font-weight: 900;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-            letter-spacing: 1px;
-        }
-        
-        .module-card h3 {
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            color: #FFFFFF;
-            font-weight: 800;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .module-card p {
-            color: #F5F5F5;
-            line-height: 1.9;
-            font-size: 1.05em;
-        }
-        
-        .testimonials {
-            background: #f8f9fa;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
-        }
-        
-        .testimonial {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            border-left: 5px solid #d4af37;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .testimonial:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            color: #4a5568;
-            margin-bottom: 20px;
-            line-height: 1.9;
-            font-size: 1.05em;
-        }
-        
-        .testimonial-author {
-            font-weight: bold;
-            color: #1a1a1a;
-        }
-        
-        .testimonial-role {
-            color: #718096;
-            font-size: 0.9em;
-        }
-        
-        .pricing-section {
-            background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .pricing-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        .pricing-section .container {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .pricing-section .section-title {
-            color: #FFD700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
-            font-weight: 900;
-        }
-        
-        .price-box {
-            background: rgba(0, 0, 0, 0.95);
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 60px 50px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(255, 215, 0, 0.4);
-            border: 4px solid #FFD700;
-            backdrop-filter: blur(10px);
-        }
-        
-        .price-box h3 {
-            font-size: 2.2em;
-            margin-bottom: 25px;
-            color: #FFFFFF;
-            font-weight: 800;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-        }
-        
-        .old-price {
-            text-decoration: line-through;
-            color: #CCCCCC;
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .new-price {
-            font-size: 5em;
-            color: #FFD700;
-            font-weight: 900;
-            margin: 25px 0;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
-        }
-        
-        .savings {
-            color: #48bb78;
-            font-size: 1.3em;
-            font-weight: bold;
-            margin-bottom: 40px;
-        }
-        
-        .features-list {
-            text-align: left;
-            margin: 40px 0;
-            list-style: none;
-        }
-        
-        .features-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
-            color: #F5F5F5;
-            font-size: 1.08em;
-            font-weight: 500;
-        }
-        
-        .features-list li:before {
-            content: "✓ ";
-            color: #FFD700;
-            font-weight: bold;
-            margin-right: 12px;
-            font-size: 1.2em;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-            color: #000000;
-            padding: 25px 70px;
-            font-size: 1.5em;
-            font-weight: 900;
-            text-decoration: none;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        
-        .cta-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 60px rgba(255, 215, 0, 0.8);
-            background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
-        }
-        
-        .cta-button:active {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.7);
-        }
-        
-        .guarantee {
-            background: rgba(72, 187, 120, 0.1);
-            border: 2px solid #48bb78;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .guarantee h4 {
-            color: #48bb78;
-            margin-bottom: 12px;
-            font-size: 1.2em;
-        }
-        
-        .guarantee p {
-            color: #e0e0e0;
-        }
-        
-        .trust-badges {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-            font-size: 0.95em;
-            color: #b0b0b0;
-        }
-        
-        footer {
-            background: #000000;
-            color: #AAAAAA;
-            text-align: center;
-            padding: 30px;
-            border-top: 3px solid #FFD700;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #000; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ── HEADER ── */
+        header { background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%); color: white; padding: 80px 20px; text-align: center; border-bottom: 5px solid #FFD700; position: relative; overflow: hidden; }
+        header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255,215,0,.2) 0%, transparent 70%); pointer-events: none; }
+        header h1 { font-size: 3em; margin-bottom: 20px; font-weight: 900; letter-spacing: -1px; color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,.6), 0 0 40px rgba(255,215,0,.3); position: relative; z-index: 1; }
+        header .subtitle { font-size: 1.5em; margin-bottom: 30px; font-weight: 300; max-width: 900px; margin-left: auto; margin-right: auto; color: #f0f0f0; position: relative; z-index: 1; }
+        .stats { display: flex; justify-content: center; gap: 60px; margin-top: 50px; flex-wrap: wrap; }
+        .stat { text-align: center; }
+        .stat-number { font-size: 3.5em; font-weight: 900; display: block; color: #FFD700; text-shadow: 0 0 15px rgba(255,215,0,.6); }
+        .stat-label { font-size: .95em; opacity: .9; color: #b0b0b0; }
+
+        /* ── ALERT BANNER ── */
+        .alert-banner { background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%); color: #1a1a1a; padding: 18px; text-align: center; font-weight: bold; font-size: 1.1em; }
+
+        /* ── GENERIC SECTIONS ── */
+        section { padding: 80px 20px; background: #0f1117; }
+        section:nth-child(even) { background: #13161e; }
+        .section-title { text-align: center; font-size: 2.5em; margin-bottom: 30px; color: #fff; font-weight: 800; }
+        .section-subtitle { text-align: center; font-size: 1.2em; color: #888; max-width: 800px; margin: 0 auto 60px; line-height: 1.8; }
+
+        /* ── PROBLEMS ── */
+        .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
+        .problem-card { background: #161a24; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.4); border-left: 5px solid #d4af37; transition: transform .3s, box-shadow .3s; }
+        .problem-card:hover { transform: translateY(-5px); box-shadow: 0 8px 28px rgba(56,189,178,.15), 0 0 0 1px rgba(56,189,178,.12); border-left-color: #38bdb2; }
+        .problem-icon { font-size: 2.8em; margin-bottom: 20px; display: inline-block; }
+        .problem-card h3 { font-size: 1.4em; margin-bottom: 15px; color: #fff; font-weight: 700; }
+        .problem-card p { color: #888; line-height: 1.8; font-size: 1.05em; }
+
+        /* ── WHO THIS IS FOR ── */
+        .for-section { background: #0f1117; background-image: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(56,189,178,.05), transparent); }
+        .for-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 50px; }
+        .for-card { padding: 30px 28px; border-radius: 14px; border: 1px solid rgba(212,175,55,.18); background: #161a24; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+        .for-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #d4af37, #38bdb2); }
+        .for-card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(56,189,178,.18); border-color: rgba(56,189,178,.3); }
+        .for-icon { font-size: 2.2em; margin-bottom: 14px; display: inline-block; }
+        .for-card h3 { font-size: 1.1em; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .for-card p { color: #888; font-size: .95em; line-height: 1.7; }
+
+        /* ── MODULES ── */
+        .solution-section { background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%); color: white; position: relative; overflow: hidden; }
+        .solution-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(212,175,55,.1) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(212,175,55,.1) 0%, transparent 50%); pointer-events: none; }
+        .solution-section .container { position: relative; z-index: 1; }
+        .solution-section .section-title { color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,.5); font-weight: 900; }
+        .solution-section .section-subtitle { color: #e0e0e0; }
+        .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2px; margin-top: 50px; border: 1px solid rgba(212,175,55,.15); border-radius: 20px; overflow: hidden; }
+        .module-card { background: #0a0a0a; padding: 36px 32px; position: relative; transition: background .25s; border-right: 1px solid rgba(212,175,55,.1); border-bottom: 1px solid rgba(212,175,55,.1); }
+        .module-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0%; background: linear-gradient(180deg, #FFD700, #d4af37); transition: height .3s ease; }
+        .module-card:hover { background: #111008; }
+        .module-card:hover::before { height: 100%; }
+        .module-number { font-size: .68rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(212,175,55,.55); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+        .module-number::after { content: ''; flex: 1; height: 1px; background: rgba(212,175,55,.15); }
+        .module-card h3 { font-size: 1.15em; margin-bottom: 12px; color: #FFF; font-weight: 800; line-height: 1.3; }
+        .module-card p { color: #888; line-height: 1.8; font-size: .95em; transition: color .25s; }
+        .module-card:hover p { color: #b8b8b8; }
+
+        /* ── FREE LESSON ── */
+        .free-lesson-section { background: linear-gradient(135deg, #000 0%, #0d0d00 50%, #000 100%); padding: 80px 20px; border-top: 1px solid rgba(212,175,55,.2); border-bottom: 1px solid rgba(212,175,55,.2); position: relative; overflow: hidden; }
+        .free-lesson-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,175,55,.07), transparent); pointer-events: none; }
+        .free-lesson-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1; }
+        .fl-text { flex: 1; max-width: 580px; }
+        .fl-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: #d4af37; background: rgba(212,175,55,.1); border: 1px solid rgba(212,175,55,.3); padding: 6px 14px; border-radius: 6px; margin-bottom: 20px; }
+        .fl-title { font-size: 2.2em; font-weight: 900; color: #FFF; line-height: 1.15; margin-bottom: 16px; letter-spacing: -.5px; }
+        .fl-title span { color: #FFD700; font-style: italic; }
+        .fl-desc { color: #b0b0b0; font-size: 1.08em; line-height: 1.8; margin-bottom: 28px; }
+        .fl-truth { background: rgba(212,175,55,.08); border-left: 4px solid #d4af37; border-radius: 0 10px 10px 0; padding: 14px 18px; color: #EFE0B0; font-size: .97em; font-weight: 600; margin-bottom: 28px; line-height: 1.6; }
+        .fl-points { list-style: none; margin-bottom: 32px; }
+        .fl-points li { display: flex; align-items: flex-start; gap: 10px; color: #c8c8c8; font-size: 1em; margin-bottom: 10px; line-height: 1.6; }
+        .fl-points li::before { content: '✓'; color: #FFD700; font-weight: 900; font-size: 1.1em; flex-shrink: 0; margin-top: 1px; }
+        .fl-cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+        .fl-btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 34px; border-radius: 12px; font-size: 1rem; font-weight: 800; text-decoration: none; cursor: pointer; transition: all .2s; letter-spacing: .03em; border: none; font-family: inherit; }
+        .fl-btn-primary { background: linear-gradient(135deg, #FFD700, #d4af37); color: #000; box-shadow: 0 8px 28px rgba(212,175,55,.35); }
+        .fl-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(212,175,55,.5); }
+        .fl-note { color: #666; font-size: .85em; }
+        .fl-card { flex-shrink: 0; width: 340px; background: linear-gradient(145deg, #111, #0a0a0a); border: 2px solid rgba(212,175,55,.35); border-radius: 20px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+        .fl-card-header { background: linear-gradient(135deg, rgba(212,175,55,.2), rgba(0,0,0,.5)); padding: 22px 24px; border-bottom: 1px solid rgba(212,175,55,.2); }
+        .fl-card-label { font-size: .65rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: #d4af37; margin-bottom: 8px; }
+        .fl-card-title { font-size: 1.05rem; font-weight: 800; color: #FFF; line-height: 1.35; }
+        .fl-card-body { padding: 22px 24px; }
+        .fl-stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+        .fl-stat { background: rgba(0,0,0,.3); border: 1px solid rgba(212,175,55,.15); border-radius: 10px; padding: 12px; text-align: center; }
+        .fl-stat-num { font-size: 1.5rem; font-weight: 900; color: #FFD700; display: block; line-height: 1; margin-bottom: 4px; }
+        .fl-stat-lbl { font-size: .62rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #666; }
+        .fl-tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+        .fl-tag { padding: 5px 11px; border-radius: 6px; font-size: .7rem; font-weight: 700; letter-spacing: .06em; background: rgba(212,175,55,.1); border: 1px solid rgba(212,175,55,.22); color: #d4af37; }
+        .fl-card-btn { display: block; width: 100%; padding: 14px; border-radius: 10px; background: linear-gradient(135deg, #FFD700, #d4af37); color: #000; font-weight: 900; font-size: .95rem; text-align: center; text-decoration: none; transition: all .2s; border: none; cursor: pointer; font-family: inherit; }
+        .fl-card-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,.4); }
+        .fl-free-badge { text-align: center; margin-top: 12px; font-size: .78rem; color: #555; font-weight: 600; }
+
+        /* ── TESTIMONIALS ── */
+        .testimonials { background: #13161e; background-image: radial-gradient(ellipse 50% 60% at 90% 50%, rgba(56,189,178,.05), transparent); }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-top: 50px; }
+        .testimonial { background: #1a1f2e; padding: 35px; border-radius: 12px; border-left: 5px solid #38bdb2; box-shadow: 0 4px 20px rgba(0,0,0,.4); transition: transform .3s, box-shadow .3s; }
+        .testimonial:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(212,175,55,.2); }
+        .testimonial-text { font-style: italic; color: #aaa; margin-bottom: 20px; line-height: 1.9; font-size: 1.05em; }
+        .testimonial-author { font-weight: bold; color: #fff; }
+        .testimonial-role { color: #718096; font-size: .9em; }
+
+        /* ── CREATOR ── */
+        .creator-section { background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%); padding: 80px 20px; border-top: 1px solid rgba(212,175,55,.2); border-bottom: 1px solid rgba(212,175,55,.2); }
+        .creator-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .creator-avatar { flex-shrink: 0; width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #d4af37, #8a6820); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; border: 3px solid rgba(212,175,55,.4); box-shadow: 0 0 40px rgba(212,175,55,.2); }
+        .creator-content { flex: 1; min-width: 280px; }
+        .creator-eyebrow { font-size: .7rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(212,175,55,.7); margin-bottom: 10px; }
+        .creator-name { font-size: 2em; font-weight: 900; color: #FFF; margin-bottom: 6px; }
+        .creator-title { font-size: .95em; color: #38bdb2; font-weight: 700; margin-bottom: 20px; letter-spacing: .03em; }
+        .creator-bio { color: #999; line-height: 1.8; font-size: 1em; margin-bottom: 24px; max-width: 640px; }
+        .creator-stats { display: flex; gap: 32px; flex-wrap: wrap; }
+        .c-stat { text-align: left; }
+        .c-stat-num { font-size: 1.8em; font-weight: 900; color: #38bdb2; line-height: 1; display: block; }
+        .c-stat-lbl { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #555; margin-top: 4px; display: block; }
+
+        /* ── FAQ ── */
+        .faq-section { background: #0f1117; background-image: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(56,189,178,.06), transparent); }
+        .faq-list { max-width: 800px; margin: 50px auto 0; }
+        .faq-item { border-bottom: 1px solid rgba(212,175,55,.12); }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 22px 0; font-size: 1.08em; font-weight: 700; color: #e8e8e8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: inherit; transition: color .2s; }
+        .faq-question:hover { color: #38bdb2; }
+        .faq-icon { font-size: 1.3em; color: #38bdb2; flex-shrink: 0; transition: transform .3s; font-weight: 400; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s; }
+        .faq-answer-inner { padding: 0 0 22px; color: #888; line-height: 1.85; font-size: 1em; }
+        .faq-item.open .faq-answer { max-height: 400px; }
+
+        /* ── PRICING ── */
+        .pricing-section { background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%); text-align: center; color: white; position: relative; overflow: hidden; }
+        .pricing-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15) 0%, transparent 70%); pointer-events: none; }
+        .pricing-section .container { position: relative; z-index: 1; }
+        .pricing-section .section-title { color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,.6); font-weight: 900; }
+        .price-box { background: rgba(0,0,0,.95); max-width: 700px; margin: 0 auto; padding: 60px 50px; border-radius: 20px; box-shadow: 0 20px 60px rgba(255,215,0,.4); border: 4px solid #FFD700; }
+        .price-box h3 { font-size: 2.2em; margin-bottom: 25px; color: #FFF; font-weight: 800; }
+        .old-price { text-decoration: line-through; color: #CCC; font-size: 1.4em; margin-bottom: 15px; font-weight: 600; }
+        .new-price { font-size: 5em; color: #FFD700; font-weight: 900; margin: 25px 0; text-shadow: 0 0 30px rgba(255,215,0,.8); }
+        .savings { color: #38bdb2; font-size: 1.3em; font-weight: bold; margin-bottom: 40px; }
+        .features-list { text-align: left; margin: 40px 0; list-style: none; }
+        .features-list li { padding: 12px 0; border-bottom: 1px solid rgba(255,215,0,.2); color: #F5F5F5; font-size: 1.08em; font-weight: 500; }
+        .features-list li:before { content: "✓ "; color: #FFD700; font-weight: bold; margin-right: 12px; font-size: 1.2em; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 25px 70px; font-size: 1.5em; font-weight: 900; text-decoration: none; border-radius: 50px; border: none; cursor: pointer; transition: all .3s ease; box-shadow: 0 10px 40px rgba(255,215,0,.6); text-transform: uppercase; letter-spacing: 1px; position: relative; overflow: hidden; animation: pulse 2s infinite; }
+        .cta-button::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,.4); transform: translate(-50%,-50%); transition: width .6s, height .6s; }
+        .cta-button:hover::before { width: 300px; height: 300px; }
+        .cta-button:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 15px 60px rgba(255,215,0,.8); animation: none; }
+        .guarantee { background: rgba(72,187,120,.1); border: 2px solid #48bb78; padding: 25px; border-radius: 12px; margin: 40px 0; text-align: center; }
+        .guarantee h4 { color: #48bb78; margin-bottom: 12px; font-size: 1.2em; }
+        .guarantee p { color: #e0e0e0; }
+        .trust-badges { display: flex; justify-content: center; gap: 25px; margin-top: 30px; flex-wrap: wrap; font-size: .95em; color: #b0b0b0; }
+        .free-lesson-nudge { margin-top: 18px; padding: 14px 18px; border-radius: 10px; background: rgba(212,175,55,.07); border: 1px dashed rgba(212,175,55,.3); text-align: center; }
+        .free-lesson-nudge p { color: #999; font-size: .9em; margin: 0; }
+        .free-lesson-nudge a { color: #FFD700; font-weight: 700; text-decoration: none; }
+        .free-lesson-nudge a:hover { text-decoration: underline; }
+        .countdown-timer { background: linear-gradient(135deg, #FF0000 0%, #DC143C 100%); padding: 25px; border-radius: 15px; margin: 30px auto; max-width: 600px; text-align: center; box-shadow: 0 10px 30px rgba(255,0,0,.4); border: 2px solid #FF6B6B; }
+        .countdown-timer h3 { color: #FFF; font-size: 1.4em; margin-bottom: 15px; font-weight: 800; }
+        .timer-display { display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap; }
+        .timer-box { background: rgba(0,0,0,.4); padding: 15px 20px; border-radius: 10px; min-width: 80px; }
+        .timer-number { font-size: 2.5em; font-weight: 900; color: #FFD700; display: block; line-height: 1; }
+        .timer-label { font-size: .9em; color: #FFF; text-transform: uppercase; margin-top: 5px; font-weight: 600; }
+        .urgency-badge { background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%); color: white; padding: 12px 25px; border-radius: 25px; font-weight: 800; font-size: 1em; display: inline-block; margin: 15px 0; box-shadow: 0 5px 15px rgba(255,69,0,.4); animation: pulse 2s infinite; }
+
+        /* ── WHATSAPP FLOAT ── */
+        .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .wa-tooltip { background: #1a1a1a; color: #FFF; font-size: .82rem; font-weight: 700; padding: 8px 14px; border-radius: 8px; white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.4); opacity: 0; transform: translateX(8px); transition: all .25s; pointer-events: none; border: 1px solid rgba(255,255,255,.1); }
+        .wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+        .wa-btn { width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 24px rgba(37,211,102,.5); transition: transform .2s, box-shadow .2s; text-decoration: none; }
+        .wa-btn:hover { transform: scale(1.1); box-shadow: 0 10px 32px rgba(37,211,102,.7); }
+        .wa-btn svg { width: 32px; height: 32px; fill: white; }
+        .wa-pulse { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: rgba(37,211,102,.4); animation: waPulse 2s infinite; pointer-events: none; }
+        @keyframes waPulse { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.7); opacity: 0; } }
+
+        /* ── FOOTER ── */
+        footer { background: #000; color: #AAA; text-align: center; padding: 40px 20px; border-top: 3px solid #FFD700; }
+        .footer-links { display: flex; justify-content: center; gap: 30px; margin: 16px 0; flex-wrap: wrap; }
+        .footer-links a { color: #FFD700; text-decoration: none; font-weight: 600; font-size: .95em; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        /* ── ANIMATIONS ── */
+        @keyframes pulse { 0% { box-shadow: 0 10px 40px rgba(255,215,0,.6); } 50% { box-shadow: 0 10px 40px rgba(255,215,0,.9), 0 0 0 10px rgba(255,215,0,.2); } 100% { box-shadow: 0 10px 40px rgba(255,215,0,.6); } }
+
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
-            }
-            
-            header .subtitle {
-                font-size: 1.2em;
-            }
-            
-            .new-price {
-                font-size: 3.5em;
-            }
-            
-            .stats {
-                gap: 30px;
-            }
-            
-            .stat-number {
-                font-size: 2.5em;
-            }
-            
-            .section-title {
-                font-size: 2em;
-            }
-            
-            .cta-button {
-                padding: 20px 50px;
-                font-size: 1.3em;
-            }
-        }
-        
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
-            }
-            50% {
-                box-shadow: 0 10px 40px rgba(255, 215, 0, 0.9), 0 0 0 10px rgba(255, 215, 0, 0.2);
-            }
-            100% {
-                box-shadow: 0 10px 40px rgba(255, 215, 0, 0.6);
-            }
-        }
-        
-        .cta-button {
-            animation: pulse 2s infinite;
-        }
-        
-        .cta-button:hover {
-            animation: none;
-        }
-        
-        .countdown-timer {
-            background: linear-gradient(135deg, #FF0000 0%, #DC143C 100%);
-            padding: 25px;
-            border-radius: 15px;
-            margin: 30px auto;
-            max-width: 600px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
-            border: 2px solid #FF6B6B;
-        }
-        
-        .countdown-timer h3 {
-            color: #FFFFFF;
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-        
-        .timer-display {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .timer-box {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 15px 20px;
-            border-radius: 10px;
-            min-width: 80px;
-        }
-        
-        .timer-number {
-            font-size: 2.5em;
-            font-weight: 900;
-            color: #FFD700;
-            display: block;
-            line-height: 1;
-        }
-        
-        .timer-label {
-            font-size: 0.9em;
-            color: #FFFFFF;
-            text-transform: uppercase;
-            margin-top: 5px;
-            font-weight: 600;
-        }
-        
-        .urgency-badge {
-            background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 25px;
-            font-weight: 800;
-            font-size: 1em;
-            display: inline-block;
-            margin: 15px 0;
-            box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
-            animation: pulse 2s infinite;
+            header h1 { font-size: 2em; }
+            header .subtitle { font-size: 1.2em; }
+            .new-price { font-size: 3.5em; }
+            .stats { gap: 30px; }
+            .stat-number { font-size: 2.5em; }
+            .section-title { font-size: 2em; }
+            .cta-button { padding: 20px 40px; font-size: 1.2em; }
+            .free-lesson-inner { flex-direction: column; }
+            .fl-card { width: 100%; }
+            .price-box { padding: 36px 22px; }
+            .creator-inner { flex-direction: column; text-align: center; }
+            .creator-stats { justify-content: center; }
+            .wa-float { bottom: 18px; right: 18px; }
         }
     </style>
 </head>
 <body>
+
+    <!-- HEADER -->
     <header>
         <div class="container">
             <h1>📖 THE ULTIMATE BLACK BOOK FOR MASTERING RETAIL</h1>
             <p class="subtitle">The Professional Playbook That Separates Shop Floor Workers From Retail Masters — Proven Strategies Used By Top Performers To Dominate Sales, Earn Promotions & Future-Proof Their Careers</p>
-            
             <div class="stats">
-                <div class="stat">
-                    <span class="stat-number">8</span>
-                    <span class="stat-label">Master Lessons</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">3,200+</span>
-                    <span class="stat-label">Retail Professionals Trained</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">92%</span>
-                    <span class="stat-label">Reported Career Growth</span>
-                </div>
+                <div class="stat"><span class="stat-number">8</span><span class="stat-label">Master Lessons</span></div>
+                <div class="stat"><span class="stat-number">3,200+</span><span class="stat-label">Retail Professionals Trained</span></div>
+                <div class="stat"><span class="stat-number">92%</span><span class="stat-label">Reported Career Growth</span></div>
             </div>
         </div>
     </header>
-    
-    <div class="alert-banner">
-        ⚡ LIMITED OFFER: Professional Development Pricing — Invest In Your Retail Mastery Today
-    </div>
-    
+
+    <div class="alert-banner">⚡ LIMITED OFFER: Professional Development Pricing — Invest In Your Retail Mastery Today</div>
+
+    <!-- PROBLEMS -->
     <section>
         <div class="container">
             <h2 class="section-title">Are You Stuck On The Shop Floor While Others Get Promoted?</h2>
             <p class="section-subtitle">You show up. You work hard. But somehow you're still invisible to management while less experienced people move ahead. Sound familiar?</p>
-            
             <div class="problems-grid">
-                <div class="problem-card">
-                    <div class="problem-icon">😤</div>
-                    <h3>Overlooked For Promotions</h3>
-                    <p>You've been in retail for years but keep getting passed over for supervisor or management roles. You don't know what they see in others that you're missing.</p>
+                <div class="problem-card"><div class="problem-icon">😤</div><h3>Overlooked For Promotions</h3><p>You've been in retail for years but keep getting passed over for supervisor or management roles. You don't know what they see in others that you're missing.</p></div>
+                <div class="problem-card"><div class="problem-icon">📉</div><h3>Hitting A Sales Plateau</h3><p>Your numbers are okay, but never outstanding. You watch top sellers crush targets while you struggle to understand what they're doing differently.</p></div>
+                <div class="problem-card"><div class="problem-icon">🔄</div><h3>Treated Like Just Another Body</h3><p>Management sees you as replaceable. You're doing the same repetitive tasks with no path forward, no recognition, no professional growth.</p></div>
+                <div class="problem-card"><div class="problem-icon">😰</div><h3>Difficult Customers Break You</h3><p>Angry customers, refund battles, and pressure situations drain you emotionally. You don't have the tools to stay professional and in control.</p></div>
+                <div class="problem-card"><div class="problem-icon">🤷</div><h3>No Real Selling Skills</h3><p>You know how to ring up sales, but you don't know how to actually sell. You're uncomfortable approaching customers and closing deals confidently.</p></div>
+                <div class="problem-card"><div class="problem-icon">⏰</div><h3>Worried About Your Future</h3><p>Technology is changing retail fast. You're afraid of being left behind or replaced because you don't have the advanced skills that modern retail demands.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO THIS IS FOR -->
+    <section class="for-section">
+        <div class="container">
+            <h2 class="section-title">Who Is This For?</h2>
+            <p class="section-subtitle">If you work in retail — or want to — this course was built specifically for you.</p>
+            <div class="for-grid">
+                <div class="for-card">
+                    <div class="for-icon">🛍️</div>
+                    <h3>Sales Assistants Ready To Level Up</h3>
+                    <p>You're on the floor every day but feel invisible. This course gives you the skills that make management take notice.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">📉</div>
-                    <h3>Hitting A Sales Plateau</h3>
-                    <p>Your numbers are okay, but never outstanding. You watch top sellers crush targets while you struggle to understand what they're doing differently.</p>
+                <div class="for-card">
+                    <div class="for-icon">📈</div>
+                    <h3>Staff Chasing Promotion</h3>
+                    <p>You want the supervisor or manager title but don't know exactly what they're looking for. This shows you precisely what that is.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">🔄</div>
-                    <h3>Treated Like Just Another Body</h3>
-                    <p>Management sees you as replaceable. You're doing the same repetitive tasks with no path forward, no recognition, no professional growth.</p>
+                <div class="for-card">
+                    <div class="for-icon">🎓</div>
+                    <h3>Job Seekers Entering Retail</h3>
+                    <p>Starting fresh and want to walk in ahead of the competition. This gives you professional knowledge before your first shift.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">😰</div>
-                    <h3>Difficult Customers Break You</h3>
-                    <p>Angry customers, refund battles, and pressure situations drain you emotionally. You don't have the tools to stay professional and in control.</p>
+                <div class="for-card">
+                    <div class="for-icon">💼</div>
+                    <h3>Junior Managers Building Authority</h3>
+                    <p>You have the title but want the real skills — team control, campaign execution, customer escalations. This delivers all of it.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">🤷</div>
-                    <h3>No Real Selling Skills</h3>
-                    <p>You know how to ring up sales, but you don't know how to actually sell. You're uncomfortable approaching customers and closing deals confidently.</p>
+                <div class="for-card">
+                    <div class="for-icon">🔄</div>
+                    <h3>Career Changers Moving Into Retail</h3>
+                    <p>Coming from another industry and need to learn the retail world fast. This is the shortcut that took years to build.</p>
                 </div>
-                
-                <div class="problem-card">
-                    <div class="problem-icon">⏰</div>
-                    <h3>Worried About Your Future</h3>
-                    <p>Technology is changing retail fast. You're afraid of being left behind or replaced because you don't have the advanced skills that modern retail demands.</p>
+                <div class="for-card">
+                    <div class="for-icon">🚀</div>
+                    <h3>Driven Performers Who Want More</h3>
+                    <p>You're already good. You want to be exceptional. This is the advanced layer most retail workers never get access to.</p>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- MODULES -->
     <section class="solution-section">
         <div class="container">
             <h2 class="section-title">Master The Complete Retail Playbook</h2>
             <p class="section-subtitle">This isn't basic training. This is the advanced system that transforms average retail workers into professionals who dominate the shop floor, command respect from management, and build real careers.</p>
-            
             <div class="modules-grid">
-                <div class="module-card">
-                    <div class="module-number">LESSON 1</div>
-                    <h3>Retail Mindset & Professional Identity</h3>
-                    <p>Stop seeing yourself as "just a worker." Build the ownership mindset that separates professionals from task-doers. Learn how your personal brand on the shop floor directly affects your promotions and pay.</p>
+                <div class="module-card"><div class="module-number">LESSON 1</div><h3>Retail Mindset & Professional Identity</h3><p>Stop seeing yourself as "just a worker." Build the ownership mindset that separates professionals from task-doers. Learn how your personal brand on the shop floor directly affects your promotions and pay.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 2</div><h3>Customer Profiling & Customer Types</h3><p>Master the art of reading any customer within 5–10 seconds. Learn the psychological buying patterns, personality types, and cultural influences that let you adapt your approach and close more sales effortlessly.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 3</div><h3>Advanced Selling Techniques</h3><p>Turn every conversation into a conversion. Get the exact opening lines, needs discovery questions, objection handling scripts, and closing techniques used by top retail performers to consistently outsell everyone else.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 4</div><h3>Visual Merchandising & Store Psychology</h3><p>Understand the management-level thinking behind store layouts, product placement, and visual storytelling. Learn how to use psychology to drive sales and show management you think like a leader.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 5</div><h3>Retail Marketing Campaigns & Activations</h3><p>Stop being confused by campaigns and start executing them like a pro. Learn how launches, markdowns, and seasonal pushes work, and how to create urgency that drives results without pressure.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 6</div><h3>Omnichannel Selling & The Future of Retail</h3><p>Future-proof your career. Master online-to-offline customer journeys, social selling, click & collect, and how technology is reshaping retail. Position yourself as indispensable in modern retail.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 7</div><h3>Customer Service Mastery & Difficult Situations</h3><p>Handle refunds, angry customers, and high-pressure situations with total emotional control. Learn the professional language and de-escalation techniques that protect both the brand and your sanity.</p></div>
+                <div class="module-card"><div class="module-number">LESSON 8</div><h3>Stress Management, Cultural Awareness & Career Growth</h3><p>Build resilience for long-term success. Master stress management, cultural sensitivity, and understand the exact path from shop floor to leadership that pays real money.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREE LESSON -->
+    <section class="free-lesson-section">
+        <div class="free-lesson-inner">
+            <div class="fl-text">
+                <div class="fl-eyebrow">🎁 Free Bonus Lesson — No Credit Card</div>
+                <h2 class="fl-title">Try The Standard<br><span>Before You Invest</span></h2>
+                <p class="fl-desc">Most retail professionals have never been taught what happens when authority goes wrong. This free lesson covers the one framework that separates careers that survive pressure from careers that end because of it.</p>
+                <div class="fl-truth">"Authority without understanding is dangerous. Ego without procedure is career suicide."</div>
+                <ul class="fl-points">
+                    <li>What Shopkeeper's Privilege actually means — and what it doesn't</li>
+                    <li>The exact procedure that protects your job when theft situations escalate</li>
+                    <li>Real scenarios: Pro moves vs amateur moves side by side</li>
+                    <li>Why most dismissals happen after the incident — not during</li>
+                    <li>18-question assessment + free Get Hired PDF included</li>
+                </ul>
+                <div class="fl-cta-row">
+                    <a class="fl-btn fl-btn-primary" href="lesson0.html">▶ Read Free Lesson Now</a>
+                    <span class="fl-note">Free • No sign-up required to read</span>
                 </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 2</div>
-                    <h3>Customer Profiling & Customer Types</h3>
-                    <p>Master the art of reading any customer within 5-10 seconds. Learn the psychological buying patterns, personality types, and cultural influences that let you adapt your approach and close more sales effortlessly.</p>
+            </div>
+            <div class="fl-card">
+                <div class="fl-card-header">
+                    <div class="fl-card-label">🎁 Bonus Lesson — Free</div>
+                    <div class="fl-card-title">Shopkeeper's Privilege: The Power You Have & The Line You Never Cross</div>
                 </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 3</div>
-                    <h3>Advanced Selling Techniques</h3>
-                    <p>Turn every conversation into a conversion. Get the exact opening lines, needs discovery questions, objection handling scripts, and closing techniques used by top retail performers to consistently outsell everyone else.</p>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 4</div>
-                    <h3>Visual Merchandising & Store Psychology</h3>
-                    <p>Understand the management-level thinking behind store layouts, product placement, and visual storytelling. Learn how to use psychology to drive sales and show management you think like a leader.</p>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 5</div>
-                    <h3>Retail Marketing Campaigns & Activations</h3>
-                    <p>Stop being confused by campaigns and start executing them like a pro. Learn how launches, markdowns, and seasonal pushes work, and how to create urgency that drives results without pressure.</p>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 6</div>
-                    <h3>Omnichannel Selling & The Future of Retail</h3>
-                    <p>Future-proof your career. Master online-to-offline customer journeys, social selling, click & collect, and how technology is reshaping retail. Position yourself as indispensable in modern retail.</p>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 7</div>
-                    <h3>Customer Service Mastery & Difficult Situations</h3>
-                    <p>Handle refunds, angry customers, and high-pressure situations with total emotional control. Learn the professional language and de-escalation techniques that protect both the brand and your sanity.</p>
-                </div>
-                
-                <div class="module-card">
-                    <div class="module-number">LESSON 8</div>
-                    <h3>Stress Management, Cultural Awareness & Career Growth</h3>
-                    <p>Build resilience for long-term success. Master stress management, cultural sensitivity, and understand the exact path from shop floor to leadership roles that pays real money.</p>
+                <div class="fl-card-body">
+                    <div class="fl-stat-row">
+                        <div class="fl-stat"><span class="fl-stat-num">18</span><span class="fl-stat-lbl">Questions</span></div>
+                        <div class="fl-stat"><span class="fl-stat-num">85%</span><span class="fl-stat-lbl">Pass Mark</span></div>
+                        <div class="fl-stat"><span class="fl-stat-num">5</span><span class="fl-stat-lbl">Sections</span></div>
+                        <div class="fl-stat"><span class="fl-stat-num">Free</span><span class="fl-stat-lbl">PDF Bonus</span></div>
+                    </div>
+                    <div class="fl-tag-row">
+                        <span class="fl-tag">Authority Framework</span>
+                        <span class="fl-tag">Real Scenarios</span>
+                        <span class="fl-tag">Career Protection</span>
+                        <span class="fl-tag">Get Hired Pack</span>
+                    </div>
+                    <a class="fl-card-btn" href="lesson0.html">▶ Start Free Lesson</a>
+                    <div class="fl-free-badge">✓ 100% Free • No payment needed</div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- TESTIMONIALS -->
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">Real Results From Real Retail Professionals</h2>
-            
+            <p class="section-subtitle">Join 3,200+ retail professionals who've already transformed their careers.</p>
             <div class="testimonial-grid">
-                <div class="testimonial">
-                    <p class="testimonial-text">"I was stuck as a sales assistant for 4 years. After this course, I understood what management was actually looking for. Within 3 months I was promoted to senior sales. The customer profiling alone changed everything."</p>
-                    <p class="testimonial-author">- Lerato M.</p>
-                    <p class="testimonial-role">Senior Sales Consultant, Sandton City</p>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">"My sales numbers doubled. Not because I worked harder, but because I finally understood the psychology. The advanced selling techniques are gold. I'm now one of the top performers in my store."</p>
-                    <p class="testimonial-author">- Sipho K.</p>
-                    <p class="testimonial-role">Sales Specialist, Gateway Mall</p>
-                </div>
-                
-                <div class="testimonial">
-                    <p class="testimonial-text">"This course gave me confidence I never had. The customer service mastery section taught me how to handle difficult situations professionally. I went from dreading angry customers to handling them with ease. Management noticed."</p>
-                    <p class="testimonial-author">- Thandiwe N.</p>
-                    <p class="testimonial-role">Floor Supervisor, V&A Waterfront</p>
+                <div class="testimonial"><p class="testimonial-text">"I was stuck as a sales assistant for 4 years. After this course, I understood what management was actually looking for. Within 3 months I was promoted to senior sales. The customer profiling alone changed everything."</p><p class="testimonial-author">— Lerato M.</p><p class="testimonial-role">Senior Sales Consultant, Sandton City</p></div>
+                <div class="testimonial"><p class="testimonial-text">"My sales numbers doubled. Not because I worked harder, but because I finally understood the psychology. The advanced selling techniques are gold. I'm now one of the top performers in my store."</p><p class="testimonial-author">— Sipho K.</p><p class="testimonial-role">Sales Specialist, Gateway Mall</p></div>
+                <div class="testimonial"><p class="testimonial-text">"This course gave me confidence I never had. The customer service mastery section taught me how to handle difficult situations professionally. I went from dreading angry customers to handling them with ease. Management noticed."</p><p class="testimonial-author">— Thandiwe N.</p><p class="testimonial-role">Floor Supervisor, V&A Waterfront</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREATOR -->
+    <section class="creator-section">
+        <div class="creator-inner">
+            <div class="creator-avatar">👨🏾‍💼</div>
+            <div class="creator-content">
+                <div class="creator-eyebrow">Meet the Creator</div>
+                <div class="creator-name">Phiwokuhle Makapela</div>
+                <div class="creator-title">Active Retail Store Manager · Creator of The Ultimate Black Book</div>
+                <p class="creator-bio">I didn't write this course from a boardroom or a university lecture. I wrote it from the shop floor — from years of managing teams, handling escalations, running campaigns, and watching talented people get overlooked because nobody ever taught them the real rules. This course is everything I wish someone had handed me on day one. It's not theory. It's the playbook that actually works in South African retail, built by someone who still lives it every day.</p>
+                <div class="creator-stats">
+                    <div class="c-stat"><span class="c-stat-num">8+</span><span class="c-stat-lbl">Years in Retail</span></div>
+                    <div class="c-stat"><span class="c-stat-num">3,200+</span><span class="c-stat-lbl">Professionals Trained</span></div>
+                    <div class="c-stat"><span class="c-stat-num">8</span><span class="c-stat-lbl">Master Lessons</span></div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Everything you need to know before you invest.</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">Do I need retail experience to take this course? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">No experience needed. The course is designed to work whether you're brand new to retail or already working on the floor. If you're starting out, it gives you a massive head start. If you're already in retail, it fills in the gaps nobody ever taught you.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How long does the course take to complete? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The course is self-paced with 8 lessons and over 5 hours of training material. Most students complete it over 1–2 weeks, fitting in lessons around their work schedule. You get lifetime access so you can revisit any lesson at any time.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is the certificate recognised by employers? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">The certificate is a professional development credential from RetailExpert.xyz, verifiable via QR code. While it is not a government-accredited SETA qualification, it demonstrates to employers that you've completed structured retail training at a professional standard — which sets you apart from most applicants.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What if the course doesn't work for me? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">You're covered by a 30-day money-back guarantee. If you complete the course and feel it hasn't elevated your retail performance or professional standing, contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b5d8d4c6c1d0c7dcdbd2c7d0c1d4dcd9f5d2d8d4dcd99bd6dad8">[email&#160;protected]</a> and we'll refund every cent. No hoops. No questions.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I access the course after payment? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Immediately after your PayFast payment is confirmed, you'll be redirected to the course dashboard at retailexpert.xyz. Access is instant — no waiting, no email delay. You can start Lesson 1 within minutes of paying.</div></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I pay via EFT or SnapScan instead of card? <span class="faq-icon">+</span></button>
+                    <div class="faq-answer"><div class="faq-answer-inner">Yes. PayFast supports multiple payment methods including EFT, SnapScan, Ozow, and Masterpass in addition to debit and credit cards. If you need help with your payment, WhatsApp us at +27 74 831 5232 and we'll assist you directly.</div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
     <section class="pricing-section">
         <div class="container">
             <h2 class="section-title">Invest In Your Retail Mastery</h2>
-            
             <div class="price-box">
-                <div class="urgency-badge">🔥 LIMITED TIME OFFER - ACT NOW!</div>
-                
+                <div class="urgency-badge">🔥 LIMITED TIME OFFER — ACT NOW!</div>
                 <h3>The Ultimate Black Book For Mastering Retail</h3>
                 <p class="old-price">Professional Development Value: R997</p>
                 <div class="new-price">R249</div>
                 <p class="savings">SAVE R748 — Limited Time Launch Price</p>
-                
                 <div class="countdown-timer">
                     <h3>⏰ Special Price Ends In:</h3>
                     <div class="timer-display">
-                        <div class="timer-box">
-                            <span class="timer-number" id="hours">23</span>
-                            <span class="timer-label">Hours</span>
-                        </div>
-                        <div class="timer-box">
-                            <span class="timer-number" id="minutes">59</span>
-                            <span class="timer-label">Minutes</span>
-                        </div>
-                        <div class="timer-box">
-                            <span class="timer-number" id="seconds">59</span>
-                            <span class="timer-label">Seconds</span>
-                        </div>
+                        <div class="timer-box"><span class="timer-number" id="hours">23</span><span class="timer-label">Hours</span></div>
+                        <div class="timer-box"><span class="timer-number" id="minutes">59</span><span class="timer-label">Minutes</span></div>
+                        <div class="timer-box"><span class="timer-number" id="seconds">59</span><span class="timer-label">Seconds</span></div>
                     </div>
-                    <p style="color: #FFFFFF; margin-top: 15px; font-weight: 700;">After timer expires, price returns to R997!</p>
+                    <p style="color:#FFF;margin-top:15px;font-weight:700;">After timer expires, price returns to R997!</p>
                 </div>
-                
-                <div style="background: rgba(255, 69, 0, 0.15); padding: 15px; border-radius: 10px; margin: 20px 0; border: 2px solid #FF6347;">
-                    <p style="color: #FFD700; font-weight: 800; font-size: 1.1em; margin: 0;">⚠️ Only 23 Spots Left at This Price!</p>
+                <div style="background:rgba(255,69,0,.15);padding:15px;border-radius:10px;margin:20px 0;border:2px solid #FF6347;">
+                    <p style="color:#FFD700;font-weight:800;font-size:1.1em;margin:0;" id="spotsEl">⚠️ Only 23 Spots Left at This Price!</p>
                 </div>
-                
                 <ul class="features-list">
                     <li>8 Advanced Master Lessons (5+ Hours of Training)</li>
                     <li>Customer Profiling & Psychology Mastery</li>
@@ -788,14 +437,13 @@
                     <li>Lifetime Access + All Future Updates</li>
                     <li>Downloadable Reference Materials</li>
                     <li>Priority Email Support</li>
+                    <li>Bonus Lesson: Shopkeeper's Privilege (Free Access)</li>
                 </ul>
-                
                 <div class="guarantee">
                     <h4>🛡️ 30-Day Professional Guarantee</h4>
                     <p>If this course doesn't elevate your retail performance and professional standing within 30 days, we'll refund every cent. No questions asked.</p>
                 </div>
-                
-                <div style="margin: 40px 0; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 2px dashed #FFD700;">
+                <div style="margin:40px 0;padding:20px;background:rgba(255,215,0,.1);border-radius:15px;border:2px dashed #FFD700;">
                     <form action="https://www.payfast.co.za/eng/process" method="post">
                         <input type="hidden" name="merchant_id" value="21873692">
                         <input type="hidden" name="merchant_key" value="qox9r0ltorngy">
@@ -804,93 +452,84 @@
                         <input type="hidden" name="notify_url" value="https://retailexpert.xyz/payment-notify">
                         <input type="hidden" name="amount" value="249.00">
                         <input type="hidden" name="item_name" value="The Ultimate Black Book for Mastering Retail">
-                        <input type="hidden" name="item_description" value="Professional retail mastery course - 8 advanced lessons covering mindset, customer profiling, selling mastery, visual merchandising, and career growth">
+                        <input type="hidden" name="item_description" value="Professional retail mastery course — 8 advanced lessons covering mindset, customer profiling, selling mastery, visual merchandising, and career growth">
                         <input type="hidden" name="email_confirmation" value="1">
                         <input type="hidden" name="confirmation_address" value="masteringretail@gmail.com">
-                        
-                        <button type="submit" class="cta-button">
-                            🚀 Master Retail Now For R249
-                        </button>
+                        <button type="submit" class="cta-button">🚀 Master Retail Now For R249</button>
                     </form>
-                    <p style="margin-top: 15px; color: #FFD700; font-weight: 700; font-size: 1.1em;">⚡ Instant Access • No Monthly Fees • Lifetime Updates</p>
+                    <p style="margin-top:15px;color:#FFD700;font-weight:700;font-size:1.1em;">⚡ Instant Access • No Monthly Fees • Lifetime Updates</p>
                 </div>
-                
                 <div class="trust-badges">
                     <span>🔒 Secure Payment</span>
                     <span>💳 PayFast Protected</span>
                     <span>⚡ Instant Access</span>
                     <span>🎓 Professional Certification</span>
                 </div>
-                
-                <p style="margin-top: 25px; color: #888;">⏰ Professional development pricing ends soon — Invest in your career today</p>
+                <div class="free-lesson-nudge">
+                    <p>Not ready yet? <a href="lesson0.html">Read a free lesson first →</a> No credit card. No sign-up. Just the content.</p>
+                </div>
+                <p style="margin-top:20px;color:#888;">⏰ Professional development pricing ends soon — Invest in your career today</p>
             </div>
         </div>
     </section>
-    
-    <footer>
+
+    <!-- FOOTER -->
+    <footer id="contact">
         <div class="container">
-            <p>&copy; 2024 RetailExpert.xyz - The Ultimate Black Book for Mastering Retail</p>
-            <p style="margin-top: 15px; font-size: 1em;">
-                📧 Email: <a href="mailto:masteringretail@gmail.com" style="color: #FFD700; text-decoration: none;">masteringretail@gmail.com</a>
-            </p>
-            <p style="margin-top: 8px; font-size: 1em;">
-                💬 WhatsApp: <a href="https://wa.me/27748315232" style="color: #FFD700; text-decoration: none;" target="_blank">+27 74 831 5232</a>
-            </p>
-            <p style="margin-top: 15px; font-size: 0.85em; color: #666;">Professional Development | Get Support Anytime</p>
+            <p style="color:#FFD700;font-weight:800;font-size:1.05em;margin-bottom:6px;">The Ultimate Black Book for Mastering Retail</p>
+            <p>RetailExpert.xyz &mdash; Professional Retail Development</p>
+            <div class="footer-links">
+                <a href="/cdn-cgi/l/email-protection#640905171001160d0a03160110050d08240309050d084a070b09">📧 <span class="__cf_email__" data-cfemail="bed3dfcdcadbccd7d0d9ccdbcadfd7d2fed9d3dfd7d290ddd1d3">[email&#160;protected]</span></a>
+                <a href="https://wa.me/27748315232" target="_blank">💬 WhatsApp: +27 74 831 5232</a>
+                <a href="lesson0.html">🎁 Free Lesson</a>
+                <a href="course.html">📖 Course Dashboard</a>
+            </div>
+            <p style="font-size:.82rem;color:#444;margin-top:14px;">© <span id="yr"></span> Phiwokuhle Makapela · All Rights Reserved · Professional Development</p>
         </div>
     </footer>
-    
-    <script>
-        // Countdown Timer - Resets every 24 hours
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <div class="wa-float">
+        <div class="wa-tooltip">💬 Chat on WhatsApp</div>
+        <div style="position:relative;">
+            <div class="wa-pulse"></div>
+            <a class="wa-btn" href="https://wa.me/27748315232?text=Hi%2C%20I%27m%20interested%20in%20The%20Ultimate%20Black%20Book%20for%20Mastering%20Retail" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Footer year
+        document.getElementById("yr").textContent = new Date().getFullYear();
+
+        // Countdown timer
         function startCountdown() {
-            const countdownKey = 'retailCountdownEnd';
-            let endTime = localStorage.getItem(countdownKey);
-            
+            var key = 'retailCountdownEnd';
+            var endTime = localStorage.getItem(key);
             if (!endTime || new Date().getTime() > parseInt(endTime)) {
-                // Set new 24-hour countdown
                 endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-                localStorage.setItem(countdownKey, endTime);
+                localStorage.setItem(key, endTime);
             }
-            
-            function updateTimer() {
-                const now = new Date().getTime();
-                const distance = parseInt(endTime) - now;
-                
-                if (distance < 0) {
-                    // Reset countdown
-                    endTime = new Date().getTime() + (24 * 60 * 60 * 1000);
-                    localStorage.setItem(countdownKey, endTime);
-                    return;
-                }
-                
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            function update() {
+                var dist = parseInt(endTime) - new Date().getTime();
+                if (dist < 0) { endTime = new Date().getTime() + (24*60*60*1000); localStorage.setItem(key, endTime); return; }
+                document.getElementById('hours').textContent   = Math.floor((dist%(1000*60*60*24))/(1000*60*60)).toString().padStart(2,'0');
+                document.getElementById('minutes').textContent = Math.floor((dist%(1000*60*60))/(1000*60)).toString().padStart(2,'0');
+                document.getElementById('seconds').textContent = Math.floor((dist%(1000*60))/1000).toString().padStart(2,'0');
             }
-            
-            updateTimer();
-            setInterval(updateTimer, 1000);
+            update(); setInterval(update, 1000);
         }
-        
-        // Start countdown when page loads
         startCountdown();
-        
-        // Spots remaining randomizer (23-31 range)
+
+        // Spots counter
         function updateSpots() {
-            const spots = Math.floor(Math.random() * 9) + 23; // Random between 23-31
-            const spotElement = document.querySelector('[style*="Only"]');
-            if (spotElement) {
-                spotElement.innerHTML = `⚠️ Only ${spots} Spots Left at This Price!`;
-            }
+            var n = Math.floor(Math.random() * 9) + 23;
+            var el = document.getElementById('spotsEl');
+            if (el) el.innerHTML = '⚠️ Only ' + n + ' Spots Left at This Price!';
         }
-        
-        // Update spots every 5 minutes
-        updateSpots();
-        setInterval(updateSpots, 5 * 60 * 1000);
-    </script>
-</body>
-</html>
+        updateSpots(); setInterval(updateSpots, 5*60*1000);
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+      
