@@ -21,7 +21,8 @@
         .progress-text { color: #FFD700; text-align: center; margin-top: 10px; font-size: 0.95em; font-weight: 600; }
         .module-card { background: #000; border: 2px solid #FFD700; border-radius: 12px; padding: 30px; margin-bottom: 30px; transition: all 0.3s ease; }
         .module-card:hover { box-shadow: 0 0 30px rgba(255,215,0,0.4); transform: translateY(-3px); }
-        .module-card-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; cursor: pointer; }
+        .module-card-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
+        .module-toggle-area { display: flex; align-items: center; gap: 20px; cursor: pointer; flex: 1; }
         .module-icon { width: 70px; height: 70px; background: #FFD700; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; flex-shrink: 0; }
         .module-header-text h3 { color: #FFD700; font-size: 1.8em; margin-bottom: 5px; font-weight: 800; }
         .module-header-text p { color: #FFD700; font-size: 1em; opacity: 0.7; }
@@ -112,10 +113,11 @@
             <div class="module-icon">🏪</div>
             <div class="module-header-text">
                 <h3>Module 1: The Spaza Shop Goldmine</h3>
-                <p>Where 80% of spaza owners miss the real money</p>
+                <p>Where 80% of spaza owners miss the real money — tap to open</p>
             </div>
             <div class="toggle-hint" id="toggle-1">▼</div>
         </div>
+        <div style="font-size:.75rem;color:rgba(255,215,0,.4);margin-bottom:4px;margin-top:-14px;padding-left:90px;">Tap the card to open ↑</div>
         <div class="module-content" id="module-1">
             <div class="content-section">
                 <h4>The Hidden Truth About Spazas</h4>
@@ -586,7 +588,7 @@
         <p style="margin-top:35px;font-size:1.3em;color:#FFD700;"><strong>Now go implement. One strategy at a time. Small shifts = BIG results.</strong></p>
         <div class="contact-box">
             <h5>Questions? Need Help Implementing?</h5>
-            <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="751814060110071c1b12071001141c19351218141c195b161a18">[email&#160;protected]</a></p>
+            <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de0ecfef9e8ffe4e3eaffe8f9ece4e1cdeae0ece4e1a3eee2e0">[email&#160;protected]</a></p>
             <p>📱 WhatsApp: +27 74 831 5232</p>
             <p style="margin-top:15px;font-size:0.95em;">Course Creator & Director: Phiwokuhle Makapela</p>
         </div>
@@ -625,6 +627,15 @@ function toggleModule(num) {
     content.classList.toggle('active', !isOpen);
     toggle.classList.toggle('open', !isOpen);
 }
+
+// Stop quiz/scenario button clicks from bubbling up and closing the module
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.choice-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    });
+});
 
 function checkAnswer(scenarioNum, choice, isCorrect, button) {
     // Prevent re-answering
