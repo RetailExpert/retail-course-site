@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
-    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700; }
     header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
     nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
     nav a:hover { opacity: 0.7; }
@@ -38,31 +38,52 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+
+    /* ── COMPLETION ── */
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+
+    /* quiz required notice */
+    #quiz-required-notice {
+      display: none;
+      background: rgba(255, 68, 68, 0.15);
+      border: 2px solid #ef4444;
+      border-radius: 12px;
+      padding: 16px 22px;
+      color: #fca5a5;
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    #quiz-required-notice.show { display: block; }
+
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; font-family: 'Inter', sans-serif; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .dashboard-link { text-align: center; margin: 40px 0; }
     .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
     .emoji { font-size: 1.5em; vertical-align: middle; }
     @media (max-width: 768px) {
+      header { flex-direction: column; gap: 12px; padding: 16px 20px; }
       header h1 { font-size: 18px; }
       .hero h2 { font-size: 2em; }
       h3 { font-size: 1.5em; }
+      .container { padding: 24px 14px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1
-     <nav class="lesson-nav">
-  <a href="course.html">Home</a>
-  <a href="course.html#contact">Contact</a>
-  <a href="course.html#progress">View Progress</a>
-</nav>
 
- 
+  <header>
+    <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
+    <nav>
+      <a href="course.html">Home</a>
+      <a href="course.html#contact">Contact</a>
+      <a href="course.html#progress">View Progress</a>
+    </nav>
   </header>
+
   <div class="container">
     <div id="progressBarContainer">
       <div class="progress-outer">
@@ -73,13 +94,11 @@
 
     <div class="hero">
       <h2>🧠 Lesson 1: Retail Mindset & Professional Identity</h2>
-      <p>
-        Master the mental foundation of elite retail performance. Transform from task-executor to professional. Build the mindset that separates top performers from everyone else on the shop floor.
-      </p>
+      <p>Master the mental foundation of elite retail performance. Transform from task-executor to professional. Build the mindset that separates top performers from everyone else on the shop floor.</p>
     </div>
 
     <div class="fun-fact">
-      <span class="emoji">🤩</span> <b>Did you know?</b> 95% of purchase decisions are made subconsciously—and customers mirror YOUR energy and professionalism. <span class="emoji">🧠</span>
+      <span class="emoji">🤩</span> <b>Did you know?</b> 95% of purchase decisions are made subconsciously — and customers mirror YOUR energy and professionalism. <span class="emoji">🧠</span>
     </div>
 
     <div class="section">
@@ -88,8 +107,7 @@
         <h4>The Difference That Changes Everything</h4>
         <p>Most people in retail see themselves as "just staff." Professionals see themselves differently. This single shift in identity determines your income, opportunities, and career trajectory.</p>
       </div>
-      
-      <h4 style="color: #FFD700; margin-top: 30px;">Task-Doer Thinking:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Task-Doer Thinking:</h4>
       <ul>
         <li>"I'm here to get through my shift"</li>
         <li>"That's not my job"</li>
@@ -98,8 +116,7 @@
         <li>Waits to be told what to do</li>
         <li>Does the minimum required</li>
       </ul>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Professional Thinking:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Professional Thinking:</h4>
       <ul>
         <li>"I'm building my reputation and skills"</li>
         <li>"How can I add value here?"</li>
@@ -108,7 +125,6 @@
         <li>Sees problems and solves them proactively</li>
         <li>Goes beyond expectations consistently</li>
       </ul>
-
       <div class="expert-tip">
         <b>Expert Insight:</b> Your mindset creates your reality. Managers promote professionals, not task-doers. Customers remember professionals. Your income follows your identity.
       </div>
@@ -118,50 +134,45 @@
       <h3><span class="section-icon">2</span>Ownership Mindset: Act Like You Own the Place</h3>
       <div class="golden-box">
         <h4>The Owner vs. Employee Mental Game</h4>
-        <p>What if this was YOUR store? YOUR brand? YOUR reputation on the line? That's the ownership mindset—and it's the secret of every top performer.</p>
+        <p>What if this was YOUR store? YOUR brand? YOUR reputation on the line? That's the ownership mindset — and it's the secret of every top performer.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Employee Mindset:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Employee Mindset:</h4>
       <ul>
         <li><strong>Sees problems:</strong> "Someone should fix that"</li>
         <li><strong>Sees mess:</strong> "Not my section"</li>
         <li><strong>Sees opportunity:</strong> "That's above my pay grade"</li>
         <li><strong>When things go wrong:</strong> "Not my fault"</li>
       </ul>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Ownership Mindset:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Ownership Mindset:</h4>
       <ul>
         <li><strong>Sees problems:</strong> "I'll handle it"</li>
-        <li><strong>Sees mess:</strong> "I'll fix it—customer experience matters"</li>
+        <li><strong>Sees mess:</strong> "I'll fix it — customer experience matters"</li>
         <li><strong>Sees opportunity:</strong> "How can I contribute?"</li>
         <li><strong>When things go wrong:</strong> "What can I do to solve this?"</li>
       </ul>
-
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: The Ritz-Carlton $2,000 Rule</h4>
-        <p>Every Ritz-Carlton employee—from housekeeping to concierge—can spend up to $2,000 per guest, per day to solve problems. No manager approval needed. Why? Because they hire people with ownership mindset and trust them to protect the brand. Result: Industry-leading loyalty and the highest customer satisfaction scores in hospitality.</p>
-        <p><strong>Your Takeaway:</strong> Even without a $2,000 budget, you can adopt the MINDSET. Act like the brand's reputation depends on you—because it does.</p>
+        <h4 style="color:#FFD700;">📖 Case Study: The Ritz-Carlton $2,000 Rule</h4>
+        <p>Every Ritz-Carlton employee can spend up to $2,000 per guest, per day to solve problems. No manager approval needed. They hire people with ownership mindset and trust them to protect the brand. Result: industry-leading loyalty and the highest customer satisfaction scores in hospitality.</p>
+        <p><strong>Your Takeaway:</strong> Even without a $2,000 budget, adopt the MINDSET. Act like the brand's reputation depends on you — because it does.</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">3</span>Your Personal Brand on the Shop Floor</h3>
       <div class="golden-box">
-        <h4>You Are a Brand—Whether You Know It or Not</h4>
-        <p>Customers don't remember "the store." They remember YOU. "That helpful person," "the one who knew everything," "the rude guy." Your personal brand determines tips, repeat customers, and management opportunities.</p>
+        <h4>You Are a Brand — Whether You Know It or Not</h4>
+        <p>Customers don't remember "the store." They remember YOU. Your personal brand determines repeat customers and management opportunities.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Building Your Professional Brand:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Building Your Professional Brand:</h4>
       <ul>
-        <li><strong>Consistency:</strong> Show up the same way every day—reliable, professional, positive</li>
+        <li><strong>Consistency:</strong> Show up the same way every day — reliable, professional, positive</li>
         <li><strong>Expertise:</strong> Become the go-to person for product knowledge</li>
-        <li><strong>Energy:</strong> Your vibe is contagious—make it positive</li>
+        <li><strong>Energy:</strong> Your vibe is contagious — make it positive</li>
         <li><strong>Problem-Solving:</strong> Be known as someone who finds solutions, not excuses</li>
         <li><strong>Authenticity:</strong> Be genuinely helpful, not fake-nice</li>
       </ul>
-
       <div class="activity">
-        <h4 style="color: #FFD700;">💪 Exercise: Define Your Professional Brand</h4>
+        <h4 style="color:#FFD700;">💪 Exercise: Define Your Professional Brand</h4>
         <p><strong>Answer these:</strong></p>
         <ol>
           <li>How do I want customers to describe me? (3 words)</li>
@@ -175,10 +186,9 @@
       <h3><span class="section-icon">4</span>Discipline, Consistency & Accountability</h3>
       <div class="golden-box">
         <h4>The Unsexy Truth About Success</h4>
-        <p>Talent is overrated. Discipline wins. The best retail professionals aren't necessarily the most charismatic—they're the most consistent.</p>
+        <p>Talent is overrated. Discipline wins. The best retail professionals aren't the most charismatic — they're the most consistent.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">The Professional's Daily Disciplines:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">The Professional's Daily Disciplines:</h4>
       <ul>
         <li><strong>Show up early:</strong> Never rushed, always prepared</li>
         <li><strong>Uniform immaculate:</strong> First impressions happen in 7 seconds</li>
@@ -187,173 +197,204 @@
         <li><strong>Greet EVERY customer:</strong> No exceptions, no bad moods</li>
         <li><strong>End-of-shift ritual:</strong> Tidy your section, prep for tomorrow</li>
       </ul>
-
       <div class="expert-tip">
-        <b>Pro Tip:</b> Professionals don't need supervision to do their job well. They hold themselves to a higher standard than their manager does. This is how you get promoted—by making management's job easier, not harder.
+        <b>Pro Tip:</b> Professionals don't need supervision to do their job well. They hold themselves to a higher standard than their manager does. This is how you get promoted.
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">5</span>How Mindset Affects Sales, Service & Promotions</h3>
-      
       <div class="golden-box">
         <h4>The Mindset-Performance Connection</h4>
         <p>Your internal state determines your external results. Professional mindset → Professional behavior → Professional outcomes.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Mindset → Sales:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Mindset → Sales:</h4>
       <ul>
         <li><strong>Fixed mindset:</strong> "I'm not good at sales" → Avoids customers → Low numbers</li>
-        <li><strong>Growth mindset:</strong> "I can learn to sell better" → Practices daily → Top performer</li>
+        <li><strong>Growth mindset:</strong> "I can learn to sell better" → Practises daily → Top performer</li>
       </ul>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Mindset → Service:</h4>
-      <ul>
-        <li><strong>Task mindset:</strong> "Process transactions" → Mechanical, cold → Customers feel it</li>
-        <li><strong>Service mindset:</strong> "Create experiences" → Warm, helpful → Customers remember you</li>
-      </ul>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Mindset → Promotions:</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Mindset → Promotions:</h4>
       <ul>
         <li><strong>Victim mindset:</strong> "They never promote people like me" → Stays stuck</li>
         <li><strong>Ownership mindset:</strong> "I'll make myself indispensable" → Gets promoted</li>
       </ul>
-
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: Nordstrom's "Use Your Best Judgment"</h4>
-        <p>Nordstrom's entire employee handbook is one sentence: "Use your best judgment in all situations." They hire for mindset, not just skills. They trust professionals to make decisions. Result: Legendary customer service, low turnover, and employees who act like owners. The mindset creates the culture, and the culture creates the results.</p>
+        <h4 style="color:#FFD700;">📖 Case Study: Nordstrom's "Use Your Best Judgment"</h4>
+        <p>Nordstrom's entire employee handbook is one sentence: "Use your best judgment in all situations." They hire for mindset, not just skills. Result: legendary customer service, low turnover, and employees who act like owners.</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">6</span>The Professional's Code</h3>
-      
       <div class="golden-box">
         <h4>Your Daily Commitment to Excellence</h4>
-        <p>Print this. Read it daily. Live it.</p>
-        <ul style="margin-top: 20px; font-size: 1.1em; line-height: 2;">
-          <li>I show up prepared, present, and professional—every single day</li>
-          <li>I treat this business like it's mine—because my reputation IS mine</li>
+        <ul style="margin-top:20px;font-size:1.1em;line-height:2;">
+          <li>I show up prepared, present, and professional — every single day</li>
+          <li>I treat this business like it's mine — because my reputation IS mine</li>
           <li>I solve problems instead of complaining about them</li>
           <li>I make customers feel valued, seen, and helped</li>
           <li>I'm constantly learning and improving my craft</li>
           <li>I hold myself to a higher standard than anyone else holds me</li>
-          <li>I build others up—customers, teammates, brand</li>
-          <li>I am a professional—and it shows in everything I do</li>
+          <li>I am a professional — and it shows in everything I do</li>
         </ul>
       </div>
     </div>
 
+    <!-- ══ QUIZ ══ -->
     <div class="quiz-section">
       <h3>🎯 Mindset Mastery Quiz</h3>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 4 out of 5 or higher to unlock the completion button.</p>
+
       <form id="quiz1">
         <div class="quiz-question">
-          <b>1. What is the key difference between a professional and a task-doer?</b><br/>
-          <label><input type="radio" name="q1" value="a"/> Professionals get paid more</label><br/>
-          <label><input type="radio" name="q1" value="b"/> Professionals take ownership and go beyond minimum requirements</label><br/>
-          <label><input type="radio" name="q1" value="c"/> Professionals work longer hours</label>
+          <b>1. What is the key difference between a professional and a task-doer?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="a"/> Professionals get paid more</label>
+            <label><input type="radio" name="q1" value="b"/> Professionals take ownership and go beyond minimum requirements</label>
+            <label><input type="radio" name="q1" value="c"/> Professionals work longer hours</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>2. What does "ownership mindset" mean in retail?</b><br/>
-          <label><input type="radio" name="q2" value="a"/> Actually owning the store</label><br/>
-          <label><input type="radio" name="q2" value="b"/> Acting like the brand's reputation depends on you and solving problems proactively</label><br/>
-          <label><input type="radio" name="q2" value="c"/> Bossing other employees around</label>
+          <b>2. What does "ownership mindset" mean in retail?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="a"/> Actually owning the store</label>
+            <label><input type="radio" name="q2" value="b"/> Acting like the brand's reputation depends on you and solving problems proactively</label>
+            <label><input type="radio" name="q2" value="c"/> Bossing other employees around</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>3. True or False: Your personal brand on the shop floor affects customer loyalty and promotion opportunities.</b><br/>
-          <label><input type="radio" name="q3" value="a"/> True</label><br/>
-          <label><input type="radio" name="q3" value="b"/> False</label>
+          <b>3. True or False: Your personal brand on the shop floor affects customer loyalty and promotion opportunities.</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="a"/> True</label>
+            <label><input type="radio" name="q3" value="b"/> False</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>4. What separates top retail performers from average ones?</b><br/>
-          <label><input type="radio" name="q4" value="a"/> Natural charisma</label><br/>
-          <label><input type="radio" name="q4" value="b"/> Consistent discipline and daily professional habits</label><br/>
-          <label><input type="radio" name="q4" value="c"/> Luck</label>
+          <b>4. What separates top retail performers from average ones?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="a"/> Natural charisma</label>
+            <label><input type="radio" name="q4" value="b"/> Consistent discipline and daily professional habits</label>
+            <label><input type="radio" name="q4" value="c"/> Luck</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>5. According to the Ritz-Carlton case study, what enables employees to spend up to $2,000 per guest?</b><br/>
-          <label><input type="radio" name="q5" value="a"/> They hire wealthy employees</label><br/>
-          <label><input type="radio" name="q5" value="b"/> They trust people with ownership mindset to protect the brand</label><br/>
-          <label><input type="radio" name="q5" value="c"/> It's a marketing gimmick</label>
+          <b>5. According to the Ritz-Carlton case study, what enables employees to spend up to $2,000 per guest?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" value="a"/> They hire wealthy employees</label>
+            <label><input type="radio" name="q5" value="b"/> They trust people with ownership mindset to protect the brand</label>
+            <label><input type="radio" name="q5" value="c"/> It's a marketing gimmick</label>
+          </div>
         </div>
-        
-        <button type="button" class="btn" onclick="gradeQuiz1()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
+        <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz1-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
-    </div>
-    
-    <script>
-      function gradeQuiz1() {
-        const correct = { q1: 'b', q2: 'b', q3: 'a', q4: 'b', q5: 'b' };
-        let score = 0, total = 5;
-        for(let i=1; i<=total; i++) {
-          let ans = document.querySelector('input[name="q'+i+'"]:checked');
-          if(ans && ans.value === correct['q'+i]) score++;
-        }
-        let msg = `🏆 You scored ${score} out of ${total}! `;
-        if(score === total) msg += "PERFECT! You've mastered the professional mindset! 🔥";
-        else if(score >= 4) msg += "Excellent! You understand what separates professionals from task-doers!";
-        else if(score >= 3) msg += "Good start! Review the key concepts for mastery.";
-        else msg += "Keep learning! This foundational mindset is critical—review and try again.";
-        
-        const resultDiv = document.getElementById('quiz1-result');
-        resultDiv.textContent = msg;
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    </script>
 
+      <div id="quiz1-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
+    </div>
+
+    <!-- ══ COMPLETION ── -->
     <div id="lesson-completion">
+      <div id="quiz-required-notice">
+        ⚠️ Complete the quiz and score 4/5 or higher to mark this lesson complete.
+      </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson2.html" class="btn" style="display:none;">Continue to Lesson 2 →</a>
       <div id="completionMsg">🎉 Lesson 1 Complete! You've built the foundational mindset of a retail professional!</div>
     </div>
-    
+
     <div class="dashboard-link">
-      <a href="progress.html">📊 View Your Progress →</a>
+      <a href="course.html">← Back to Course Home</a>
     </div>
   </div>
-  
+
   <script>
-    const lessonNum = 1;
-    const totalLessons = 8;
-    
+    var lessonNum    = 1;
+    var totalLessons = 8;
+    var quizPassed   = false;
+
+    // ── Grade Quiz ──
+    function gradeQuiz() {
+      var correct = { q1:'b', q2:'b', q3:'a', q4:'b', q5:'b' };
+      var score = 0;
+      for (var i = 1; i <= 5; i++) {
+        var ans = document.querySelector('input[name="q' + i + '"]:checked');
+        if (ans && ans.value === correct['q' + i]) score++;
+      }
+
+      var msg = '🏆 You scored ' + score + ' out of 5! ';
+      if (score === 5)      msg += 'PERFECT! You have mastered the professional mindset! 🔥';
+      else if (score >= 4)  msg += 'Excellent! You understand what separates professionals from task-doers.';
+      else if (score >= 3)  msg += 'Good effort — review the key sections and try again to unlock completion.';
+      else                  msg += 'Keep studying! Review the content above and retake the quiz.';
+
+      var resultDiv = document.getElementById('quiz1-result');
+      resultDiv.textContent = msg;
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+
+      if (score >= 4) {
+        quizPassed = true;
+        document.getElementById('quiz-required-notice').classList.remove('show');
+        // Unlock mark complete button if not already done
+        var btn = document.getElementById('markComplete');
+        if (btn && !btn.disabled) {
+          btn.style.opacity = '1';
+          btn.style.background = 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)';
+        }
+      } else {
+        quizPassed = false;
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/5. Score 4 or higher to mark complete. Review the lesson and try again!';
+      }
+    }
+
+    // ── Mark Complete ──
     function markLessonComplete() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      progress[`lesson${lessonNum}`] = true;
+      // If lesson already marked done, allow through
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (!quizPassed && !progress['lesson' + lessonNum]) {
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 4/5 or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        return;
+      }
+
+      progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
-      
+
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
-      document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+      document.getElementById('markComplete').textContent = '✅ Lesson Completed';
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
+      document.getElementById('quiz-required-notice').classList.remove('show');
       updateProgressBar();
     }
-    
+
+    // ── Progress Bar ──
     function updateProgressBar() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      let completed = 0;
-      for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
-      let percent = Math.round((completed/totalLessons)*100);
+      var progress  = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      var completed = 0;
+      for (var i = 1; i <= totalLessons; i++) { if (progress['lesson' + i]) completed++; }
+      var percent = Math.round((completed / totalLessons) * 100);
       document.getElementById('progressBarFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent =
-        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+      document.getElementById('progressText').textContent = 'Lesson ' + lessonNum + ' of ' + totalLessons + ' • ' + percent + '% Complete';
     }
-    
+
+    // ── On Load ──
     window.onload = function() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      if(progress[`lesson${lessonNum}`]) {
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (progress['lesson' + lessonNum]) {
+        quizPassed = true;
         document.getElementById('nextLessonBtn').style.display = 'inline-block';
-        document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+        document.getElementById('markComplete').textContent = '✅ Lesson Completed';
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
+      } else {
+        // Show the quiz notice so student knows what's required
+        document.getElementById('quiz-required-notice').classList.add('show');
       }
       updateProgressBar();
     };
   </script>
+
 </body>
 </html>
