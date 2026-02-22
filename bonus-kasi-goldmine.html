@@ -1,718 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BONUS: The Kasi Business Goldmine | The Ultimate Black Book</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #000; color: #fff; line-height: 1.6; }
-        .header { background: #000; border-bottom: 3px solid #FFD700; padding: 25px 20px; position: sticky; top: 0; z-index: 1000; }
-        .header-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .course-title { color: #FFD700; font-size: 1.8em; font-weight: 900; letter-spacing: 1px; }
-        .bonus-badge { background: #FFD700; color: #000; padding: 8px 20px; border-radius: 25px; font-weight: 800; font-size: 0.9em; letter-spacing: 1px; }
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-        .lesson-header { background: #000; border: 3px solid #FFD700; border-radius: 12px; padding: 40px; margin-bottom: 40px; text-align: center; }
-        .lesson-number { color: #FFD700; font-size: 1em; font-weight: 700; letter-spacing: 2px; margin-bottom: 15px; }
-        .lesson-title { color: #FFD700; font-size: 2.5em; font-weight: 900; margin-bottom: 20px; line-height: 1.2; }
-        .lesson-description { color: #fff; font-size: 1.2em; line-height: 1.7; margin-bottom: 30px; }
-        .progress-container { background: #000; border: 2px solid #FFD700; border-radius: 50px; height: 12px; overflow: hidden; margin-top: 30px; }
-        .progress-bar { background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%); height: 100%; width: 0%; transition: width 0.5s ease; }
-        .progress-text { color: #FFD700; text-align: center; margin-top: 10px; font-size: 0.95em; font-weight: 600; }
-        .module-card { background: #000; border: 2px solid #FFD700; border-radius: 12px; padding: 30px; margin-bottom: 30px; transition: all 0.3s ease; }
-        .module-card:hover { box-shadow: 0 0 30px rgba(255,215,0,0.4); transform: translateY(-3px); }
-        .module-card-header { display: flex; align-items: center; gap: 20px; margin-bottom: 20px; }
-        .module-toggle-area { display: flex; align-items: center; gap: 20px; cursor: pointer; flex: 1; }
-        .module-icon { width: 70px; height: 70px; background: #FFD700; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2em; flex-shrink: 0; }
-        .module-header-text h3 { color: #FFD700; font-size: 1.8em; margin-bottom: 5px; font-weight: 800; }
-        .module-header-text p { color: #FFD700; font-size: 1em; opacity: 0.7; }
-        .toggle-hint { margin-left: auto; color: #FFD700; font-size: 1.5em; transition: transform 0.3s; }
-        .module-content { display: none; padding-top: 20px; border-top: 1px solid #FFD700; margin-top: 20px; }
-        .module-content.active { display: block; }
-        .toggle-hint.open { transform: rotate(180deg); }
-        .content-section { background: #000; border: 1px solid #FFD700; border-radius: 8px; padding: 25px; margin-bottom: 25px; }
-        .content-section h4 { color: #FFD700; font-size: 1.5em; margin-bottom: 15px; font-weight: 700; }
-        .content-section p { color: #fff; margin-bottom: 15px; line-height: 1.8; font-size: 1.05em; }
-        .goldmine-box { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; border-radius: 12px; padding: 30px; margin: 30px 0; border: 3px solid #FFD700; }
-        .goldmine-box h4 { font-size: 1.8em; margin-bottom: 15px; font-weight: 900; }
-        .goldmine-box p { font-size: 1.15em; line-height: 1.7; font-weight: 600; }
-        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
-        .stat-card { background: #000; border: 2px solid #FFD700; border-radius: 8px; padding: 25px; text-align: center; }
-        .stat-number { color: #FFD700; font-size: 3em; font-weight: 900; margin-bottom: 10px; }
-        .stat-label { color: #fff; font-size: 1em; line-height: 1.4; }
-        .scenario-box { background: #000; border: 3px solid #FFD700; border-radius: 12px; padding: 30px; margin: 30px 0; }
-        .scenario-box h4 { color: #FFD700; font-size: 1.6em; margin-bottom: 20px; font-weight: 800; }
-        .scenario-text { color: #fff; font-size: 1.15em; line-height: 1.8; margin-bottom: 25px; }
-        .choices { display: flex; flex-direction: column; gap: 15px; }
-        .choice-btn { background: #000; border: 2px solid #FFD700; color: #fff; padding: 18px 25px; border-radius: 8px; cursor: pointer; text-align: left; transition: all 0.3s ease; font-size: 1.05em; font-weight: 500; }
-        .choice-btn:hover:not(.disabled) { background: #FFD700; color: #000; box-shadow: 0 0 20px rgba(255,215,0,0.6); transform: translateX(5px); }
-        .choice-btn.correct { background: #4CAF50; border-color: #4CAF50; color: #fff; }
-        .choice-btn.incorrect { background: #FF4444; border-color: #FF4444; color: #fff; }
-        .choice-btn.disabled { pointer-events: none; opacity: 0.6; }
-        .choice-btn.correct.disabled { opacity: 1; }
-        .choice-btn.incorrect.disabled { opacity: 1; }
-        .feedback { display: none; margin-top: 25px; padding: 25px; border-radius: 8px; font-size: 1.1em; line-height: 1.8; }
-        .feedback.show { display: block; }
-        .feedback.correct { background: rgba(76,175,80,0.2); border: 2px solid #4CAF50; color: #fff; }
-        .feedback.incorrect { background: rgba(255,68,68,0.2); border: 2px solid #FF4444; color: #fff; }
-        .quiz-section { background: #000; border: 3px solid #FFD700; border-radius: 12px; padding: 35px; margin: 35px 0; }
-        .quiz-section h4 { color: #FFD700; font-size: 1.8em; text-align: center; margin-bottom: 10px; font-weight: 800; }
-        .quiz-progress-text { color: rgba(255,215,0,0.6); text-align: center; font-size: 0.9em; margin-bottom: 25px; }
-        .quiz-question { background: #000; border: 2px solid #FFD700; border-radius: 8px; padding: 25px; margin-bottom: 25px; }
-        .quiz-question p { color: #FFD700; font-size: 1.2em; margin-bottom: 20px; font-weight: 700; }
-        .quiz-complete-banner { display: none; background: linear-gradient(135deg, #FFD700, #FFA500); color: #000; border-radius: 10px; padding: 20px 25px; text-align: center; margin-top: 20px; font-weight: 800; font-size: 1.1em; }
-        .quiz-complete-banner.show { display: block; }
-        .action-section { background: #000; border: 2px solid #FFD700; border-radius: 8px; padding: 30px; margin: 30px 0; }
-        .action-section h4 { color: #FFD700; font-size: 1.6em; margin-bottom: 25px; font-weight: 800; }
-        .action-list { list-style: none; padding: 0; }
-        .action-item { background: #000; border: 1px solid #FFD700; border-radius: 6px; padding: 18px; margin-bottom: 15px; color: #fff; font-size: 1.05em; line-height: 1.7; }
-        .action-item strong { color: #FFD700; font-weight: 800; }
-        .tip-box { background: rgba(255,215,0,0.1); border: 2px solid #FFD700; border-radius: 8px; padding: 25px; margin: 25px 0; }
-        .tip-box h5 { color: #FFD700; font-size: 1.3em; margin-bottom: 12px; font-weight: 800; }
-        .tip-box p { color: #fff; line-height: 1.7; font-size: 1.05em; }
-        .completion-section { background: #000; border: 3px solid #FFD700; border-radius: 12px; padding: 50px; margin-top: 50px; text-align: center; }
-        .completion-section h2 { color: #FFD700; font-size: 2.2em; margin-bottom: 25px; font-weight: 900; }
-        .completion-section p { color: #fff; font-size: 1.15em; line-height: 1.8; margin-bottom: 20px; }
-        .completion-section ul { text-align: left; max-width: 600px; margin: 30px auto; line-height: 2.2; }
-        .completion-section li { color: #fff; font-size: 1.1em; }
-        .contact-box { background: #FFD700; color: #000; border-radius: 8px; padding: 25px; margin-top: 30px; text-align: center; }
-        .contact-box h5 { font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
-        .contact-box p { font-size: 1.1em; font-weight: 600; }
-        @media (max-width: 768px) {
-            .header-content { flex-direction: column; gap: 15px; }
-            .lesson-title { font-size: 2em; }
-            .module-icon { width: 60px; height: 60px; font-size: 1.6em; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .stat-number { font-size: 2.5em; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Kasi Business Goldmine | The Ultimate Black Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #FFD700;
+  --gold2: #FFA500;
+  --black: #000;
+  --dark: #0d0d0d;
+  --card: #111;
+  --border: #222;
+  --text: #e0e0e0;
+  --dim: #777;
+  --green: #22c55e;
+  --red: #ef4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--black);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+.nav {
+  background: var(--black);
+  border-bottom: 3px solid var(--gold);
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: .1em;
+}
+.nav-badge {
+  background: var(--gold);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: .1em;
+  padding: 5px 14px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--dark);
+  border-bottom: 1px solid #1a1a1a;
+  padding: 60px 24px 50px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% -20%, rgba(255,215,0,.12) 0%, transparent 60%);
+}
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  position: relative;
+}
+.hero h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 10vw, 6rem);
+  color: var(--gold);
+  letter-spacing: .05em;
+  line-height: 1;
+  margin-bottom: 20px;
+  position: relative;
+}
+.hero h1 span { color: #fff; }
+.hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.5);
+  max-width: 580px;
+  margin: 0 auto 32px;
+  position: relative;
+}
+
+/* ── PROGRESS BAR ── */
+.progress-section {
+  background: var(--dark);
+  border: 1px solid #1a1a1a;
+  max-width: 680px;
+  margin: 0 auto 8px;
+  border-radius: 8px;
+  padding: 16px 20px;
+  position: relative;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: .8rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-bottom: 10px;
+}
+.progress-label span:last-child { color: var(--gold); }
+.prog-track {
+  height: 8px;
+  background: #1a1a1a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.prog-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--gold2));
+  border-radius: 4px;
+  transition: width .6s ease;
+}
+
+/* ── LAYOUT ── */
+.wrap { max-width: 820px; margin: 0 auto; padding: 40px 20px 80px; }
+
+/* ── MODULE HEADER ── */
+.module {
+  margin-bottom: 48px;
+  border: 1px solid #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.module-head {
+  background: var(--dark);
+  padding: 28px 28px 24px;
+  border-bottom: 1px solid #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.mod-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--gold);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+.mod-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+  letter-spacing: .04em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.mod-sub { font-size: .85rem; color: var(--dim); font-weight: 500; }
+.module-body { padding: 28px; }
+
+/* ── CONTENT BLOCKS ── */
+.block { margin-bottom: 28px; }
+.block-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.block p { color: rgba(255,255,255,.7); font-size: .97rem; margin-bottom: 10px; }
+.block p strong { color: var(--gold); font-weight: 700; }
+
+.goldmine {
+  background: linear-gradient(135deg, #1a1400, #0d0a00);
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+.goldmine-head {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+  letter-spacing: .06em;
+  margin-bottom: 10px;
+}
+.goldmine p { color: rgba(255,255,255,.75); font-size: .97rem; margin-bottom: 8px; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 28px;
+}
+@media(max-width:520px){ .stats { grid-template-columns: 1fr; } }
+.stat {
+  background: #0d0d0d;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  padding: 18px;
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  color: var(--gold);
+  letter-spacing: .04em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-lbl { font-size: .78rem; color: var(--dim); font-weight: 500; line-height: 1.4; }
+
+/* ── SCENARIO ── */
+.scenario {
+  background: #0a0a0a;
+  border: 2px solid #222;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+.scenario-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+}
+.scenario-text { font-size: .97rem; color: rgba(255,255,255,.7); margin-bottom: 20px; line-height: 1.7; }
+.scenario-text strong { color: #fff; }
+
+/* ── QUIZ SECTION ── */
+.quiz {
+  background: #0a0a0a;
+  border: 2px solid var(--gold);
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 28px;
+}
+.quiz-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+.quiz-counter {
+  font-size: .8rem;
+  color: var(--dim);
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.quiz-counter .done { color: var(--gold); }
+.q-block {
+  background: #111;
+  border: 1px solid #1e1e1e;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+.q-text {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* ── ANSWER BUTTONS ── */
+.options { display: flex; flex-direction: column; gap: 8px; }
+.opt {
+  background: #0d0d0d;
+  border: 1.5px solid #2a2a2a;
+  color: rgba(255,255,255,.75);
+  padding: 13px 16px;
+  border-radius: 7px;
+  cursor: pointer;
+  text-align: left;
+  font-family: 'Barlow', sans-serif;
+  font-size: .93rem;
+  font-weight: 500;
+  transition: border-color .15s, background .15s, color .15s;
+  width: 100%;
+}
+.opt:hover { border-color: var(--gold); color: #fff; background: #151200; }
+.opt.correct {
+  border-color: var(--green) !important;
+  background: rgba(34,197,94,.12) !important;
+  color: var(--green) !important;
+  cursor: default;
+}
+.opt.wrong {
+  border-color: var(--red) !important;
+  background: rgba(239,68,68,.1) !important;
+  color: var(--red) !important;
+  cursor: default;
+}
+.opt.used { cursor: default; opacity: .45; }
+.opt.used:hover { border-color: #2a2a2a; background: #0d0d0d; color: rgba(255,255,255,.75); }
+
+/* ── FEEDBACK ── */
+.q-feedback {
+  display: none;
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 7px;
+  font-size: .9rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.q-feedback.show { display: block; }
+.q-feedback.correct { background: rgba(34,197,94,.1); border: 1px solid var(--green); color: rgba(255,255,255,.8); }
+.q-feedback.wrong { background: rgba(239,68,68,.08); border: 1px solid var(--red); color: rgba(255,255,255,.8); }
+
+/* ── MODULE COMPLETE BANNER ── */
+.mod-complete {
+  display: none;
+  background: linear-gradient(135deg, #1a1400, #0f0c00);
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  padding: 18px 22px;
+  text-align: center;
+  margin-top: 16px;
+}
+.mod-complete.show { display: block; }
+.mod-complete-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: .06em;
+}
+.mod-complete p { font-size: .85rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+
+/* ── TIP BOX ── */
+.tip {
+  background: rgba(255,215,0,.05);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 7px 7px 0;
+  padding: 16px 18px;
+  margin-bottom: 28px;
+}
+.tip-head { font-weight: 800; color: var(--gold); font-size: .9rem; margin-bottom: 6px; }
+.tip p { font-size: .9rem; color: rgba(255,255,255,.65); margin-bottom: 6px; }
+
+/* ── ACTION LIST ── */
+.actions { margin-bottom: 28px; }
+.actions-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.action-row {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #141414;
+}
+.action-row:last-child { border-bottom: none; }
+.action-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: .7rem;
+  letter-spacing: .1em;
+  background: #1a1400;
+  border: 1px solid rgba(255,215,0,.3);
+  color: var(--gold);
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.action-text { font-size: .92rem; color: rgba(255,255,255,.7); }
+
+/* ── COMPLETION ── */
+.completion {
+  background: var(--dark);
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  padding: 50px 32px;
+  text-align: center;
+  margin-top: 20px;
+}
+.completion h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: var(--gold);
+  letter-spacing: .06em;
+  margin-bottom: 16px;
+}
+.completion p { color: rgba(255,255,255,.6); font-size: 1rem; margin-bottom: 12px; max-width: 560px; margin-left: auto; margin-right: auto; }
+.completion-list { text-align: left; max-width: 480px; margin: 24px auto; }
+.completion-list li { color: rgba(255,255,255,.7); font-size: .97rem; padding: 6px 0; list-style: none; }
+.completion-list li::before { content: '✓ '; color: var(--gold); font-weight: 700; }
+.contact-card {
+  background: var(--gold);
+  border-radius: 8px;
+  padding: 22px;
+  margin-top: 28px;
+}
+.contact-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; color: #000; letter-spacing: .06em; margin-bottom: 10px; }
+.contact-card p { color: #000; font-weight: 600; font-size: .97rem; margin-bottom: 4px; }
+
+/* ── DIVIDER ── */
+.divider { height: 1px; background: #1a1a1a; margin: 28px 0; }
+</style>
 </head>
 <body>
 
-<div class="header">
-    <div class="header-content">
-        <div class="course-title">THE ULTIMATE BLACK BOOK</div>
-        <div class="bonus-badge">BONUS CHAPTER</div>
-    </div>
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-logo">The Ultimate Black Book</div>
+  <div class="nav-badge">Bonus Chapter</div>
 </div>
 
-<div class="container">
-    <div class="lesson-header">
-        <div class="lesson-number">BONUS MODULE</div>
-        <h1 class="lesson-title">THE KASI BUSINESS GOLDMINE</h1>
-        <p class="lesson-description">Discover where the REAL money is hiding in spaza shops, salons, taverns, kota shops, and car washes. This is the psychology, strategies, and goldmines that 90% of kasi business owners never find.</p>
-        <div class="progress-container">
-            <div class="progress-bar" id="mainProgress"></div>
-        </div>
-        <div class="progress-text" id="progressText">0% Complete — open a module to begin</div>
-    </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Bonus Module</div>
+  <h1>The Kasi<br><span>Business</span><br>Goldmine</h1>
+  <p>The psychology, strategies, and hidden money that 90% of kasi business owners never find.</p>
 
-    <!-- ══ MODULE 1: SPAZA ══ -->
-    <div class="module-card">
-        <div class="module-card-header" onclick="toggleModule(1)">
-            <div class="module-icon">🏪</div>
-            <div class="module-header-text">
-                <h3>Module 1: The Spaza Shop Goldmine</h3>
-                <p>Where 80% of spaza owners miss the real money — tap to open</p>
-            </div>
-            <div class="toggle-hint" id="toggle-1">▼</div>
-        </div>
-        <div style="font-size:.75rem;color:rgba(255,215,0,.4);margin-bottom:4px;margin-top:-14px;padding-left:90px;">Tap the card to open ↑</div>
-        <div class="module-content" id="module-1">
-            <div class="content-section">
-                <h4>The Hidden Truth About Spazas</h4>
-                <p>Most spaza owners think they're in the "selling products" business. They're wrong.</p>
-                <p>You're in the <strong style="color:#FFD700;">CONVENIENCE business</strong>. People don't come to you because you're cheaper than Pick n Pay. They come because you're CLOSER, FASTER, and EASIER.</p>
-                <p>But here's where most owners lose thousands...</p>
-            </div>
-            <div class="goldmine-box">
-                <h4>💰 THE SPAZA GOLDMINE:</h4>
-                <p>The real money isn't in WHAT you sell. It's in WHEN you're open and HOW FAST you serve.</p>
-                <p>A spaza that's open until 9pm and serves customers in under 60 seconds makes 3X more than one that closes at 7pm with slow service. That's R30,000+ extra per month.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">60%</div><div class="stat-label">of daily profit happens after 5pm</div></div>
-                <div class="stat-card"><div class="stat-number">R15K</div><div class="stat-label">lost per year from "no change"</div></div>
-                <div class="stat-card"><div class="stat-number">3X</div><div class="stat-label">more sales with proper lighting</div></div>
-            </div>
-            <div class="content-section">
-                <h4>The 3 Spaza Money Multipliers</h4>
-                <p><strong style="color:#FFD700;">1. The Speed Factor:</strong> Every 30 seconds you save per customer = 10 more customers per day = R300+ extra daily. That's R9,000/month from speed alone.</p>
-                <p><strong style="color:#FFD700;">2. The Visibility Game:</strong> Products at eye level sell 70% more than products on the floor. Move your top 5 sellers to eye level TODAY.</p>
-                <p><strong style="color:#FFD700;">3. The Regular Customer System:</strong> 20% of your customers give you 80% of profit. Know their names = they become YOUR spaza, not just "a spaza".</p>
-            </div>
-            <div class="scenario-box">
-                <h4>🎯 REAL SCENARIO: The Evening Rush</h4>
-                <div class="scenario-text">It's 7:30pm. You've been open since 6am and you're tired. A customer walks in for a R12 Coke, but you don't have R8 change for their R20.<br><br><strong>What do you do?</strong></div>
-                <div class="choices" id="scenario-choices-1">
-                    <button class="choice-btn" onclick="checkAnswer(1,'A',false,this)">A) "Sorry, no change. Come back tomorrow."</button>
-                    <button class="choice-btn" onclick="checkAnswer(1,'B',false,this)">B) "Let me check next door for change real quick."</button>
-                    <button class="choice-btn" onclick="checkAnswer(1,'C',true,this)">C) "Take the Coke now. Next time you owe me R12 instead of R20."</button>
-                    <button class="choice-btn" onclick="checkAnswer(1,'D',false,this)">D) "Do you have anything smaller?"</button>
-                </div>
-                <div class="feedback" id="feedback-1"></div>
-            </div>
-            <div class="content-section">
-                <h4>The Spaza Layout That Sells</h4>
-                <ul class="action-list">
-                    <li class="action-item"><strong>At the entrance:</strong> High-margin impulse items (chips, sweets, airtime)</li>
-                    <li class="action-item"><strong>Eye level:</strong> Your best-sellers and highest-margin products</li>
-                    <li class="action-item"><strong>Near the fridge:</strong> Salty snacks (60% of cold drink buyers also buy snacks)</li>
-                    <li class="action-item"><strong>At the counter:</strong> Last-minute add-ons (sweets, lighters, matches)</li>
-                    <li class="action-item"><strong>Floor level:</strong> Bulk items people specifically come for (rice, flour, sugar)</li>
-                </ul>
-            </div>
-            <div class="tip-box">
-                <h5>💡 PRO TIP: The Airtime Strategy</h5>
-                <p>Airtime has the lowest profit margin (R2-R3 per R10). But it's your BAIT.</p>
-                <p>When someone buys airtime, ALWAYS ask: "Chips? Cold drink? Anything else?" 40% will say yes. That R2 airtime sale just became R15 profit.</p>
-            </div>
-            <div class="quiz-section" id="quiz-section-1">
-                <h4>✅ MODULE 1 QUIZ</h4>
-                <p class="quiz-progress-text" id="quiz-progress-1">Answer all 3 questions to complete this module</p>
-                <div class="quiz-question">
-                    <p>Question 1: What percentage of daily spaza profit typically happens after 5pm?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,1,'A',false,this)">A) 30%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,1,'B',false,this)">B) 45%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,1,'C',true,this)">C) 60%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,1,'D',false,this)">D) 75%</button>
-                    </div>
-                    <div class="feedback" id="quiz-1-1"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 2: Eye-level products sell how much more than floor-level products?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,2,'A',false,this)">A) 30% more</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,2,'B',false,this)">B) 50% more</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,2,'C',true,this)">C) 70% more</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,2,'D',false,this)">D) 90% more</button>
-                    </div>
-                    <div class="feedback" id="quiz-1-2"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 3: What's the main reason customers choose a spaza over Pick n Pay?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,3,'A',false,this)">A) Lower prices</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,3,'B',false,this)">B) Better quality</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,3,'C',true,this)">C) Convenience/proximity</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(1,3,'D',false,this)">D) Friendly service</button>
-                    </div>
-                    <div class="feedback" id="quiz-1-3"></div>
-                </div>
-                <div class="quiz-complete-banner" id="quiz-complete-1">🎉 Module 1 Complete! Well done.</div>
-            </div>
-            <div class="action-section">
-                <h4>⚡ Action Steps: Implement This Week</h4>
-                <ul class="action-list">
-                    <li class="action-item"><strong>TODAY:</strong> Get R200 in small change before you open tomorrow.</li>
-                    <li class="action-item"><strong>TOMORROW:</strong> Move your top 5 best-sellers to eye level.</li>
-                    <li class="action-item"><strong>THIS WEEK:</strong> Install a bright light outside (R350 investment = R2,000+ monthly return).</li>
-                    <li class="action-item"><strong>THIS MONTH:</strong> Start a "Regular Customer Book" — write down 20 names you should know.</li>
-                </ul>
-            </div>
-        </div>
+  <div class="progress-section">
+    <div class="progress-label">
+      <span>Overall Progress</span>
+      <span id="prog-label">0 of 20 answered</span>
     </div>
-
-    <!-- ══ MODULE 2: SALON ══ -->
-    <div class="module-card">
-        <div class="module-card-header" onclick="toggleModule(2)">
-            <div class="module-icon">💇</div>
-            <div class="module-header-text">
-                <h3>Module 2: The Salon Goldmine</h3>
-                <p>Why the best salons make money when clients are waiting</p>
-            </div>
-            <div class="toggle-hint" id="toggle-2">▼</div>
-        </div>
-        <div class="module-content" id="module-2">
-            <div class="content-section">
-                <h4>The Salon Paradox</h4>
-                <p>Most salon owners think their product is the hairdo. Wrong.</p>
-                <p>Your product is <strong style="color:#FFD700;">TRANSFORMATION + SOCIAL EXPERIENCE</strong>. Women don't just come for hair. They come to feel beautiful, catch up on gossip, and be seen. Understanding this changes everything.</p>
-            </div>
-            <div class="goldmine-box">
-                <h4>💰 THE SALON GOLDMINE:</h4>
-                <p>The real money is in the WAITING TIME and RETAIL PRODUCTS.</p>
-                <p>A client waits 30-90 minutes before/during service. That's your opportunity to make an extra R200-R500 per client WITHOUT doing more hair. Most salons ignore this. That's R8,000+ lost every month.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">R8K</div><div class="stat-label">extra per month from product sales</div></div>
-                <div class="stat-card"><div class="stat-number">40%</div><div class="stat-label">of revenue from repeat clients</div></div>
-                <div class="stat-card"><div class="stat-number">65%</div><div class="stat-label">less no-shows with deposit system</div></div>
-            </div>
-            <div class="content-section">
-                <h4>The 3 Salon Money Multipliers</h4>
-                <p><strong style="color:#FFD700;">1. The Waiting Room Shop:</strong> Clients sit for 30+ minutes. Display products at eye level while they wait. Easy R200-R300 per client.</p>
-                <p><strong style="color:#FFD700;">2. The Deposit Psychology:</strong> R50-R100 deposit cuts no-shows by 65%. Your time = money. Stop working for free.</p>
-                <p><strong style="color:#FFD700;">3. The "Next Appointment" Rule:</strong> Book the next appointment BEFORE they leave. 80% will keep it. "See you in 6 weeks" = guaranteed income stream.</p>
-            </div>
-            <div class="scenario-box">
-                <h4>🎯 REAL SCENARIO: The No-Show Problem</h4>
-                <div class="scenario-text">A regular client books for Saturday 10am. She's a no-show for the 3rd time. No call, no message. You turned away 2 other paying clients for her.<br><br><strong>What's your move?</strong></div>
-                <div class="choices" id="scenario-choices-2">
-                    <button class="choice-btn" onclick="checkAnswer(2,'A',false,this)">A) Just accept it — she's a good client when she comes</button>
-                    <button class="choice-btn" onclick="checkAnswer(2,'B',false,this)">B) Confront her angrily — she wasted your time</button>
-                    <button class="choice-btn" onclick="checkAnswer(2,'C',true,this)">C) Implement a R50 deposit policy for all bookings going forward</button>
-                    <button class="choice-btn" onclick="checkAnswer(2,'D',false,this)">D) Block her number — you don't need that stress</button>
-                </div>
-                <div class="feedback" id="feedback-2"></div>
-            </div>
-            <div class="tip-box">
-                <h5>💡 PRO TIP: The Mirror Psychology</h5>
-                <p>Position your retail display so clients see it in the mirror while getting their hair done. They're already in "beauty investment" mode. Seeing products in the mirror = 40% higher chance of buying. This one layout change can add R5,000+ monthly.</p>
-            </div>
-            <div class="quiz-section" id="quiz-section-2">
-                <h4>✅ MODULE 2 QUIZ</h4>
-                <p class="quiz-progress-text" id="quiz-progress-2">Answer all 3 questions to complete this module</p>
-                <div class="quiz-question">
-                    <p>Question 1: How much can a deposit system reduce no-shows?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,1,'A',false,this)">A) 25%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,1,'B',false,this)">B) 45%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,1,'C',true,this)">C) 65%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,1,'D',false,this)">D) 85%</button>
-                    </div>
-                    <div class="feedback" id="quiz-2-1"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 2: What percentage of salon revenue typically comes from repeat clients?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,2,'A',false,this)">A) 20%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,2,'B',false,this)">B) 30%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,2,'C',true,this)">C) 40%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,2,'D',false,this)">D) 50%</button>
-                    </div>
-                    <div class="feedback" id="quiz-2-2"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 3: What's the main psychological reason clients buy products at salons?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,3,'A',false,this)">A) Cheaper than stores</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,3,'B',true,this)">B) Trust + already in beauty investment mode</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,3,'C',false,this)">C) Better selection</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(2,3,'D',false,this)">D) Convenience only</button>
-                    </div>
-                    <div class="feedback" id="quiz-2-3"></div>
-                </div>
-                <div class="quiz-complete-banner" id="quiz-complete-2">🎉 Module 2 Complete! Well done.</div>
-            </div>
-            <div class="action-section">
-                <h4>⚡ Action Steps: Implement This Week</h4>
-                <ul class="action-list">
-                    <li class="action-item"><strong>TODAY:</strong> Announce your new R50 deposit policy on WhatsApp status.</li>
-                    <li class="action-item"><strong>TOMORROW:</strong> Set up a small product display in your waiting area.</li>
-                    <li class="action-item"><strong>THIS WEEK:</strong> Book next appointments before clients leave the chair.</li>
-                    <li class="action-item"><strong>THIS MONTH:</strong> Track product sales — aim for R200+ per client in retail.</li>
-                </ul>
-            </div>
-        </div>
+    <div class="prog-track">
+      <div class="prog-fill" id="prog-fill"></div>
     </div>
-
-    <!-- ══ MODULE 3: TAVERN ══ -->
-    <div class="module-card">
-        <div class="module-card-header" onclick="toggleModule(3)">
-            <div class="module-icon">🍺</div>
-            <div class="module-header-text">
-                <h3>Module 3: The Tavern Goldmine</h3>
-                <p>The psychology of rounds and why atmosphere = profit</p>
-            </div>
-            <div class="toggle-hint" id="toggle-3">▼</div>
-        </div>
-        <div class="module-content" id="module-3">
-            <div class="content-section">
-                <h4>The Tavern Truth</h4>
-                <p>Most tavern owners think they sell alcohol. Wrong.</p>
-                <p>You sell <strong style="color:#FFD700;">SOCIAL STATUS + BELONGING</strong>. People don't come for the beer — they come to be SEEN drinking the beer, to belong to a community. Miss this and you're just another shebeen.</p>
-            </div>
-            <div class="goldmine-box">
-                <h4>💰 THE TAVERN GOLDMINE:</h4>
-                <p>The real money is in THE ROUND system and creating REGULARS.</p>
-                <p>Regulars spend 5X more than tourists over a year. ONE regular = R15,000/year. Get 20 regulars = R300,000/year guaranteed.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">70%</div><div class="stat-label">of weekly profit from Friday-Sunday</div></div>
-                <div class="stat-card"><div class="stat-number">R12K</div><div class="stat-label">extra monthly from music/atmosphere investment</div></div>
-                <div class="stat-card"><div class="stat-number">5X</div><div class="stat-label">more spending from regulars vs tourists</div></div>
-            </div>
-            <div class="scenario-box">
-                <h4>🎯 REAL SCENARIO: The Credit Request</h4>
-                <div class="scenario-text">It's Thursday night. A regular customer (comes every weekend for 6 months) asks for R150 credit. Says he'll pay you Saturday when he gets paid. You know where he works.<br><br><strong>What do you do?</strong></div>
-                <div class="choices" id="scenario-choices-3">
-                    <button class="choice-btn" onclick="checkAnswer(3,'A',false,this)">A) Say no — never give credit at a tavern</button>
-                    <button class="choice-btn" onclick="checkAnswer(3,'B',true,this)">B) Give R150 credit, write it in your book, remind him Saturday morning</button>
-                    <button class="choice-btn" onclick="checkAnswer(3,'C',false,this)">C) Give R100 instead of R150 as a "test"</button>
-                    <button class="choice-btn" onclick="checkAnswer(3,'D',false,this)">D) Tell him to come back Saturday with cash</button>
-                </div>
-                <div class="feedback" id="feedback-3"></div>
-            </div>
-            <div class="tip-box">
-                <h5>💡 PRO TIP: The "Last Round" Psychology</h5>
-                <p>When announcing last round at closing time, say: "Last round in 15 minutes, gents!" People will order 2 rounds — one now, one at the 15-minute mark. That's an extra R2,000+ per night.</p>
-            </div>
-            <div class="quiz-section" id="quiz-section-3">
-                <h4>✅ MODULE 3 QUIZ</h4>
-                <p class="quiz-progress-text" id="quiz-progress-3">Answer all 3 questions to complete this module</p>
-                <div class="quiz-question">
-                    <p>Question 1: What percentage of weekly tavern profit typically comes from Friday-Sunday?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,1,'A',false,this)">A) 45%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,1,'B',false,this)">B) 55%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,1,'C',true,this)">C) 70%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,1,'D',false,this)">D) 85%</button>
-                    </div>
-                    <div class="feedback" id="quiz-3-1"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 2: How much more do regulars spend compared to tourists over a year?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,2,'A',false,this)">A) 2X more</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,2,'B',false,this)">B) 3X more</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,2,'C',true,this)">C) 5X more</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,2,'D',false,this)">D) 7X more</button>
-                    </div>
-                    <div class="feedback" id="quiz-3-2"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 3: What's the main reason people choose one tavern over another?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,3,'A',false,this)">A) Cheapest prices</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,3,'B',true,this)">B) Atmosphere + feeling like a regular</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,3,'C',false,this)">C) Location only</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(3,3,'D',false,this)">D) Drink selection</button>
-                    </div>
-                    <div class="feedback" id="quiz-3-3"></div>
-                </div>
-                <div class="quiz-complete-banner" id="quiz-complete-3">🎉 Module 3 Complete! Well done.</div>
-            </div>
-            <div class="action-section">
-                <h4>⚡ Action Steps: Implement This Week</h4>
-                <ul class="action-list">
-                    <li class="action-item"><strong>TODAY:</strong> Start a "Regulars Book" — write down 20 names + their usual drinks.</li>
-                    <li class="action-item"><strong>TOMORROW:</strong> Deep clean your toilets.</li>
-                    <li class="action-item"><strong>THIS WEEK:</strong> Invest R500 in better music/sound system.</li>
-                    <li class="action-item"><strong>THIS MONTH:</strong> Greet every regular by name + remember their drink order without asking.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══ MODULE 4: KOTA SHOP ══ -->
-    <div class="module-card">
-        <div class="module-card-header" onclick="toggleModule(4)">
-            <div class="module-icon">🌭</div>
-            <div class="module-header-text">
-                <h3>Module 4: The Kota Shop Goldmine</h3>
-                <p>Speed + consistency = the winning formula</p>
-            </div>
-            <div class="toggle-hint" id="toggle-4">▼</div>
-        </div>
-        <div class="module-content" id="module-4">
-            <div class="content-section">
-                <h4>The Kota Shop Reality</h4>
-                <p>Most kota shop owners think they sell food. Wrong.</p>
-                <p>You sell <strong style="color:#FFD700;">SPEED + FAMILIARITY</strong>. Your customers are on lunch break (30-45 minutes max). They want their kota FAST and they want it to taste THE SAME every single time.</p>
-            </div>
-            <div class="goldmine-box">
-                <h4>💰 THE KOTA SHOP GOLDMINE:</h4>
-                <p>The real money is in LUNCH RUSH optimization and THE SIGNATURE SPECIAL.</p>
-                <p>A kota shop that serves 50 customers from 12-2pm vs 30 makes R12,000+ extra per month. Same rent, same location — just faster service.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">80%</div><div class="stat-label">of daily sales happen 12pm-2pm</div></div>
-                <div class="stat-card"><div class="stat-number">R12K</div><div class="stat-label">extra monthly from speed optimization</div></div>
-                <div class="stat-card"><div class="stat-number">3 min</div><div class="stat-label">target time per kota for max profit</div></div>
-            </div>
-            <div class="scenario-box">
-                <h4>🎯 REAL SCENARIO: The Lunch Rush Bottleneck</h4>
-                <div class="scenario-text">It's 12:45pm — peak lunch hour. You have 8 customers waiting. Each kota takes 6 minutes to make from scratch. People are getting impatient and 2 just left.<br><br><strong>What's your move going forward?</strong></div>
-                <div class="choices" id="scenario-choices-4">
-                    <button class="choice-btn" onclick="checkAnswer(4,'A',false,this)">A) Work faster — rush through each order</button>
-                    <button class="choice-btn" onclick="checkAnswer(4,'B',false,this)">B) Tell customers to come back in 20 minutes</button>
-                    <button class="choice-btn" onclick="checkAnswer(4,'C',true,this)">C) Implement prep system: pre-cut bread, batch-cook chips before noon</button>
-                    <button class="choice-btn" onclick="checkAnswer(4,'D',false,this)">D) Raise prices to reduce demand</button>
-                </div>
-                <div class="feedback" id="feedback-4"></div>
-            </div>
-            <div class="tip-box">
-                <h5>💡 PRO TIP: The WhatsApp Pre-Order System</h5>
-                <p>Create a WhatsApp group for regulars. They order at 11:30am, you prepare by 12pm, they collect in 30 seconds. 10 pre-orders daily = R300 guaranteed + faster service for walk-ins.</p>
-            </div>
-            <div class="quiz-section" id="quiz-section-4">
-                <h4>✅ MODULE 4 QUIZ</h4>
-                <p class="quiz-progress-text" id="quiz-progress-4">Answer all 3 questions to complete this module</p>
-                <div class="quiz-question">
-                    <p>Question 1: What percentage of daily kota sales happen during the 12pm-2pm lunch rush?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,1,'A',false,this)">A) 50%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,1,'B',false,this)">B) 65%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,1,'C',true,this)">C) 80%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,1,'D',false,this)">D) 90%</button>
-                    </div>
-                    <div class="feedback" id="quiz-4-1"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 2: What's the target service time per kota for maximum profit?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,2,'A',false,this)">A) 1 minute</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,2,'B',true,this)">B) 3 minutes</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,2,'C',false,this)">C) 5 minutes</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,2,'D',false,this)">D) 7 minutes</button>
-                    </div>
-                    <div class="feedback" id="quiz-4-2"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 3: What's the main reason customers choose one kota shop over another?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,3,'A',false,this)">A) Lowest price</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,3,'B',true,this)">B) Speed + consistency (same taste every time)</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,3,'C',false,this)">C) Location only</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(4,3,'D',false,this)">D) Biggest portions</button>
-                    </div>
-                    <div class="feedback" id="quiz-4-3"></div>
-                </div>
-                <div class="quiz-complete-banner" id="quiz-complete-4">🎉 Module 4 Complete! Well done.</div>
-            </div>
-            <div class="action-section">
-                <h4>⚡ Action Steps: Implement This Week</h4>
-                <ul class="action-list">
-                    <li class="action-item"><strong>TODAY:</strong> Time yourself making 5 kotas. Identify the slowest steps.</li>
-                    <li class="action-item"><strong>TOMORROW:</strong> Start prepping at 10:30am instead of making everything as orders come in.</li>
-                    <li class="action-item"><strong>THIS WEEK:</strong> Create your signature "Special" kota and promote it on WhatsApp status.</li>
-                    <li class="action-item"><strong>THIS MONTH:</strong> Set up WhatsApp pre-order system (aim for 10+ regulars).</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- ══ MODULE 5: CAR WASH ══ -->
-    <div class="module-card">
-        <div class="module-card-header" onclick="toggleModule(5)">
-            <div class="module-icon">🚗</div>
-            <div class="module-header-text">
-                <h3>Module 5: The Car Wash Goldmine</h3>
-                <p>Why the real money is in the waiting, not the washing</p>
-            </div>
-            <div class="toggle-hint" id="toggle-5">▼</div>
-        </div>
-        <div class="module-content" id="module-5">
-            <div class="content-section">
-                <h4>The Car Wash Secret</h4>
-                <p>Most car wash owners think they wash cars. Wrong.</p>
-                <p>You sell <strong style="color:#FFD700;">TIME CONVENIENCE + TRUST</strong>. People pay R50-R150 for something they could do themselves because they value their TIME. They're also trusting you with their R200,000+ asset.</p>
-            </div>
-            <div class="goldmine-box">
-                <h4>💰 THE CAR WASH GOLDMINE:</h4>
-                <p>The real money is in UPSELLS during waiting time and BUILDING WEEKLY REGULARS.</p>
-                <p>Basic wash = R80. Add interior vacuum (+R50), tire shine (+R30), air freshener (+R20) = R180. That's 125% more from the same customer, same time slot.</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card"><div class="stat-number">70%</div><div class="stat-label">of customers accept upsells when asked properly</div></div>
-                <div class="stat-card"><div class="stat-number">R10K</div><div class="stat-label">extra monthly from 30 weekly regulars</div></div>
-                <div class="stat-card"><div class="stat-number">125%</div><div class="stat-label">revenue increase from proper upselling</div></div>
-            </div>
-            <div class="scenario-box">
-                <h4>🎯 REAL SCENARIO: The Upsell Moment</h4>
-                <div class="scenario-text">A customer pulls up for a basic R80 wash. You can see the interior is dirty — fast food wrappers, dusty dashboard, dirty floor mats. They seem in a good mood and not rushed.<br><br><strong>What do you say?</strong></div>
-                <div class="choices" id="scenario-choices-5">
-                    <button class="choice-btn" onclick="checkAnswer(5,'A',false,this)">A) Nothing — just do the R80 wash they asked for</button>
-                    <button class="choice-btn" onclick="checkAnswer(5,'B',false,this)">B) "Your interior is dirty, you should pay for full service"</button>
-                    <button class="choice-btn" onclick="checkAnswer(5,'C',true,this)">C) "I can do the outside in 20 minutes. Want me to quickly vacuum the inside too for just R50 more?"</button>
-                    <button class="choice-btn" onclick="checkAnswer(5,'D',false,this)">D) Start vacuuming the interior without asking and charge them after</button>
-                </div>
-                <div class="feedback" id="feedback-5"></div>
-            </div>
-            <div class="tip-box">
-                <h5>💡 PRO TIP: The "While You Wait" Shop</h5>
-                <p>Set up a small table with cold drinks (R15), airtime vouchers (R2 profit each), and snacks (R10). Customer is stuck there for 20-30 minutes. They'll buy out of boredom. R500 table setup = R15,000+ yearly return.</p>
-            </div>
-            <div class="quiz-section" id="quiz-section-5">
-                <h4>✅ MODULE 5 QUIZ</h4>
-                <p class="quiz-progress-text" id="quiz-progress-5">Answer all 3 questions to complete this module</p>
-                <div class="quiz-question">
-                    <p>Question 1: What percentage of customers will accept upsells when offered properly?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,1,'A',false,this)">A) 40%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,1,'B',false,this)">B) 55%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,1,'C',true,this)">C) 70%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,1,'D',false,this)">D) 85%</button>
-                    </div>
-                    <div class="feedback" id="quiz-5-1"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 2: How much revenue increase comes from proper upselling?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,2,'A',false,this)">A) 50%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,2,'B',false,this)">B) 75%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,2,'C',true,this)">C) 125%</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,2,'D',false,this)">D) 150%</button>
-                    </div>
-                    <div class="feedback" id="quiz-5-2"></div>
-                </div>
-                <div class="quiz-question">
-                    <p>Question 3: What's the main reason customers choose one car wash over another?</p>
-                    <div class="choices">
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,3,'A',false,this)">A) Cheapest price</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,3,'B',true,this)">B) Trust + convenience + comfort while waiting</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,3,'C',false,this)">C) Speed only</button>
-                        <button class="choice-btn" onclick="checkQuizAnswer(5,3,'D',false,this)">D) Location only</button>
-                    </div>
-                    <div class="feedback" id="quiz-5-3"></div>
-                </div>
-                <div class="quiz-complete-banner" id="quiz-complete-5">🎉 Module 5 Complete! Well done.</div>
-            </div>
-            <div class="action-section">
-                <h4>⚡ Action Steps: Implement This Week</h4>
-                <ul class="action-list">
-                    <li class="action-item"><strong>TODAY:</strong> Create your 3-tier pricing (Bronze R80 / Silver R130 / Gold R200).</li>
-                    <li class="action-item"><strong>TOMORROW:</strong> Start offering upsells to EVERY single customer.</li>
-                    <li class="action-item"><strong>THIS WEEK:</strong> Set up a "while you wait" table with cold drinks, airtime, and snacks.</li>
-                    <li class="action-item"><strong>THIS MONTH:</strong> Get 10 customers on weekly/monthly prepaid plans.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- COMPLETION -->
-    <div class="completion-section">
-        <h2>🔥 YOU'VE COMPLETED THE KASI BUSINESS GOLDMINE! 🔥</h2>
-        <p>You now know where the REAL money is hiding in kasi businesses — the stuff 90% of owners never figure out.</p>
-        <p><strong style="color:#FFD700;font-size:1.3em;">What You've Mastered:</strong></p>
-        <ul>
-            <li>✓ The goldmine in each business type (spaza, salon, tavern, kota, car wash)</li>
-            <li>✓ Why psychology beats products every single time</li>
-            <li>✓ Exact strategies you can implement THIS WEEK</li>
-            <li>✓ How to turn one-time customers into lifetime regulars</li>
-            <li>✓ The hidden revenue streams 90% of owners miss completely</li>
-            <li>✓ Real numbers: R15K here, R12K there, R8K monthly — all measurable, all achievable</li>
-        </ul>
-        <p style="margin-top:35px;font-size:1.3em;color:#FFD700;"><strong>Now go implement. One strategy at a time. Small shifts = BIG results.</strong></p>
-        <div class="contact-box">
-            <h5>Questions? Need Help Implementing?</h5>
-            <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8de0ecfef9e8ffe4e3eaffe8f9ece4e1cdeae0ece4e1a3eee2e0">[email&#160;protected]</a></p>
-            <p>📱 WhatsApp: +27 74 831 5232</p>
-            <p style="margin-top:15px;font-size:0.95em;">Course Creator & Director: Phiwokuhle Makapela</p>
-        </div>
-    </div>
+  </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ════════════════════════════════════════
-//  FIXED QUIZ SYSTEM
-//  - Each module tracks its OWN questions
-//  - Progress bar counts answered questions
-//    only within VISIBLE/active modules
-//  - "Module complete" banner shows when
-//    all 3 quiz questions are answered
-// ════════════════════════════════════════
+<!-- CONTENT -->
+<div class="wrap">
 
-// Tracks answered questions per module: { module: { question: answered } }
-const quizState = {
-    1: { 1: false, 2: false, 3: false },
-    2: { 1: false, 2: false, 3: false },
-    3: { 1: false, 2: false, 3: false },
-    4: { 1: false, 2: false, 3: false },
-    5: { 1: false, 2: false, 3: false }
-};
+<!-- ══════════════════════════════
+     MODULE 1 — SPAZA
+══════════════════════════════ -->
+<div class="module">
+  <div class="module-head">
+    <div class="mod-icon">🏪</div>
+    <div>
+      <div class="mod-title">Module 1: The Spaza Goldmine</div>
+      <div class="mod-sub">Where 80% of spaza owners miss the real money</div>
+    </div>
+  </div>
+  <div class="module-body">
 
-// Tracks answered scenarios per module
-const scenarioState = { 1: false, 2: false, 3: false, 4: false, 5: false };
+    <div class="block">
+      <div class="block-title">The Hidden Truth</div>
+      <p>Most spaza owners think they're in the "selling products" business. They're wrong.</p>
+      <p>You're in the <strong>CONVENIENCE business</strong>. People don't come to you because you're cheaper than Pick n Pay. They come because you're CLOSER, FASTER, and EASIER.</p>
+    </div>
 
-// Total answerable interactions = 5 scenarios + 15 quiz questions = 20
-const TOTAL = 20;
+    <div class="goldmine">
+      <div class="goldmine-head">💰 The Spaza Goldmine</div>
+      <p>The real money isn't in WHAT you sell — it's in WHEN you're open and HOW FAST you serve.</p>
+      <p>A spaza open until 9pm serving customers in under 60 seconds makes 3X more than one that closes at 7pm with slow service. That's R30,000+ extra per month.</p>
+    </div>
 
-function toggleModule(num) {
-    const content = document.getElementById('module-' + num);
-    const toggle  = document.getElementById('toggle-' + num);
-    const isOpen  = content.classList.contains('active');
-    content.classList.toggle('active', !isOpen);
-    toggle.classList.toggle('open', !isOpen);
+    <div class="stats">
+      <div class="stat"><div class="stat-num">60%</div><div class="stat-lbl">of daily profit happens after 5pm</div></div>
+      <div class="stat"><div class="stat-num">R15K</div><div class="stat-lbl">lost per year from "no change"</div></div>
+      <div class="stat"><div class="stat-num">3X</div><div class="stat-lbl">more sales with proper lighting</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">The 3 Money Multipliers</div>
+      <p><strong>1. The Speed Factor:</strong> Every 30 seconds saved per customer = 10 more customers/day = R300+ extra daily = R9,000/month.</p>
+      <p><strong>2. The Visibility Game:</strong> Products at eye level sell 70% more than floor-level. Move your top 5 sellers to eye level TODAY.</p>
+      <p><strong>3. The Regular Customer System:</strong> 20% of customers = 80% of profit. Know their names = they become YOUR spaza.</p>
+    </div>
+
+    <!-- SCENARIO 1 -->
+    <div class="scenario">
+      <div class="scenario-title">🎯 Real Scenario — The Evening Rush</div>
+      <div class="scenario-text">It's 7:30pm. You've been open since 6am and you're tired. A customer walks in for a R12 Coke, but you don't have R8 change for their R20.<br><br><strong>What do you do?</strong></div>
+      <div class="options" id="s1-opts">
+        <button class="opt" data-module="s" data-id="1" data-correct="false" onclick="answer(this)">A) "Sorry, no change. Come back tomorrow."</button>
+        <button class="opt" data-module="s" data-id="1" data-correct="false" onclick="answer(this)">B) "Let me check next door for change real quick."</button>
+        <button class="opt" data-module="s" data-id="1" data-correct="true" onclick="answer(this)">C) "Take the Coke now. Next time you owe me R12 instead of R20."</button>
+        <button class="opt" data-module="s" data-id="1" data-correct="false" onclick="answer(this)">D) "Do you have anything smaller?"</button>
+      </div>
+      <div class="q-feedback" id="s1-fb"></div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-head">💡 Pro Tip: The Airtime Strategy</div>
+      <p>Airtime has the lowest profit margin (R2-R3 per R10). But it's your BAIT.</p>
+      <p>When someone buys airtime, ALWAYS ask: "Chips? Cold drink? Anything else?" 40% will say yes. That R2 sale just became R15 profit.</p>
+    </div>
+
+    <!-- QUIZ 1 -->
+    <div class="quiz">
+      <div class="quiz-title">Module 1 Quiz</div>
+      <div class="quiz-counter">Questions answered: <span class="done" id="qc-1">0</span> / 3</div>
+
+      <div class="q-block">
+        <div class="q-text">Q1: What percentage of daily spaza profit typically happens after 5pm?</div>
+        <div class="options" id="q1-1-opts">
+          <button class="opt" data-qmod="1" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">A) 30%</button>
+          <button class="opt" data-qmod="1" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">B) 45%</button>
+          <button class="opt" data-qmod="1" data-qnum="1" data-correct="true" onclick="quizAnswer(this)">C) 60%</button>
+          <button class="opt" data-qmod="1" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">D) 75%</button>
+        </div>
+        <div class="q-feedback" id="q1-1-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q2: Eye-level products sell how much more than floor-level products?</div>
+        <div class="options" id="q1-2-opts">
+          <button class="opt" data-qmod="1" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">A) 30% more</button>
+          <button class="opt" data-qmod="1" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">B) 50% more</button>
+          <button class="opt" data-qmod="1" data-qnum="2" data-correct="true" onclick="quizAnswer(this)">C) 70% more</button>
+          <button class="opt" data-qmod="1" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">D) 90% more</button>
+        </div>
+        <div class="q-feedback" id="q1-2-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q3: What's the main reason customers choose a spaza over Pick n Pay?</div>
+        <div class="options" id="q1-3-opts">
+          <button class="opt" data-qmod="1" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">A) Lower prices</button>
+          <button class="opt" data-qmod="1" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">B) Better quality</button>
+          <button class="opt" data-qmod="1" data-qnum="3" data-correct="true" onclick="quizAnswer(this)">C) Convenience / proximity</button>
+          <button class="opt" data-qmod="1" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">D) Friendly service</button>
+        </div>
+        <div class="q-feedback" id="q1-3-fb"></div>
+      </div>
+
+      <div class="mod-complete" id="mc-1">
+        <div class="mod-complete-text">🏆 Module 1 Complete!</div>
+        <p>You know the spaza goldmine. Now implement it.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions-title">⚡ Action Steps This Week</div>
+      <div class="action-row"><span class="action-tag">Today</span><span class="action-text">Get R200 in small change before you open tomorrow.</span></div>
+      <div class="action-row"><span class="action-tag">Tomorrow</span><span class="action-text">Move your top 5 best-sellers to eye level.</span></div>
+      <div class="action-row"><span class="action-tag">This week</span><span class="action-text">Install a bright light outside (R350 = R2,000+ monthly return).</span></div>
+      <div class="action-row"><span class="action-tag">This month</span><span class="action-text">Start a "Regular Customer Book" — write down 20 names you should know.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MODULE 2 — SALON
+══════════════════════════════ -->
+<div class="module">
+  <div class="module-head">
+    <div class="mod-icon">💇</div>
+    <div>
+      <div class="mod-title">Module 2: The Salon Goldmine</div>
+      <div class="mod-sub">Why the best salons make money when clients are waiting</div>
+    </div>
+  </div>
+  <div class="module-body">
+
+    <div class="block">
+      <div class="block-title">The Salon Paradox</div>
+      <p>Most salon owners think their product is the hairdo. Wrong.</p>
+      <p>Your product is <strong>TRANSFORMATION + SOCIAL EXPERIENCE</strong>. Women don't just come for hair — they come to feel beautiful, catch up on gossip, and be seen. Understanding this changes everything.</p>
+    </div>
+
+    <div class="goldmine">
+      <div class="goldmine-head">💰 The Salon Goldmine</div>
+      <p>The real money is in WAITING TIME and RETAIL PRODUCTS.</p>
+      <p>A client waits 30-90 minutes. That's your opportunity to make an extra R200-R500 per client WITHOUT doing more hair. Most salons ignore this — that's R8,000+ lost every month.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num">R8K</div><div class="stat-lbl">extra per month from product sales</div></div>
+      <div class="stat"><div class="stat-num">40%</div><div class="stat-lbl">of revenue from repeat clients</div></div>
+      <div class="stat"><div class="stat-num">65%</div><div class="stat-lbl">less no-shows with deposit system</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">The 3 Money Multipliers</div>
+      <p><strong>1. The Waiting Room Shop:</strong> Display products at eye level while clients wait. Easy R200-R300 per client from boredom + trust.</p>
+      <p><strong>2. The Deposit Psychology:</strong> R50-R100 deposit cuts no-shows by 65%. Your time = money. Stop working for free.</p>
+      <p><strong>3. The Next Appointment Rule:</strong> Book the next appointment BEFORE they leave. 80% will keep it. Guaranteed income stream.</p>
+    </div>
+
+    <!-- SCENARIO 2 -->
+    <div class="scenario">
+      <div class="scenario-title">🎯 Real Scenario — The No-Show Problem</div>
+      <div class="scenario-text">A regular client books for Saturday 10am — your busiest slot. She's a no-show for the 3rd time. No call, no message. You turned away 2 other paying clients for her.<br><br><strong>What's your move?</strong></div>
+      <div class="options" id="s2-opts">
+        <button class="opt" data-module="s" data-id="2" data-correct="false" onclick="answer(this)">A) Just accept it — she's a good client when she comes</button>
+        <button class="opt" data-module="s" data-id="2" data-correct="false" onclick="answer(this)">B) Confront her angrily — she wasted your time</button>
+        <button class="opt" data-module="s" data-id="2" data-correct="true" onclick="answer(this)">C) Implement a R50 deposit policy for all bookings going forward</button>
+        <button class="opt" data-module="s" data-id="2" data-correct="false" onclick="answer(this)">D) Block her number — you don't need that stress</button>
+      </div>
+      <div class="q-feedback" id="s2-fb"></div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-head">💡 Pro Tip: The Mirror Psychology</div>
+      <p>Position your retail display so clients see it in the mirror while getting their hair done.</p>
+      <p>They're already in "beauty investment" mode. Seeing products in the mirror = 40% higher chance of buying. This one change adds R5,000+ monthly.</p>
+    </div>
+
+    <!-- QUIZ 2 -->
+    <div class="quiz">
+      <div class="quiz-title">Module 2 Quiz</div>
+      <div class="quiz-counter">Questions answered: <span class="done" id="qc-2">0</span> / 3</div>
+
+      <div class="q-block">
+        <div class="q-text">Q1: How much can a deposit system reduce no-shows?</div>
+        <div class="options" id="q2-1-opts">
+          <button class="opt" data-qmod="2" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">A) 25%</button>
+          <button class="opt" data-qmod="2" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">B) 45%</button>
+          <button class="opt" data-qmod="2" data-qnum="1" data-correct="true" onclick="quizAnswer(this)">C) 65%</button>
+          <button class="opt" data-qmod="2" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">D) 85%</button>
+        </div>
+        <div class="q-feedback" id="q2-1-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q2: What percentage of salon revenue typically comes from repeat clients?</div>
+        <div class="options" id="q2-2-opts">
+          <button class="opt" data-qmod="2" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">A) 20%</button>
+          <button class="opt" data-qmod="2" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">B) 30%</button>
+          <button class="opt" data-qmod="2" data-qnum="2" data-correct="true" onclick="quizAnswer(this)">C) 40%</button>
+          <button class="opt" data-qmod="2" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">D) 50%</button>
+        </div>
+        <div class="q-feedback" id="q2-2-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q3: What's the main reason clients buy products at salons?</div>
+        <div class="options" id="q2-3-opts">
+          <button class="opt" data-qmod="2" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">A) Cheaper than stores</button>
+          <button class="opt" data-qmod="2" data-qnum="3" data-correct="true" onclick="quizAnswer(this)">B) Trust + already in beauty investment mode</button>
+          <button class="opt" data-qmod="2" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">C) Better selection</button>
+          <button class="opt" data-qmod="2" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">D) Convenience only</button>
+        </div>
+        <div class="q-feedback" id="q2-3-fb"></div>
+      </div>
+
+      <div class="mod-complete" id="mc-2">
+        <div class="mod-complete-text">🏆 Module 2 Complete!</div>
+        <p>You know the salon goldmine. Now implement it.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions-title">⚡ Action Steps This Week</div>
+      <div class="action-row"><span class="action-tag">Today</span><span class="action-text">Announce your new R50 deposit policy on WhatsApp status.</span></div>
+      <div class="action-row"><span class="action-tag">Tomorrow</span><span class="action-text">Set up a small product display in your waiting area.</span></div>
+      <div class="action-row"><span class="action-tag">This week</span><span class="action-text">Book next appointments before clients leave the chair.</span></div>
+      <div class="action-row"><span class="action-tag">This month</span><span class="action-text">Track product sales — aim for R200+ per client in retail.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MODULE 3 — TAVERN
+══════════════════════════════ -->
+<div class="module">
+  <div class="module-head">
+    <div class="mod-icon">🍺</div>
+    <div>
+      <div class="mod-title">Module 3: The Tavern Goldmine</div>
+      <div class="mod-sub">The psychology of rounds and why atmosphere = profit</div>
+    </div>
+  </div>
+  <div class="module-body">
+
+    <div class="block">
+      <div class="block-title">The Tavern Truth</div>
+      <p>Most tavern owners think they sell alcohol. Wrong.</p>
+      <p>You sell <strong>SOCIAL STATUS + BELONGING</strong>. People come to be SEEN drinking the beer, to belong to a community. Miss this and you're just another shebeen.</p>
+    </div>
+
+    <div class="goldmine">
+      <div class="goldmine-head">💰 The Tavern Goldmine</div>
+      <p>The real money is in THE ROUND system and creating REGULARS.</p>
+      <p>Regulars spend 5X more than tourists over a year. ONE regular = R15,000/year. Get 20 regulars = R300,000/year guaranteed.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num">70%</div><div class="stat-lbl">of weekly profit from Friday-Sunday</div></div>
+      <div class="stat"><div class="stat-num">R12K</div><div class="stat-lbl">extra monthly from music/atmosphere</div></div>
+      <div class="stat"><div class="stat-num">5X</div><div class="stat-lbl">more spending from regulars vs tourists</div></div>
+    </div>
+
+    <div class="block">
+      <div class="block-title">The 3 Money Multipliers</div>
+      <p><strong>1. The Atmosphere ROI:</strong> Good music + clean space = people stay 2 hours longer = 3 more rounds per person = R600 extra per table. R500/month investment = R12,000+ back.</p>
+      <p><strong>2. The Regular System:</strong> Know 30 regulars by name + drink preference. They bring friends. "This is MY spot" loyalty = exponential growth.</p>
+      <p><strong>3. The Credit Psychology:</strong> Give credit to employed regulars only. R200 limit. They'll pay Friday AND feel obligated to drink there next weekend too.</p>
+    </div>
+
+    <!-- SCENARIO 3 -->
+    <div class="scenario">
+      <div class="scenario-title">🎯 Real Scenario — The Credit Request</div>
+      <div class="scenario-text">It's Thursday night. A regular (comes every weekend for 6 months) asks for R150 credit. Says he'll pay Saturday when he gets paid. You know where he works.<br><br><strong>What do you do?</strong></div>
+      <div class="options" id="s3-opts">
+        <button class="opt" data-module="s" data-id="3" data-correct="false" onclick="answer(this)">A) Say no — never give credit at a tavern</button>
+        <button class="opt" data-module="s" data-id="3" data-correct="true" onclick="answer(this)">B) Give R150 credit, write it in your book, remind him Saturday morning</button>
+        <button class="opt" data-module="s" data-id="3" data-correct="false" onclick="answer(this)">C) Give R100 instead of R150 as a "test"</button>
+        <button class="opt" data-module="s" data-id="3" data-correct="false" onclick="answer(this)">D) Tell him to come back Saturday with cash</button>
+      </div>
+      <div class="q-feedback" id="s3-fb"></div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-head">💡 Pro Tip: The "Last Round" Psychology</div>
+      <p>Say: "Last round in 15 minutes, gents!" — never "last round NOW".</p>
+      <p>People order 2 rounds — one now, one at the 15-minute mark. That's an extra R2,000+ per night you would have missed.</p>
+    </div>
+
+    <!-- QUIZ 3 -->
+    <div class="quiz">
+      <div class="quiz-title">Module 3 Quiz</div>
+      <div class="quiz-counter">Questions answered: <span class="done" id="qc-3">0</span> / 3</div>
+
+      <div class="q-block">
+        <div class="q-text">Q1: What percentage of weekly tavern profit comes from Friday-Sunday?</div>
+        <div class="options" id="q3-1-opts">
+          <button class="opt" data-qmod="3" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">A) 45%</button>
+          <button class="opt" data-qmod="3" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">B) 55%</button>
+          <button class="opt" data-qmod="3" data-qnum="1" data-correct="true" onclick="quizAnswer(this)">C) 70%</button>
+          <button class="opt" data-qmod="3" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">D) 85%</button>
+        </div>
+        <div class="q-feedback" id="q3-1-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q2: How much more do regulars spend vs tourists over a year?</div>
+        <div class="options" id="q3-2-opts">
+          <button class="opt" data-qmod="3" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">A) 2X more</button>
+          <button class="opt" data-qmod="3" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">B) 3X more</button>
+          <button class="opt" data-qmod="3" data-qnum="2" data-correct="true" onclick="quizAnswer(this)">C) 5X more</button>
+          <button class="opt" data-qmod="3" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">D) 7X more</button>
+        </div>
+        <div class="q-feedback" id="q3-2-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q3: What's the main reason people choose one tavern over another?</div>
+        <div class="options" id="q3-3-opts">
+          <button class="opt" data-qmod="3" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">A) Cheapest prices</button>
+          <button class="opt" data-qmod="3" data-qnum="3" data-correct="true" onclick="quizAnswer(this)">B) Atmosphere + feeling like a regular</button>
+          <button class="opt" data-qmod="3" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">C) Location only</button>
+          <button class="opt" data-qmod="3" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">D) Drink selection</button>
+        </div>
+        <div class="q-feedback" id="q3-3-fb"></div>
+      </div>
+
+      <div class="mod-complete" id="mc-3">
+        <div class="mod-complete-text">🏆 Module 3 Complete!</div>
+        <p>You know the tavern goldmine. Now implement it.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions-title">⚡ Action Steps This Week</div>
+      <div class="action-row"><span class="action-tag">Today</span><span class="action-text">Start a "Regulars Book" — write down 20 names + their usual drinks.</span></div>
+      <div class="action-row"><span class="action-tag">Tomorrow</span><span class="action-text">Deep clean your toilets. Seriously.</span></div>
+      <div class="action-row"><span class="action-tag">This week</span><span class="action-text">Invest R500 in better music/sound system.</span></div>
+      <div class="action-row"><span class="action-tag">This month</span><span class="action-text">Greet every regular by name + remember their drink without asking.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MODULE 4 — KOTA SHOP
+══════════════════════════════ -->
+<div class="module">
+  <div class="module-head">
+    <div class="mod-icon">🌭</div>
+    <div>
+      <div class="mod-title">Module 4: The Kota Shop Goldmine</div>
+      <div class="mod-sub">Speed + consistency = the winning formula</div>
+    </div>
+  </div>
+  <div class="module-body">
+
+    <div class="block">
+      <div class="block-title">The Kota Reality</div>
+      <p>Most kota shop owners think they sell food. Wrong.</p>
+      <p>You sell <strong>SPEED + FAMILIARITY</strong>. Customers are on a 30-45 minute lunch break. They want their kota FAST and they want it to taste THE SAME every single time.</p>
+    </div>
+
+    <div class="goldmine">
+      <div class="goldmine-head">💰 The Kota Shop Goldmine</div>
+      <p>The real money is in LUNCH RUSH optimization and THE SIGNATURE SPECIAL.</p>
+      <p>Serving 50 customers from 12-2pm vs 30 = R12,000+ extra per month. Same rent, same location — just faster service.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num">80%</div><div class="stat-lbl">of daily sales happen 12pm-2pm</div></div>
+      <div class="stat"><div class="stat-num">R12K</div><div class="stat-lbl">extra monthly from speed optimization</div></div>
+      <div class="stat"><div class="stat-num">3 min</div><div class="stat-lbl">target time per kota for max profit</div></div>
+    </div>
+
+    <!-- SCENARIO 4 -->
+    <div class="scenario">
+      <div class="scenario-title">🎯 Real Scenario — The Lunch Rush Bottleneck</div>
+      <div class="scenario-text">It's 12:45pm — peak lunch hour. You have 8 customers waiting. Each kota takes 6 minutes from scratch. People are getting impatient and 2 just left.<br><br><strong>What's your move going forward?</strong></div>
+      <div class="options" id="s4-opts">
+        <button class="opt" data-module="s" data-id="4" data-correct="false" onclick="answer(this)">A) Work faster — rush through each order</button>
+        <button class="opt" data-module="s" data-id="4" data-correct="false" onclick="answer(this)">B) Tell customers to come back in 20 minutes</button>
+        <button class="opt" data-module="s" data-id="4" data-correct="true" onclick="answer(this)">C) Implement prep system: pre-cut bread, batch-cook chips before noon</button>
+        <button class="opt" data-module="s" data-id="4" data-correct="false" onclick="answer(this)">D) Raise prices to reduce demand</button>
+      </div>
+      <div class="q-feedback" id="s4-fb"></div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-head">💡 Pro Tip: The WhatsApp Pre-Order System</div>
+      <p>Create a WhatsApp group for regulars. They order at 11:30am, you prepare by 12pm, they collect in 30 seconds.</p>
+      <p>10 pre-orders daily = R300 guaranteed + faster service for walk-ins. Zero waste. Win-win.</p>
+    </div>
+
+    <!-- QUIZ 4 -->
+    <div class="quiz">
+      <div class="quiz-title">Module 4 Quiz</div>
+      <div class="quiz-counter">Questions answered: <span class="done" id="qc-4">0</span> / 3</div>
+
+      <div class="q-block">
+        <div class="q-text">Q1: What percentage of daily kota sales happen during the 12pm-2pm lunch rush?</div>
+        <div class="options" id="q4-1-opts">
+          <button class="opt" data-qmod="4" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">A) 50%</button>
+          <button class="opt" data-qmod="4" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">B) 65%</button>
+          <button class="opt" data-qmod="4" data-qnum="1" data-correct="true" onclick="quizAnswer(this)">C) 80%</button>
+          <button class="opt" data-qmod="4" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">D) 90%</button>
+        </div>
+        <div class="q-feedback" id="q4-1-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q2: What's the target service time per kota for maximum profit?</div>
+        <div class="options" id="q4-2-opts">
+          <button class="opt" data-qmod="4" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">A) 1 minute</button>
+          <button class="opt" data-qmod="4" data-qnum="2" data-correct="true" onclick="quizAnswer(this)">B) 3 minutes</button>
+          <button class="opt" data-qmod="4" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">C) 5 minutes</button>
+          <button class="opt" data-qmod="4" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">D) 7 minutes</button>
+        </div>
+        <div class="q-feedback" id="q4-2-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q3: What's the main reason customers choose one kota shop over another?</div>
+        <div class="options" id="q4-3-opts">
+          <button class="opt" data-qmod="4" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">A) Lowest price</button>
+          <button class="opt" data-qmod="4" data-qnum="3" data-correct="true" onclick="quizAnswer(this)">B) Speed + consistency (same taste every time)</button>
+          <button class="opt" data-qmod="4" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">C) Location only</button>
+          <button class="opt" data-qmod="4" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">D) Biggest portions</button>
+        </div>
+        <div class="q-feedback" id="q4-3-fb"></div>
+      </div>
+
+      <div class="mod-complete" id="mc-4">
+        <div class="mod-complete-text">🏆 Module 4 Complete!</div>
+        <p>You know the kota goldmine. Now implement it.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions-title">⚡ Action Steps This Week</div>
+      <div class="action-row"><span class="action-tag">Today</span><span class="action-text">Time yourself making 5 kotas. Find the slowest steps.</span></div>
+      <div class="action-row"><span class="action-tag">Tomorrow</span><span class="action-text">Start prepping at 10:30am instead of making everything as orders come in.</span></div>
+      <div class="action-row"><span class="action-tag">This week</span><span class="action-text">Create your signature "Special" kota and promote it on WhatsApp status.</span></div>
+      <div class="action-row"><span class="action-tag">This month</span><span class="action-text">Set up WhatsApp pre-order system — aim for 10+ regulars.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     MODULE 5 — CAR WASH
+══════════════════════════════ -->
+<div class="module">
+  <div class="module-head">
+    <div class="mod-icon">🚗</div>
+    <div>
+      <div class="mod-title">Module 5: The Car Wash Goldmine</div>
+      <div class="mod-sub">The real money is in the waiting, not the washing</div>
+    </div>
+  </div>
+  <div class="module-body">
+
+    <div class="block">
+      <div class="block-title">The Car Wash Secret</div>
+      <p>Most car wash owners think they wash cars. Wrong.</p>
+      <p>You sell <strong>TIME CONVENIENCE + TRUST</strong>. People pay R50-R150 for something they could do at home because they value their TIME — and they're trusting you with their R200,000+ asset.</p>
+    </div>
+
+    <div class="goldmine">
+      <div class="goldmine-head">💰 The Car Wash Goldmine</div>
+      <p>The real money is in UPSELLS during waiting time and WEEKLY REGULARS.</p>
+      <p>Basic wash = R80. Add interior vacuum (+R50), tire shine (+R30), air freshener (+R20) = R180. That's 125% more from the same customer, same time slot.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="stat-num">70%</div><div class="stat-lbl">of customers accept upsells when asked properly</div></div>
+      <div class="stat"><div class="stat-num">R10K</div><div class="stat-lbl">extra monthly from 30 weekly regulars</div></div>
+      <div class="stat"><div class="stat-num">125%</div><div class="stat-lbl">revenue increase from proper upselling</div></div>
+    </div>
+
+    <!-- SCENARIO 5 -->
+    <div class="scenario">
+      <div class="scenario-title">🎯 Real Scenario — The Upsell Moment</div>
+      <div class="scenario-text">A customer pulls up for a basic R80 wash. The interior is clearly dirty — wrappers, dusty dashboard, dirty mats. They're in a good mood and not rushed.<br><br><strong>What do you say?</strong></div>
+      <div class="options" id="s5-opts">
+        <button class="opt" data-module="s" data-id="5" data-correct="false" onclick="answer(this)">A) Nothing — just do the R80 wash they asked for</button>
+        <button class="opt" data-module="s" data-id="5" data-correct="false" onclick="answer(this)">B) "Your interior is dirty, you should pay for full service"</button>
+        <button class="opt" data-module="s" data-id="5" data-correct="true" onclick="answer(this)">C) "I'll do the outside in 20 min — want me to quickly vacuum inside too for just R50 more?"</button>
+        <button class="opt" data-module="s" data-id="5" data-correct="false" onclick="answer(this)">D) Start vacuuming without asking and charge after</button>
+      </div>
+      <div class="q-feedback" id="s5-fb"></div>
+    </div>
+
+    <div class="tip">
+      <div class="tip-head">💡 Pro Tip: The "While You Wait" Shop</div>
+      <p>Set up a small table: cold drinks (R15), airtime vouchers, snacks (R10).</p>
+      <p>Customer is stuck there 20-30 minutes with nothing to do. They'll buy out of boredom. R500 setup = R15,000+ yearly return. Easiest money you'll ever make.</p>
+    </div>
+
+    <!-- QUIZ 5 -->
+    <div class="quiz">
+      <div class="quiz-title">Module 5 Quiz</div>
+      <div class="quiz-counter">Questions answered: <span class="done" id="qc-5">0</span> / 3</div>
+
+      <div class="q-block">
+        <div class="q-text">Q1: What percentage of customers accept upsells when offered properly?</div>
+        <div class="options" id="q5-1-opts">
+          <button class="opt" data-qmod="5" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">A) 40%</button>
+          <button class="opt" data-qmod="5" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">B) 55%</button>
+          <button class="opt" data-qmod="5" data-qnum="1" data-correct="true" onclick="quizAnswer(this)">C) 70%</button>
+          <button class="opt" data-qmod="5" data-qnum="1" data-correct="false" onclick="quizAnswer(this)">D) 85%</button>
+        </div>
+        <div class="q-feedback" id="q5-1-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q2: How much revenue increase comes from proper upselling?</div>
+        <div class="options" id="q5-2-opts">
+          <button class="opt" data-qmod="5" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">A) 50%</button>
+          <button class="opt" data-qmod="5" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">B) 75%</button>
+          <button class="opt" data-qmod="5" data-qnum="2" data-correct="true" onclick="quizAnswer(this)">C) 125%</button>
+          <button class="opt" data-qmod="5" data-qnum="2" data-correct="false" onclick="quizAnswer(this)">D) 150%</button>
+        </div>
+        <div class="q-feedback" id="q5-2-fb"></div>
+      </div>
+
+      <div class="q-block">
+        <div class="q-text">Q3: What's the main reason customers choose one car wash over another?</div>
+        <div class="options" id="q5-3-opts">
+          <button class="opt" data-qmod="5" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">A) Cheapest price</button>
+          <button class="opt" data-qmod="5" data-qnum="3" data-correct="true" onclick="quizAnswer(this)">B) Trust + convenience + comfort while waiting</button>
+          <button class="opt" data-qmod="5" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">C) Speed only</button>
+          <button class="opt" data-qmod="5" data-qnum="3" data-correct="false" onclick="quizAnswer(this)">D) Location only</button>
+        </div>
+        <div class="q-feedback" id="q5-3-fb"></div>
+      </div>
+
+      <div class="mod-complete" id="mc-5">
+        <div class="mod-complete-text">🏆 Module 5 Complete!</div>
+        <p>You know the car wash goldmine. Now implement it.</p>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="actions-title">⚡ Action Steps This Week</div>
+      <div class="action-row"><span class="action-tag">Today</span><span class="action-text">Create your 3-tier pricing: Bronze R80 / Silver R130 / Gold R200.</span></div>
+      <div class="action-row"><span class="action-tag">Tomorrow</span><span class="action-text">Offer upsells to EVERY single customer who comes in.</span></div>
+      <div class="action-row"><span class="action-tag">This week</span><span class="action-text">Set up a "while you wait" table with cold drinks, airtime, snacks.</span></div>
+      <div class="action-row"><span class="action-tag">This month</span><span class="action-text">Get 10 customers on weekly/monthly prepaid plans.</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COMPLETION -->
+<div class="completion">
+  <h2>🔥 Kasi Business Goldmine Complete!</h2>
+  <p>You now know where the REAL money is hiding — the stuff 90% of owners never figure out.</p>
+  <ul class="completion-list">
+    <li>The goldmine in each business type</li>
+    <li>Why psychology beats products every time</li>
+    <li>Strategies you can implement THIS WEEK</li>
+    <li>How to turn one-time customers into lifetime regulars</li>
+    <li>The hidden revenue streams 90% of owners miss</li>
+    <li>Real numbers — all measurable, all achievable</li>
+  </ul>
+  <p style="color:var(--gold);font-weight:800;font-size:1.1rem;">Now go implement. One strategy at a time. Small shifts = BIG results.</p>
+  <div class="contact-card">
+    <h4>Questions? Need Help Implementing?</h4>
+    <p>📧 masteringretail@gmail.com</p>
+    <p>📱 WhatsApp: +27 74 831 5232</p>
+    <p style="margin-top:10px;font-size:.9rem;opacity:.7;">Course Creator & Director: Phiwokuhle Makapela</p>
+  </div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+// ═══════════════════════════════════════════════════
+//  QUIZ ENGINE — Simple, isolated, bulletproof
+//  Each button is independent. No bubbling issues.
+//  No toggles. No collapse. Just: click → respond.
+// ═══════════════════════════════════════════════════
+
+// Track answered state: quizDone[module][qnum] = true/false
+const quizDone  = { 1:{1:false,2:false,3:false}, 2:{1:false,2:false,3:false}, 3:{1:false,2:false,3:false}, 4:{1:false,2:false,3:false}, 5:{1:false,2:false,3:false} };
+const sceneDone = { 1:false, 2:false, 3:false, 4:false, 5:false };
+const TOTAL = 20; // 5 scenarios + 15 quiz questions
+
+// ── SCENARIO ANSWER ──
+function answer(btn) {
+  var id       = parseInt(btn.getAttribute('data-id'));
+  var correct  = btn.getAttribute('data-correct') === 'true';
+
+  // Already answered? Do nothing
+  if (sceneDone[id]) return;
+  sceneDone[id] = true;
+
+  // Lock all buttons in this group
+  var opts = document.getElementById('s' + id + '-opts').querySelectorAll('.opt');
+  for (var i = 0; i < opts.length; i++) {
+    opts[i].classList.add('used');
+    opts[i].onclick = null;
+  }
+
+  // Style the clicked button
+  btn.classList.remove('used');
+  btn.classList.add(correct ? 'correct' : 'wrong');
+
+  // Show feedback
+  var fb = document.getElementById('s' + id + '-fb');
+  fb.classList.add('show', correct ? 'correct' : 'wrong');
+  fb.innerHTML = getSceneFeedback(id, correct);
+
+  updateProgress();
 }
 
-// Stop quiz/scenario button clicks from bubbling up and closing the module
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.choice-btn').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-    });
-});
+// ── QUIZ ANSWER ──
+function quizAnswer(btn) {
+  var mod     = parseInt(btn.getAttribute('data-qmod'));
+  var qnum    = parseInt(btn.getAttribute('data-qnum'));
+  var correct = btn.getAttribute('data-correct') === 'true';
 
-function checkAnswer(scenarioNum, choice, isCorrect, button) {
-    // Prevent re-answering
-    if (scenarioState[scenarioNum]) return;
-    scenarioState[scenarioNum] = true;
+  // Already answered? Do nothing
+  if (quizDone[mod][qnum]) return;
+  quizDone[mod][qnum] = true;
 
-    const feedback   = document.getElementById('feedback-' + scenarioNum);
-    const allButtons = button.closest('.choices').querySelectorAll('.choice-btn');
+  // Lock all buttons in this question's options div
+  var opts = document.getElementById('q' + mod + '-' + qnum + '-opts').querySelectorAll('.opt');
+  for (var i = 0; i < opts.length; i++) {
+    opts[i].classList.add('used');
+    opts[i].onclick = null;
+  }
 
-    allButtons.forEach(btn => btn.classList.add('disabled'));
-    button.classList.add(isCorrect ? 'correct' : 'incorrect');
+  // Style clicked button
+  btn.classList.remove('used');
+  btn.classList.add(correct ? 'correct' : 'wrong');
 
-    feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
-    feedback.innerHTML = getFeedback(scenarioNum, isCorrect);
+  // Show feedback
+  var fb = document.getElementById('q' + mod + '-' + qnum + '-fb');
+  fb.classList.add('show', correct ? 'correct' : 'wrong');
+  fb.innerHTML = correct
+    ? '<strong>✅ Correct!</strong> That\'s the knowledge that separates successful kasi businesses from struggling ones.'
+    : '<strong>❌ Not quite.</strong> Review the content above — the answer is there. These numbers are your profit blueprint.';
 
-    updateProgress();
+  // Update per-module counter
+  var done = (quizDone[mod][1] ? 1 : 0) + (quizDone[mod][2] ? 1 : 0) + (quizDone[mod][3] ? 1 : 0);
+  document.getElementById('qc-' + mod).textContent = done;
+
+  // Show module complete banner when all 3 done
+  if (done === 3) {
+    document.getElementById('mc-' + mod).classList.add('show');
+  }
+
+  updateProgress();
 }
 
-function checkQuizAnswer(module, question, choice, isCorrect, button) {
-    // Prevent re-answering
-    if (quizState[module][question]) return;
-    quizState[module][question] = true;
-
-    const feedback   = document.getElementById('quiz-' + module + '-' + question);
-    const allButtons = button.closest('.choices').querySelectorAll('.choice-btn');
-
-    allButtons.forEach(btn => btn.classList.add('disabled'));
-    button.classList.add(isCorrect ? 'correct' : 'incorrect');
-
-    feedback.classList.add('show', isCorrect ? 'correct' : 'incorrect');
-    feedback.innerHTML = isCorrect
-        ? '<strong>✅ Correct!</strong> You\'re paying attention. This is exactly the kind of knowledge that separates successful kasi businesses from struggling ones.'
-        : '<strong>❌ Not quite.</strong> Review the content above — the answer is in there. Understanding these numbers is crucial for maximising your profits.';
-
-    // Check if all 3 quiz questions in this module are now answered
-    const allAnswered = quizState[module][1] && quizState[module][2] && quizState[module][3];
-    if (allAnswered) {
-        document.getElementById('quiz-complete-' + module).classList.add('show');
-        document.getElementById('quiz-progress-' + module).textContent = '✅ All questions answered!';
-    } else {
-        const done  = Object.values(quizState[module]).filter(Boolean).length;
-        document.getElementById('quiz-progress-' + module).textContent = done + ' of 3 answered';
-    }
-
-    updateProgress();
-}
-
+// ── PROGRESS BAR ──
 function updateProgress() {
-    // Count total answered: 5 scenarios + 15 quiz questions
-    let answered = 0;
-    for (let m = 1; m <= 5; m++) {
-        if (scenarioState[m]) answered++;
-        answered += Object.values(quizState[m]).filter(Boolean).length;
-    }
-    const pct = Math.round((answered / TOTAL) * 100);
-    document.getElementById('mainProgress').style.width = pct + '%';
-    document.getElementById('progressText').textContent = pct + '% Complete — ' + answered + ' of ' + TOTAL + ' questions answered';
+  var count = 0;
+  for (var i = 1; i <= 5; i++) {
+    if (sceneDone[i]) count++;
+    if (quizDone[i][1]) count++;
+    if (quizDone[i][2]) count++;
+    if (quizDone[i][3]) count++;
+  }
+  var pct = Math.round((count / TOTAL) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = count + ' of ' + TOTAL + ' answered — ' + pct + '%';
 }
 
-function getFeedback(num, isCorrect) {
-    const fb = {
-        1: {
-            correct: '<strong>💰 CORRECT!</strong><br><br>This is the goldmine move. You just turned a "lost sale" into:<br>• A loyal customer (they feel valued)<br>• R12 guaranteed next time<br>• Word-of-mouth: "That spaza always sorts you out"<br><br>That R8 "loss" will make you R1,872/year from this customer alone. Trust = loyalty = profit.',
-            incorrect: '<strong>❌ Not the best move.</strong><br><br>The winning answer is C. The R8 you "give up" buys you customer loyalty, reputation, and repeat business. Turning away a customer over change costs R15,000/year in lost repeat business.'
-        },
-        2: {
-            correct: '<strong>💰 CORRECT!</strong><br><br>Perfect move. You\'re not punishing her specifically — you\'re protecting YOUR time going forward. Deposits cut no-shows by 65%. Serious clients pay without hesitation. Your time = money.',
-            incorrect: '<strong>❌ Not the best move.</strong><br><br>The winning answer is C — implement a deposit system. Confronting her burns the bridge. Blocking her is emotional, not strategic. Deposits protect your time without drama.'
-        },
-        3: {
-            correct: '<strong>💰 CORRECT!</strong><br><br>Smart move. He\'s a proven regular, you know his income source, R150 is manageable. When he pays Saturday, he\'ll drink there too. Strategic credit to proven regulars = loyalty investment, not charity.',
-            incorrect: '<strong>❌ Not the best move.</strong><br><br>The winning answer is B. Small risk (R150) vs big reward (lifetime customer worth R15,000/year). Strategic credit to employed regulars = smart business.'
-        },
-        4: {
-            correct: '<strong>💰 CORRECT!</strong><br><br>Prep is the goldmine. Pre-cut bread saves 1 minute per kota = 20 more customers at lunch = R300 extra daily = R6,000/month. Speed isn\'t about rushing — it\'s about PREPARATION.',
-            incorrect: '<strong>❌ Not the best move.</strong><br><br>The winning answer is C. Rushing = mistakes = bad quality. Telling customers to come back = they go to your competitor. The bottleneck is prep, not your speed during service.'
-        },
-        5: {
-            correct: '<strong>💰 CORRECT!</strong><br><br>Perfect upsell technique. You acknowledged what they asked for, offered extra value without pushing, and "just R50 more" makes it feel easy. 70% of customers say yes to this approach.',
-            incorrect: '<strong>❌ Not the best move.</strong><br><br>The winning answer is C. Saying nothing = lost revenue. Calling it dirty = offensive.
+// ── SCENARIO FEEDBACK TEXT ──
+function getSceneFeedback(num, correct) {
+  var fb = {
+    1: {
+      y: '<strong>💰 Correct!</strong> This is the goldmine move. The R8 you "give up" buys you a loyal customer, word-of-mouth reputation, and guaranteed return business. That "loss" makes you R1,872/year from this customer alone.',
+      n: '<strong>❌ Not the best move.</strong> The winning answer is C. Turning away a customer over change costs R15,000/year in lost repeat business. Trust = loyalty = profit.'
+    },
+    2: {
+      y: '<strong>💰 Correct!</strong> You\'re protecting your time without burning the bridge. Deposits cut no-shows by 65%. Serious clients pay without hesitation. Your time = money.',
+      n: '<strong>❌ Not the best move.</strong> The winning answer is C — implement a deposit system. It protects your time professionally without confrontation or drama.'
+    },
+    3: {
+      y: '<strong>💰 Correct!</strong> Smart move. He\'s a proven 6-month regular with a known income source. Small risk (R150) vs big reward (lifetime customer = R15,000/year). When he pays Saturday he\'ll drink there too.',
+      n: '<strong>❌ Not the best move.</strong> The winning answer is B. Strategic credit to proven employed regulars = loyalty investment, not charity. That\'s R15,000/year secured.'
+    },
+    4: {
+      y: '<strong>💰 Correct!</strong> Prep is the goldmine. Pre-cut bread + batch chips = 3 minutes per kota instead of 6. That\'s 20 more customers at lunch = R300 extra daily = R6,000/month from preparation alone.',
+      n: '<strong>❌ Not the best move.</strong> The winning answer is C. Rushing = mistakes. Telling them to leave = they go to your competitor. The bottleneck is prep, not speed during service.'
+    },
+    5: {
+      y: '<strong>💰 Correct!</strong> Perfect upsell. You respected their original request, offered value gently, and "just R50 more" makes it feel easy. 70% say yes to this approach. R80 just became R130 — 62% more revenue.',
+      n: '<strong>❌ Not the best move.</strong> The winning answer is C. Always offer, never push. Make it sound easy and affordable. 70% of customers accept when you ask right — that\'s the goldmine.'
+    }
+  };
+  return fb[num][correct ? 'y' : 'n'];
+}
+</script>
+</body>
+</html>
