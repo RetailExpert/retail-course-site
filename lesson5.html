@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #000000; color: #F5F5F5; line-height: 1.7; }
-    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700;}
+    header { background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%); color: white; padding: 25px 40px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 20px rgba(255, 215, 0, 0.2); border-bottom: 3px solid #FFD700; }
     header h1 { margin: 0; font-size: 24px; font-weight: 900; color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
     nav a { color: #FFD700; margin-left: 25px; text-decoration: none; font-weight: 600; transition: opacity 0.3s ease; }
     nav a:hover { opacity: 0.7; }
@@ -47,28 +47,34 @@
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
-    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; }
+    #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
+    #quiz-required-notice.show { display: block; }
+    .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; font-family: 'Inter', sans-serif; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .dashboard-link { text-align: center; margin: 40px 0; }
     .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
     @media (max-width: 768px) {
+      header { flex-direction: column; gap: 12px; padding: 16px 20px; }
       header h1 { font-size: 18px; }
       .hero h2 { font-size: 2em; }
       h3 { font-size: 1.5em; }
       .activation-grid { grid-template-columns: 1fr; }
+      .container { padding: 24px 14px; }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>⚫ THE ULTIMATE BLACK BOOK ⚫</h1>
-    <nav class="lesson-nav">
-  <a href="course.html">Home</a>
-  <a href="course.html#contact">Contact</a>
-  <a href="course.html#progress">View Progress</a>
-</nav>
-
+    <nav>
+      <a href="course.html">Home</a>
+      <a href="course.html#contact">Contact</a>
+      <a href="course.html#progress">View Progress</a>
+    </nav>
   </header>
+
   <div class="container">
     <div id="progressBarContainer">
       <div class="progress-outer">
@@ -84,13 +90,11 @@
 
     <div class="section">
       <h3><span class="section-icon">🚀</span>Understanding Retail Campaigns: The Big Picture</h3>
-      
       <div class="golden-box">
         <h4>What is a Retail Campaign?</h4>
-        <p>A retail campaign is a coordinated marketing effort designed to achieve specific business objectives within a defined timeframe. It's not just "having a sale"—it's a strategic activation that combines merchandising, promotions, communication, and in-store energy to drive measurable results.</p>
+        <p>A retail campaign is a coordinated marketing effort designed to achieve specific business objectives within a defined timeframe. It's not just "having a sale" — it's a strategic activation that combines merchandising, promotions, communication, and in-store energy to drive measurable results.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">The Anatomy of a Successful Campaign</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">The Anatomy of a Successful Campaign</h4>
       <ul>
         <li><strong>Clear Objective:</strong> What are we trying to achieve? (Drive traffic, clear inventory, launch new products, build brand awareness)</li>
         <li><strong>Target Audience:</strong> Who are we speaking to? (Existing customers, new shoppers, specific demographics)</li>
@@ -99,10 +103,7 @@
         <li><strong>In-Store Activation:</strong> How do we execute? (Displays, signage, staff training, customer experience)</li>
         <li><strong>Measurement:</strong> How do we track success? (Sales lift, traffic increase, conversion rate, ROI)</li>
       </ul>
-
-      <div class="pro-tip">
-        <strong>🎯 Pro Tip:</strong> The best campaigns answer three questions: "What's in it for me?" (customer benefit), "Why now?" (urgency), and "How do I get it?" (clear call-to-action).
-      </div>
+      <div class="pro-tip"><strong>🎯 Pro Tip:</strong> The best campaigns answer three questions: "What's in it for me?" (customer benefit), "Why now?" (urgency), and "How do I get it?" (clear call-to-action).</div>
     </div>
 
     <div class="section">
@@ -110,62 +111,51 @@
 
       <div class="campaign-type">
         <h4>1. 🎉 Seasonal Campaigns</h4>
-        <p><strong>Purpose:</strong> Capitalize on holidays, seasons, and cultural moments</p>
+        <p><strong>Purpose:</strong> Capitalise on holidays, seasons, and cultural moments</p>
         <p><strong>Examples:</strong> Christmas, Back-to-School, Summer Sale, Black Friday</p>
         <p><strong>Timeline:</strong> 4-12 weeks</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
           <li>Start planning 8-12 weeks in advance</li>
           <li>Create emotional connection to the season</li>
           <li>Build anticipation with countdown marketing</li>
           <li>Train staff on seasonal products and offers</li>
         </ul>
-        <div class="pro-tip">
-          <strong>Mastery Move:</strong> Don't just follow the calendar—create your own micro-seasons. "Mid-Winter Refresh," "Summer Pre-Sale," "Fall Preview Week."
-        </div>
+        <div class="pro-tip"><strong>Mastery Move:</strong> Don't just follow the calendar — create your own micro-seasons. "Mid-Winter Refresh," "Summer Pre-Sale," "Fall Preview Week."</div>
       </div>
 
       <div class="campaign-type">
         <h4>2. 🆕 Product Launch Campaigns</h4>
         <p><strong>Purpose:</strong> Generate excitement and trial for new products</p>
-        <p><strong>Examples:</strong> New collection drop, exclusive collaboration, brand partnership</p>
         <p><strong>Timeline:</strong> 2-6 weeks</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
           <li>Build hype before launch (teasers, previews, VIP access)</li>
           <li>Create scarcity ("Limited quantity," "First 50 customers")</li>
           <li>Feature prominently in-store (window displays, power walls)</li>
-          <li>Staff become product experts—can demo and tell the story</li>
+          <li>Staff become product experts — can demo and tell the story</li>
         </ul>
       </div>
 
       <div class="campaign-type">
         <h4>3. 💰 Clearance & Markdown Campaigns</h4>
         <p><strong>Purpose:</strong> Move aging inventory to make room for new stock</p>
-        <p><strong>Examples:</strong> End-of-Season Sale, Clearance Event, Flash Sale</p>
         <p><strong>Timeline:</strong> 1-4 weeks</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
-          <li>Bold signage—make discounts visible from outside</li>
+          <li>Bold signage — make discounts visible from outside</li>
           <li>Bundle slow-movers with popular items</li>
           <li>Create urgency: "While supplies last," "Final days"</li>
           <li>Use email/SMS to alert your database immediately</li>
         </ul>
-        <div class="pro-tip">
-          <strong>Mastery Move:</strong> Never say "We need to get rid of this." Frame it as "Our most popular items from last season are now at incredible prices!"
-        </div>
+        <div class="pro-tip"><strong>Mastery Move:</strong> Never say "We need to get rid of this." Frame it as "Our most popular items from last season are now at incredible prices!"</div>
       </div>
 
       <div class="campaign-type">
         <h4>4. 🎁 Loyalty & VIP Campaigns</h4>
         <p><strong>Purpose:</strong> Reward best customers and increase repeat purchases</p>
-        <p><strong>Examples:</strong> Members-Only Sale, Double Points Week, VIP Preview Night</p>
         <p><strong>Timeline:</strong> 1-2 weeks</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
-          <li>Make VIPs feel special—exclusive access, early access, special perks</li>
+          <li>Make VIPs feel special — exclusive access, early access, special perks</li>
           <li>Personal invitations (email, SMS, even handwritten notes)</li>
-          <li>In-store: champagne, snacks, personal shopping assistance</li>
+          <li>In-store: refreshments, personal shopping assistance</li>
           <li>Track who participates for future targeting</li>
         </ul>
       </div>
@@ -173,9 +163,7 @@
       <div class="campaign-type">
         <h4>5. 🏆 Competitive Campaigns</h4>
         <p><strong>Purpose:</strong> Respond to competitor activity or win market share</p>
-        <p><strong>Examples:</strong> Price match guarantee, "Beat any offer," Trade-in programs</p>
         <p><strong>Timeline:</strong> Ongoing or rapid response (1-2 weeks)</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
           <li>Know what competitors are doing (mystery shop them)</li>
           <li>Communicate your advantage clearly</li>
@@ -187,11 +175,9 @@
       <div class="campaign-type">
         <h4>6. 🌟 Brand Building Campaigns</h4>
         <p><strong>Purpose:</strong> Increase awareness, change perception, build emotional connection</p>
-        <p><strong>Examples:</strong> Sustainability initiative, Community partnership, Brand refresh</p>
         <p><strong>Timeline:</strong> 4-12 weeks</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
-          <li>Tell authentic stories—customers, staff, brand values</li>
+          <li>Tell authentic stories — customers, staff, brand values</li>
           <li>Create shareable moments (photo ops, social media activations)</li>
           <li>Align in-store experience with brand message</li>
           <li>Measure brand lift (surveys, social sentiment, traffic)</li>
@@ -201,91 +187,79 @@
       <div class="campaign-type">
         <h4>7. ⚡ Flash & Urgency Campaigns</h4>
         <p><strong>Purpose:</strong> Create immediate action and FOMO (Fear of Missing Out)</p>
-        <p><strong>Examples:</strong> 24-Hour Flash Sale, Weekend Only, Today Only Special</p>
         <p><strong>Timeline:</strong> 1-3 days</p>
-        <p><strong>Key Success Factors:</strong></p>
         <ul>
           <li>Extremely time-sensitive messaging</li>
           <li>Push notifications, SMS, social media blasts</li>
-          <li>Simple offer—easy to understand immediately</li>
+          <li>Simple offer — easy to understand immediately</li>
           <li>Staff prepared for high traffic and fast transactions</li>
         </ul>
-        <div class="pro-tip">
-          <strong>Warning:</strong> Don't overuse flash sales—they can train customers to wait for deals and devalue your brand.
-        </div>
+        <div class="pro-tip"><strong>Warning:</strong> Don't overuse flash sales — they can train customers to wait for deals and devalue your brand.</div>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">⚡</span>Staff Activation: Turning Your Team into Campaign Champions</h3>
-      
       <div class="golden-box">
         <h4>The Truth About Campaign Success</h4>
         <p>A brilliant campaign executed by unenthusiastic staff = FAILURE. An average campaign executed by energized, knowledgeable staff = SUCCESS. Your team IS the campaign.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">The Staff Activation Formula</h4>
-
+      <h4 style="color:#FFD700;margin-top:30px;">The Staff Activation Formula</h4>
       <div class="activation-grid">
         <div class="activation-card">
           <h4>1. 📢 Pre-Launch Brief</h4>
           <p><strong>48 hours before campaign:</strong></p>
-          <ul style="font-size: 0.95em;">
+          <ul style="font-size:0.95em;">
             <li>Explain the "why" and objectives</li>
             <li>Show them the offers and materials</li>
-            <li>Practice key talking points</li>
+            <li>Practise key talking points</li>
             <li>Answer all questions</li>
           </ul>
         </div>
-
         <div class="activation-card">
           <h4>2. 🎭 Role-Play Sessions</h4>
           <p><strong>Morning of launch:</strong></p>
-          <ul style="font-size: 0.95em;">
-            <li>Practice customer scenarios</li>
+          <ul style="font-size:0.95em;">
+            <li>Practise customer scenarios</li>
             <li>Rehearse objection handling</li>
             <li>Test product knowledge</li>
             <li>Build confidence and excitement</li>
           </ul>
         </div>
-
         <div class="activation-card">
           <h4>3. 🎯 Clear Targets</h4>
           <p><strong>Set goals:</strong></p>
-          <ul style="font-size: 0.95em;">
+          <ul style="font-size:0.95em;">
             <li>Team target (store goal)</li>
             <li>Individual targets (per staff)</li>
             <li>Specific metrics (units sold, attachments, signups)</li>
             <li>Make it visible (leaderboard)</li>
           </ul>
         </div>
-
         <div class="activation-card">
           <h4>4. 🏆 Incentives & Recognition</h4>
           <p><strong>Motivate performance:</strong></p>
-          <ul style="font-size: 0.95em;">
+          <ul style="font-size:0.95em;">
             <li>Prizes for top performers</li>
             <li>Public recognition (team huddles)</li>
             <li>Small rewards (coffee, lunch)</li>
-            <li>Gamify it—make it fun!</li>
+            <li>Gamify it — make it fun!</li>
           </ul>
         </div>
-
         <div class="activation-card">
           <h4>5. 📊 Real-Time Tracking</h4>
           <p><strong>During campaign:</strong></p>
-          <ul style="font-size: 0.95em;">
+          <ul style="font-size:0.95em;">
             <li>Update results hourly or daily</li>
             <li>Celebrate wins immediately</li>
             <li>Course-correct quickly</li>
             <li>Keep energy high</li>
           </ul>
         </div>
-
         <div class="activation-card">
           <h4>6. 💬 Daily Huddles</h4>
           <p><strong>Each day of campaign:</strong></p>
-          <ul style="font-size: 0.95em;">
+          <ul style="font-size:0.95em;">
             <li>5-minute team check-in</li>
             <li>Share success stories</li>
             <li>Address challenges</li>
@@ -293,367 +267,319 @@
           </ul>
         </div>
       </div>
-
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: Lululemon's "Sweat Life" Campaign</h4>
-        <p>Lululemon doesn't just train staff on products—they make them campaign ambassadors. Before their wellness campaigns, all staff participate in the activities themselves (yoga classes, running groups). They can authentically share personal experiences, not just sales pitches. Result: 89% of campaign participants become repeat customers because staff connection feels genuine.</p>
+        <h4 style="color:#FFD700;">📖 Case Study: Lululemon's "Sweat Life" Campaign</h4>
+        <p>Lululemon makes staff campaign ambassadors. Before wellness campaigns, all staff participate in the activities themselves (yoga classes, running groups). They share personal experiences, not just sales pitches. Result: 89% of campaign participants become repeat customers because staff connection feels genuine.</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">🎨</span>Creating Urgency Without Pressure</h3>
-      
       <div class="golden-box">
         <h4>The Psychology of Urgency</h4>
         <p>Urgency drives action. But there's a difference between healthy urgency (FOMO, scarcity) and toxic pressure (manipulation, aggression). Master the art of inspiring action without being pushy.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Urgency Tactics That Work</h4>
-
       <div class="timeline">
         <div class="timeline-item">
           <h5>⏰ Time Scarcity</h5>
           <p><strong>Use:</strong> "Sale ends Sunday," "Today only," "Final hours"</p>
-          <p><strong>Why it works:</strong> Deadlines trigger action. People procrastinate unless there's a reason to act now.</p>
-          <p><strong>How to say it:</strong> "I'd hate for you to miss this—the sale ends tomorrow and these have been flying off the shelves!"</p>
+          <p><strong>How to say it:</strong> "I'd hate for you to miss this — the sale ends tomorrow and these have been flying off the shelves!"</p>
         </div>
-
         <div class="timeline-item">
           <h5>📦 Quantity Scarcity</h5>
           <p><strong>Use:</strong> "Only 3 left," "Limited stock," "While supplies last"</p>
-          <p><strong>Why it works:</strong> Scarcity increases perceived value. We want what's rare.</p>
-          <p><strong>How to say it:</strong> "We only have a few of these left in your size—would you like me to hold one while you decide?"</p>
+          <p><strong>How to say it:</strong> "We only have a few of these left in your size — would you like me to hold one while you decide?"</p>
         </div>
-
         <div class="timeline-item">
           <h5>🎁 Bonus Scarcity</h5>
-          <p><strong>Use:</strong> "First 50 customers get a free gift," "Spend $100 today, get..."</p>
-          <p><strong>Why it works:</strong> Added value creates fear of missing out on a deal.</p>
+          <p><strong>Use:</strong> "First 50 customers get a free gift," "Spend R500 today, get..."</p>
           <p><strong>How to say it:</strong> "Just so you know, if you grab this today, you'll also qualify for our gift-with-purchase!"</p>
         </div>
-
         <div class="timeline-item">
           <h5>🌟 Exclusivity</h5>
           <p><strong>Use:</strong> "Members only," "VIP early access," "Exclusive to this location"</p>
-          <p><strong>Why it works:</strong> People want to feel special and part of an exclusive group.</p>
           <p><strong>How to say it:</strong> "You're one of our valued customers, so you get first access before we open this to everyone tomorrow."</p>
         </div>
       </div>
-
-      <div class="pro-tip">
-        <strong>🎯 The Golden Rule:</strong> Always be honest. Never manufacture fake urgency ("Only 2 left!" when you have 50 in the back). Customers can smell BS, and it destroys trust permanently.
-      </div>
+      <div class="pro-tip"><strong>🎯 The Golden Rule:</strong> Always be honest. Never manufacture fake urgency. Customers can tell, and it destroys trust permanently.</div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">📈</span>Measuring Campaign Success</h3>
-      
       <div class="golden-box">
         <h4>What Gets Measured Gets Improved</h4>
-        <p>You can't improve what you don't track. Every campaign should have clear metrics that tell you if it worked—and what to do differently next time.</p>
+        <p>You can't improve what you don't track. Every campaign should have clear metrics that tell you if it worked — and what to do differently next time.</p>
       </div>
-
-      <h4 style="color: #FFD700; margin-top: 30px;">Key Campaign Metrics</h4>
+      <h4 style="color:#FFD700;margin-top:30px;">Key Campaign Metrics</h4>
       <ul>
-        <li><strong>Sales Lift:</strong> % increase in sales vs. baseline (compare to same period last year or previous week)</li>
-        <li><strong>Traffic Increase:</strong> How many more customers came in during the campaign?</li>
-        <li><strong>Conversion Rate:</strong> Did more visitors buy? (Sales ÷ Traffic)</li>
+        <li><strong>Sales Lift:</strong> % increase in sales vs. baseline</li>
+        <li><strong>Traffic Increase:</strong> How many more customers came in?</li>
+        <li><strong>Conversion Rate:</strong> Sales ÷ Traffic</li>
         <li><strong>Average Transaction Value:</strong> Did people spend more per purchase?</li>
-        <li><strong>Units Per Transaction:</strong> Did they buy more items?</li>
         <li><strong>Campaign ROI:</strong> (Revenue - Campaign Cost) ÷ Campaign Cost × 100</li>
-        <li><strong>New Customer Acquisition:</strong> How many first-time buyers did we get?</li>
-        <li><strong>Email/SMS Performance:</strong> Open rates, click rates, conversion from digital</li>
+        <li><strong>New Customer Acquisition:</strong> How many first-time buyers?</li>
         <li><strong>Social Engagement:</strong> Shares, comments, user-generated content</li>
       </ul>
-
-      <div class="pro-tip">
-        <strong>🎯 Pro Tip:</strong> Track results daily during the campaign, not just at the end. If something isn't working, you can pivot mid-campaign. Wait until it's over and you've wasted time and money.
-      </div>
-
+      <div class="pro-tip"><strong>🎯 Pro Tip:</strong> Track results daily during the campaign, not just at the end. If something isn't working, you can pivot mid-campaign.</div>
       <div class="case-study">
-        <h4 style="color: #FFD700;">📖 Case Study: Target's Back-to-School Campaign</h4>
-        <p>Target tracks everything—down to which products sell in which stores during their massive back-to-school push. They use real-time data to shift inventory, adjust displays, and change promotions MID-CAMPAIGN. This agility is why they consistently outperform competitors during peak seasons. Their mantra: "Plan the campaign, but be ready to adapt every single day."</p>
+        <h4 style="color:#FFD700;">📖 Case Study: Target's Back-to-School Campaign</h4>
+        <p>Target tracks everything — down to which products sell in which stores. They use real-time data to shift inventory, adjust displays, and change promotions MID-CAMPAIGN. Their mantra: "Plan the campaign, but be ready to adapt every single day."</p>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">🔥</span>Campaign Execution Checklist</h3>
-      
       <div class="golden-box">
         <h4>The Pre-Launch Checklist (Use This Every Time)</h4>
-        <p style="margin-bottom: 15px;"><strong>2 Weeks Before:</strong></p>
-        <ul style="margin-bottom: 25px;">
+        <p style="margin-bottom:15px;"><strong>2 Weeks Before:</strong></p>
+        <ul style="margin-bottom:25px;">
           <li>☐ Campaign objectives defined and communicated</li>
-          <li>☐ Target audience identified</li>
-          <li>☐ Offers finalized and approved</li>
-          <li>☐ Marketing materials ordered (signage, flyers, digital assets)</li>
+          <li>☐ Offers finalised and approved</li>
+          <li>☐ Marketing materials ordered</li>
           <li>☐ Inventory levels confirmed</li>
           <li>☐ Staff training scheduled</li>
         </ul>
-
-        <p style="margin-bottom: 15px;"><strong>1 Week Before:</strong></p>
-        <ul style="margin-bottom: 25px;">
+        <p style="margin-bottom:15px;"><strong>1 Week Before:</strong></p>
+        <ul style="margin-bottom:25px;">
           <li>☐ Store layout/displays planned and built</li>
           <li>☐ All signage installed</li>
           <li>☐ POS systems updated with promotions</li>
           <li>☐ Email/SMS campaigns scheduled</li>
-          <li>☐ Social media content created and queued</li>
           <li>☐ Staff briefing completed</li>
         </ul>
-
-        <p style="margin-bottom: 15px;"><strong>Day Before Launch:</strong></p>
-        <ul style="margin-bottom: 25px;">
-          <li>☐ Final walk-through of store</li>
-          <li>☐ Staff role-play and questions answered</li>
-          <li>☐ Team targets communicated</li>
-          <li>☐ Opening inventory count done</li>
-          <li>☐ Communication channels tested (email, SMS, social)</li>
-          <li>☐ Backup stock identified and accessible</li>
-        </ul>
-
-        <p style="margin-bottom: 15px;"><strong>During Campaign:</strong></p>
-        <ul style="margin-bottom: 25px;">
+        <p style="margin-bottom:15px;"><strong>During Campaign:</strong></p>
+        <ul style="margin-bottom:25px;">
           <li>☐ Daily huddles with team</li>
           <li>☐ Real-time results tracking</li>
           <li>☐ Quick wins celebrated publicly</li>
-          <li>☐ Issues addressed immediately</li>
           <li>☐ Customer feedback collected</li>
-          <li>☐ Inventory replenished as needed</li>
         </ul>
-
-        <p style="margin-bottom: 15px;"><strong>Post-Campaign:</strong></p>
+        <p style="margin-bottom:15px;"><strong>Post-Campaign:</strong></p>
         <ul>
           <li>☐ Final results calculated and shared</li>
-          <li>☐ Team debriefing—what worked, what didn't</li>
-          <li>☐ Customer data captured (emails, preferences, feedback)</li>
-          <li>☐ Thank customers (follow-up email/SMS)</li>
+          <li>☐ Team debriefing — what worked, what didn't</li>
           <li>☐ Document learnings for next campaign</li>
-          <li>☐ Recognize top performers</li>
+          <li>☐ Recognise top performers</li>
         </ul>
       </div>
     </div>
 
     <div class="section">
       <h3><span class="section-icon">💡</span>Advanced Campaign Strategies</h3>
-
       <div class="campaign-type">
         <h4>🎪 The "Event-ification" Strategy</h4>
-        <p>Don't just have a sale—create an EVENT. People remember experiences, not discounts.</p>
-        <p><strong>Examples:</strong></p>
+        <p>Don't just have a sale — create an EVENT. People remember experiences, not discounts.</p>
         <ul>
-          <li><strong>Nike:</strong> Midnight launch parties for sneaker drops with DJs, food trucks, and influencer appearances</li>
+          <li><strong>Nike:</strong> Midnight launch parties with DJs and influencer appearances</li>
           <li><strong>Sephora:</strong> Beauty classes during campaigns where customers learn while they shop</li>
-          <li><strong>IKEA:</strong> Breakfast campaigns—"Shop early, eat free"</li>
+          <li><strong>IKEA:</strong> Breakfast campaigns — "Shop early, eat free"</li>
         </ul>
-        <div class="pro-tip">
-          <strong>Your Move:</strong> Add one experiential element to your next campaign—live music, product demos, contests, photo booth, free samples. Make people want to BE there, not just buy there.
-        </div>
+        <div class="pro-tip"><strong>Your Move:</strong> Add one experiential element to your next campaign — live music, demos, contests, photo booth, free samples.</div>
       </div>
-
       <div class="campaign-type">
         <h4>🤝 The "Collaboration Amplifier"</h4>
         <p>Partner with complementary brands or local businesses to expand reach and add value.</p>
-        <p><strong>Examples:</strong></p>
         <ul>
           <li>Clothing store + local coffee shop: "Show your receipt, get 20% off coffee"</li>
           <li>Sports store + gym: Co-host fitness challenge during campaign</li>
           <li>Beauty store + salon: Cross-promote services and products</li>
         </ul>
-        <div class="pro-tip">
-          <strong>Win-Win:</strong> Both businesses get new customers, shared marketing costs, and increased foot traffic. Plus, it's more interesting than another solo discount.
-        </div>
       </div>
-
       <div class="campaign-type">
         <h4>📱 The "Social-First Campaign"</h4>
-        <p>Build campaigns designed to be shared on social media—free marketing through customer content.</p>
-        <p><strong>Tactics:</strong></p>
+        <p>Build campaigns designed to be shared on social media — free marketing through customer content.</p>
         <ul>
           <li><strong>Hashtag contests:</strong> "Post your purchase with #OurBrandStyle for a chance to win..."</li>
           <li><strong>Instagram-worthy displays:</strong> Create photo-ops customers can't resist</li>
-          <li><strong>User-generated content:</strong> Feature customer photos in-store and online</li>
           <li><strong>Influencer seeding:</strong> Give local influencers early access to share with followers</li>
         </ul>
-      </div>
-
-      <div class="campaign-type">
-        <h4>🎯 The "Segmentation Play"</h4>
-        <p>Don't blast everyone with the same message—personalize campaigns by customer segment.</p>
-        <p><strong>Segments:</strong></p>
-        <ul>
-          <li><strong>VIP customers:</strong> Early access, exclusive offers, personal invitations</li>
-          <li><strong>Lapsed customers:</strong> "We miss you" campaign with special comeback offer</li>
-          <li><strong>New customers:</strong> Welcome series with education + first-purchase incentive</li>
-          <li><strong>Category shoppers:</strong> Target based on past purchases (women's shoes, tech, etc.)</li>
-        </ul>
-        <div class="pro-tip">
-          <strong>Data is Gold:</strong> The more you know about your customers, the more relevant your campaigns. Invest in a CRM or loyalty program that tracks purchase history.
-        </div>
       </div>
     </div>
 
     <div class="case-study">
-      <h4 style="color: #FFD700;">📖 Master Case Study: Apple's Product Launch Playbook</h4>
-      <p><strong>The Setup:</strong> Apple doesn't just launch products—they create cultural moments. Every iPhone release follows a proven formula:</p>
-      <ul>
-        <li><strong>Teaser Phase (6-8 weeks out):</strong> Mysterious hints, leaked photos, media speculation builds organic buzz</li>
-        <li><strong>Reveal Event (2 weeks out):</strong> Theatrical unveiling live-streamed globally, creating massive FOMO</li>
-        <li><strong>Pre-Order Frenzy (1 week):</strong> Limited quantities, countdown timers, "reserve yours now"</li>
-        <li><strong>Launch Day (Day 1):</strong> Lines around the block, media coverage, staff energized and trained</li>
-        <li><strong>Post-Launch (Weeks 2-4):</strong> User testimonials, reviews, accessories pushed, genius bar appointments</li>
-      </ul>
-      <p><strong>Why It Works:</strong> They manufacture urgency through genuine scarcity, create community around the launch (people want to be "first"), and maintain mystique. Every touchpoint is choreographed. The campaign doesn't sell a phone—it sells belonging to something bigger.</p>
+      <h4 style="color:#FFD700;">📖 Master Case Study: Apple's Product Launch Playbook</h4>
+      <p>Apple doesn't just launch products — they create cultural moments. Every iPhone release follows a proven formula: teaser phase (organic buzz), reveal event (global FOMO), pre-order frenzy (limited quantities), launch day (lines, media, trained staff), and post-launch (testimonials, accessories, genius bar).</p>
       <p><strong>Your Takeaway:</strong> You don't need Apple's budget. You need Apple's THINKING. Build anticipation, create scarcity, make it an event, train your team obsessively, and measure everything.</p>
     </div>
 
+    <!-- ══ QUIZ ══ -->
     <div class="quiz-section">
       <h3>🎯 Campaign Mastery Quiz</h3>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz5">
         <div class="quiz-question">
-          <b>1. What are the three questions that the best campaigns answer?</b><br/>
-          <label><input type="radio" name="q1" value="a"/> What's in it for me? Why now? How do I get it?</label><br/>
-          <label><input type="radio" name="q1" value="b"/> How much? When? Where?</label><br/>
-          <label><input type="radio" name="q1" value="c"/> Who made it? Why? What color?</label>
+          <b>1. What are the three questions the best campaigns answer?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q1" value="a"/> What's in it for me? Why now? How do I get it?</label>
+            <label><input type="radio" name="q1" value="b"/> How much? When? Where?</label>
+            <label><input type="radio" name="q1" value="c"/> Who made it? Why? What colour?</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>2. What type of campaign is best for moving aging inventory?</b><br/>
-          <label><input type="radio" name="q2" value="a"/> Product Launch Campaign</label><br/>
-          <label><input type="radio" name="q2" value="b"/> Clearance & Markdown Campaign</label><br/>
-          <label><input type="radio" name="q2" value="c"/> Brand Building Campaign</label>
+          <b>2. What type of campaign is best for moving aging inventory?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q2" value="a"/> Product Launch Campaign</label>
+            <label><input type="radio" name="q2" value="b"/> Clearance & Markdown Campaign</label>
+            <label><input type="radio" name="q2" value="c"/> Brand Building Campaign</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>3. What is the #1 factor that determines campaign success?</b><br/>
-          <label><input type="radio" name="q3" value="a"/> How much you spend on advertising</label><br/>
-          <label><input type="radio" name="q3" value="b"/> Staff activation and enthusiasm</label><br/>
-          <label><input type="radio" name="q3" value="c"/> The size of the discount</label>
+          <b>3. What is the #1 factor that determines campaign success?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q3" value="a"/> How much you spend on advertising</label>
+            <label><input type="radio" name="q3" value="b"/> Staff activation and enthusiasm</label>
+            <label><input type="radio" name="q3" value="c"/> The size of the discount</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>4. Which urgency tactic uses "Only 3 left" or "While supplies last"?</b><br/>
-          <label><input type="radio" name="q4" value="a"/> Time Scarcity</label><br/>
-          <label><input type="radio" name="q4" value="b"/> Quantity Scarcity</label><br/>
-          <label><input type="radio" name="q4" value="c"/> Bonus Scarcity</label>
+          <b>4. Which urgency tactic uses "Only 3 left" or "While supplies last"?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q4" value="a"/> Time Scarcity</label>
+            <label><input type="radio" name="q4" value="b"/> Quantity Scarcity</label>
+            <label><input type="radio" name="q4" value="c"/> Bonus Scarcity</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>5. True or False: You should only measure campaign results after the campaign ends.</b><br/>
-          <label><input type="radio" name="q5" value="a"/> True</label><br/>
-          <label><input type="radio" name="q5" value="b"/> False - track daily to pivot mid-campaign if needed</label>
+          <b>5. True or False: You should only measure campaign results after the campaign ends.</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q5" value="a"/> True</label>
+            <label><input type="radio" name="q5" value="b"/> False — track daily to pivot mid-campaign if needed</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>6. What is the "Event-ification" strategy?</b><br/>
-          <label><input type="radio" name="q6" value="a"/> Creating an experience around your campaign, not just a discount</label><br/>
-          <label><input type="radio" name="q6" value="b"/> Only running campaigns during holidays</label><br/>
-          <label><input type="radio" name="q6" value="c"/> Hiring event planners</label>
+          <b>6. What is the "Event-ification" strategy?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" value="a"/> Creating an experience around your campaign, not just a discount</label>
+            <label><input type="radio" name="q6" value="b"/> Only running campaigns during holidays</label>
+            <label><input type="radio" name="q6" value="c"/> Hiring event planners</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>7. Which campaign metric measures (Revenue - Cost) ÷ Cost × 100?</b><br/>
-          <label><input type="radio" name="q7" value="a"/> Conversion Rate</label><br/>
-          <label><input type="radio" name="q7" value="b"/> Campaign ROI</label><br/>
-          <label><input type="radio" name="q7" value="c"/> Traffic Increase</label>
+          <b>7. Which campaign metric measures (Revenue - Cost) ÷ Cost × 100?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" value="a"/> Conversion Rate</label>
+            <label><input type="radio" name="q7" value="b"/> Campaign ROI</label>
+            <label><input type="radio" name="q7" value="c"/> Traffic Increase</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>8. What should happen 48 hours before campaign launch?</b><br/>
-          <label><input type="radio" name="q8" value="a"/> Nothing - wait until launch day</label><br/>
-          <label><input type="radio" name="q8" value="b"/> Pre-launch staff brief explaining objectives and offers</label><br/>
-          <label><input type="radio" name="q8" value="c"/> Start the campaign early</label>
+          <b>8. What should happen 48 hours before campaign launch?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> Nothing — wait until launch day</label>
+            <label><input type="radio" name="q8" value="b"/> Pre-launch staff brief explaining objectives and offers</label>
+            <label><input type="radio" name="q8" value="c"/> Start the campaign early</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>9. What is the danger of overusing flash sales?</b><br/>
-          <label><input type="radio" name="q9" value="a"/> Customers love them too much</label><br/>
-          <label><input type="radio" name="q9" value="b"/> They train customers to wait for deals and can devalue your brand</label><br/>
-          <label><input type="radio" name="q9" value="c"/> They're too expensive to run</label>
+          <b>9. What is the danger of overusing flash sales?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> Customers love them too much</label>
+            <label><input type="radio" name="q9" value="b"/> They train customers to wait for deals and can devalue your brand</label>
+            <label><input type="radio" name="q9" value="c"/> They're too expensive to run</label>
+          </div>
         </div>
-        
         <div class="quiz-question">
-          <b>10. What did Apple do to make product launches cultural moments?</b><br/>
-          <label><input type="radio" name="q10" value="a"/> Lower prices significantly</label><br/>
-          <label><input type="radio" name="q10" value="b"/> Build anticipation, create scarcity, make it an event, train staff obsessively</label><br/>
-          <label><input type="radio" name="q10" value="c"/> Run TV commercials only</label>
+          <b>10. What did Apple do to make product launches cultural moments?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> Lower prices significantly</label>
+            <label><input type="radio" name="q10" value="b"/> Build anticipation, create scarcity, make it an event, train staff obsessively</label>
+            <label><input type="radio" name="q10" value="c"/> Run TV commercials only</label>
+          </div>
         </div>
-        
-        <button type="button" class="btn" onclick="gradeQuiz5()" style="margin-top: 25px; background: #000; color: #FFD700; border: 3px solid #FFD700;">Submit Quiz</button>
+        <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
-      <div id="quiz5-result" style="font-weight: bold; margin-top: 25px; padding: 25px; background: rgba(0,0,0,0.2); border-radius: 12px; display: none;"></div>
+      <div id="quiz5-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
-    
-    <script>
-      function gradeQuiz5() {
-        const correct = {
-          q1: 'a', q2: 'b', q3: 'b', q4: 'b', q5: 'b',
-          q6: 'a', q7: 'b', q8: 'b', q9: 'b', q10: 'b'
-        };
-        let score = 0, total = 10;
-        for(let i=1; i<=total; i++) {
-          let ans = document.querySelector('input[name="q'+i+'"]:checked');
-          if(ans && ans.value === correct['q'+i]) score++;
-        }
-        let msg = `🎯 You scored ${score} out of ${total}! `;
-        if(score === total) msg += "CAMPAIGN MASTER! You're ready to crush any activation! 🔥";
-        else if(score >= 8) msg += "Excellent! You understand campaign execution at a high level!";
-        else if(score >= 6) msg += "Good foundation! Review the strategies for mastery.";
-        else msg += "Keep learning! Campaigns are complex - review the lesson and try again.";
-        
-        const resultDiv = document.getElementById('quiz5-result');
-        resultDiv.textContent = msg;
-        resultDiv.style.display = 'block';
-        resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    </script>
 
+    <!-- ══ COMPLETION ══ -->
     <div id="lesson-completion">
+      <div id="quiz-required-notice">
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
+      </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson6.html" class="btn" style="display:none;">Continue to Lesson 6 →</a>
       <div id="completionMsg">🎉 Lesson 5 Complete! You now understand how to execute campaigns that drive real results!</div>
     </div>
-    
+
     <div class="dashboard-link">
-      <a href="progress.html">📊 View Your Progress →</a>
+      <a href="course.html">← Back to Course Home</a>
     </div>
   </div>
-  
+
   <script>
-    const lessonNum = 5;
-    const totalLessons = 8;
-    
+    var lessonNum    = 5;
+    var totalLessons = 8;
+    var quizPassed   = false;
+
+    function gradeQuiz() {
+      var correct = { q1:'a', q2:'b', q3:'b', q4:'b', q5:'b', q6:'a', q7:'b', q8:'b', q9:'b', q10:'b' };
+      var score = 0;
+      for (var i = 1; i <= 10; i++) {
+        var ans = document.querySelector('input[name="q' + i + '"]:checked');
+        if (ans && ans.value === correct['q' + i]) score++;
+      }
+      var msg = '🎯 You scored ' + score + ' out of 10! ';
+      if (score === 10)    msg += 'CAMPAIGN MASTER! You\'re ready to crush any activation! 🔥';
+      else if (score >= 8) msg += 'Excellent! You understand campaign execution at a high level.';
+      else if (score >= 6) msg += 'Good foundation! Review the strategies and try again to unlock completion.';
+      else                 msg += 'Keep learning! Campaigns are complex — review the lesson and try again.';
+
+      var resultDiv = document.getElementById('quiz5-result');
+      resultDiv.textContent = msg;
+      resultDiv.style.display = 'block';
+      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+
+      if (score >= 8) {
+        quizPassed = true;
+        document.getElementById('quiz-required-notice').classList.remove('show');
+      } else {
+        quizPassed = false;
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/10. Score 8 or higher to mark complete. Review the lesson and try again!';
+      }
+    }
+
     function markLessonComplete() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      progress[`lesson${lessonNum}`] = true;
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (!quizPassed && !progress['lesson' + lessonNum]) {
+        document.getElementById('quiz-required-notice').classList.add('show');
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 8/10 or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        return;
+      }
+      progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
-      
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
-      document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+      document.getElementById('markComplete').textContent = '✅ Lesson Completed';
       document.getElementById('markComplete').disabled = true;
       document.getElementById('completionMsg').style.display = 'block';
+      document.getElementById('quiz-required-notice').classList.remove('show');
       updateProgressBar();
     }
-    
+
     function updateProgressBar() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      let completed = 0;
-      for(let i=1; i<=totalLessons; i++) if(progress[`lesson${i}`]) completed++;
-      let percent = Math.round((completed/totalLessons)*100);
+      var progress  = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      var completed = 0;
+      for (var i = 1; i <= totalLessons; i++) { if (progress['lesson' + i]) completed++; }
+      var percent = Math.round((completed / totalLessons) * 100);
       document.getElementById('progressBarFill').style.width = percent + '%';
-      document.getElementById('progressText').textContent =
-        `Lesson ${lessonNum} of ${totalLessons} • ${percent}% Complete`;
+      document.getElementById('progressText').textContent = 'Lesson ' + lessonNum + ' of ' + totalLessons + ' • ' + percent + '% Complete';
     }
-    
+
     window.onload = function() {
-      let progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
-      if(progress[`lesson${lessonNum}`]) {
+      var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
+      if (progress['lesson' + lessonNum]) {
+        quizPassed = true;
         document.getElementById('nextLessonBtn').style.display = 'inline-block';
-        document.getElementById('markComplete').textContent = "✅ Lesson Completed";
+        document.getElementById('markComplete').textContent = '✅ Lesson Completed';
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
+      } else {
+        document.getElementById('quiz-required-notice').classList.add('show');
       }
       updateProgressBar();
     };
   </script>
+
 </body>
-                                                                                                                                                              </html>
+</html>
