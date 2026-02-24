@@ -183,7 +183,7 @@
             </ol>
         </div>
         
-        <a href="course-portal.html" class="cta-button">
+        <a href="course.html" class="cta-button">
             🚀 ACCESS MY COURSE NOW
         </a>
         
@@ -192,5 +192,39 @@
             <p style="margin-top: 10px;">We typically respond within 24 hours.</p>
         </div>
     </div>
+
+    <script>
+        // Automatically notify masteringretail@gmail.com when a customer lands here
+        (function() {
+            // Only fire once per visit using sessionStorage
+            if (sessionStorage.getItem('notified')) return;
+            sessionStorage.setItem('notified', 'true');
+
+            // Grab any PayFast params from the URL if present
+            var params = new URLSearchParams(window.location.search);
+            var customerName  = params.get('name_first') || params.get('name') || 'Unknown';
+            var customerEmail = params.get('email_address') || params.get('email') || 'Not provided';
+            var amount        = params.get('amount') || 'R249.00';
+            var paymentId     = params.get('pf_payment_id') || params.get('payment_id') || 'N/A';
+            var timestamp     = new Date().toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg'});
+
+            fetch('https://formspree.io/f/xrearbqa', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    subject: '💰 NEW SALE — R249 Course Purchase!',
+                    message: '🎉 A new customer just purchased the course!\n\n' +
+                             'Name: ' + customerName + '\n' +
+                             'Email: ' + customerEmail + '\n' +
+                             'Amount: ' + amount + '\n' +
+                             'Payment ID: ' + paymentId + '\n' +
+                             'Time: ' + timestamp + '\n\n' +
+                             'The customer has been given access password: GetHired249'
+                })
+            }).catch(function() {
+                // Silent fail — customer experience is unaffected
+            });
+        })();
+    </script>
 </body>
 </html>
