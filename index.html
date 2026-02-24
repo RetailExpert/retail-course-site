@@ -8,8 +8,6 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; background: #000; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* ── HEADER ── */
         header { background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%); color: white; padding: 80px 20px; text-align: center; border-bottom: 5px solid #FFD700; position: relative; overflow: hidden; }
         header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(255,215,0,.2) 0%, transparent 70%); pointer-events: none; }
         header h1 { font-size: 3em; margin-bottom: 20px; font-weight: 900; letter-spacing: -1px; color: #FFD700; text-shadow: 0 0 20px rgba(255,215,0,.6), 0 0 40px rgba(255,215,0,.3); position: relative; z-index: 1; }
@@ -18,25 +16,17 @@
         .stat { text-align: center; }
         .stat-number { font-size: 3.5em; font-weight: 900; display: block; color: #FFD700; text-shadow: 0 0 15px rgba(255,215,0,.6); }
         .stat-label { font-size: .95em; opacity: .9; color: #b0b0b0; }
-
-        /* ── ALERT BANNER ── */
         .alert-banner { background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%); color: #1a1a1a; padding: 18px; text-align: center; font-weight: bold; font-size: 1.1em; }
-
-        /* ── GENERIC SECTIONS ── */
         section { padding: 80px 20px; background: #0f1117; }
         section:nth-child(even) { background: #13161e; }
         .section-title { text-align: center; font-size: 2.5em; margin-bottom: 30px; color: #fff; font-weight: 800; }
         .section-subtitle { text-align: center; font-size: 1.2em; color: #888; max-width: 800px; margin: 0 auto 60px; line-height: 1.8; }
-
-        /* ── PROBLEMS ── */
         .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-top: 50px; }
         .problem-card { background: #161a24; padding: 35px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,.4); border-left: 5px solid #d4af37; transition: transform .3s, box-shadow .3s; }
         .problem-card:hover { transform: translateY(-5px); box-shadow: 0 8px 28px rgba(56,189,178,.15), 0 0 0 1px rgba(56,189,178,.12); border-left-color: #38bdb2; }
         .problem-icon { font-size: 2.8em; margin-bottom: 20px; display: inline-block; }
         .problem-card h3 { font-size: 1.4em; margin-bottom: 15px; color: #fff; font-weight: 700; }
         .problem-card p { color: #888; line-height: 1.8; font-size: 1.05em; }
-
-        /* ── WHO THIS IS FOR ── */
         .for-section { background: #0f1117; background-image: radial-gradient(ellipse 70% 50% at 50% 100%, rgba(56,189,178,.05), transparent); }
         .for-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 50px; }
         .for-card { padding: 30px 28px; border-radius: 14px; border: 1px solid rgba(212,175,55,.18); background: #161a24; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
@@ -45,8 +35,6 @@
         .for-icon { font-size: 2.2em; margin-bottom: 14px; display: inline-block; }
         .for-card h3 { font-size: 1.1em; font-weight: 800; color: #fff; margin-bottom: 8px; }
         .for-card p { color: #888; font-size: .95em; line-height: 1.7; }
-
-        /* ── MODULES ── */
         .solution-section { background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%); color: white; position: relative; overflow: hidden; }
         .solution-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, rgba(212,175,55,.1) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(212,175,55,.1) 0%, transparent 50%); pointer-events: none; }
         .solution-section .container { position: relative; z-index: 1; }
@@ -62,8 +50,6 @@
         .module-card h3 { font-size: 1.15em; margin-bottom: 12px; color: #FFF; font-weight: 800; line-height: 1.3; }
         .module-card p { color: #888; line-height: 1.8; font-size: .95em; transition: color .25s; }
         .module-card:hover p { color: #b8b8b8; }
-
-        /* ── FREE LESSON ── */
         .free-lesson-section { background: linear-gradient(135deg, #000 0%, #0d0d00 50%, #000 100%); padding: 80px 20px; border-top: 1px solid rgba(212,175,55,.2); border-bottom: 1px solid rgba(212,175,55,.2); position: relative; overflow: hidden; }
         .free-lesson-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(212,175,55,.07), transparent); pointer-events: none; }
         .free-lesson-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 60px; position: relative; z-index: 1; }
@@ -95,8 +81,6 @@
         .fl-card-btn { display: block; width: 100%; padding: 14px; border-radius: 10px; background: linear-gradient(135deg, #FFD700, #d4af37); color: #000; font-weight: 900; font-size: .95rem; text-align: center; text-decoration: none; transition: all .2s; border: none; cursor: pointer; font-family: inherit; }
         .fl-card-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,.4); }
         .fl-free-badge { text-align: center; margin-top: 12px; font-size: .78rem; color: #555; font-weight: 600; }
-
-        /* ── TESTIMONIALS ── */
         .testimonials { background: #13161e; background-image: radial-gradient(ellipse 50% 60% at 90% 50%, rgba(56,189,178,.05), transparent); }
         .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 35px; margin-top: 50px; }
         .testimonial { background: #1a1f2e; padding: 35px; border-radius: 12px; border-left: 5px solid #38bdb2; box-shadow: 0 4px 20px rgba(0,0,0,.4); transition: transform .3s, box-shadow .3s; }
@@ -104,8 +88,6 @@
         .testimonial-text { font-style: italic; color: #aaa; margin-bottom: 20px; line-height: 1.9; font-size: 1.05em; }
         .testimonial-author { font-weight: bold; color: #fff; }
         .testimonial-role { color: #718096; font-size: .9em; }
-
-        /* ── CREATOR ── */
         .creator-section { background: linear-gradient(135deg, #000 0%, #111 50%, #000 100%); padding: 80px 20px; border-top: 1px solid rgba(212,175,55,.2); border-bottom: 1px solid rgba(212,175,55,.2); }
         .creator-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
         .creator-avatar { flex-shrink: 0; width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #d4af37, #8a6820); display: flex; align-items: center; justify-content: center; font-size: 3.5rem; border: 3px solid rgba(212,175,55,.4); box-shadow: 0 0 40px rgba(212,175,55,.2); }
@@ -118,8 +100,6 @@
         .c-stat { text-align: left; }
         .c-stat-num { font-size: 1.8em; font-weight: 900; color: #38bdb2; line-height: 1; display: block; }
         .c-stat-lbl { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #555; margin-top: 4px; display: block; }
-
-        /* ── FAQ ── */
         .faq-section { background: #0f1117; background-image: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(56,189,178,.06), transparent); }
         .faq-list { max-width: 800px; margin: 50px auto 0; }
         .faq-item { border-bottom: 1px solid rgba(212,175,55,.12); }
@@ -130,8 +110,6 @@
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s; }
         .faq-answer-inner { padding: 0 0 22px; color: #888; line-height: 1.85; font-size: 1em; }
         .faq-item.open .faq-answer { max-height: 400px; }
-
-        /* ── PRICING ── */
         .pricing-section { background: linear-gradient(135deg, #000 0%, #1a1a1a 50%, #000 100%); text-align: center; color: white; position: relative; overflow: hidden; }
         .pricing-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 50%, rgba(212,175,55,.15) 0%, transparent 70%); pointer-events: none; }
         .pricing-section .container { position: relative; z-index: 1; }
@@ -163,8 +141,6 @@
         .timer-number { font-size: 2.5em; font-weight: 900; color: #FFD700; display: block; line-height: 1; }
         .timer-label { font-size: .9em; color: #FFF; text-transform: uppercase; margin-top: 5px; font-weight: 600; }
         .urgency-badge { background: linear-gradient(135deg, #FF4500 0%, #FF6347 100%); color: white; padding: 12px 25px; border-radius: 25px; font-weight: 800; font-size: 1em; display: inline-block; margin: 15px 0; box-shadow: 0 5px 15px rgba(255,69,0,.4); animation: pulse 2s infinite; }
-
-        /* ── WHATSAPP FLOAT ── */
         .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
         .wa-tooltip { background: #1a1a1a; color: #FFF; font-size: .82rem; font-weight: 700; padding: 8px 14px; border-radius: 8px; white-space: nowrap; box-shadow: 0 4px 16px rgba(0,0,0,.4); opacity: 0; transform: translateX(8px); transition: all .25s; pointer-events: none; border: 1px solid rgba(255,255,255,.1); }
         .wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
@@ -173,17 +149,11 @@
         .wa-btn svg { width: 32px; height: 32px; fill: white; }
         .wa-pulse { position: absolute; width: 60px; height: 60px; border-radius: 50%; background: rgba(37,211,102,.4); animation: waPulse 2s infinite; pointer-events: none; }
         @keyframes waPulse { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.7); opacity: 0; } }
-
-        /* ── FOOTER ── */
         footer { background: #000; color: #AAA; text-align: center; padding: 40px 20px; border-top: 3px solid #FFD700; }
         .footer-links { display: flex; justify-content: center; gap: 30px; margin: 16px 0; flex-wrap: wrap; }
         .footer-links a { color: #FFD700; text-decoration: none; font-weight: 600; font-size: .95em; }
         .footer-links a:hover { text-decoration: underline; }
-
-        /* ── ANIMATIONS ── */
         @keyframes pulse { 0% { box-shadow: 0 10px 40px rgba(255,215,0,.6); } 50% { box-shadow: 0 10px 40px rgba(255,215,0,.9), 0 0 0 10px rgba(255,215,0,.2); } 100% { box-shadow: 0 10px 40px rgba(255,215,0,.6); } }
-
-        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             header h1 { font-size: 2em; }
             header .subtitle { font-size: 1.2em; }
@@ -203,7 +173,6 @@
 </head>
 <body>
 
-    <!-- HEADER -->
     <header>
         <div class="container">
             <h1>📖 THE ULTIMATE BLACK BOOK FOR MASTERING RETAIL</h1>
@@ -218,7 +187,6 @@
 
     <div class="alert-banner">⚡ LIMITED OFFER: Professional Development Pricing — Invest In Your Retail Mastery Today</div>
 
-    <!-- PROBLEMS -->
     <section>
         <div class="container">
             <h2 class="section-title">Are You Stuck On The Shop Floor While Others Get Promoted?</h2>
@@ -234,47 +202,21 @@
         </div>
     </section>
 
-    <!-- WHO THIS IS FOR -->
     <section class="for-section">
         <div class="container">
             <h2 class="section-title">Who Is This For?</h2>
             <p class="section-subtitle">If you work in retail — or want to — this course was built specifically for you.</p>
             <div class="for-grid">
-                <div class="for-card">
-                    <div class="for-icon">🛍️</div>
-                    <h3>Sales Assistants Ready To Level Up</h3>
-                    <p>You're on the floor every day but feel invisible. This course gives you the skills that make management take notice.</p>
-                </div>
-                <div class="for-card">
-                    <div class="for-icon">📈</div>
-                    <h3>Staff Chasing Promotion</h3>
-                    <p>You want the supervisor or manager title but don't know exactly what they're looking for. This shows you precisely what that is.</p>
-                </div>
-                <div class="for-card">
-                    <div class="for-icon">🎓</div>
-                    <h3>Job Seekers Entering Retail</h3>
-                    <p>Starting fresh and want to walk in ahead of the competition. This gives you professional knowledge before your first shift.</p>
-                </div>
-                <div class="for-card">
-                    <div class="for-icon">💼</div>
-                    <h3>Junior Managers Building Authority</h3>
-                    <p>You have the title but want the real skills — team control, campaign execution, customer escalations. This delivers all of it.</p>
-                </div>
-                <div class="for-card">
-                    <div class="for-icon">🔄</div>
-                    <h3>Career Changers Moving Into Retail</h3>
-                    <p>Coming from another industry and need to learn the retail world fast. This is the shortcut that took years to build.</p>
-                </div>
-                <div class="for-card">
-                    <div class="for-icon">🚀</div>
-                    <h3>Driven Performers Who Want More</h3>
-                    <p>You're already good. You want to be exceptional. This is the advanced layer most retail workers never get access to.</p>
-                </div>
+                <div class="for-card"><div class="for-icon">🛍️</div><h3>Sales Assistants Ready To Level Up</h3><p>You're on the floor every day but feel invisible. This course gives you the skills that make management take notice.</p></div>
+                <div class="for-card"><div class="for-icon">📈</div><h3>Staff Chasing Promotion</h3><p>You want the supervisor or manager title but don't know exactly what they're looking for. This shows you precisely what that is.</p></div>
+                <div class="for-card"><div class="for-icon">🎓</div><h3>Job Seekers Entering Retail</h3><p>Starting fresh and want to walk in ahead of the competition. This gives you professional knowledge before your first shift.</p></div>
+                <div class="for-card"><div class="for-icon">💼</div><h3>Junior Managers Building Authority</h3><p>You have the title but want the real skills — team control, campaign execution, customer escalations. This delivers all of it.</p></div>
+                <div class="for-card"><div class="for-icon">🔄</div><h3>Career Changers Moving Into Retail</h3><p>Coming from another industry and need to learn the retail world fast. This is the shortcut that took years to build.</p></div>
+                <div class="for-card"><div class="for-icon">🚀</div><h3>Driven Performers Who Want More</h3><p>You're already good. You want to be exceptional. This is the advanced layer most retail workers never get access to.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- MODULES -->
     <section class="solution-section">
         <div class="container">
             <h2 class="section-title">Master The Complete Retail Playbook</h2>
@@ -292,7 +234,6 @@
         </div>
     </section>
 
-    <!-- FREE LESSON -->
     <section class="free-lesson-section">
         <div class="free-lesson-inner">
             <div class="fl-text">
@@ -337,7 +278,6 @@
         </div>
     </section>
 
-    <!-- TESTIMONIALS -->
     <section class="testimonials">
         <div class="container">
             <h2 class="section-title">Real Results From Real Retail Professionals</h2>
@@ -350,7 +290,6 @@
         </div>
     </section>
 
-    <!-- CREATOR -->
     <section class="creator-section">
         <div class="creator-inner">
             <div class="creator-avatar">👨🏾‍💼</div>
@@ -368,7 +307,6 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq-section">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
@@ -402,7 +340,6 @@
         </div>
     </section>
 
-    <!-- PRICING -->
     <section class="pricing-section">
         <div class="container">
             <h2 class="section-title">Invest In Your Retail Mastery</h2>
@@ -444,9 +381,10 @@
                     <p>If this course doesn't elevate your retail performance and professional standing within 30 days, we'll refund every cent. No questions asked.</p>
                 </div>
                 <div style="margin:40px 0;padding:20px;background:rgba(255,215,0,.1);border-radius:15px;border:2px dashed #FFD700;">
-                    <form action="https://www.payfast.co.za/eng/process" method="post">
-                        <input type="hidden" name="merchant_id" value="21873692">
-                        <input type="hidden" name="merchant_key" value="qox9r0ltorngy">
+                    <!-- ✅ SANDBOX TEST MODE — swap back to live details after testing -->
+                    <form action="https://sandbox.payfast.co.za/eng/process" method="post">
+                        <input type="hidden" name="merchant_id" value="10000100">
+                        <input type="hidden" name="merchant_key" value="46f0cd694581a">
                         <input type="hidden" name="return_url" value="https://retailexpert.xyz/thankyou.html">
                         <input type="hidden" name="cancel_url" value="https://retailexpert.xyz/">
                         <input type="hidden" name="notify_url" value="https://retailexpert.xyz/payment-notify">
@@ -473,7 +411,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer id="contact">
         <div class="container">
             <p style="color:#FFD700;font-weight:800;font-size:1.05em;margin-bottom:6px;">The Ultimate Black Book for Mastering Retail</p>
@@ -488,7 +425,6 @@
         </div>
     </footer>
 
-    <!-- WHATSAPP FLOATING BUTTON -->
     <div class="wa-float">
         <div class="wa-tooltip">💬 Chat on WhatsApp</div>
         <div style="position:relative;">
@@ -499,11 +435,8 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Footer year
+    <script>
         document.getElementById("yr").textContent = new Date().getFullYear();
-
-        // Countdown timer
         function startCountdown() {
             var key = 'retailCountdownEnd';
             var endTime = localStorage.getItem(key);
@@ -521,15 +454,20 @@
             update(); setInterval(update, 1000);
         }
         startCountdown();
-
-        // Spots counter
         function updateSpots() {
             var n = Math.floor(Math.random() * 9) + 23;
             var el = document.getElementById('spotsEl');
             if (el) el.innerHTML = '⚠️ Only ' + n + ' Spots Left at This Price!';
         }
         updateSpots(); setInterval(updateSpots, 5*60*1000);
-
-        // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(function(btn) {
-      
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+</html>
