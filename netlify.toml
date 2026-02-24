@@ -1,0 +1,7 @@
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/payment-notify"
+  to = "/.netlify/functions/payment-notify"
+  status = 200
