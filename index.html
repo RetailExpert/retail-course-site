@@ -461,4 +461,14 @@
             if (el) el.innerHTML = '⚠️ Only ' + n + ' Spots Left at This Price!';
         }
         updateSpots(); setInterval(updateSpots, 5*60*1000);
-        document.querySelectorAll('.faq-question').forEach(function(bt
+        document.querySelectorAll('.faq-question').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var item = this.closest('.faq-item');
+                var wasOpen = item.classList.contains('open');
+                document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+                if (!wasOpen) item.classList.add('open');
+            });
+        });
+    </script>
+</body>
+</html>
