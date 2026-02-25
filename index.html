@@ -103,7 +103,8 @@
         .faq-section { background: #0f1117; background-image: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(56,189,178,.06), transparent); }
         .faq-list { max-width: 800px; margin: 50px auto 0; }
         .faq-item { border-bottom: 1px solid rgba(212,175,55,.12); }
-        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 22px 0; font-size: 1.08em; font-weight: 700; color: #e8e8e8; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: inherit; transition: color .2s; }
+        .faq-question { width: 100%; background: none; border: none; text-align: left; padding: 22px 0; font-size: 1.08em; font-weight: 700; color: #e8e8e8; cursor: pointer; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; font-family: inherit; transition: color .2s; }
+        @media(max-width:600px){ .faq-question { font-size: .92em; padding: 16px 0; } .faq-answer-inner { font-size: .9em; } }
         .faq-question:hover { color: #38bdb2; }
         .faq-icon { font-size: 1.3em; color: #38bdb2; flex-shrink: 0; transition: transform .3s; font-weight: 400; }
         .faq-item.open .faq-icon { transform: rotate(45deg); }
