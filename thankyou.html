@@ -1,230 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Your Course! - RetailExpert</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        
-        .success-container {
-            background: white;
-            max-width: 600px;
-            width: 100%;
-            padding: 50px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            text-align: center;
-        }
-        
-        .success-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            animation: bounce 1s ease;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        h1 {
-            color: #2d3748;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .congrats-text {
-            color: #4a5568;
-            font-size: 1.2em;
-            margin-bottom: 30px;
-            line-height: 1.6;
-        }
-        
-        .access-box {
-            background: #f7fafc;
-            border: 3px dashed #667eea;
-            padding: 30px;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-        
-        .access-box h2 {
-            color: #667eea;
-            font-size: 1.5em;
-            margin-bottom: 15px;
-        }
-        
-        .password-display {
-            background: white;
-            border: 2px solid #667eea;
-            padding: 20px;
-            border-radius: 10px;
-            font-size: 1.8em;
-            font-weight: bold;
-            color: #667eea;
-            letter-spacing: 2px;
-            margin: 20px 0;
-            user-select: all;
-        }
-        
-        .instructions {
-            background: #e6fffa;
-            border-left: 4px solid #4fd1c5;
-            padding: 20px;
-            margin: 30px 0;
-            text-align: left;
-            border-radius: 5px;
-        }
-        
-        .instructions h3 {
-            color: #234e52;
-            margin-bottom: 15px;
-        }
-        
-        .instructions ol {
-            margin-left: 20px;
-            color: #2d3748;
-            line-height: 1.8;
-        }
-        
-        .instructions li {
-            margin: 10px 0;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 20px 50px;
-            font-size: 1.3em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            margin-top: 20px;
-            transition: transform 0.3s;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-        
-        .support-text {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 2px solid #e2e8f0;
-            color: #718096;
-            font-size: 0.9em;
-        }
-        
-        .support-text a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 768px) {
-            .success-container {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .password-display {
-                font-size: 1.4em;
-            }
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Welcome to The Ultimate Black Book – RetailExpert</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --gold:#FFD700;--gold2:#ffae00;
+  --green:#22c55e;
+  --bg:#000;--dim:#666;--text:#e0e0e0;
+  --border:rgba(255,215,0,.2);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
+
+#particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.particle{position:absolute;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0;animation:float linear infinite;}
+@keyframes float{0%{transform:translateY(100vh) rotate(0deg);opacity:1;}100%{transform:translateY(-10vh) rotate(720deg);opacity:0;}}
+
+.hero{
+  position:relative;z-index:1;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:60px 24px 40px;
+  background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(255,215,0,.12),transparent 60%);
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.3);
+  border-radius:30px;padding:8px 20px;
+  font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,215,0,.8);
+  margin-bottom:32px;animation:fadeDown .6s ease both;
+}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-16px);}to{opacity:1;transform:translateY(0);}}
+.trophy{font-size:7rem;line-height:1;margin-bottom:24px;display:block;animation:popIn .7s cubic-bezier(.34,1.56,.64,1) .2s both;filter:drop-shadow(0 0 40px rgba(255,215,0,.6));}
+@keyframes popIn{from{opacity:0;transform:scale(.4);}to{opacity:1;transform:scale(1);}}
+.hero-title{font-size:clamp(2.2rem,6vw,4rem);font-weight:900;color:var(--gold);line-height:1.1;letter-spacing:-1px;text-shadow:0 0 40px rgba(255,215,0,.5);margin-bottom:16px;animation:fadeUp .6s ease .4s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.hero-sub{font-size:1.1rem;color:#aaa;max-width:560px;line-height:1.7;margin-bottom:48px;animation:fadeUp .6s ease .55s both;}
+.hero-sub strong{color:#fff;}
+
+.stats-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-bottom:56px;animation:fadeUp .6s ease .7s both;}
+.stat-pill{background:linear-gradient(145deg,#111,#0a0a0a);border:1px solid var(--border);border-radius:14px;padding:16px 22px;text-align:center;min-width:100px;}
+.stat-num{font-size:1.6rem;font-weight:900;color:var(--gold);display:block;line-height:1;}
+.stat-lbl{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:5px;display:block;}
+
+.scroll-cue{display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,215,0,.4);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;animation:fadeUp .6s ease .9s both;cursor:pointer;transition:.2s;}
+.scroll-cue:hover{color:rgba(255,215,0,.7);}
+.scroll-arrow{width:32px;height:32px;border:2px solid rgba(255,215,0,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;animation:bob 1.5s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(6px);}}
+
+.section{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:0 24px 120px;}
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.25),transparent);margin-bottom:56px;}
+
+.activate-card{background:linear-gradient(145deg,#0d0d0d,#080808);border:2px solid var(--gold);border-radius:20px;padding:40px 36px;box-shadow:0 0 60px rgba(255,215,0,.1);margin-bottom:20px;}
+.card-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,215,0,.6);margin-bottom:14px;}
+.card-title{font-size:1.5rem;font-weight:900;color:#fff;margin-bottom:8px;line-height:1.2;}
+.card-desc{color:#777;font-size:.9rem;line-height:1.7;margin-bottom:28px;}
+
+.field{margin-bottom:16px;}
+.field label{display:block;font-size:.75rem;font-weight:800;color:rgba(255,215,0,.7);letter-spacing:.08em;text-transform:uppercase;margin-bottom:7px;}
+.field input{width:100%;padding:15px 18px;background:#000;border:2px solid rgba(255,215,0,.2);border-radius:10px;color:#fff;font-size:1rem;font-family:'Inter',sans-serif;outline:none;transition:.2s;}
+.field input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(255,215,0,.06);}
+.field input::placeholder{color:#444;}
+
+.activate-btn{width:100%;padding:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;border:none;border-radius:50px;font-size:1.05rem;font-weight:900;cursor:pointer;font-family:'Inter',sans-serif;transition:.2s;margin-top:4px;letter-spacing:.03em;}
+.activate-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,215,0,.4);}
+.activate-btn:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none;}
+
+.err-msg{background:rgba(252,129,74,.1);border:1px solid rgba(252,129,74,.3);color:#fc8181;padding:12px 16px;border-radius:8px;font-size:.85rem;font-weight:700;margin-top:14px;display:none;}
+.err-msg.show{display:block;}
+
+.trust-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:20px;}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;color:#555;}
+.trust-item span{color:var(--gold);}
+
+.access-section{display:none;}
+.access-section.show{display:block;}
+
+.password-card{background:linear-gradient(145deg,#0d0d0d,#080808);border:2px solid var(--gold);border-radius:20px;padding:40px 36px;text-align:center;box-shadow:0 0 60px rgba(255,215,0,.12);margin-bottom:20px;position:relative;overflow:hidden;}
+.password-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.pw-eyebrow{font-size:.68rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,215,0,.5);margin-bottom:12px;}
+.pw-title{font-size:1.3rem;font-weight:900;color:#fff;margin-bottom:24px;}
+.pw-display{background:#000;border:2px solid var(--gold);border-radius:14px;padding:22px;font-size:2.2rem;font-weight:900;color:var(--gold);letter-spacing:4px;text-shadow:0 0 20px rgba(255,215,0,.5);margin-bottom:14px;user-select:all;}
+.pw-tip{font-size:.8rem;color:#555;font-weight:600;margin-bottom:28px;}
+.access-btn{display:block;width:100%;padding:18px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;font-size:1.05rem;font-weight:900;text-decoration:none;border-radius:50px;transition:.2s;letter-spacing:.03em;box-shadow:0 8px 28px rgba(255,215,0,.3);}
+.access-btn:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(255,215,0,.5);}
+
+.steps-card{background:linear-gradient(145deg,#0a0a0a,#060606);border:1px solid rgba(255,215,0,.12);border-radius:16px;padding:28px 32px;margin-bottom:20px;}
+.steps-title{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,215,0,.5);margin-bottom:18px;}
+.step{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;}
+.step:last-child{margin-bottom:0;}
+.step-num{width:26px;height:26px;flex-shrink:0;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:900;color:var(--gold);margin-top:1px;}
+.step-text{font-size:.9rem;color:#999;line-height:1.5;}
+.step-text strong{color:#fff;}
+
+.support-card{background:linear-gradient(145deg,#0a0a0a,#060606);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.support-left p{font-size:.82rem;color:#555;margin-bottom:4px;}
+.support-left strong{color:#fff;font-size:.95rem;}
+.support-links{display:flex;gap:10px;flex-wrap:wrap;}
+.support-link{padding:9px 18px;border-radius:30px;font-size:.78rem;font-weight:800;text-decoration:none;border:1px solid rgba(255,215,0,.25);color:var(--gold);transition:.2s;}
+.support-link:hover{background:rgba(255,215,0,.08);}
+
+/* ── FLOATING BUTTONS ── */
+.float-btns{position:fixed;bottom:28px;right:28px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:14px;}
+.float-item{display:flex;align-items:center;gap:10px;position:relative;}
+.float-tooltip{background:#1a1a1a;color:#fff;font-size:.75rem;font-weight:700;padding:7px 13px;border-radius:8px;white-space:nowrap;border:1px solid rgba(255,255,255,.1);box-shadow:0 4px 16px rgba(0,0,0,.5);opacity:0;transform:translateX(8px);transition:all .25s;pointer-events:none;}
+.float-item:hover .float-tooltip{opacity:1;transform:translateX(0);}
+.float-btn{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s,box-shadow .2s;position:relative;font-size:1.4rem;}
+.float-btn:hover{transform:scale(1.1);}
+.float-pulse{position:absolute;width:56px;height:56px;border-radius:50%;opacity:.4;animation:fpulse 2s infinite;pointer-events:none;}
+@keyframes fpulse{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.75);opacity:0;}}
+.btn-wa{background:#25D366;box-shadow:0 6px 20px rgba(37,211,102,.5);}
+.btn-wa:hover{box-shadow:0 10px 30px rgba(37,211,102,.7);}
+.pulse-wa{background:rgba(37,211,102,.4);}
+.btn-email{background:linear-gradient(135deg,var(--gold),var(--gold2));box-shadow:0 6px 20px rgba(255,215,0,.4);}
+.btn-email:hover{box-shadow:0 10px 30px rgba(255,215,0,.6);}
+.pulse-email{background:rgba(255,215,0,.35);}
+
+@media(max-width:500px){
+  .activate-card,.password-card,.steps-card{padding:28px 22px;}
+  .pw-display{font-size:1.6rem;letter-spacing:2px;}
+  .hero-title{font-size:2rem;}
+  .trophy{font-size:5rem;}
+  .float-btns{bottom:18px;right:18px;}
+  .float-btn{width:50px;height:50px;}
+  .float-pulse{width:50px;height:50px;}
+}
+</style>
 </head>
 <body>
-    <div class="success-container">
-        <div class="success-icon">🎉</div>
-        <h1>Payment Successful!</h1>
-        <p class="congrats-text">
-            Congratulations! You've just taken the first step towards landing your retail job. 
-            Your course is ready and waiting for you.
-        </p>
-        
-        <div class="access-box">
-            <h2>🔐 Your Course Access Password</h2>
-            <p style="color: #4a5568; margin-bottom: 15px;">Save this password - you'll need it to access your course:</p>
-            <div class="password-display">GetHired249</div>
-            <p style="color: #718096; font-size: 0.9em; margin-top: 10px;">
-                💡 Tip: Screenshot this page or write down your password
-            </p>
-        </div>
-        
-        <div class="instructions">
-            <h3>📚 How to Access Your Course:</h3>
-            <ol>
-                <li>Click the "ACCESS MY COURSE" button below</li>
-                <li>Enter your password: <strong>GetHired249</strong></li>
-                <li>Start with Lesson 1 and work your way through</li>
-                <li>Each lesson unlocks after you complete the previous one</li>
-                <li>Take your time and revisit lessons anytime</li>
-            </ol>
-        </div>
-        
-        <a href="course.html" class="cta-button">
-            🚀 ACCESS MY COURSE NOW
-        </a>
-        
-        <div class="support-text">
-            <p><strong>Need help?</strong> Email us at <a href="mailto:masteringretail@gmail.com">masteringretail@gmail.com</a></p>
-            <p style="margin-top: 10px;">We typically respond within 24 hours.</p>
-        </div>
+
+<div id="particles"></div>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-badge">🎉 Payment Confirmed</div>
+  <span class="trophy">🏆</span>
+  <h1 class="hero-title">You're In.<br>Welcome To The Family.</h1>
+  <p class="hero-sub">Your investment just unlocked the same retail playbook used by <strong>top-performing store professionals</strong> across South Africa. It's time to level up.</p>
+  <div class="stats-row">
+    <div class="stat-pill"><span class="stat-num">8</span><span class="stat-lbl">Lessons</span></div>
+    <div class="stat-pill"><span class="stat-num">5hrs+</span><span class="stat-lbl">Training</span></div>
+    <div class="stat-pill"><span class="stat-num">R249</span><span class="stat-lbl">Invested</span></div>
+    <div class="stat-pill"><span class="stat-num">∞</span><span class="stat-lbl">Access</span></div>
+  </div>
+  <div class="scroll-cue" onclick="document.getElementById('activate').scrollIntoView({behavior:'smooth'})">
+    Activate your access
+    <div class="scroll-arrow">↓</div>
+  </div>
+</div>
+
+<!-- ── ACTIVATION SECTION ── -->
+<div class="section" id="activate">
+  <div class="divider"></div>
+
+  <!-- STEP 1: Form -->
+  <div id="activateBox">
+    <div class="activate-card">
+      <div class="card-eyebrow">⚡ Step 1 of 1 — Takes 10 seconds</div>
+      <div class="card-title">Activate Your Course Access</div>
+      <div class="card-desc">Enter your name and email to unlock your course and receive your welcome email with all your access details.</div>
+      <div class="field">
+        <label>Your Full Name</label>
+        <input type="text" id="customerName" placeholder="e.g. Sipho Dlamini">
+      </div>
+      <div class="field">
+        <label>Your Email Address</label>
+        <input type="email" id="customerEmail" placeholder="e.g. sipho@gmail.com">
+      </div>
+      <button class="activate-btn" id="activateBtn" onclick="activateCourse()">🚀 Unlock My Course Now</button>
+      <div class="err-msg" id="errMsg"></div>
     </div>
+    <div class="trust-row">
+      <div class="trust-item"><span>🔒</span> Secure & Private</div>
+      <div class="trust-item"><span>⚡</span> Instant Access</div>
+      <div class="trust-item"><span>📧</span> Welcome Email Sent</div>
+      <div class="trust-item"><span>♾️</span> Lifetime Access</div>
+    </div>
+  </div>
 
-    <script>
-        // Automatically notify masteringretail@gmail.com when a customer lands here
-        (function() {
-            // Only fire once per visit using sessionStorage
-            if (sessionStorage.getItem('notified')) return;
-            sessionStorage.setItem('notified', 'true');
+  <!-- STEP 2: Access revealed -->
+  <div class="access-section" id="accessSection">
+    <div class="password-card">
+      <div class="pw-eyebrow">🔐 Your Access Password</div>
+      <div class="pw-title">Save This — You'll Need It Every Time</div>
+      <div class="pw-display">GetHired249</div>
+      <p class="pw-tip">💡 Screenshot this screen. Your password has also been sent to your email.</p>
+      <a href="course.html" class="access-btn">🚀 Enter The Course Now</a>
+    </div>
+    <div class="steps-card">
+      <div class="steps-title">📚 How to get started</div>
+      <div class="step"><div class="step-num">1</div><div class="step-text">Tap <strong>"Enter The Course Now"</strong> above</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-text">Enter your password: <strong>GetHired249</strong></div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-text">Complete the short <strong>pre-course assessment</strong> to unlock Lesson 1</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-text">Work through each lesson — <strong>each one unlocks the next</strong></div></div>
+      <div class="step"><div class="step-num">5</div><div class="step-text">Complete all 8 to earn your <strong>Professional Certificate</strong></div></div>
+    </div>
+    <div class="support-card">
+      <div class="support-left"><p>Need help?</p><strong>We've got you covered</strong></div>
+      <div class="support-links">
+        <a href="https://wa.me/27748315232" class="support-link">💬 WhatsApp</a>
+        <a href="mailto:masteringretail@gmail.com" class="support-link">📧 Email</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-            // Grab any PayFast params from the URL if present
-            var params = new URLSearchParams(window.location.search);
-            var customerName  = params.get('name_first') || params.get('name') || 'Unknown';
-            var customerEmail = params.get('email_address') || params.get('email') || 'Not provided';
-            var amount        = params.get('amount') || 'R249.00';
-            var paymentId     = params.get('pf_payment_id') || params.get('payment_id') || 'N/A';
-            var timestamp     = new Date().toLocaleString('en-ZA', {timeZone: 'Africa/Johannesburg'});
+<!-- FLOATING BUTTONS -->
+<div class="float-btns">
+  <div class="float-item">
+    <div class="float-tooltip">📧 Email us</div>
+    <a href="mailto:masteringretail@gmail.com" class="float-btn btn-email">
+      <div class="float-pulse pulse-email"></div>
+      📧
+    </a>
+  </div>
+  <div class="float-item">
+    <div class="float-tooltip">💬 Chat on WhatsApp</div>
+    <a href="https://wa.me/27748315232?text=Hi%2C%20I%20just%20purchased%20The%20Ultimate%20Black%20Book%20and%20need%20help" class="float-btn btn-wa" target="_blank" rel="noopener">
+      <div class="float-pulse pulse-wa"></div>
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+  </div>
+</div>
 
-            fetch('https://formspree.io/f/xrearbqa', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    subject: '💰 NEW SALE — R249 Course Purchase!',
-                    message: '🎉 A new customer just purchased the course!\n\n' +
-                             'Name: ' + customerName + '\n' +
-                             'Email: ' + customerEmail + '\n' +
-                             'Amount: ' + amount + '\n' +
-                             'Payment ID: ' + paymentId + '\n' +
-                             'Time: ' + timestamp + '\n\n' +
-                             'The customer has been given access password: GetHired249'
-                })
-            }).catch(function() {
-                // Silent fail — customer experience is unaffected
-            });
-        })();
-    </script>
+<script>
+  // ── EMAILJS INIT ──
+  emailjs.init('0l9QW3egxVaLM3TF-');
+
+  // ── PARTICLES ──
+  (function(){
+    var c = document.getElementById('particles');
+    var colors = ['#FFD700','#ffae00','#fff4a0','#ffe066'];
+    for(var i = 0; i < 25; i++){
+      var p = document.createElement('div');
+      p.className = 'particle';
+      p.style.left = Math.random()*100 + 'vw';
+      p.style.width = p.style.height = (Math.random()*5+3) + 'px';
+      p.style.background = colors[Math.floor(Math.random()*colors.length)];
+      p.style.animationDuration = (Math.random()*8+6) + 's';
+      p.style.animationDelay = (Math.random()*10) + 's';
+      p.style.borderRadius = Math.random() > .5 ? '50%' : '2px';
+      c.appendChild(p);
+    }
+  })();
+
+  // ── ACTIVATION ──
+  function activateCourse() {
+    var name  = document.getElementById('customerName').value.trim();
+    var email = document.getElementById('customerEmail').value.trim();
+    var btn   = document.getElementById('activateBtn');
+    var err   = document.getElementById('errMsg');
+
+    err.classList.remove('show');
+
+    if (!name) {
+      err.textContent = '⚠️ Please enter your full name.';
+      err.classList.add('show');
+      return;
+    }
+    if (!email || !email.includes('@') || !email.includes('.')) {
+      err.textContent = '⚠️ Please enter a valid email address.';
+      err.classList.add('show');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = '⏳ Activating your access...';
+
+    var timestamp = new Date().toLocaleString('en-ZA', {timeZone:'Africa/Johannesburg'});
+
+    // 1. Welcome email TO THE CUSTOMER via EmailJS
+    emailjs.send('RetailExpert', 'template_b32i93d', {
+      customer_name:  name,
+      customer_email: email,
+      password:       'GetHired249',
+      course_url:     'https://retailexpert.xyz/course.html'
+    }).catch(function(e){ console.log('EmailJS error:', e); });
+
+    // 2. Notification TO YOU via Formspree
+    fetch('https://formspree.io/f/xrearbqa', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({
+        subject: '💰 NEW SALE — R249!',
+        message: '🎉 New customer activated!\n\nName: ' + name + '\nEmail: ' + email + '\nAmount: R249.00\nTime: ' + timestamp
+      })
+    }).catch(function(e){ console.log('Formspree error:', e); });
+
+    // 3. Reveal access after short delay
+    setTimeout(function(){
+      document.getElementById('activateBox').style.display = 'none';
+      document.getElementById('accessSection').classList.add('show');
+      window.scrollTo({top: document.getElementById('activate').offsetTop - 20, behavior:'smooth'});
+    }, 900);
+  }
+
+  document.addEventListener('keypress', function(e){
+    if (e.key === 'Enter') activateCourse();
+  });
+</script>
 </body>
 </html>
