@@ -25,6 +25,79 @@ body{
   min-height:100vh;
 }
 
+/* ── PASSWORD GATE ── */
+#gate{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at top,#111,#000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+  padding:20px;
+}
+.gate-box{
+  background:linear-gradient(145deg,#111,#0a0a0a);
+  border:2px solid var(--gold);
+  border-radius:20px;
+  padding:48px 40px;
+  max-width:440px;
+  width:100%;
+  text-align:center;
+  box-shadow:0 20px 60px rgba(255,215,0,.15);
+}
+.gate-icon{font-size:3rem;margin-bottom:16px;display:block;}
+.gate-box h2{color:var(--gold);font-size:1.6rem;font-weight:900;margin-bottom:8px;}
+.gate-box p{color:#888;font-size:.92rem;margin-bottom:28px;line-height:1.6;}
+.gate-input{
+  width:100%;
+  padding:14px 18px;
+  background:#000;
+  border:2px solid rgba(255,215,0,.3);
+  border-radius:10px;
+  color:#fff;
+  font-size:1.1rem;
+  font-family:'Inter',sans-serif;
+  text-align:center;
+  letter-spacing:3px;
+  outline:none;
+  margin-bottom:16px;
+  transition:border .2s;
+}
+.gate-input:focus{border-color:var(--gold);}
+.gate-btn{
+  width:100%;
+  padding:15px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;
+  border:none;
+  border-radius:50px;
+  font-size:1rem;
+  font-weight:900;
+  cursor:pointer;
+  font-family:'Inter',sans-serif;
+  transition:.2s;
+}
+.gate-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(255,215,0,.4);}
+.gate-error{
+  color:#fc8181;
+  font-size:.85rem;
+  font-weight:700;
+  margin-top:12px;
+  display:none;
+}
+.gate-error.show{display:block;}
+.gate-help{
+  margin-top:20px;
+  font-size:.78rem;
+  color:#555;
+}
+.gate-help a{color:var(--gold);text-decoration:none;font-weight:700;}
+
+/* ── MAIN CONTENT (hidden until unlocked) ── */
+#main-content{display:none;}
+#main-content.show{display:block;}
+
 /* ── HEADER ── */
 header{
   background:linear-gradient(135deg,#000,#0d0d0d);
@@ -80,12 +153,7 @@ nav a:hover{opacity:.7;}
   text-transform:uppercase;
   color:rgba(255,215,0,.7);
 }
-.auth-dot{
-  width:4px;height:4px;border-radius:50%;
-  background:rgba(255,215,0,.3);
-  display:inline-block;
-  flex-shrink:0;
-}
+.auth-dot{width:4px;height:4px;border-radius:50%;background:rgba(255,215,0,.3);display:inline-block;flex-shrink:0;}
 @media(max-width:600px){
   .authority-banner{gap:12px;padding:8px 16px;}
   .authority-item{font-size:.63rem;}
@@ -116,30 +184,12 @@ nav a:hover{opacity:.7;}
 
 /* ── PROGRESS ── */
 .progress-section{margin-bottom:28px;}
-.progress-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  margin-bottom:10px;
-  flex-wrap:wrap;
-  gap:6px;
-}
+.progress-meta{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;flex-wrap:wrap;gap:6px;}
 .progress-pct{font-weight:900;font-size:1.4rem;color:var(--gold);}
 .progress-sub{font-size:.78rem;color:var(--dim);font-weight:600;}
 .progress-status{font-size:.82rem;color:var(--dim);font-weight:600;text-align:right;}
-.progress-wrap{
-  border:2px solid var(--gold);
-  border-radius:10px;
-  overflow:hidden;
-  background:#0a0a0a;
-}
-.progress-bar{
-  height:18px;
-  width:0%;
-  background:linear-gradient(90deg,var(--gold),var(--gold2));
-  box-shadow:0 0 16px rgba(255,215,0,.5);
-  transition:width .7s ease;
-}
+.progress-wrap{border:2px solid var(--gold);border-radius:10px;overflow:hidden;background:#0a0a0a;}
+.progress-bar{height:18px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold2));box-shadow:0 0 16px rgba(255,215,0,.5);transition:width .7s ease;}
 
 /* ── CONTINUE BANNER ── */
 .continue-banner{
@@ -160,42 +210,20 @@ nav a:hover{opacity:.7;}
 .continue-lbl{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,215,0,.6);margin-bottom:3px;}
 .continue-name{font-weight:800;color:#fff;font-size:.97rem;}
 .continue-btn{
-  background:var(--gold);
-  color:#000;
-  border:none;
-  padding:12px 26px;
-  border-radius:30px;
-  font-weight:900;
-  font-size:.88rem;
-  cursor:pointer;
-  text-decoration:none;
-  white-space:nowrap;
-  transition:.2s;
-  font-family:'Inter',sans-serif;
+  background:var(--gold);color:#000;border:none;padding:12px 26px;border-radius:30px;
+  font-weight:900;font-size:.88rem;cursor:pointer;text-decoration:none;white-space:nowrap;
+  transition:.2s;font-family:'Inter',sans-serif;
 }
 .continue-btn:hover{background:#ffe033;transform:translateY(-2px);}
 
 /* ── ALL DONE ── */
-.all-done{
-  display:none;
-  background:linear-gradient(135deg,#0a1a00,#0d1a00);
-  border:2px solid var(--green);
-  border-radius:12px;
-  padding:24px;
-  text-align:center;
-  margin-bottom:26px;
-}
+.all-done{display:none;background:linear-gradient(135deg,#0a1a00,#0d1a00);border:2px solid var(--green);border-radius:12px;padding:24px;text-align:center;margin-bottom:26px;}
 .all-done.show{display:block;}
 .all-done h3{font-size:1.4rem;font-weight:900;color:var(--green);margin-bottom:8px;}
 .all-done p{color:rgba(255,255,255,.55);font-size:.9rem;}
 
 /* ── LESSON GRID ── */
-.lesson-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:16px;
-  margin-bottom:32px;
-}
+.lesson-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:32px;}
 
 /* ── LESSON CARD ── */
 .lesson-card{
@@ -209,50 +237,16 @@ nav a:hover{opacity:.7;}
   flex-direction:column;
   overflow:hidden;
 }
-.lesson-card:hover:not(.locked){
-  transform:translateY(-4px);
-  border-color:var(--gold);
-  box-shadow:0 14px 40px rgba(255,215,0,.18);
-}
-.lesson-card.completed{
-  border-color:rgba(34,197,94,.35);
-  background:linear-gradient(145deg,#0a1a0a,#050f05);
-}
-.lesson-card.completed::after{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:3px;
-  background:var(--green);
-}
-.lesson-card.next{
-  border-color:var(--gold);
-  box-shadow:0 0 22px rgba(255,215,0,.12);
-}
-.lesson-card.locked{
-  opacity:.5;
-  cursor:not-allowed;
-}
+.lesson-card:hover:not(.locked){transform:translateY(-4px);border-color:var(--gold);box-shadow:0 14px 40px rgba(255,215,0,.18);}
+.lesson-card.completed{border-color:rgba(34,197,94,.35);background:linear-gradient(145deg,#0a1a0a,#050f05);}
+.lesson-card.completed::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);}
+.lesson-card.next{border-color:var(--gold);box-shadow:0 0 22px rgba(255,215,0,.12);}
+.lesson-card.locked{opacity:.5;cursor:not-allowed;}
 .lesson-card.locked:hover{transform:none;box-shadow:none;border-color:rgba(255,215,0,.18);}
-.lesson-card.bonus-unlocked{
-  border-color:var(--gold);
-  background:rgba(255,215,0,.04);
-}
+.lesson-card.bonus-unlocked{border-color:var(--gold);background:rgba(255,215,0,.04);}
 
 /* ── STATUS BADGE ── */
-.card-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:4px;
-  font-size:.62rem;
-  font-weight:700;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  padding:3px 9px;
-  border-radius:3px;
-  margin-bottom:10px;
-  width:fit-content;
-}
+.card-badge{display:inline-flex;align-items:center;gap:4px;font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px;margin-bottom:10px;width:fit-content;}
 .badge-done{background:rgba(34,197,94,.12);color:var(--green);border:1px solid rgba(34,197,94,.3);}
 .badge-next{background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.3);}
 .badge-locked{background:rgba(255,255,255,.04);color:var(--dim);border:1px solid rgba(255,255,255,.07);}
@@ -268,19 +262,9 @@ nav a:hover{opacity:.7;}
 
 /* ── CARD BUTTON ── */
 .card-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:11px 20px;
-  border-radius:30px;
-  font-weight:900;
-  font-size:.83rem;
-  text-decoration:none;
-  border:none;
-  cursor:pointer;
-  transition:.2s;
-  width:fit-content;
-  font-family:'Inter',sans-serif;
+  display:inline-flex;align-items:center;gap:6px;padding:11px 20px;border-radius:30px;
+  font-weight:900;font-size:.83rem;text-decoration:none;border:none;cursor:pointer;
+  transition:.2s;width:fit-content;font-family:'Inter',sans-serif;
 }
 .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;box-shadow:0 5px 18px rgba(255,215,0,.35);}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,215,0,.45);}
@@ -291,87 +275,43 @@ nav a:hover{opacity:.7;}
 
 /* ── ACHIEVEMENT BADGES ── */
 .badges-section{margin-bottom:36px;}
-.badges-title{
-  font-size:1.1rem;
-  font-weight:900;
-  color:var(--gold);
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  margin-bottom:16px;
-  text-shadow:0 0 10px rgba(255,215,0,.3);
-}
-.badges-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
-  gap:12px;
-}
-.achievement{
-  background:linear-gradient(145deg,#111,#0a0a0a);
-  border:2px solid rgba(255,215,0,.1);
-  border-radius:14px;
-  padding:16px 12px;
-  text-align:center;
-  transition:.3s;
-  position:relative;
-  overflow:hidden;
-}
-.achievement.earned{
-  border-color:rgba(255,215,0,.5);
-  background:linear-gradient(145deg,#1a1400,#0f0e00);
-  box-shadow:0 0 20px rgba(255,215,0,.12);
-}
-.achievement.earned::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:2px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);
-}
-.achievement-icon{
-  font-size:2em;
-  margin-bottom:8px;
-  display:block;
-  filter:grayscale(1) opacity(.2);
-  transition:.3s;
-}
-.achievement.earned .achievement-icon{
-  filter:none;
-  animation:badgePop .4s ease;
-}
-@keyframes badgePop{
-  0%{transform:scale(.7);opacity:0;}
-  70%{transform:scale(1.15);}
-  100%{transform:scale(1);opacity:1;}
-}
-.achievement-name{
-  font-size:.65rem;
-  font-weight:800;
-  color:rgba(255,255,255,.2);
-  letter-spacing:.05em;
-  text-transform:uppercase;
-  line-height:1.4;
-  transition:.3s;
-}
+.badges-title{font-size:1.1rem;font-weight:900;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px;text-shadow:0 0 10px rgba(255,215,0,.3);}
+.badges-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;}
+.achievement{background:linear-gradient(145deg,#111,#0a0a0a);border:2px solid rgba(255,215,0,.1);border-radius:14px;padding:16px 12px;text-align:center;transition:.3s;position:relative;overflow:hidden;}
+.achievement.earned{border-color:rgba(255,215,0,.5);background:linear-gradient(145deg,#1a1400,#0f0e00);box-shadow:0 0 20px rgba(255,215,0,.12);}
+.achievement.earned::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.achievement-icon{font-size:2em;margin-bottom:8px;display:block;filter:grayscale(1) opacity(.2);transition:.3s;}
+.achievement.earned .achievement-icon{filter:none;animation:badgePop .4s ease;}
+@keyframes badgePop{0%{transform:scale(.7);opacity:0;}70%{transform:scale(1.15);}100%{transform:scale(1);opacity:1;}}
+.achievement-name{font-size:.65rem;font-weight:800;color:rgba(255,255,255,.2);letter-spacing:.05em;text-transform:uppercase;line-height:1.4;transition:.3s;}
 .achievement.earned .achievement-name{color:var(--gold);}
-.achievement-status{
-  font-size:.58rem;
-  color:var(--dim);
-  margin-top:5px;
-  font-weight:600;
-}
+.achievement-status{font-size:.58rem;color:var(--dim);margin-top:5px;font-weight:600;}
 .achievement.earned .achievement-status{color:rgba(255,215,0,.5);}
 
 /* ── CONTACT ── */
-.contact{
-  padding:26px;
-  border-radius:16px;
-  background:linear-gradient(160deg,#0f0f0f,#000);
-  border:2px solid var(--gold);
-}
+.contact{padding:26px;border-radius:16px;background:linear-gradient(160deg,#0f0f0f,#000);border:2px solid var(--gold);}
 .contact p{font-size:.97rem;margin-bottom:6px;}
 </style>
 </head>
 <body>
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <div class="gate-box">
+    <span class="gate-icon">🔐</span>
+    <h2>Course Access</h2>
+    <p>Enter your access password to unlock The Ultimate Black Book for Mastering Retail.</p>
+    <input type="password" class="gate-input" id="gateInput" placeholder="Enter password" onkeypress="if(event.key==='Enter')checkPassword()">
+    <button class="gate-btn" onclick="checkPassword()">🚀 Unlock My Course</button>
+    <div class="gate-error" id="gateError">⚠️ Incorrect password. Check your welcome email or contact us.</div>
+    <div class="gate-help">
+      Need help? <a href="https://wa.me/27748315232">WhatsApp us</a> or <a href="mailto:masteringretail@gmail.com">Email us</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN COURSE CONTENT -->
+<div id="main-content">
 
 <header>
   <h1>THE ULTIMATE BLACK BOOK</h1>
@@ -382,7 +322,6 @@ nav a:hover{opacity:.7;}
   </nav>
 </header>
 
-<!-- AUTHORITY BANNER -->
 <div class="authority-banner">
   <div class="authority-item">⚡ Built by an Active Store Manager</div>
   <div class="auth-dot"></div>
@@ -392,8 +331,6 @@ nav a:hover{opacity:.7;}
 </div>
 
 <div class="container">
-
-  <!-- PROGRESS -->
   <div id="progress" class="progress-section">
     <div class="section-title">Your Progress</div>
     <div class="progress-meta">
@@ -408,13 +345,11 @@ nav a:hover{opacity:.7;}
     </div>
   </div>
 
-  <!-- ALL DONE -->
   <div class="all-done" id="all-done">
     <h3>🏆 Course Complete!</h3>
     <p>You've finished all 8 lessons of The Ultimate Black Book. You're ready to go.</p>
   </div>
 
-  <!-- CONTINUE BANNER -->
   <div class="continue-banner hidden" id="continue-banner">
     <div class="continue-left">
       <div class="continue-icon">▶️</div>
@@ -426,27 +361,50 @@ nav a:hover{opacity:.7;}
     <a class="continue-btn" id="continue-link" href="#">Continue →</a>
   </div>
 
-  <!-- RETAIL MASTERY FRAMEWORK -->
   <div class="section-title">Retail Mastery Framework</div>
   <div class="lesson-grid" id="lesson-grid"></div>
 
-  <!-- ACHIEVEMENTS -->
   <div class="badges-section">
     <div class="badges-title">🏅 Your Achievements</div>
     <div class="badges-grid" id="badges-grid"></div>
   </div>
 
-  <!-- CONTACT -->
   <div id="contact" class="contact">
     <div class="section-title" style="font-size:1.3rem;margin-bottom:14px;">Contact</div>
     <p><strong>Course Creator &amp; Director:</strong> Phiwokuhle Makapela</p>
     <p>📧 masteringretail@gmail.com</p>
     <p>💬 WhatsApp: +27 74 831 5232</p>
   </div>
-
 </div>
 
+</div><!-- end main-content -->
+
 <script>
+// ── PASSWORD GATE ──
+var CORRECT_PASSWORD = 'GetHired249';
+
+function checkPassword() {
+  var input = document.getElementById('gateInput').value.trim();
+  var error = document.getElementById('gateError');
+  if (input === CORRECT_PASSWORD) {
+    sessionStorage.setItem('courseUnlocked', 'true');
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('main-content').classList.add('show');
+    render();
+  } else {
+    error.classList.add('show');
+    document.getElementById('gateInput').value = '';
+    document.getElementById('gateInput').focus();
+  }
+}
+
+// Check if already unlocked this session
+if (sessionStorage.getItem('courseUnlocked') === 'true') {
+  document.getElementById('gate').style.display = 'none';
+  document.getElementById('main-content').classList.add('show');
+}
+
+// ── COURSE LOGIC ──
 var LESSONS = [
   { num:1, title:'Retail Mindset & Professional Identity',                file:'lesson1.html', desc:'Build the mindset that separates retail professionals from everyone else.' },
   { num:2, title:'Customer Profiling & Customer Types',                   file:'lesson2.html', desc:'Read customers instantly and adapt your approach to every personality type.' },
@@ -574,7 +532,8 @@ function cardBonus() {
   return '<div class="lesson-card locked"><div class="card-badge badge-locked">🔒 Restricted</div><div class="lesson-num-label">Bonus Chapter</div><h3>The Kasi Business Goldmine</h3><p class="lesson-desc">Unlocks after Lesson 3. (' + done3 + '/3 lessons done)</p><button class="card-btn btn-locked">🔒 Locked</button></div>';
 }
 
-render();
+// Only render if already unlocked
+if (sessionStorage.getItem('courseUnlocked') === 'true') render();
 </script>
 </body>
 </html>
