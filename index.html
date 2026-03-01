@@ -473,7 +473,7 @@
 
 <script>
 // RetailExpert Visitor Tracking
-(function() {
+window.addEventListener('load', function() {
   const TRACK_URL = '/.netlify/functions/track';
   const referrer = document.referrer || 'direct';
 
@@ -482,22 +482,24 @@
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ event_type: 'visit', referrer: referrer })
-  }).catch(() => {});
+  }).then(function(r) {
+    console.log('Track visit:', r.status);
+  }).catch(function(e) {
+    console.log('Track error:', e);
+  });
 
   // Track payment button click
-  document.addEventListener('DOMContentLoaded', function() {
-    const payBtn = document.querySelector('button[type="submit"].cta-button');
-    if (payBtn) {
-      payBtn.addEventListener('click', function() {
-        fetch(TRACK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ event_type: 'payment_click', referrer: referrer })
-        }).catch(() => {});
-      });
-    }
-  });
-})();
+  const payBtn = document.querySelector('button[type="submit"].cta-button');
+  if (payBtn) {
+    payBtn.addEventListener('click', function() {
+      fetch(TRACK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ event_type: 'payment_click', referrer: referrer })
+      }).catch(function() {});
+    });
+  }
+});
 </script>
 </body>
-                    </html>
+    </html>
