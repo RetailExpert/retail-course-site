@@ -23,10 +23,14 @@ exports.handler = async (event) => {
       headers: {
         'Content-Type': 'application/json',
         'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Prefer': 'return=minimal'
       },
       body: JSON.stringify({ event_type, referrer })
     });
+
+    const resText = await res.text();
+    console.log('Supabase response:', res.status, resText);
 
     if (event_type === 'payment_click' && CALLMEBOT_API_KEY !== 'YOUR_CALLMEBOT_KEY') {
       const msg = encodeURIComponent(`💰 RetailExpert: Someone just clicked BUY NOW! Source: ${referrer || 'Direct'}`);
@@ -36,7 +40,7 @@ exports.handler = async (event) => {
     return {
       statusCode: 200,
       headers,
-      body: JSON.stringify({ success: true })
+      body: JSON.stringify({ success: true, supabase_status: res.status })
     };
   } catch (err) {
     return {
