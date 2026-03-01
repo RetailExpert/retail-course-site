@@ -470,5 +470,34 @@
             });
         });
     </script>
+
+<script>
+// RetailExpert Visitor Tracking
+(function() {
+  const TRACK_URL = '/.netlify/functions/track';
+  const referrer = document.referrer || 'direct';
+
+  // Track page visit
+  fetch(TRACK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ event_type: 'visit', referrer: referrer })
+  }).catch(() => {});
+
+  // Track payment button click
+  document.addEventListener('DOMContentLoaded', function() {
+    const payBtn = document.querySelector('button[type="submit"].cta-button');
+    if (payBtn) {
+      payBtn.addEventListener('click', function() {
+        fetch(TRACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ event_type: 'payment_click', referrer: referrer })
+        }).catch(() => {});
+      });
+    }
+  });
+})();
+</script>
 </body>
-                                                 </html>
+                    </html>
