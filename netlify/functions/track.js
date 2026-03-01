@@ -1,7 +1,7 @@
 const SUPABASE_URL = 'https://mkoblrxtitrvxwsfubjd.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_DaJiN_25cKFyc-h39Z219g_ZKScPaMN';
 const WHATSAPP_NUMBER = '27748315232';
-const CALLMEBOT_API_KEY = 'YOUR_CALLMEBOT_KEY';
+const CALLMEBOT_API_KEY = '4988567';
 
 exports.handler = async (event) => {
   const headers = {
@@ -49,7 +49,7 @@ exports.handler = async (event) => {
     const resText = await res.text();
     console.log('Supabase response:', res.status, resText);
 
-    if (event_type === 'payment_click' && CALLMEBOT_API_KEY !== 'YOUR_CALLMEBOT_KEY') {
+    if (event_type === 'payment_click' && CALLMEBOT_API_KEY !== '4988567') {
       const msg = encodeURIComponent(`💰 RetailExpert: Someone just clicked BUY NOW! Source: ${referrer || 'Direct'}`);
       await fetch(`https://api.callmebot.com/whatsapp.php?phone=${WHATSAPP_NUMBER}&text=${msg}&apikey=${CALLMEBOT_API_KEY}`);
     }
