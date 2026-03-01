@@ -1,0 +1,12 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/dash"
+  to = "/dashboard.html"
+  status = 200
+
+[[redirects]]
+  from = "/track"
+  to = "/.netlify/functions/track"
+  status = 200
