@@ -1,9 +1,8 @@
 const SUPABASE_URL = 'https://mkoblrxtitrvxwsfubjd.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_DaJiN_25cKFyc-h39Z219g_ZKScPaMN';
 
-// CallMeBot WhatsApp - set up at callmebot.com with your number
 const WHATSAPP_NUMBER = '27748315232';
-const CALLMEBOT_API_KEY = 'YOUR_CALLMEBOT_KEY'; // We'll set this up after
+const CALLMEBOT_API_KEY = 'YOUR_CALLMEBOT_KEY';
 
 exports.handler = async (event) => {
   const headers = {
@@ -19,7 +18,6 @@ exports.handler = async (event) => {
   try {
     const { event_type, referrer } = JSON.parse(event.body);
 
-    // 1. Save to Supabase
     const res = await fetch(`${SUPABASE_URL}/rest/v1/page_events`, {
       method: 'POST',
       headers: {
@@ -30,17 +28,10 @@ exports.handler = async (event) => {
       body: JSON.stringify({ event_type, referrer })
     });
 
-    // 2. WhatsApp notification for payment clicks only
     if (event_type === 'payment_click' && CALLMEBOT_API_KEY !== 'YOUR_CALLMEBOT_KEY') {
       const msg = encodeURIComponent(`💰 RetailExpert: Someone just clicked BUY NOW! Source: ${referrer || 'Direct'}`);
       await fetch(`https://api.callmebot.com/whatsapp.php?phone=${WHATSAPP_NUMBER}&text=${msg}&apikey=${CALLMEBOT_API_KEY}`);
     }
-
-    // 3. WhatsApp for visits (optional - can be noisy, currently disabled)
-    // if (event_type === 'visit' && CALLMEBOT_API_KEY !== 'YOUR_CALLMEBOT_KEY') {
-    //   const msg = encodeURIComponent(`👁 RetailExpert: New visitor from ${referrer || 'Direct'}`);
-    //   await fetch(`https://api.callmebot.com/whatsapp.php?phone=${WHATSAPP_NUMBER}&text=${msg}&apikey=${CALLMEBOT_API_KEY}`);
-    // }
 
     return {
       statusCode: 200,
