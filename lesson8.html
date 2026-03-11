@@ -15,15 +15,15 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .pro-tip { background: linear-gradient(135deg, rgba(255, 215, 0, 0.15) 0%, rgba(255, 140, 0, 0.15) 100%); color: #FFF; padding: 20px 25px; border-radius: 12px; margin: 20px 0; border-left: 5px solid #FFA500; font-weight: 500; }
     .mastery-insight { background: rgba(255, 215, 0, 0.05); color: #F5F5F5; padding: 25px; border-radius: 12px; margin: 20px 0; border: 2px solid #FFD700; }
@@ -42,6 +42,9 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 600px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
@@ -85,7 +88,6 @@
       <p>Master the inner game of retail. Build resilience, navigate diversity with grace, and chart your path from shop floor to leadership. This is where professionals become unstoppable.</p>
     </div>
 
-    <!-- ══ PART 1 ══ -->
     <div class="section">
       <h3><span class="section-icon">🔥</span>Part 1: Stress Management for High-Performance Retail</h3>
       <div class="golden-box">
@@ -154,7 +156,6 @@
       </div>
     </div>
 
-    <!-- ══ PART 2 ══ -->
     <div class="section">
       <h3><span class="section-icon">🌍</span>Part 2: Cultural Awareness & Sensitivity</h3>
       <div class="golden-box">
@@ -221,7 +222,6 @@
       </div>
     </div>
 
-    <!-- ══ PART 3 ══ -->
     <div class="section">
       <h3><span class="section-icon">🚀</span>Part 3: Professional Growth & Career Progression</h3>
       <div class="golden-box">
@@ -268,7 +268,6 @@
       </div>
     </div>
 
-    <!-- ══ FINAL MASTERY ══ -->
     <div class="section">
       <h3><span class="section-icon">🎓</span>Final Mastery Principles</h3>
       <div class="golden-box">
@@ -289,12 +288,13 @@
       </div>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
-      <h3>🏆 Final Mastery Assessment: Lesson 8</h3>
+      <h3>🏆 Final Mastery Quiz</h3>
       <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to complete the course and unlock your certificate.</p>
       <form id="quiz8">
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq1">
           <b>1. What are the four energy tanks that elite retail professionals manage?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q1" value="a"/> Work, Home, Social, Rest</label>
@@ -302,15 +302,17 @@
             <label><input type="radio" name="q1" value="c"/> Sales, Service, Inventory, Management</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq2">
           <b>2. What is the "5-Minute Reset" technique used for?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q2" value="a"/> Taking breaks during slow times</label>
+            <label><input type="radio" name="q2" value="a"/> Taking a break from serving customers</label>
             <label><input type="radio" name="q2" value="b"/> Neurologically resetting your stress response between difficult situations</label>
             <label><input type="radio" name="q2" value="c"/> Counting inventory quickly</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq3">
           <b>3. Which dimension of cultural intelligence involves understanding your own biases and assumptions?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q3" value="a"/> Cultural Knowledge</label>
@@ -318,67 +320,75 @@
             <label><input type="radio" name="q3" value="c"/> Cultural Self-Awareness</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq4">
           <b>4. True or False: Direct eye contact is considered respectful in all cultures.</b>
           <div class="quiz-options">
             <label><input type="radio" name="q4" value="a"/> True</label>
             <label><input type="radio" name="q4" value="b"/> False — it varies by culture and can be disrespectful in some</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>5. What is the typical timeline for the Senior Sales / Lead level?</b>
+
+        <div class="quiz-question" id="qq5">
+          <b>5. What is the typical timeline for the Senior Sales / Lead career level?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q5" value="a"/> 6-18 months</label>
             <label><input type="radio" name="q5" value="b"/> 1-2 years</label>
             <label><input type="radio" name="q5" value="c"/> 3-5 years</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq6">
           <b>6. Which of these is NOT one of the 10 Accelerators for Rapid Career Growth?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q6" value="a"/> Document Everything</label>
-            <label><input type="radio" name="q6" value="b"/> Wait for your manager to recognise your work</label>
+            <label><input type="radio" name="q6" value="b"/> Wait for your manager to recognise your work without prompting</label>
             <label><input type="radio" name="q6" value="c"/> Network Upward</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>7. What should you do every 6 months to drive your career development?</b>
+
+        <div class="quiz-question" id="qq7">
+          <b>7. What should you do every 6 months to actively drive your career development?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q7" value="a"/> Wait for annual review</label>
+            <label><input type="radio" name="q7" value="a"/> Wait for your annual review</label>
             <label><input type="radio" name="q7" value="b"/> Schedule a "career conversation" with your manager</label>
             <label><input type="radio" name="q7" value="c"/> Apply for jobs at other companies</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>8. According to Nike's retail wellness program, what was the impact of stress management?</b>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. According to Nike's retail wellness program, what was the impact of investing in stress management?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q8" value="a"/> No measurable change</label>
-            <label><input type="radio" name="q8" value="b"/> 34% reduction in sick days, 28% improvement in customer satisfaction</label>
-            <label><input type="radio" name="q8" value="c"/> Increased turnover</label>
+            <label><input type="radio" name="q8" value="a"/> No measurable change in performance</label>
+            <label><input type="radio" name="q8" value="b"/> 34% reduction in sick days and 28% improvement in customer satisfaction</label>
+            <label><input type="radio" name="q8" value="c"/> Increased staff turnover</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq9">
           <b>9. What is the #1 trait managers look for when considering promotions?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q9" value="a"/> Years of experience</label>
-            <label><input type="radio" name="q9" value="b"/> Initiative — solving problems before they're assigned</label>
-            <label><input type="radio" name="q9" value="c"/> Being friends with the manager</label>
+            <label><input type="radio" name="q9" value="a"/> Years of experience at the company</label>
+            <label><input type="radio" name="q9" value="b"/> Initiative — solving problems before they are assigned</label>
+            <label><input type="radio" name="q9" value="c"/> Being on good personal terms with the manager</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq10">
           <b>10. What is the Ultimate Black Book philosophy on challenges?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q10" value="a"/> Avoid them when possible</label>
+            <label><input type="radio" name="q10" value="a"/> Avoid them whenever possible</label>
             <label><input type="radio" name="q10" value="b"/> Every challenge is training for the next level — Growth Over Comfort</label>
-            <label><input type="radio" name="q10" value="c"/> Challenges mean you're in the wrong job</label>
+            <label><input type="radio" name="q10" value="c"/> Challenges are a sign you are in the wrong job</label>
           </div>
         </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Final Quiz</button>
       </form>
       <div id="quiz8-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
         ⚠️ Score 8/10 or higher on the final quiz to complete the course and unlock your certificate.
@@ -396,33 +406,65 @@
   <script>
     var lessonNum    = 8;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'Physical, Emotional, Mental, Spiritual' },
+      q2:  { value: 'b', text: 'Neurologically resetting your stress response between difficult situations' },
+      q3:  { value: 'c', text: 'Cultural Self-Awareness' },
+      q4:  { value: 'b', text: 'False — it varies by culture and can be disrespectful in some' },
+      q5:  { value: 'b', text: '1-2 years' },
+      q6:  { value: 'b', text: 'Wait for your manager to recognise your work without prompting' },
+      q7:  { value: 'b', text: 'Schedule a "career conversation" with your manager' },
+      q8:  { value: 'b', text: '34% reduction in sick days and 28% improvement in customer satisfaction' },
+      q9:  { value: 'b', text: 'Initiative — solving problems before they are assigned' },
+      q10: { value: 'b', text: 'Every challenge is training for the next level — Growth Over Comfort' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'b', q3:'c', q4:'b', q5:'b', q6:'b', q7:'b', q8:'b', q9:'b', q10:'b' };
       var score = 0;
-      for (var i = 1; i <= 10; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🏆 You scored ' + score + ' out of 10! ';
-      if (score === 10)    msg += 'LEGENDARY MASTERY! You\'ve completed The Ultimate Black Book! 🔥';
-      else if (score >= 8) msg += 'Outstanding! You\'re ready to dominate! Review any missed questions for perfection.';
-      else if (score >= 6) msg += 'Strong performance! Review the lesson and try again to unlock your certificate.';
-      else                 msg += 'Keep learning! This is advanced material — review and take the quiz again.';
 
       var resultDiv = document.getElementById('quiz8-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'LEGENDARY MASTERY! You\'ve completed The Ultimate Black Book! 🔥';
+      else if (score >= passScore) msg += 'Outstanding! You\'re ready to dominate. Review any red answers for perfection.';
+      else if (score >= 6)         msg += 'Strong performance! Review the red answers above and try again.';
+      else                         msg += 'Keep learning! Review the lesson and retake — you\'re almost there.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 8) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/10. Score 8 or higher to complete the course. Review and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
@@ -430,14 +472,13 @@
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Score 8/10 or higher on the final quiz first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Score ' + passScore + '/' + totalQ + ' or higher on the final quiz first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
 
-      // Lock in completion date and certificate number (once only)
       if (!localStorage.getItem('ubb_completion_date')) {
         localStorage.setItem('ubb_completion_date', new Date().toISOString());
       }
@@ -476,6 +517,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
