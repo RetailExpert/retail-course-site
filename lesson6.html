@@ -15,19 +15,19 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
     .hero .stats { display: flex; justify-content: center; gap: 40px; margin-top: 40px; position: relative; z-index: 1; flex-wrap: wrap; }
     .stat { text-align: center; min-width: 150px; }
-    .stat-number { font-size: 2.5em; font-weight: 900; display: block; color: #FFD700; text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+    .stat-number { font-size: 2.5em; font-weight: 900; display: block; color: #FFD700; }
     .stat-label { font-size: 0.9em; color: #B0B0B0; margin-top: 8px; display: block; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .pro-tip { background: linear-gradient(135deg, rgba(236, 201, 75, 0.15) 0%, rgba(236, 201, 75, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ECC94B; color: #F5F5F5; font-weight: 500; }
     .myth-buster { background: linear-gradient(135deg, rgba(245, 101, 101, 0.15) 0%, rgba(245, 101, 101, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #F56565; color: #F5F5F5; font-weight: 500; }
@@ -55,7 +55,9 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
-    .quiz-options input[type="radio"] { margin-right: 10px; }
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
@@ -72,14 +74,12 @@
       nav a { margin-left: 0; }
       .container { padding: 30px 15px; margin-top: 10px; }
       .hero h2 { font-size: 2em; }
-      .hero p { font-size: 1.1em; }
       .hero .stats { gap: 20px; }
       h3 { font-size: 1.6em; }
       .section { padding: 25px 20px; }
       .comparison-table { font-size: 0.9em; }
       .comparison-table th, .comparison-table td { padding: 12px 8px; }
       .tools-grid { grid-template-columns: 1fr; }
-      .quiz-section { padding: 25px 20px; }
       .btn { padding: 15px 30px; font-size: 1em; display: block; width: 90%; margin: 12px auto; }
     }
   </style>
@@ -255,81 +255,101 @@
 
     <div class="challenge-box"><b>🔥 Challenge:</b> Find a brand (big or small) that you think does omnichannel best. List 3 standout practices — and 1 thing you'd improve!</div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
-      <h3>🎯 Omnichannel Mastery Challenge</h3>
-      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 6 out of 8 or higher to unlock the completion button.</p>
+      <h3>🎯 Omnichannel Mastery Quiz</h3>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz6">
-        <div class="quiz-question">
-          <b>1. What's the primary difference between multichannel and omnichannel retail?</b>
+
+        <div class="quiz-question" id="qq1">
+          <b>1. What is the primary difference between multichannel and omnichannel retail?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q1" value="a"/> A) Multichannel uses more platforms</label>
-            <label><input type="radio" name="q1" value="b"/> B) Omnichannel creates unified, seamless experiences</label>
-            <label><input type="radio" name="q1" value="c"/> C) Multichannel is more expensive to implement</label>
-            <label><input type="radio" name="q1" value="d"/> D) There's no significant difference</label>
+            <label><input type="radio" name="q1" value="a"/> Multichannel uses more platforms</label>
+            <label><input type="radio" name="q1" value="b"/> Omnichannel creates unified, seamless experiences across all channels</label>
+            <label><input type="radio" name="q1" value="c"/> Multichannel is more expensive to implement</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>2. A customer finds a product on Instagram, checks stock online, then buys in-store. What's the most important tech for making this seamless?</b>
+
+        <div class="quiz-question" id="qq2">
+          <b>2. A customer finds a product on Instagram, checks stock online, then buys in-store. What is the most important technology making this seamless?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q2" value="a"/> A) Real-time integrated inventory visibility</label>
-            <label><input type="radio" name="q2" value="b"/> B) A loyalty program</label>
-            <label><input type="radio" name="q2" value="c"/> C) Store-only promotions</label>
-            <label><input type="radio" name="q2" value="d"/> D) Separate websites for each channel</label>
+            <label><input type="radio" name="q2" value="a"/> Real-time integrated inventory visibility</label>
+            <label><input type="radio" name="q2" value="b"/> A loyalty program</label>
+            <label><input type="radio" name="q2" value="c"/> Separate websites for each channel</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq3">
           <b>3. Which of these is NOT a true omnichannel feature?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q3" value="a"/> A) Unified return policy for online and in-store</label>
-            <label><input type="radio" name="q3" value="b"/> B) Staff can pull up customer history from any location</label>
-            <label><input type="radio" name="q3" value="c"/> C) Inventory is visible across all channels</label>
-            <label><input type="radio" name="q3" value="d"/> D) Customers must use separate accounts for each channel</label>
+            <label><input type="radio" name="q3" value="a"/> Unified return policy for online and in-store purchases</label>
+            <label><input type="radio" name="q3" value="b"/> Staff can pull up customer history from any location</label>
+            <label><input type="radio" name="q3" value="c"/> Customers must use separate accounts for each channel</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq4">
           <b>4. What is the biggest risk of not integrating data across channels?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q4" value="a"/> A) Reduced staff workload</label>
-            <label><input type="radio" name="q4" value="b"/> B) Incomplete customer profiles and lost sales opportunities</label>
-            <label><input type="radio" name="q4" value="c"/> C) More social media followers</label>
-            <label><input type="radio" name="q4" value="d"/> D) Faster checkout</label>
+            <label><input type="radio" name="q4" value="a"/> Reduced staff workload</label>
+            <label><input type="radio" name="q4" value="b"/> Incomplete customer profiles and lost sales opportunities</label>
+            <label><input type="radio" name="q4" value="c"/> More social media followers</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>5. A customer starts a return online and finishes it in-store. What's most important to make this smooth?</b>
+
+        <div class="quiz-question" id="qq5">
+          <b>5. A customer starts a return online and finishes it in-store. What is most important to make this smooth?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q5" value="a"/> A) Staff training on omnichannel policies and tools</label>
-            <label><input type="radio" name="q5" value="b"/> B) A printed return slip</label>
-            <label><input type="radio" name="q5" value="c"/> C) Separate systems for online and in-store</label>
-            <label><input type="radio" name="q5" value="d"/> D) Only allow returns in the channel of purchase</label>
+            <label><input type="radio" name="q5" value="a"/> Staff training on omnichannel policies and shared systems</label>
+            <label><input type="radio" name="q5" value="b"/> A printed return slip</label>
+            <label><input type="radio" name="q5" value="c"/> Separate systems for online and in-store</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>6. True or False: Omnichannel excellence requires both technology and strong team culture.</b>
+
+        <div class="quiz-question" id="qq6">
+          <b>6. True or False: Omnichannel excellence requires both technology AND strong team culture.</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q6" value="a"/> A) True</label>
-            <label><input type="radio" name="q6" value="b"/> B) False</label>
+            <label><input type="radio" name="q6" value="a"/> True</label>
+            <label><input type="radio" name="q6" value="b"/> False — technology alone is enough</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq7">
           <b>7. Which KPI best measures cross-channel loyalty?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q7" value="a"/> A) Net Promoter Score (NPS)</label>
-            <label><input type="radio" name="q7" value="b"/> B) Customer Lifetime Value (CLV) for multi-channel shoppers</label>
-            <label><input type="radio" name="q7" value="c"/> C) Average transaction value</label>
-            <label><input type="radio" name="q7" value="d"/> D) Staff turnover rate</label>
+            <label><input type="radio" name="q7" value="a"/> Net Promoter Score (NPS)</label>
+            <label><input type="radio" name="q7" value="b"/> Customer Lifetime Value (CLV) for omnichannel shoppers</label>
+            <label><input type="radio" name="q7" value="c"/> Average transaction value</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>8. Which is the most powerful strategy for omnichannel personalisation?</b>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. What is the most powerful strategy for omnichannel personalisation?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q8" value="a"/> A) Segmenting by channel</label>
-            <label><input type="radio" name="q8" value="b"/> B) Using unified customer profiles to personalise in every channel</label>
-            <label><input type="radio" name="q8" value="c"/> C) Using generic email campaigns</label>
-            <label><input type="radio" name="q8" value="d"/> D) Only personalising for online customers</label>
+            <label><input type="radio" name="q8" value="a"/> Segmenting customers by channel only</label>
+            <label><input type="radio" name="q8" value="b"/> Using unified customer profiles to personalise across every channel</label>
+            <label><input type="radio" name="q8" value="c"/> Using the same generic email for all customers</label>
           </div>
         </div>
+
+        <div class="quiz-question" id="qq9">
+          <b>9. What does BOPIS stand for?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> Buy Online, Pay In Store</label>
+            <label><input type="radio" name="q9" value="b"/> Buy Online, Pick Up In Store</label>
+            <label><input type="radio" name="q9" value="c"/> Browse Online, Purchase In Store</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. According to the Sephora case study, how much more do Beauty Insider members spend compared to non-members?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> 5x more</label>
+            <label><input type="radio" name="q10" value="b"/> 15x more</label>
+            <label><input type="radio" name="q10" value="c"/> 2x more</label>
+          </div>
+        </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
       <div id="quiz6-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
@@ -337,10 +357,10 @@
 
     <div class="challenge-box"><b>🔥 Final Challenge:</b> Mystery shop your own business or a competitor: start on social, buy online, pick up in-store, and try a return. Note every point of delight and every friction. Propose one bold improvement!</div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
-        ⚠️ Complete the quiz and score 6/8 or higher to mark this lesson complete.
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
       </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson7.html" class="btn" style="display:none;">Continue to Lesson 7 →</a>
@@ -355,33 +375,65 @@
   <script>
     var lessonNum    = 6;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'Omnichannel creates unified, seamless experiences across all channels' },
+      q2:  { value: 'a', text: 'Real-time integrated inventory visibility' },
+      q3:  { value: 'c', text: 'Customers must use separate accounts for each channel' },
+      q4:  { value: 'b', text: 'Incomplete customer profiles and lost sales opportunities' },
+      q5:  { value: 'a', text: 'Staff training on omnichannel policies and shared systems' },
+      q6:  { value: 'a', text: 'True' },
+      q7:  { value: 'b', text: 'Customer Lifetime Value (CLV) for omnichannel shoppers' },
+      q8:  { value: 'b', text: 'Using unified customer profiles to personalise across every channel' },
+      q9:  { value: 'b', text: 'Buy Online, Pick Up In Store' },
+      q10: { value: 'b', text: '15x more' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'a', q3:'d', q4:'b', q5:'a', q6:'a', q7:'b', q8:'b' };
       var score = 0;
-      for (var i = 1; i <= 8; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🏆 You scored ' + score + ' out of 8! ';
-      if (score === 8)     msg += 'OMNICHANNEL GENIUS! You\'ve mastered the future of retail! 🔥';
-      else if (score >= 6) msg += 'Excellent! You\'re ready to lead omnichannel transformation.';
-      else if (score >= 5) msg += 'Solid foundation! Review the 5 pillars and try again to unlock completion.';
-      else                 msg += 'Keep learning! Omnichannel is complex — review the lesson and try again.';
 
       var resultDiv = document.getElementById('quiz6-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'OMNICHANNEL GENIUS! You\'ve mastered the future of retail! 🔥';
+      else if (score >= passScore) msg += 'Excellent! You\'re ready to lead omnichannel transformation.';
+      else if (score >= 6)         msg += 'Good foundation! Review the red answers above and try again.';
+      else                         msg += 'Keep learning! Review the 5 pillars and retake the quiz.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 6) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/8. Score 6 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
@@ -389,8 +441,8 @@
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 6/8 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
@@ -426,6 +478,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
