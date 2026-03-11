@@ -15,16 +15,16 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); position: relative; }
     .section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #FFD700, #FFA500); border-radius: 15px 15px 0 0; }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .psychology-box { background: linear-gradient(135deg, rgba(236, 201, 75, 0.15) 0%, rgba(236, 201, 75, 0.05) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #ECC94B; }
     .psychology-box h4 { color: #ECC94B; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
@@ -51,39 +51,32 @@
     li { margin: 12px 0; color: #E0E0E0; font-size: 1.05em; line-height: 1.8; }
     li strong { color: #FFD700; font-weight: 700; }
     p { font-size: 1.1em; margin-bottom: 20px; line-height: 1.8; color: #E0E0E0; }
-
-    /* Quiz */
     .quiz-section { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; color: #000; box-shadow: 0 15px 50px rgba(255,215,0,0.3); }
     .quiz-section h3 { color: #000; margin-top: 0; text-shadow: none; border-bottom: 3px solid #000; }
     .quiz-question { margin: 25px 0; background: rgba(0,0,0,0.1); padding: 20px; border-radius: 10px; }
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255,255,255,0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255,255,255,0.5); }
-    .quiz-options input[type="radio"] { margin-right: 10px; }
-
-    /* Final exam */
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     .final-exam-container { background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(255,165,0,0.15) 100%); padding: 40px 35px; border-radius: 20px; margin: 50px 0; border: 3px solid #FFD700; }
-    .exam-title { color: #FFD700; font-size: 2.2em; font-weight: 900; text-align: center; margin-bottom: 30px; text-shadow: 0 0 15px rgba(255,215,0,0.4); }
+    .exam-title { color: #FFD700; font-size: 2.2em; font-weight: 900; text-align: center; margin-bottom: 30px; }
     .exam-question { margin: 25px 0; background: rgba(0,0,0,0.2); padding: 25px; border-radius: 12px; border-left: 4px solid #FFD700; }
     .exam-question strong { color: #FFD700; font-size: 1.1em; }
     .exam-free-response { width: 100%; min-height: 100px; background: rgba(255,255,255,0.9); border: 2px solid #FFD700; border-radius: 8px; padding: 12px; font-family: 'Inter', sans-serif; font-size: 1em; margin-top: 12px; color: #000; box-sizing: border-box; }
     .exam-options label { display: block; margin: 12px 0; cursor: pointer; padding: 12px; background: rgba(0,0,0,0.2); border-radius: 8px; transition: background 0.3s; color: #F5F5F5; }
     .exam-options label:hover { background: rgba(0,0,0,0.3); }
-    .exam-options input[type="radio"] { margin-right: 10px; }
     .exam-result { background: rgba(72,187,120,0.2); border: 3px solid #48bb78; color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 30px 0; font-size: 1.2em; text-align: center; display: none; }
-
-    /* Completion */
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72,187,120,0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255,68,68,0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
     #quiz-required-notice.show { display: block; }
-
     .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255,215,0,0.4); border: none; cursor: pointer; text-transform: uppercase; font-family: 'Inter', sans-serif; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255,215,0,0.6); }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
     .dashboard-link { text-align: center; margin: 40px 0; }
     .dashboard-link a { color: #FFD700; font-weight: 600; text-decoration: underline; font-size: 1.1em; }
-
     @media (max-width: 768px) {
       header { flex-direction: column; gap: 15px; text-align: center; }
       header h1 { font-size: 20px; }
@@ -265,73 +258,108 @@
       </div>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
-      <h3>🎯 Section Quiz: Psychology, Strategy & Law</h3>
-      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 5 out of 7 or higher to unlock the completion button.</p>
+      <h3>🎯 Customer Service Mastery Quiz</h3>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz7">
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq1">
           <b>1. What is the main reason for using the PEACE method in customer service?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q1" value="a"/> A) To speed up customer interactions</label>
-            <label><input type="radio" name="q1" value="b"/> B) To transform conflicts into collaborative problem-solving and trust-building</label>
-            <label><input type="radio" name="q1" value="c"/> C) To avoid company policies</label>
+            <label><input type="radio" name="q1" value="a"/> To speed up customer interactions</label>
+            <label><input type="radio" name="q1" value="b"/> To transform conflicts into collaborative problem-solving and trust-building</label>
+            <label><input type="radio" name="q1" value="c"/> To avoid following company policies</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq2">
           <b>2. Which concept explains why customers may become MORE loyal after a well-resolved problem?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q2" value="a"/> A) Discount Theory</label>
-            <label><input type="radio" name="q2" value="b"/> B) Service Recovery Paradox</label>
-            <label><input type="radio" name="q2" value="c"/> C) Customer Fatigue</label>
+            <label><input type="radio" name="q2" value="a"/> Discount Theory</label>
+            <label><input type="radio" name="q2" value="b"/> Service Recovery Paradox</label>
+            <label><input type="radio" name="q2" value="c"/> Customer Fatigue</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq3">
           <b>3. In a high-stress customer situation, which approach is NOT recommended?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q3" value="a"/> A) Lower your voice and use open body language</label>
-            <label><input type="radio" name="q3" value="b"/> B) Use legal jargon to intimidate the customer</label>
-            <label><input type="radio" name="q3" value="c"/> C) Offer choices within policy</label>
+            <label><input type="radio" name="q3" value="a"/> Lower your voice and use open body language</label>
+            <label><input type="radio" name="q3" value="b"/> Use legal jargon to intimidate the customer into backing down</label>
+            <label><input type="radio" name="q3" value="c"/> Offer choices within company policy</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>4. Why is documentation so crucial in customer service, especially after disputes?</b>
+
+        <div class="quiz-question" id="qq4">
+          <b>4. Why is documentation crucial after customer disputes?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q4" value="a"/> A) It helps with marketing</label>
-            <label><input type="radio" name="q4" value="b"/> B) It protects you and the business legally in case of future disputes</label>
-            <label><input type="radio" name="q4" value="c"/> C) It is only needed for refunds</label>
+            <label><input type="radio" name="q4" value="a"/> It helps with marketing campaigns</label>
+            <label><input type="radio" name="q4" value="b"/> It protects you and the business legally in case of future disputes</label>
+            <label><input type="radio" name="q4" value="c"/> It is only needed for refunds</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>5. Which is a correct legal response when a customer threatens legal action?</b>
+
+        <div class="quiz-question" id="qq5">
+          <b>5. What is the correct response when a customer threatens legal action?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q5" value="a"/> A) Argue with the customer</label>
-            <label><input type="radio" name="q5" value="b"/> B) Politely inform them you will escalate to management and document the interaction</label>
-            <label><input type="radio" name="q5" value="c"/> C) Offer a large discount immediately</label>
+            <label><input type="radio" name="q5" value="a"/> Argue back and defend your position aggressively</label>
+            <label><input type="radio" name="q5" value="b"/> Politely inform them you will escalate to management and document the interaction</label>
+            <label><input type="radio" name="q5" value="c"/> Immediately offer a large discount to make them go away</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>6. A customer demands a full cash refund after 45 days for a used product, but your policy is 30 days. What is the best course of action?</b>
+
+        <div class="quiz-question" id="qq6">
+          <b>6. A customer demands a full refund after 45 days, but your policy is 30 days. What is the best course of action?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q6" value="a"/> A) Refuse outright and tell them to leave</label>
-            <label><input type="radio" name="q6" value="b"/> B) Use the PEACE method to explore solutions (store credit, exchange, or escalation), staying within policy</label>
-            <label><input type="radio" name="q6" value="c"/> C) Give a full refund to avoid confrontation</label>
+            <label><input type="radio" name="q6" value="a"/> Refuse outright and tell them to leave</label>
+            <label><input type="radio" name="q6" value="b"/> Use the PEACE method to explore solutions within policy (store credit, exchange, or escalation to manager)</label>
+            <label><input type="radio" name="q6" value="c"/> Give a full refund immediately to avoid confrontation</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>7. An angry customer claims an employee promised a special price that is not in the system. What should you do?</b>
+
+        <div class="quiz-question" id="qq7">
+          <b>7. An angry customer claims an employee promised a special price not in the system. What should you do?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q7" value="a"/> A) Dismiss their claim and move on</label>
-            <label><input type="radio" name="q7" value="b"/> B) Calmly gather facts, clarify what was promised, consult your supervisor, and never make unauthorised offers</label>
-            <label><input type="radio" name="q7" value="c"/> C) Immediately apply the discount regardless of policy</label>
+            <label><input type="radio" name="q7" value="a"/> Dismiss their claim and move on</label>
+            <label><input type="radio" name="q7" value="b"/> Calmly gather facts, clarify what was promised, consult your supervisor, and never make unauthorised offers</label>
+            <label><input type="radio" name="q7" value="c"/> Immediately apply the discount regardless of policy</label>
           </div>
         </div>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. What does the "E - Empathetic Acknowledgment" step in PEACE achieve psychologically?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> It admits fault on behalf of the business</label>
+            <label><input type="radio" name="q8" value="b"/> It activates the brain's reward center, reducing the customer's defensive response</label>
+            <label><input type="radio" name="q8" value="c"/> It signals that you will give the customer whatever they want</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq9">
+          <b>9. Under the "Emotional Firewall" mindset, what does a service professional do?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> Ignore the customer's feelings completely</label>
+            <label><input type="radio" name="q9" value="b"/> Maintain professional boundaries while still showing genuine empathy</label>
+            <label><input type="radio" name="q9" value="c"/> Take every complaint personally and respond emotionally</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. When is it appropriate to physically detain a customer in a retail setting?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> Only if you suspect theft and have been trained in "shopkeeper's privilege," following exact legal protocols</label>
+            <label><input type="radio" name="q10" value="b"/> Whenever the customer raises their voice</label>
+            <label><input type="radio" name="q10" value="c"/> To make a point about store rules</label>
+          </div>
+        </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
       <div id="quiz7-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ FINAL EXAM ══ -->
+    <!-- FINAL EXAM -->
     <div class="final-exam-container">
       <div class="exam-title">📝 Final Exam: Legendary Service Certification</div>
       <form id="finalExamForm">
@@ -344,18 +372,18 @@
           <strong>2. Multiple Choice:</strong><br>
           Which best describes the Service Recovery Paradox?
           <div class="exam-options">
-            <label><input type="radio" name="exam2" value="a"/> A) Customers are always less loyal after a problem, regardless of resolution</label>
-            <label><input type="radio" name="exam2" value="b"/> B) Customers may become more loyal if their problems are resolved exceptionally well</label>
-            <label><input type="radio" name="exam2" value="c"/> C) Only discounts increase loyalty</label>
+            <label><input type="radio" name="exam2" value="a"/> Customers are always less loyal after a problem, regardless of resolution</label>
+            <label><input type="radio" name="exam2" value="b"/> Customers may become more loyal if their problems are resolved exceptionally well</label>
+            <label><input type="radio" name="exam2" value="c"/> Only discounts increase loyalty after a complaint</label>
           </div>
         </div>
         <div class="exam-question">
           <strong>3. Multiple Choice:</strong><br>
           What should you always do after a customer service crisis or dispute?
           <div class="exam-options">
-            <label><input type="radio" name="exam3" value="a"/> A) Forget it and move on</label>
-            <label><input type="radio" name="exam3" value="b"/> B) Document the interaction and escalate if needed per commercial law and company policy</label>
-            <label><input type="radio" name="exam3" value="c"/> C) Promise the customer anything they want</label>
+            <label><input type="radio" name="exam3" value="a"/> Forget it and move on to the next customer</label>
+            <label><input type="radio" name="exam3" value="b"/> Document the interaction and escalate if needed per commercial law and company policy</label>
+            <label><input type="radio" name="exam3" value="c"/> Promise the customer anything they want to keep the peace</label>
           </div>
         </div>
         <div class="exam-question">
@@ -367,9 +395,9 @@
           <strong>5. Multiple Choice:</strong><br>
           When is it appropriate to physically detain a customer in a retail setting?
           <div class="exam-options">
-            <label><input type="radio" name="exam5" value="a"/> A) Only if you suspect theft and have been trained in "shopkeeper's privilege," following exact legal protocols</label>
-            <label><input type="radio" name="exam5" value="b"/> B) Whenever you feel annoyed</label>
-            <label><input type="radio" name="exam5" value="c"/> C) To make a point about store rules</label>
+            <label><input type="radio" name="exam5" value="a"/> Only if you suspect theft and have been trained in "shopkeeper's privilege," following exact legal protocols</label>
+            <label><input type="radio" name="exam5" value="b"/> Whenever you feel the customer is being unreasonable</label>
+            <label><input type="radio" name="exam5" value="c"/> To make a point about store rules</label>
           </div>
         </div>
         <button type="submit" class="btn" style="margin-top:35px;">Submit Final Exam</button>
@@ -377,10 +405,10 @@
       <div class="exam-result" id="examResult"></div>
     </div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
-        ⚠️ Complete the quiz and score 5/7 or higher to mark this lesson complete.
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
       </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson8.html" class="btn" style="display:none;">Continue to Lesson 8 →</a>
@@ -395,62 +423,93 @@
   <script>
     var lessonNum    = 7;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'To transform conflicts into collaborative problem-solving and trust-building' },
+      q2:  { value: 'b', text: 'Service Recovery Paradox' },
+      q3:  { value: 'b', text: 'Use legal jargon to intimidate the customer into backing down' },
+      q4:  { value: 'b', text: 'It protects you and the business legally in case of future disputes' },
+      q5:  { value: 'b', text: 'Politely inform them you will escalate to management and document the interaction' },
+      q6:  { value: 'b', text: 'Use the PEACE method to explore solutions within policy (store credit, exchange, or escalation to manager)' },
+      q7:  { value: 'b', text: 'Calmly gather facts, clarify what was promised, consult your supervisor, and never make unauthorised offers' },
+      q8:  { value: 'b', text: "It activates the brain's reward center, reducing the customer's defensive response" },
+      q9:  { value: 'b', text: 'Maintain professional boundaries while still showing genuine empathy' },
+      q10: { value: 'a', text: 'Only if you suspect theft and have been trained in "shopkeeper\'s privilege," following exact legal protocols' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'b', q3:'b', q4:'b', q5:'b', q6:'b', q7:'b' };
       var score = 0;
-      for (var i = 1; i <= 7; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🏆 You scored ' + score + ' out of 7! ';
-      if (score === 7)     msg += 'LEGENDARY SERVICE MASTER! You\'ve achieved excellence! 🔥';
-      else if (score >= 5) msg += 'Outstanding! You\'re ready to handle any customer situation.';
-      else if (score >= 4) msg += 'Strong performance! Review the PEACE method and try again to unlock completion.';
-      else                 msg += 'Keep learning! Customer service mastery requires practice — review and try again.';
 
       var resultDiv = document.getElementById('quiz7-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'LEGENDARY SERVICE MASTER! You\'ve achieved excellence! 🔥';
+      else if (score >= passScore) msg += 'Outstanding! You\'re ready to handle any customer situation.';
+      else if (score >= 6)         msg += 'Good foundation! Review the red answers above and try again.';
+      else                         msg += 'Keep learning! Customer service mastery requires practice — review and retake.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 5) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/7. Score 5 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
-    // Final exam grading
     document.getElementById('finalExamForm').addEventListener('submit', function(e) {
       e.preventDefault();
       var score = 0;
-      if (document.querySelector('input[name="exam2"]:checked')?.value === 'b') score++;
-      if (document.querySelector('input[name="exam3"]:checked')?.value === 'b') score++;
-      if (document.querySelector('input[name="exam5"]:checked')?.value === 'a') score++;
+      if (document.querySelector('input[name="exam2"]:checked') && document.querySelector('input[name="exam2"]:checked').value === 'b') score++;
+      if (document.querySelector('input[name="exam3"]:checked') && document.querySelector('input[name="exam3"]:checked').value === 'b') score++;
+      if (document.querySelector('input[name="exam5"]:checked') && document.querySelector('input[name="exam5"]:checked').value === 'a') score++;
 
       var resultText = '<strong>🎉 Exam Complete!</strong><br><br>';
       resultText += 'You answered <strong>' + score + ' out of 3</strong> multiple-choice questions correctly!<br><br>';
-      if (score === 3)      resultText += '<strong style="color:#FFD700;">🏆 PERFECT SCORE!</strong> You\'ve mastered the principles of legendary customer service!';
-      else if (score >= 2)  resultText += '<strong style="color:#48bb78;">⭐ EXCELLENT!</strong> You have a strong grasp of customer service excellence!';
-      else                  resultText += '<strong>📚 Keep Learning!</strong> Review the lesson materials for deeper understanding.';
-      resultText += '<br><br>Your free responses demonstrate your understanding and will be evaluated for full certification.';
+      if (score === 3)     resultText += '<strong style="color:#FFD700;">🏆 PERFECT SCORE!</strong> You\'ve mastered the principles of legendary customer service!';
+      else if (score >= 2) resultText += '<strong style="color:#48bb78;">⭐ EXCELLENT!</strong> You have a strong grasp of customer service excellence!';
+      else                 resultText += '<strong>📚 Keep Learning!</strong> Review the lesson materials for deeper understanding.';
+      resultText += '<br><br>Your free responses demonstrate your real-world application skills.';
 
       document.getElementById('examResult').innerHTML = resultText;
       document.getElementById('examResult').style.display = 'block';
-      document.getElementById('examResult').scrollIntoView({ behavior:'smooth', block:'center' });
+      document.getElementById('examResult').scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
 
     function markLessonComplete() {
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 5/7 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
@@ -486,6 +545,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
