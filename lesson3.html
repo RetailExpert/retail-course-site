@@ -15,15 +15,15 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .fun-fact { background: linear-gradient(135deg, rgba(199, 249, 204, 0.15) 0%, rgba(147, 250, 165, 0.15) 100%); color: #F5F5F5; font-weight: 600; padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
     .case-study { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 25px 0; border: 3px solid #FFD700; }
@@ -38,6 +38,9 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
@@ -115,6 +118,13 @@
         <h4>Psychology-Based Selling</h4>
         <p>Dr. Robert Cialdini identified 6 universal principles of influence. Master these and you become exponentially more persuasive — ethically.</p>
       </div>
+      <div class="case-study" style="margin-top:30px;">
+        <h4 style="color:#FFD700;">🧑‍🔬 Who is Cialdini? (Pronounced: "chall-DEE-nee")</h4>
+        <p>Dr. Robert Cialdini is an American psychologist who did something no academic had done before — he went <strong>undercover</strong>. He spent years training as a car salesman, a fundraiser, and an advertiser, just to understand how the world's most effective persuaders operated in real life.</p>
+        <p style="margin-top:12px;">In 1984, he published <strong>"Influence: The Psychology of Persuasion"</strong> — one of the best-selling business books of all time, with over 5 million copies sold. The 6 principles weren't invented by him — he <em>discovered</em> them by watching what top persuaders were already doing naturally. He just named them and gave us the playbook.</p>
+        <p style="margin-top:12px;">Every great salesperson, marketer, and negotiator in the world has studied these principles. Now you will too.</p>
+      </div>
+
       <h4 style="color:#FFD700;margin-top:30px;">The 6 Weapons of Influence:</h4>
       <ul>
         <li><strong>1. Reciprocity:</strong> People feel obligated to give back when given something first
@@ -259,12 +269,13 @@
       </div>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
       <h3>🎯 Advanced Selling Mastery Quiz</h3>
-      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 6 out of 8 or higher to unlock the completion button.</p>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz3">
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq1">
           <b>1. What is the main goal of consultative selling?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q1" value="a"/> Pitching as many products as possible</label>
@@ -272,7 +283,8 @@
             <label><input type="radio" name="q1" value="c"/> Offering the lowest price</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq2">
           <b>2. Which Cialdini principle is used when you show "Staff Picks" or "Bestsellers"?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q2" value="a"/> Scarcity</label>
@@ -280,62 +292,87 @@
             <label><input type="radio" name="q2" value="c"/> Commitment</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>3. The "Feel-Felt-Found" method is best for:</b>
+
+        <div class="quiz-question" id="qq3">
+          <b>3. The "Feel-Felt-Found" method is best used for:</b>
           <div class="quiz-options">
             <label><input type="radio" name="q3" value="a"/> Handling objections</label>
-            <label><input type="radio" name="q3" value="b"/> Telling jokes</label>
-            <label><input type="radio" name="q3" value="c"/> Closing the sale</label>
+            <label><input type="radio" name="q3" value="b"/> Opening a conversation</label>
+            <label><input type="radio" name="q3" value="c"/> Greeting a customer</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq4">
           <b>4. What is an "Option Close"?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q4" value="a"/> Offering two choices ("Would you like the blue or the grey?")</label>
+            <label><input type="radio" name="q4" value="a"/> Offering two choices, both leading to a sale ("Would you like the blue or the grey?")</label>
             <label><input type="radio" name="q4" value="b"/> Asking "Do you want this or not?"</label>
-            <label><input type="radio" name="q4" value="c"/> Telling a story</label>
+            <label><input type="radio" name="q4" value="c"/> Telling the customer about other options at other stores</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>5. What's the best way to handle the objection "It's too expensive"?</b>
+
+        <div class="quiz-question" id="qq5">
+          <b>5. What's the best way to handle "It's too expensive"?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q5" value="a"/> Argue about price</label>
             <label><input type="radio" name="q5" value="b"/> Empathise and reframe the value or long-term benefit</label>
-            <label><input type="radio" name="q5" value="c"/> Ignore the objection</label>
+            <label><input type="radio" name="q5" value="c"/> Immediately offer a discount</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq6">
           <b>6. True or False: Asking "yes or no" questions is the best way to learn about your customer.</b>
           <div class="quiz-options">
             <label><input type="radio" name="q6" value="a"/> True</label>
             <label><input type="radio" name="q6" value="b"/> False — open-ended questions reveal deeper needs</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>7. What's a quick way to build rapport with a new customer?</b>
+
+        <div class="quiz-question" id="qq7">
+          <b>7. What do objections really signal?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q7" value="a"/> Find a genuine point of connection or share a little humour</label>
-            <label><input type="radio" name="q7" value="b"/> Dive into the sales pitch immediately</label>
-            <label><input type="radio" name="q7" value="c"/> Point out what they're doing wrong</label>
+            <label><input type="radio" name="q7" value="a"/> The customer is not interested at all</label>
+            <label><input type="radio" name="q7" value="b"/> Buying signals — the customer is engaged enough to raise concerns</label>
+            <label><input type="radio" name="q7" value="c"/> You should end the conversation</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>8. What do objections really signal?</b>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. Which closing technique is being used: "So you love the comfort, the style, and the warranty — shall we get you set up?"</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q8" value="a"/> The customer hates you</label>
-            <label><input type="radio" name="q8" value="b"/> Buying signals — they're engaged enough to raise concerns</label>
-            <label><input type="radio" name="q8" value="c"/> You should give up</label>
+            <label><input type="radio" name="q8" value="a"/> The Urgency Close</label>
+            <label><input type="radio" name="q8" value="b"/> The Summary Close</label>
+            <label><input type="radio" name="q8" value="c"/> The Puppy Dog Close</label>
           </div>
         </div>
+
+        <div class="quiz-question" id="qq9">
+          <b>9. Which Cialdini principle applies when you say "This is our last one in this colour!"?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> Liking</label>
+            <label><input type="radio" name="q9" value="b"/> Reciprocity</label>
+            <label><input type="radio" name="q9" value="c"/> Scarcity</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. A customer says "I need to think about it." What is the best first response?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> "Of course! What specifically would you like to think about? Maybe I can help."</label>
+            <label><input type="radio" name="q10" value="b"/> "OK, bye then."</label>
+            <label><input type="radio" name="q10" value="c"/> "You should just buy it now before it's gone."</label>
+          </div>
+        </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
       <div id="quiz3-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
-        ⚠️ Complete the quiz and score 6/8 or higher to mark this lesson complete.
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
       </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson4.html" class="btn" style="display:none;">Continue to Lesson 4 →</a>
@@ -350,33 +387,65 @@
   <script>
     var lessonNum    = 3;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'Diagnosing customer needs and tailoring solutions' },
+      q2:  { value: 'b', text: 'Social Proof' },
+      q3:  { value: 'a', text: 'Handling objections' },
+      q4:  { value: 'a', text: 'Offering two choices, both leading to a sale ("Would you like the blue or the grey?")' },
+      q5:  { value: 'b', text: 'Empathise and reframe the value or long-term benefit' },
+      q6:  { value: 'b', text: 'False — open-ended questions reveal deeper needs' },
+      q7:  { value: 'b', text: 'Buying signals — the customer is engaged enough to raise concerns' },
+      q8:  { value: 'b', text: 'The Summary Close' },
+      q9:  { value: 'c', text: 'Scarcity' },
+      q10: { value: 'a', text: '"Of course! What specifically would you like to think about? Maybe I can help."' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'b', q3:'a', q4:'a', q5:'b', q6:'b', q7:'a', q8:'b' };
       var score = 0;
-      for (var i = 1; i <= 8; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🏆 You scored ' + score + ' out of 8! ';
-      if (score === 8)     msg += 'SELLING MASTER! You\'re ready to close like a pro! 🔥';
-      else if (score >= 6) msg += 'Excellent! You\'ve mastered advanced selling techniques.';
-      else if (score >= 5) msg += 'Good effort! Review the key techniques and try again to unlock completion.';
-      else                 msg += 'Keep learning! Practise these techniques and try again.';
 
       var resultDiv = document.getElementById('quiz3-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'SELLING MASTER! You\'re ready to close like a pro! 🔥';
+      else if (score >= passScore) msg += 'Excellent! You\'ve mastered advanced selling techniques.';
+      else if (score >= 6)         msg += 'Good effort! Review the red answers above and try again.';
+      else                         msg += 'Keep learning! Practise these techniques and retake the quiz.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 6) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/8. Score 6 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
@@ -384,15 +453,13 @@
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 6/8 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
-      // Unlock bonus chapter
       localStorage.setItem('lesson_3_completed', 'true');
-
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = '✅ Lesson Completed';
       document.getElementById('markComplete').disabled = true;
@@ -425,6 +492,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
