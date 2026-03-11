@@ -15,15 +15,15 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .campaign-type { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 30px; border-radius: 15px; margin: 25px 0; border: 3px solid #FFD700; }
     .campaign-type h4 { color: #FFD700; font-size: 1.5em; margin-bottom: 15px; font-weight: 800; }
@@ -45,6 +45,9 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
@@ -402,12 +405,13 @@
       <p><strong>Your Takeaway:</strong> You don't need Apple's budget. You need Apple's THINKING. Build anticipation, create scarcity, make it an event, train your team obsessively, and measure everything.</p>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
       <h3>🎯 Campaign Mastery Quiz</h3>
       <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz5">
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq1">
           <b>1. What are the three questions the best campaigns answer?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q1" value="a"/> What's in it for me? Why now? How do I get it?</label>
@@ -415,7 +419,8 @@
             <label><input type="radio" name="q1" value="c"/> Who made it? Why? What colour?</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq2">
           <b>2. What type of campaign is best for moving aging inventory?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q2" value="a"/> Product Launch Campaign</label>
@@ -423,7 +428,8 @@
             <label><input type="radio" name="q2" value="c"/> Brand Building Campaign</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq3">
           <b>3. What is the #1 factor that determines campaign success?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q3" value="a"/> How much you spend on advertising</label>
@@ -431,7 +437,8 @@
             <label><input type="radio" name="q3" value="c"/> The size of the discount</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq4">
           <b>4. Which urgency tactic uses "Only 3 left" or "While supplies last"?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q4" value="a"/> Time Scarcity</label>
@@ -439,22 +446,25 @@
             <label><input type="radio" name="q4" value="c"/> Bonus Scarcity</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq5">
           <b>5. True or False: You should only measure campaign results after the campaign ends.</b>
           <div class="quiz-options">
             <label><input type="radio" name="q5" value="a"/> True</label>
             <label><input type="radio" name="q5" value="b"/> False — track daily to pivot mid-campaign if needed</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq6">
           <b>6. What is the "Event-ification" strategy?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q6" value="a"/> Creating an experience around your campaign, not just a discount</label>
             <label><input type="radio" name="q6" value="b"/> Only running campaigns during holidays</label>
-            <label><input type="radio" name="q6" value="c"/> Hiring event planners</label>
+            <label><input type="radio" name="q6" value="c"/> Hiring event planners for every campaign</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq7">
           <b>7. Which campaign metric measures (Revenue - Cost) ÷ Cost × 100?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q7" value="a"/> Conversion Rate</label>
@@ -462,36 +472,40 @@
             <label><input type="radio" name="q7" value="c"/> Traffic Increase</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq8">
           <b>8. What should happen 48 hours before campaign launch?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q8" value="a"/> Nothing — wait until launch day</label>
-            <label><input type="radio" name="q8" value="b"/> Pre-launch staff brief explaining objectives and offers</label>
-            <label><input type="radio" name="q8" value="c"/> Start the campaign early</label>
+            <label><input type="radio" name="q8" value="b"/> Pre-launch staff brief explaining objectives, offers, and talking points</label>
+            <label><input type="radio" name="q8" value="c"/> Start the campaign early for loyal customers</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq9">
           <b>9. What is the danger of overusing flash sales?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q9" value="a"/> Customers love them too much</label>
+            <label><input type="radio" name="q9" value="a"/> Customers enjoy them too much</label>
             <label><input type="radio" name="q9" value="b"/> They train customers to wait for deals and can devalue your brand</label>
-            <label><input type="radio" name="q9" value="c"/> They're too expensive to run</label>
+            <label><input type="radio" name="q9" value="c"/> They are too expensive to run regularly</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>10. What did Apple do to make product launches cultural moments?</b>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. What made Apple's product launches into cultural moments?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q10" value="a"/> Lower prices significantly</label>
-            <label><input type="radio" name="q10" value="b"/> Build anticipation, create scarcity, make it an event, train staff obsessively</label>
-            <label><input type="radio" name="q10" value="c"/> Run TV commercials only</label>
+            <label><input type="radio" name="q10" value="a"/> Significantly lowering prices at launch</label>
+            <label><input type="radio" name="q10" value="b"/> Building anticipation, creating scarcity, making it an event, and training staff obsessively</label>
+            <label><input type="radio" name="q10" value="c"/> Running TV commercials only</label>
           </div>
         </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
       <div id="quiz5-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
         ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
@@ -509,33 +523,65 @@
   <script>
     var lessonNum    = 5;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'a', text: 'What\'s in it for me? Why now? How do I get it?' },
+      q2:  { value: 'b', text: 'Clearance & Markdown Campaign' },
+      q3:  { value: 'b', text: 'Staff activation and enthusiasm' },
+      q4:  { value: 'b', text: 'Quantity Scarcity' },
+      q5:  { value: 'b', text: 'False — track daily to pivot mid-campaign if needed' },
+      q6:  { value: 'a', text: 'Creating an experience around your campaign, not just a discount' },
+      q7:  { value: 'b', text: 'Campaign ROI' },
+      q8:  { value: 'b', text: 'Pre-launch staff brief explaining objectives, offers, and talking points' },
+      q9:  { value: 'b', text: 'They train customers to wait for deals and can devalue your brand' },
+      q10: { value: 'b', text: 'Building anticipation, creating scarcity, making it an event, and training staff obsessively' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'a', q2:'b', q3:'b', q4:'b', q5:'b', q6:'a', q7:'b', q8:'b', q9:'b', q10:'b' };
       var score = 0;
-      for (var i = 1; i <= 10; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🎯 You scored ' + score + ' out of 10! ';
-      if (score === 10)    msg += 'CAMPAIGN MASTER! You\'re ready to crush any activation! 🔥';
-      else if (score >= 8) msg += 'Excellent! You understand campaign execution at a high level.';
-      else if (score >= 6) msg += 'Good foundation! Review the strategies and try again to unlock completion.';
-      else                 msg += 'Keep learning! Campaigns are complex — review the lesson and try again.';
 
       var resultDiv = document.getElementById('quiz5-result');
+      var msg = '🎯 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'CAMPAIGN MASTER! You\'re ready to crush any activation! 🔥';
+      else if (score >= passScore) msg += 'Excellent! You understand campaign execution at a high level.';
+      else if (score >= 6)         msg += 'Good foundation! Review the red answers above and try again.';
+      else                         msg += 'Keep learning! Campaigns are powerful — review the lesson and retake.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 8) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/10. Score 8 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
@@ -543,8 +589,8 @@
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 8/10 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
@@ -580,6 +626,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
