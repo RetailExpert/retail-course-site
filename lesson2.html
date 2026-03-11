@@ -15,15 +15,15 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .profile-card { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 30px; border-radius: 15px; margin: 20px 0; border: 3px solid #FFD700; }
     .profile-card h4 { color: #FFD700; font-size: 1.5em; margin-bottom: 15px; font-weight: 800; }
@@ -37,6 +37,9 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
@@ -159,7 +162,7 @@
       </div>
 
       <div class="profile-card">
-        <h4>4. 👑 The Quality Connoisseur</h4>
+        <h4>4. 👑 The Picky Shopper</h4>
         <p><strong>Profile:</strong> Seeks best-in-class, willing to pay for quality, knowledgeable</p>
         <p><strong>Body Language:</strong> Examines products closely, reads labels, asks detailed questions</p>
         <p><strong>What They Say:</strong> "What's the quality like?" "Where is this made?" "What's the warranty?"</p>
@@ -265,12 +268,13 @@
       </div>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
       <h3>🎯 Customer Profiling Mastery Quiz</h3>
-      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 4 out of 5 or higher to unlock the completion button.</p>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz2">
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq1">
           <b>1. Which customer type responds best to urgency and limited-time offers?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q1" value="a"/> The Loyalist</label>
@@ -278,14 +282,16 @@
             <label><input type="radio" name="q1" value="c"/> The Researcher</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq2">
           <b>2. True or False: Behavioral segmentation should only use data from loyalty programs.</b>
           <div class="quiz-options">
             <label><input type="radio" name="q2" value="a"/> True</label>
             <label><input type="radio" name="q2" value="b"/> False — it includes shopping patterns, triggers, and preferences from all sources</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq3">
           <b>3. What's the best first step to profile a new customer?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q3" value="a"/> Offer them a discount immediately</label>
@@ -293,7 +299,8 @@
             <label><input type="radio" name="q3" value="c"/> Wait for them to approach you</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq4">
           <b>4. Which of the following is a psychographic trait?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q4" value="a"/> Preferred payment method</label>
@@ -301,7 +308,8 @@
             <label><input type="radio" name="q4" value="c"/> Personal values and lifestyle motivators</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq5">
           <b>5. What physical action in-store is most closely linked to purchase intent?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q5" value="a"/> Looking at price tags</label>
@@ -309,15 +317,61 @@
             <label><input type="radio" name="q5" value="c"/> Standing near entrance</label>
           </div>
         </div>
+
+        <div class="quiz-question" id="qq6">
+          <b>6. A customer walks in fast, checks their phone, and says "Where can I find the black jeans?" — which type are they?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" value="a"/> The Browser</label>
+            <label><input type="radio" name="q6" value="b"/> The Mission Shopper</label>
+            <label><input type="radio" name="q6" value="c"/> The Loyalist</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq7">
+          <b>7. How should you approach a Picky Shopper customer?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" value="a"/> Lead with discounts and promotions</label>
+            <label><input type="radio" name="q7" value="b"/> Focus on craftsmanship, materials, durability and never compete on price</label>
+            <label><input type="radio" name="q7" value="c"/> Give them space and let them browse alone</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. A customer's arms are crossed and they keep glancing at the exit. What should you do?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> Push harder with your sales pitch</label>
+            <label><input type="radio" name="q8" value="b"/> Give them space — they feel pressured</label>
+            <label><input type="radio" name="q8" value="c"/> Offer a discount immediately</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq9">
+          <b>9. Which customer type is 2.8x more likely to share positive experiences on social media?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> The Mission Shopper</label>
+            <label><input type="radio" name="q9" value="b"/> The Researcher</label>
+            <label><input type="radio" name="q9" value="c"/> The Value Seeker</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. What is the most important thing to do when serving a Loyalist customer?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> Treat them like any other customer to be fair</label>
+            <label><input type="radio" name="q10" value="b"/> Personalise their experience, use their name, and give them VIP treatment</label>
+            <label><input type="radio" name="q10" value="c"/> Focus only on upselling new products</label>
+          </div>
+        </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
       <div id="quiz2-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
-        ⚠️ Complete the quiz and score 4/5 or higher to mark this lesson complete.
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
       </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson3.html" class="btn" style="display:none;">Continue to Lesson 3 →</a>
@@ -332,33 +386,65 @@
   <script>
     var lessonNum    = 2;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'The Impulse Buyer' },
+      q2:  { value: 'b', text: 'False — it includes shopping patterns, triggers, and preferences from all sources' },
+      q3:  { value: 'b', text: 'Ask open-ended questions about their needs and observe body language' },
+      q4:  { value: 'c', text: 'Personal values and lifestyle motivators' },
+      q5:  { value: 'b', text: 'Touching the product (40% more likely to buy)' },
+      q6:  { value: 'b', text: 'The Mission Shopper' },
+      q7:  { value: 'b', text: 'Focus on craftsmanship, materials, durability and never compete on price' },
+      q8:  { value: 'b', text: 'Give them space — they feel pressured' },
+      q9:  { value: 'c', text: 'The Value Seeker' },
+      q10: { value: 'b', text: 'Personalise their experience, use their name, and give them VIP treatment' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'b', q3:'b', q4:'c', q5:'b' };
       var score = 0;
-      for (var i = 1; i <= 5; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🏆 You scored ' + score + ' out of 5! ';
-      if (score === 5)     msg += 'PROFILING MASTER! You can read customers like a book! 🔥';
-      else if (score >= 4) msg += 'Excellent! You understand customer psychology at a deep level.';
-      else if (score >= 3) msg += 'Good foundation! Review the 8 types and try again to unlock completion.';
-      else                 msg += 'Keep learning! Review the content above and retake the quiz.';
 
       var resultDiv = document.getElementById('quiz2-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'PROFILING MASTER! You can read customers like a book! 🔥';
+      else if (score >= passScore) msg += 'Excellent! You understand customer psychology at a deep level.';
+      else if (score >= 6)         msg += 'Good foundation! Review the red answers and try again.';
+      else                         msg += 'Keep studying! Review the 8 customer types and retake the quiz.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 4) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/5. Score 4 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
@@ -366,8 +452,8 @@
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 4/5 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
@@ -403,6 +489,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
