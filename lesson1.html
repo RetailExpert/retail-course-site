@@ -15,15 +15,15 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .fun-fact { background: linear-gradient(135deg, rgba(199, 249, 204, 0.15) 0%, rgba(147, 250, 165, 0.15) 100%); color: #F5F5F5; font-weight: 600; padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; }
     .case-study { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); color: #F5F5F5; padding: 30px; border-radius: 15px; margin: 25px 0; border: 3px solid #FFD700; }
@@ -38,26 +38,13 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
-
-    /* ── COMPLETION ── */
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
-
-    /* quiz required notice */
-    #quiz-required-notice {
-      display: none;
-      background: rgba(255, 68, 68, 0.15);
-      border: 2px solid #ef4444;
-      border-radius: 12px;
-      padding: 16px 22px;
-      color: #fca5a5;
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 18px;
-      text-align: center;
-    }
+    #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
     #quiz-required-notice.show { display: block; }
-
     .btn { display: inline-block; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #000; padding: 20px 50px; text-decoration: none; border-radius: 50px; margin: 15px 10px; font-weight: 900; font-size: 1.2em; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4); border: none; cursor: pointer; text-transform: uppercase; font-family: 'Inter', sans-serif; }
     .btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(255, 215, 0, 0.6); }
     .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
@@ -151,9 +138,11 @@
         <li><strong>When things go wrong:</strong> "What can I do to solve this?"</li>
       </ul>
       <div class="case-study">
-        <h4 style="color:#FFD700;">📖 Case Study: The Ritz-Carlton $2,000 Rule</h4>
-        <p>Every Ritz-Carlton employee can spend up to $2,000 per guest, per day to solve problems. No manager approval needed. They hire people with ownership mindset and trust them to protect the brand. Result: industry-leading loyalty and the highest customer satisfaction scores in hospitality.</p>
-        <p><strong>Your Takeaway:</strong> Even without a $2,000 budget, adopt the MINDSET. Act like the brand's reputation depends on you — because it does.</p>
+        <h4 style="color:#FFD700;">📖 Case Study: Woolworths SA — Service That Sets the Standard</h4>
+        <p>Woolworths SA has consistently ranked as one of South Africa's most trusted retail brands — not because of their products alone, but because of their people.</p>
+        <p style="margin-top:12px;">Woolworths store staff are trained to resolve customer issues on the floor, without always escalating to a manager. A customer unhappy with a product? Staff assist immediately. A quality complaint? They handle it with confidence and care — on the spot.</p>
+        <p style="margin-top:12px;">The result? Woolworths consistently tops SA customer satisfaction surveys and commands premium loyalty in a highly competitive market — with customers driving past cheaper competitors just to shop there.</p>
+        <p style="margin-top:16px;"><strong>Your Takeaway:</strong> Woolworths doesn't just hire people — they develop professionals who take ownership of the customer experience. That ownership mindset is exactly why their brand commands respect across South Africa.</p>
       </div>
     </div>
 
@@ -240,13 +229,14 @@
       </div>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <!-- QUIZ -->
     <div class="quiz-section">
       <h3>🎯 Mindset Mastery Quiz</h3>
-      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 4 out of 5 or higher to unlock the completion button.</p>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
 
       <form id="quiz1">
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq1">
           <b>1. What is the key difference between a professional and a task-doer?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q1" value="a"/> Professionals get paid more</label>
@@ -254,7 +244,8 @@
             <label><input type="radio" name="q1" value="c"/> Professionals work longer hours</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq2">
           <b>2. What does "ownership mindset" mean in retail?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q2" value="a"/> Actually owning the store</label>
@@ -262,14 +253,16 @@
             <label><input type="radio" name="q2" value="c"/> Bossing other employees around</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq3">
           <b>3. True or False: Your personal brand on the shop floor affects customer loyalty and promotion opportunities.</b>
           <div class="quiz-options">
             <label><input type="radio" name="q3" value="a"/> True</label>
             <label><input type="radio" name="q3" value="b"/> False</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq4">
           <b>4. What separates top retail performers from average ones?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q4" value="a"/> Natural charisma</label>
@@ -277,24 +270,71 @@
             <label><input type="radio" name="q4" value="c"/> Luck</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>5. According to the Ritz-Carlton case study, what enables employees to spend up to $2,000 per guest?</b>
+
+        <div class="quiz-question" id="qq5">
+          <b>5. According to the Woolworths SA case study, what is the main reason their brand commands loyalty across South Africa?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q5" value="a"/> They hire wealthy employees</label>
-            <label><input type="radio" name="q5" value="b"/> They trust people with ownership mindset to protect the brand</label>
-            <label><input type="radio" name="q5" value="c"/> It's a marketing gimmick</label>
+            <label><input type="radio" name="q5" value="a"/> Their products are cheaper than competitors</label>
+            <label><input type="radio" name="q5" value="b"/> Staff take ownership of the customer experience and resolve issues on the floor</label>
+            <label><input type="radio" name="q5" value="c"/> They have the most store locations in SA</label>
           </div>
         </div>
+
+        <div class="quiz-question" id="qq6">
+          <b>6. A task-doer sees a mess in another section of the store. What do they most likely say?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q6" value="a"/> "I'll fix it — customer experience matters"</label>
+            <label><input type="radio" name="q6" value="b"/> "Not my section"</label>
+            <label><input type="radio" name="q6" value="c"/> "Let me find a solution"</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq7">
+          <b>7. Which of the following is a daily discipline of a retail professional?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" value="a"/> Waiting for the manager to identify problems</label>
+            <label><input type="radio" name="q7" value="b"/> Greeting every customer without exception</label>
+            <label><input type="radio" name="q7" value="c"/> Focusing only on your assigned tasks</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. How does a growth mindset affect sales performance?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> It has no effect — some people are just naturally good at sales</label>
+            <label><input type="radio" name="q8" value="b"/> It leads to daily practice and improvement, making you a top performer</label>
+            <label><input type="radio" name="q8" value="c"/> It makes you overconfident with customers</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq9">
+          <b>9. What does your personal brand on the shop floor depend on most?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> How long you have worked in retail</label>
+            <label><input type="radio" name="q9" value="b"/> Consistency, expertise, energy and genuine helpfulness</label>
+            <label><input type="radio" name="q9" value="c"/> Your relationship with the store manager</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. Which mindset leads directly to promotions in retail?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> Victim mindset — waiting for management to notice you</label>
+            <label><input type="radio" name="q10" value="b"/> Ownership mindset — making yourself indispensable</label>
+            <label><input type="radio" name="q10" value="c"/> Task-doer mindset — completing assigned work efficiently</label>
+          </div>
+        </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
 
       <div id="quiz1-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ COMPLETION ── -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
-        ⚠️ Complete the quiz and score 4/5 or higher to mark this lesson complete.
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
       </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson2.html" class="btn" style="display:none;">Continue to Lesson 2 →</a>
@@ -309,58 +349,83 @@
   <script>
     var lessonNum    = 1;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
-    // ── Grade Quiz ──
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'Professionals take ownership and go beyond minimum requirements' },
+      q2:  { value: 'b', text: 'Acting like the brand\'s reputation depends on you and solving problems proactively' },
+      q3:  { value: 'a', text: 'True' },
+      q4:  { value: 'b', text: 'Consistent discipline and daily professional habits' },
+      q5:  { value: 'b', text: 'Staff take ownership of the customer experience and resolve issues on the floor' },
+      q6:  { value: 'b', text: 'Not my section' },
+      q7:  { value: 'b', text: 'Greeting every customer without exception' },
+      q8:  { value: 'b', text: 'It leads to daily practice and improvement, making you a top performer' },
+      q9:  { value: 'b', text: 'Consistency, expertise, energy and genuine helpfulness' },
+      q10: { value: 'b', text: 'Ownership mindset — making yourself indispensable' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'b', q3:'a', q4:'b', q5:'b' };
       var score = 0;
-      for (var i = 1; i <= 5; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+
+        var old = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+
+        qDiv.appendChild(fb);
       }
 
-      var msg = '🏆 You scored ' + score + ' out of 5! ';
-      if (score === 5)      msg += 'PERFECT! You have mastered the professional mindset! 🔥';
-      else if (score >= 4)  msg += 'Excellent! You understand what separates professionals from task-doers.';
-      else if (score >= 3)  msg += 'Good effort — review the key sections and try again to unlock completion.';
-      else                  msg += 'Keep studying! Review the content above and retake the quiz.';
-
       var resultDiv = document.getElementById('quiz1-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'PERFECT! You have completely mastered the professional mindset! 🔥';
+      else if (score >= passScore) msg += 'Excellent! You understand what separates professionals from task-doers.';
+      else if (score >= 6)         msg += 'Good effort — review the red answers above and try again.';
+      else                         msg += 'Keep studying! Review the lesson content and retake the quiz.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 4) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
-        // Unlock mark complete button if not already done
-        var btn = document.getElementById('markComplete');
-        if (btn && !btn.disabled) {
-          btn.style.opacity = '1';
-          btn.style.background = 'linear-gradient(135deg, #FFD700 0%, #FFA500 100%)';
-        }
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/5. Score 4 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher to complete this lesson. Review the red answers and try again!';
       }
     }
 
-    // ── Mark Complete ──
     function markLessonComplete() {
-      // If lesson already marked done, allow through
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 4/5 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
-
       progress['lesson' + lessonNum] = true;
       localStorage.setItem('retailProgress', JSON.stringify(progress));
-
       document.getElementById('nextLessonBtn').style.display = 'inline-block';
       document.getElementById('markComplete').textContent = '✅ Lesson Completed';
       document.getElementById('markComplete').disabled = true;
@@ -369,7 +434,6 @@
       updateProgressBar();
     }
 
-    // ── Progress Bar ──
     function updateProgressBar() {
       var progress  = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       var completed = 0;
@@ -379,7 +443,6 @@
       document.getElementById('progressText').textContent = 'Lesson ' + lessonNum + ' of ' + totalLessons + ' • ' + percent + '% Complete';
     }
 
-    // ── On Load ──
     window.onload = function() {
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (progress['lesson' + lessonNum]) {
@@ -389,7 +452,6 @@
         document.getElementById('markComplete').disabled = true;
         document.getElementById('completionMsg').style.display = 'block';
       } else {
-        // Show the quiz notice so student knows what's required
         document.getElementById('quiz-required-notice').classList.add('show');
       }
       updateProgressBar();
