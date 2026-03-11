@@ -15,15 +15,15 @@
     #progressBarContainer { margin: 30px auto 40px auto; max-width: 500px; }
     #progressBarContainer .progress-outer { background:#1a1a1a; border-radius:8px; overflow:hidden; height:16px; border: 2px solid #FFD700; }
     #progressBarFill { height:100%; width:0; background:linear-gradient(90deg,#FFD700,#FFA500); transition:width 0.7s; box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    #progressText { text-align:center; font-size:1.1em; margin-top:10px; color:#FFD700; font-weight:800; }
     .hero { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); padding: 50px 40px; border-radius: 20px; margin-bottom: 40px; border: 3px solid #FFD700; position: relative; overflow: hidden; }
     .hero::before { content: ''; position: absolute; top: 0; right: 0; width: 300px; height: 300px; background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%); }
-    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; text-shadow: 0 0 15px rgba(255, 215, 0, 0.4); position: relative; z-index: 1; }
+    .hero h2 { color: #FFD700; font-size: 2.8em; margin-bottom: 20px; font-weight: 900; position: relative; z-index: 1; }
     .hero p { font-size: 1.3em; color: #F5F5F5; line-height: 1.8; position: relative; z-index: 1; }
-    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; text-shadow: 0 0 10px rgba(255, 215, 0, 0.3); border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
+    h3 { margin-top: 50px; color: #FFD700; font-size: 2em; font-weight: 800; border-bottom: 3px solid #FFD700; padding-bottom: 10px; }
     .section { margin-bottom: 50px; background: #1a1a1a; padding: 40px; border-radius: 15px; border: 2px solid rgba(255, 215, 0, 0.3); }
-    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; text-shadow: 0 0 8px rgba(255, 215, 0, 0.4); }
-    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; box-shadow: 0 5px 20px rgba(255, 215, 0, 0.1); }
+    .section-icon { font-weight: 900; color: #FFD700; margin-right: 15px; font-size: 1.3em; }
+    .golden-box { background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 165, 0, 0.1) 100%); padding: 25px 30px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #FFD700; }
     .golden-box h4 { color: #FFD700; font-size: 1.3em; margin-bottom: 15px; font-weight: 800; }
     .golden-box b { color: #FFD700; font-weight: 700; }
     .fun-fact { background: linear-gradient(135deg, rgba(72, 187, 120, 0.15) 0%, rgba(72, 187, 120, 0.05) 100%); padding: 20px 25px; border-radius: 12px; margin: 25px 0; border-left: 5px solid #48bb78; color: #F5F5F5; font-weight: 500; }
@@ -42,6 +42,9 @@
     .quiz-question b { display: block; margin-bottom: 12px; font-size: 1.1em; }
     .quiz-options label { display: block; margin: 10px 0; cursor: pointer; padding: 10px; background: rgba(255, 255, 255, 0.3); border-radius: 8px; transition: background 0.3s; }
     .quiz-options label:hover { background: rgba(255, 255, 255, 0.5); }
+    .answer-feedback { margin-top: 14px; padding: 12px 16px; border-radius: 8px; font-weight: 700; font-size: .95em; }
+    .answer-correct { background: rgba(72, 187, 120, 0.25); border: 2px solid #48bb78; color: #000; }
+    .answer-wrong { background: rgba(239, 68, 68, 0.25); border: 2px solid #ef4444; color: #000; }
     #lesson-completion { margin: 50px 0 30px 0; text-align: center; }
     #completionMsg { margin: 25px auto 0 auto; max-width: 500px; font-size: 1.2em; color: #48bb78; font-weight: 700; display: none; background: rgba(72, 187, 120, 0.1); padding: 20px; border-radius: 12px; border: 2px solid #48bb78; }
     #quiz-required-notice { display: none; background: rgba(255, 68, 68, 0.15); border: 2px solid #ef4444; border-radius: 12px; padding: 16px 22px; color: #fca5a5; font-weight: 700; font-size: 1rem; margin-bottom: 18px; text-align: center; }
@@ -168,15 +171,121 @@
 
     <div class="section">
       <h3><span class="section-icon">4</span>Mannequins: The Silent Sales Team</h3>
-      <div class="vis-caption">Mannequin Inspiration</div>
-      <div style="text-align:center;margin-bottom:20px;"><span style="font-size:2.5em;">🧍‍♂️🧍‍♀️🧍</span></div>
+      <div class="golden-box">
+        <h4>The Mannequin is Your Best Salesperson</h4>
+        <p>A well-dressed mannequin sells the entire outfit — not just one item. Customers don't always know how to put looks together. When you do it for them, they buy more. Head-to-toe dressing consistently increases units per transaction.</p>
+      </div>
+
+      <h4 style="color:#FFD700;margin-top:30px;">Step-by-Step: How to Dress a Mannequin</h4>
       <ul>
-        <li><strong>Outfit Storytelling:</strong> Dress mannequins in full looks, including accessories. "Head-to-toe" increases multiple item sales.</li>
-        <li><strong>Action Poses:</strong> Use dynamic or lifestyle poses (running, sitting, "in action") to inspire imagination.</li>
-        <li><strong>Diversity:</strong> Use mannequins of different shapes, sizes, and skin tones for inclusivity and relatability.</li>
-        <li><strong>Positioning:</strong> Place at entrances, power walls, or near new arrivals. Rotate outfits at least weekly.</li>
+        <li><strong>Step 1 — Plan the outfit before touching the mannequin:</strong> Pull all pieces first — top, bottom, outerwear, shoes, and accessories. Lay them out together and assess the full look before you start. This saves time and avoids a half-dressed mannequin on the floor.</li>
+        <li><strong>Step 2 — Dress from the bottom up:</strong> Start with pants, skirts, or shorts first, then layer upward. This prevents creasing the top when pulling on bottoms.</li>
+        <li><strong>Step 3 — Use tissue paper or padding where needed:</strong> Stuff loose garments lightly with tissue paper to give them shape and volume. A flat, shapeless garment on a mannequin looks cheap — even if it's not.</li>
+        <li><strong>Step 4 — Tuck, pin, and clip at the back:</strong> The front must look perfect. Use straight pins or bulldog clips at the back to create a clean, fitted silhouette. Customers only see the front — make it flawless.</li>
+        <li><strong>Step 5 — Style the garment intentionally:</strong> Roll sleeves once or twice for a casual look. Pop a collar. Half-tuck a shirt. These small details make the outfit look intentional, not just placed.</li>
+        <li><strong>Step 6 — Add footwear:</strong> Shoes complete a look and dramatically increase footwear sales. Bare feet on a mannequin leave the outfit feeling unfinished.</li>
+        <li><strong>Step 7 — Accessorise fully:</strong> This is where most VMs stop short — and where the biggest sales opportunity lives. See the full accessories guide below.</li>
+        <li><strong>Step 8 — Step back and review:</strong> Walk 3–5 metres back and look at the mannequin as a customer would. Check symmetry, silhouette, and whether the outfit tells a clear story. Fix what looks off from a distance.</li>
       </ul>
-      <div class="case-study"><b>📊 Case Study: Nike Flagship Stores</b><br>Nike uses mannequins in action poses (jumping, running) with full gear. This boosts basket size and inspires social media sharing.</div>
+
+      <h4 style="color:#FFD700;margin-top:35px;">Accessories: The Detail That Drives Sales</h4>
+      <div class="golden-box">
+        <p>Accessories are not optional decoration — they are a selling tool. A fully accessorised mannequin can increase average transaction value by up to 30% because customers want the complete look, not just the main garment.</p>
+      </div>
+      <ul>
+        <li><strong>Bags & Handbags:</strong> Hang on the wrist or place in the hand naturally. Choose a bag that complements — not exactly matches — the outfit. Complementary is more stylish than matchy-matchy.</li>
+        <li><strong>Belts:</strong> Use to define the waist on dresses, oversized shirts, or high-waisted bottoms. A belt instantly makes an outfit look more intentional.</li>
+        <li><strong>Jewellery:</strong> Layer necklaces for a fashion-forward look. Add earrings, bracelets, and rings where the mannequin allows. Jewellery draws the eye upward to the face — important for window displays.</li>
+        <li><strong>Scarves & Wraps:</strong> Drape loosely around the neck or tie to a bag handle. These add colour and texture without overwhelming the main outfit.</li>
+        <li><strong>Hats & Headwear:</strong> Caps, beanies, or sun hats depending on season. Place slightly forward or at a natural angle — not perfectly centred, which looks stiff.</li>
+        <li><strong>Sunglasses:</strong> Perch on the mannequin's head or hold in the hand. Instantly adds a lifestyle dimension to the look.</li>
+        <li><strong>Socks & Hosiery:</strong> Visible socks are a trend detail — don't hide them. A bold sock with a cropped trouser tells a story. In winter, layer tights under skirts or dresses.</li>
+        <li><strong>Watches:</strong> Where available, a watch on a mannequin's wrist elevates the look from casual to polished immediately.</li>
+      </ul>
+
+      <h4 style="color:#FFD700;margin-top:35px;">Outfit Storytelling: The 3 Rules</h4>
+      <ul>
+        <li><strong>Rule 1 — One hero piece per outfit:</strong> Every look needs one standout item — a bold jacket, a statement dress, a bright accessory. Everything else should support it, not compete with it.</li>
+        <li><strong>Rule 2 — Maximum 3 colours per outfit:</strong> More than 3 colours creates visual noise. Use the 60/30/10 rule — 60% dominant colour, 30% secondary, 10% accent.</li>
+        <li><strong>Rule 3 — Tell a lifestyle story:</strong> Don't just dress a mannequin — dress a person going somewhere. "Saturday brunch," "first day at the office," "Sunday afternoon." When the mannequin has a life, customers imagine themselves in it.</li>
+      </ul>
+
+      <h4 style="color:#FFD700;margin-top:35px;">Positioning & Rotation</h4>
+      <ul>
+        <li><strong>Place at entrances and windows:</strong> Use your best, most current looks here — it's the first impression.</li>
+        <li><strong>Face mannequins toward customer flow:</strong> They should "greet" entering customers, not face the wall.</li>
+        <li><strong>Group in odd numbers:</strong> 1, 3, or 5 mannequins together looks more natural and dynamic than even numbers, which feel static.</li>
+        <li><strong>Rotate outfits weekly:</strong> Regular customers notice. Fresh mannequins signal new stock even when nothing new has arrived.</li>
+        <li><strong>Use varied poses:</strong> Mix standing, walking, and angled poses. A row of identical straight-standing mannequins looks like a factory, not a store.</li>
+      </ul>
+
+      <div class="expert-tip">
+        <b>🎯 Pro Tip:</b> When you finish dressing a mannequin, take a photo immediately. This becomes your reference for maintaining the look throughout the week as items are tried on and replaced — and doubles as a VM record photo for your Area Manager.
+      </div>
+
+      <div class="case-study"><b>📊 Case Study: Nike Flagship Stores</b><br>Nike uses mannequins in action poses (jumping, running) with full gear — shoes, socks, wristbands, caps, the works. The fully accessorised approach boosts basket size and inspires customers to buy the complete performance kit, not just the jersey.</div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">4b</span>Wall Bays, Wardrobes & Hanging Bays: Dressing the Floor</h3>
+      <div class="golden-box">
+        <h4>The Floor Tells a Story Too</h4>
+        <p>Mannequins get the attention, but wall bays, wardrobes, and hanging bays are where the volume lives. How you dress these structures directly affects how easy it is for customers to shop — and how much they buy. A messy bay loses sales silently.</p>
+      </div>
+
+      <h4 style="color:#FFD700;margin-top:30px;">Wall Bays: Dressing Top to Bottom</h4>
+      <ul>
+        <li><strong>Top shelf — folded or display items:</strong> Use the top shelf for folded stock, boxed items, or decorative props. Customers rarely reach this high, so treat it as a visual extension of the display, not a storage shelf.</li>
+        <li><strong>Eye level — your hero product:</strong> Eye level is buy level. Your best seller, newest arrival, or highest margin item belongs here. This is the first place a customer's eyes land.</li>
+        <li><strong>Hand level — second-best sellers:</strong> Slightly below eye level. Customers naturally reach here — stock it with strong options that complement the hero product above.</li>
+        <li><strong>Lower shelves — basics and staples:</strong> Reserve for core basics, multi-buy items, or high-volume lines. Customers will bend for value but not for trend.</li>
+        <li><strong>Colour block or colour flow:</strong> Choose one approach per bay — either group colours in solid blocks (bold, graphic look) or graduate them across the bay like a rainbow flow (soft, fashion-forward look). Never mix both on the same bay.</li>
+        <li><strong>Face all items forward:</strong> Every hanger, fold, and facing must point toward the customer. A single sideways hanger breaks the visual line and makes the whole bay look untidy.</li>
+        <li><strong>Size order is non-negotiable:</strong> Run sizes from small to large, left to right, on every hanging rail. Customers scan left to right — if sizing is random, they give up and leave.</li>
+      </ul>
+
+      <h4 style="color:#FFD700;margin-top:35px;">Wardrobes & Tower Fixtures: Dressing With Intention</h4>
+      <ul>
+        <li><strong>Treat a wardrobe like an outfit, not a cupboard:</strong> The full wardrobe should tell one story — one colour palette, one lifestyle, one season. Mixing unrelated items in a wardrobe confuses the customer and devalues everything in it.</li>
+        <li><strong>Use the hanging rail for outerwear and key pieces:</strong> Hang your statement jackets, blazers, or hero garments on the rail at the front. These are the first things the customer engages with.</li>
+        <li><strong>Use shelves for folded items and accessories:</strong> Fold neatly using consistent folding size — all items the same width and depth. Uneven folding looks sloppy even if the stock is premium.</li>
+        <li><strong>Add a prop or accessory to the top:</strong> A bag, a folded scarf, a hat, or a small plant on top of the wardrobe adds lifestyle context and draws the eye upward to the full unit.</li>
+        <li><strong>Keep internal shelves colour-consistent:</strong> If the wardrobe is styled in neutrals, don't place a bright red folded item inside. Every shelf should reinforce the same colour story.</li>
+      </ul>
+
+      <h4 style="color:#FFD700;margin-top:35px;">Hanging Bays & Rounders: Managing Volume Neatly</h4>
+      <ul>
+        <li><strong>Hanger direction must be consistent:</strong> All hooks face the same direction — toward the customer. This is a basic standard but one of the most frequently missed on busy trading floors.</li>
+        <li><strong>Space hangers evenly:</strong> Overcrowded rails make garments look like clearance stock. Give each item enough breathing room that the shoulder of the garment is visible. Customers need to be able to browse without effort.</li>
+        <li><strong>Group by style, then colour, then size:</strong> First separate by product type (e.g. all shirts together, all trousers together). Within each type, group by colour. Within each colour, run size small to large.</li>
+        <li><strong>Use waterfall or step-down hanging for impact:</strong> On a 4-way or rounder, use descending length — shorter items at the front, longer at the back. This creates visual depth and makes the fixture look fuller.</li>
+        <li><strong>Remove excess stock from the floor:</strong> A rounder stuffed with 60 items looks like a clearance bin. Edit down to a presentable quantity and replenish from the stockroom as needed. Less on the floor = more perceived value.</li>
+        <li><strong>Wall bans (brand banding):</strong> Many companies use branded wall bands — strips of signage along the top of the bay that carry the brand name, campaign, or category label. These must be straight, undamaged, and correctly positioned per your planogram. A crooked or torn wall band undermines even the best display below it.</li>
+      </ul>
+
+      <h4 style="color:#FFD700;margin-top:35px;">The Bay Dressing Checklist</h4>
+      <div class="golden-box">
+        <ul style="margin-top:10px;">
+          <li>✅ All items faced forward</li>
+          <li>✅ Sizes run small to large, left to right</li>
+          <li>✅ Colours blocked or flowed consistently</li>
+          <li>✅ No empty hangers on the floor</li>
+          <li>✅ No overcrowded rails — breathing room between garments</li>
+          <li>✅ Wall bands straight, clean, and correctly placed</li>
+          <li>✅ Hero product at eye level</li>
+          <li>✅ Price tickets facing outward and visible</li>
+          <li>✅ Top shelf is a display, not a dumping ground</li>
+          <li>✅ Photo taken for AM records once complete</li>
+        </ul>
+      </div>
+
+      <div class="expert-tip">
+        <b>🎯 Pro Tip:</b> Do a quick bay walk every morning before trading and every evening before close. Five minutes of straightening at the start and end of the day prevents the slow deterioration that makes a store look neglected by midweek.
+      </div>
+
+      <div class="activity">
+        <b>💪 Challenge:</b> Pick your worst-looking bay today. Apply the full checklist above. Take a before and after photo. The difference will motivate you to do every bay the same way.
+      </div>
     </div>
 
     <div class="section">
@@ -187,6 +296,42 @@
         <li><strong>Scents & Sounds:</strong> Scented zones and curated playlists can increase time in-store by 18%.</li>
       </ul>
       <div class="fun-fact"><span class="icon">🌈</span> <b>Fun Fact:</b> Stores with music matching their brand (tempo, genre) see a 9% higher average spend!</div>
+
+      <h4 style="color:#FFD700;margin-top:35px;">How Fabric Colours & Washes Are Made: The Fascinating Story</h4>
+      <div class="golden-box">
+        <h4>Why This Matters on the Floor</h4>
+        <p>When a customer asks "why does this denim look faded?" or "what makes this fabric feel so soft?" — a sales assistant who can answer confidently becomes an expert in that customer's eyes. Product knowledge builds trust. Trust builds sales.</p>
+      </div>
+
+      <h4 style="color:#FFD700;margin-top:25px;">🪨 Stonewash: How It Was Born</h4>
+      <ul>
+        <li><strong>The origin:</strong> Stonewashing was invented in the early 1980s by Donald Freeland, a denim manufacturer who was trying to find a way to pre-soften stiff, raw denim jeans so customers didn't have to break them in themselves.</li>
+        <li><strong>How it works:</strong> Newly manufactured denim jeans are placed into large industrial washing machines — along with actual pumice stones (volcanic rock). The rough stones tumble against the fabric for hours, physically abrading and softening the denim fibres and fading the indigo dye unevenly to create that natural, worn-in look.</li>
+        <li><strong>The volcanic rock connection:</strong> Pumice stones are lightweight, porous volcanic rocks — the same type used in foot scrubs. Their rough surface creates micro-abrasions on the denim without tearing it.</li>
+        <li><strong>The result:</strong> A softer hand feel, uneven fading, and a lived-in appearance straight off the production line — without the customer having to wear the jeans for months to achieve the same effect.</li>
+        <li><strong>Modern evolution:</strong> Today many brands have replaced pumice stones with enzyme washing (using biological enzymes that eat into the cotton fibres chemically) and laser fading (lasers burn precise fade patterns into the denim) — faster, more consistent, and more environmentally friendly.</li>
+      </ul>
+
+      <h4 style="color:#FFD700;margin-top:35px;">👖 Denim Detailing: What All Those Effects Actually Mean</h4>
+      <p style="color:#C0C0C0;margin-bottom:15px;">These are the terms your team will encounter daily — knowing them means you can describe the product confidently to any customer.</p>
+      <ul>
+        <li><strong>Whiskering:</strong> The faded, crease-like lines that radiate from the crotch and hip area of jeans — they look like cat whiskers. These are created by hand-sanding, laser etching, or chemical sprays applied to the folded fabric to mimic the natural crease lines that form when a person sits or moves over time. They give jeans a broken-in, authentic feel.</li>
+        <li><strong>Sandblasting / Sanding:</strong> Abrasive sand or sandpaper is used to physically wear away the surface dye in specific areas — usually the thighs, knees, and seat — creating a naturally faded highlight effect. This was historically done by hand but is now largely laser-automated for consistency and safety.</li>
+        <li><strong>Dirty Wash / Overdye:</strong> The jeans are dyed over their base colour — often with grey, brown, or khaki tones — to give them an aged, earthy, unwashed appearance. This is what customers often call "dirty jeans." The fabric hasn't actually been dirtied — it's been overdyed to look that way intentionally. Very popular in streetwear and urban fashion.</li>
+        <li><strong>Patches:</strong> Fabric patches sewn onto denim — on knees, pockets, or as decorative panels — originally served a practical purpose (reinforcing worn areas). In fashion, patches became a statement detail, signalling authenticity, rebellion, and DIY culture. Brands now design patches into new jeans as a deliberate style choice rather than a repair.</li>
+        <li><strong>Distressing / Rips:</strong> Intentional tears, holes, or frayed edges applied to denim at the factory. Knees are the most common location. Created by laser cutting, hand-cutting with blades, or chemical treatments that weaken the fabric in specific spots. What looks destroyed is actually engineered — and often commands a premium price.</li>
+        <li><strong>Acid Wash:</strong> Jeans are soaked in chlorine or bleach solutions — often with pumice stones — creating irregular, high-contrast bleached patterns across the fabric. Acid wash was a defining look of the 1980s and has regularly cycled back into fashion. The result is a marbled, almost tie-dye-like fading across the surface.</li>
+        <li><strong>Raw Denim:</strong> The opposite of all the above — raw denim is unwashed, untreated denim in its pure indigo state. It's stiff, dark, and will fade and crease uniquely over time based on how the individual wearer moves. Denim purists prize raw denim because every pair eventually becomes a one-of-a-kind piece shaped by the owner's body and lifestyle.</li>
+        <li><strong>Selvedge Denim:</strong> Woven on old-style narrow shuttle looms with a self-finished edge (the "selvedge" — short for self-edge) that prevents fraying. The visible coloured line on the inside cuff when rolled up is the selvedge edge — a mark of premium, traditional craftsmanship.</li>
+      </ul>
+
+      <div class="expert-tip">
+        <b>🎯 Floor Tip:</b> When a customer picks up a distressed or dirty-wash jean and looks uncertain, this is your moment. Explain that the effect is intentional and engineered — it didn't arrive like that by accident. Customers who understand what they're looking at are far more likely to buy it confidently.
+      </div>
+
+      <div class="case-study">
+        <b>📊 Industry Insight:</b> Distressed and washed denim consistently commands 20–40% higher retail prices than plain denim — despite using the same base fabric. The finishing process is where the perceived value is created. Knowing this helps you justify the price to any customer who questions it.
+      </div>
     </div>
 
     <div class="section">
@@ -214,67 +359,183 @@
       </div>
     </div>
 
-    <!-- ══ QUIZ ══ -->
+    <div class="section">
+      <h3><span class="section-icon">7</span>Taking VM Photos: How to Capture Your Displays Professionally</h3>
+      <div class="golden-box">
+        <h4>Why VM Photography Matters</h4>
+        <p>Area Managers, Regional Managers, and Head Office will regularly ask for photos of your displays — for compliance checks, best-practice sharing, and competitions. A poorly shot photo can undersell a brilliant display. A great photo can get you noticed across the whole region.</p>
+      </div>
+      <h4 style="color:#FFD700;margin-top:30px;">The Golden Rules of VM Photography</h4>
+      <ul>
+        <li><strong>Wipe your camera lens first:</strong> This is the most overlooked step. A smudged lens from fingerprints makes every photo blurry and hazy — no matter how good your display looks. Give it a quick wipe on your shirt before every shoot. Sounds obvious, but most people never do it.</li>
+        <li><strong>Clean before you shoot:</strong> Remove dust, straighten hangers, fix price tags, wipe glass. The camera catches everything you ignore with your eyes.</li>
+        <li><strong>Shoot straight-on:</strong> Hold your phone at the mid-height of the display and keep it level. Tilted shots make displays look unprofessional.</li>
+        <li><strong>Use natural light where possible:</strong> Stand with light behind you, not behind the display. Avoid shooting into windows — your display will appear dark.</li>
+        <li><strong>Turn off harsh overhead lights if they cause glare:</strong> Use the store's accent/spot lighting to your advantage instead.</li>
+        <li><strong>Use gridlines on your phone camera:</strong> This keeps your shot straight and symmetrical. Enable in your camera settings.</li>
+        <li><strong>Shoot wide first, then detail:</strong> Always take a full-width shot of the entire display, then move in for close-up detail shots of key items or props.</li>
+        <li><strong>Remove clutter from the frame:</strong> Move trolleys, boxes, or signage that isn't part of the display out of shot before photographing.</li>
+        <li><strong>Portrait vs Landscape:</strong> Use landscape (horizontal) for wide wall bays and full-store shots. Use portrait (vertical) for mannequins, tower displays, and social media posts.</li>
+        <li><strong>Consistency matters:</strong> If sending multiple photos to your AM or HO, shoot them all at the same height and angle so they look like a professional set.</li>
+      </ul>
+      <div class="expert-tip">
+        <b>🎯 Pro Tip:</b> Lightly edit your photos before sending — increase brightness slightly and boost contrast. Most phones have a built-in editing tool. A brighter, sharper photo always makes a display look more impressive. Don't filter or over-edit — just clean it up.
+      </div>
+      <div class="activity">
+        <b>💪 Challenge:</b> Retake a VM photo you've sent before using these rules. Compare the two. The difference will surprise you.
+      </div>
+      <div class="case-study">
+        <b>📊 Real Talk:</b> Area Managers often judge store execution based on the quality of the photos they receive. A well-lit, straight, clean photo of a good display signals professionalism and attention to detail — even before they walk through the door.
+      </div>
+    </div>
+
+    <div class="section">
+      <h3><span class="section-icon">8</span>Seasonal Colour & Company Colour Palettes</h3>
+      <div class="golden-box">
+        <h4>Two Rules That Govern VM Colour</h4>
+        <p>Colour in retail is guided by two forces at the same time — the <strong>season</strong> (which drives customer mood and buying behaviour) and your <strong>company's brand palette</strong> (which is non-negotiable and set by Head Office). Great VMs understand both and work within them creatively.</p>
+      </div>
+
+      <h4 style="color:#FFD700;margin-top:30px;">Seasonal Colour Guidelines</h4>
+      <ul>
+        <li><strong>Summer (Oct–Feb in SA):</strong> Bright, energetic colours — whites, yellows, corals, aquas, and vibrant prints. Light fabrics forward. Communicate fun, freedom, and heat.</li>
+        <li><strong>Autumn/Transition (Mar–Apr):</strong> Warm, earthy tones — burnt orange, terracotta, rust, olive green, camel. Begin layering in textures like denim and knitwear.</li>
+        <li><strong>Winter (May–Aug):</strong> Deep, rich, cosy tones — navy, charcoal, burgundy, forest green, black. Heavy fabrics, boots, and layering pieces take centre stage.</li>
+        <li><strong>Spring/New Season (Sep–Oct):</strong> Fresh, optimistic tones — pastels, mint, blush, soft yellow, lavender. Transition pieces and new arrivals dominate windows and mannequins.</li>
+      </ul>
+      <div class="fun-fact">
+        <span class="icon">🌍</span> <b>SA Note:</b> South Africa's seasons are the reverse of Europe and North America. Always use local SA season timing — don't follow international VM guides blindly!
+      </div>
+
+      <h4 style="color:#FFD700;margin-top:30px;">Company Colour Palettes: Follow the Brand</h4>
+      <ul>
+        <li><strong>Every retail brand has a defined colour identity</strong> set by their marketing and design teams. This is not optional — it reflects how the brand wants to be perceived by customers.</li>
+        <li><strong>Examples:</strong>
+          <ul style="margin-left:20px;color:#C0C0C0;">
+            <li>Soviet — bold, urban, street-influenced. Black, white, red energy. Displays should feel edgy and confident.</li>
+            <li>Woolworths SA — clean, premium, neutral. Whites, creams, soft greys. Displays feel elevated and sophisticated.</li>
+            <li>Mr Price — youthful, colourful, value-driven. Bright pops of colour, fun energy, high-volume displays.</li>
+            <li>Truworths — aspirational, fashion-forward. Rich tones, editorial styling, sleek fixtures.</li>
+          </ul>
+        </li>
+        <li><strong>When in doubt, refer to your VM guide or planogram</strong> — Head Office will issue seasonal colour direction documents that specify exactly which colours to lead with each campaign.</li>
+        <li><strong>Never mix seasonal colours with off-brand fixtures or signage</strong> — a summer pastel display on a gothic black prop sends a confused message to the customer.</li>
+      </ul>
+
+      <div class="golden-box">
+        <h4>The VM Colour Rule of Thumb</h4>
+        <p>Season tells you <strong>what</strong> colours to use. Brand tells you <strong>how</strong> to use them. Your creativity lives in the space between the two.</p>
+      </div>
+
+      <div class="activity">
+        <b>💪 Exercise:</b> Look at your current store displays. Are the colours aligned with both the current season AND your brand's palette? Identify one display that could be improved with a simple colour adjustment — and do it this week.
+      </div>
+    </div>
+
+    <!-- QUIZ -->
     <div class="quiz-section">
       <h3>🎯 Visual Merchandising Mastery Quiz</h3>
-      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 5 out of 6 or higher to unlock the completion button.</p>
+      <p style="color:#000;font-weight:700;margin-bottom:24px;">Score 8 out of 10 or higher to unlock the completion button.</p>
       <form id="quiz4">
-        <div class="quiz-question">
-          <b>1. Which layout is best for maximising exposure to all store areas?</b>
+
+        <div class="quiz-question" id="qq1">
+          <b>1. Which layout is best for maximising customer exposure to all store areas?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q1" value="a"/> Grid</label>
             <label><input type="radio" name="q1" value="b"/> Racetrack/Loop</label>
             <label><input type="radio" name="q1" value="c"/> Freeform</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>2. Endcaps are most effective for:</b>
+
+        <div class="quiz-question" id="qq2">
+          <b>2. Endcaps are most effective for displaying:</b>
           <div class="quiz-options">
             <label><input type="radio" name="q2" value="a"/> Clearance items only</label>
             <label><input type="radio" name="q2" value="b"/> New, high-margin, or seasonal goods</label>
-            <label><input type="radio" name="q2" value="c"/> Storing supplies</label>
+            <label><input type="radio" name="q2" value="c"/> Store supplies</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>3. What visual merchandising element is proven to boost multiple item sales?</b>
+
+        <div class="quiz-question" id="qq3">
+          <b>3. What visual element is proven to boost multiple item sales?</b>
           <div class="quiz-options">
-            <label><input type="radio" name="q3" value="a"/> Mannequins in full outfits</label>
+            <label><input type="radio" name="q3" value="a"/> Mannequins dressed in full head-to-toe outfits</label>
             <label><input type="radio" name="q3" value="b"/> Unlabeled shelves</label>
-            <label><input type="radio" name="q3" value="c"/> Empty corners</label>
+            <label><input type="radio" name="q3" value="c"/> Empty corner displays</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>4. What's the ideal frequency for changing key displays?</b>
+
+        <div class="quiz-question" id="qq4">
+          <b>4. What is the ideal frequency for changing key displays?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q4" value="a"/> Weekly or more often</label>
             <label><input type="radio" name="q4" value="b"/> Twice a year</label>
             <label><input type="radio" name="q4" value="c"/> Only when a manager says so</label>
           </div>
         </div>
-        <div class="quiz-question">
+
+        <div class="quiz-question" id="qq5">
           <b>5. True or False: Scent and music have little impact on shopping behaviour.</b>
           <div class="quiz-options">
             <label><input type="radio" name="q5" value="a"/> True</label>
-            <label><input type="radio" name="q5" value="b"/> False</label>
+            <label><input type="radio" name="q5" value="b"/> False — scent and music can increase time in-store by 18% and spend by 9%</label>
           </div>
         </div>
-        <div class="quiz-question">
-          <b>6. What's a quick way to make your store "Instagrammable"?</b>
+
+        <div class="quiz-question" id="qq6">
+          <b>6. What is a quick way to make your store "Instagrammable"?</b>
           <div class="quiz-options">
             <label><input type="radio" name="q6" value="a"/> Create a fun, photo-friendly display or prop area</label>
-            <label><input type="radio" name="q6" value="b"/> Hide your best products</label>
-            <label><input type="radio" name="q6" value="c"/> Turn off the lights</label>
+            <label><input type="radio" name="q6" value="b"/> Hide your best products at the back</label>
+            <label><input type="radio" name="q6" value="c"/> Dim all the lights</label>
           </div>
         </div>
+
+        <div class="quiz-question" id="qq7">
+          <b>7. Where should top-selling products be placed on a gondola or wall unit?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q7" value="a"/> On the bottom shelf</label>
+            <label><input type="radio" name="q7" value="b"/> At eye or hand level</label>
+            <label><input type="radio" name="q7" value="c"/> On the very top shelf</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq8">
+          <b>8. Which colour psychology association is correct?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q8" value="a"/> Red = freshness, Blue = urgency</label>
+            <label><input type="radio" name="q8" value="b"/> Red = urgency, Blue = trust</label>
+            <label><input type="radio" name="q8" value="c"/> Yellow = sadness, Green = danger</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq9">
+          <b>9. When taking a VM photo to send to your Area Manager, what should you do first?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q9" value="a"/> Apply a filter to make it look more dramatic</label>
+            <label><input type="radio" name="q9" value="b"/> Clean the display — remove dust, straighten hangers, fix price tags</label>
+            <label><input type="radio" name="q9" value="c"/> Take the photo quickly from any angle</label>
+          </div>
+        </div>
+
+        <div class="quiz-question" id="qq10">
+          <b>10. In South Africa, which season calls for deep rich tones like navy, burgundy, and charcoal?</b>
+          <div class="quiz-options">
+            <label><input type="radio" name="q10" value="a"/> Summer (Oct–Feb)</label>
+            <label><input type="radio" name="q10" value="b"/> Spring (Sep–Oct)</label>
+            <label><input type="radio" name="q10" value="c"/> Winter (May–Aug)</label>
+          </div>
+        </div>
+
         <button type="button" class="btn" onclick="gradeQuiz()" style="margin-top:25px;background:#000;color:#FFD700;border:3px solid #FFD700;">Submit Quiz</button>
       </form>
       <div id="quiz4-result" style="font-weight:bold;margin-top:25px;padding:25px;background:rgba(0,0,0,0.2);border-radius:12px;display:none;color:#000;"></div>
     </div>
 
-    <!-- ══ COMPLETION ══ -->
+    <!-- COMPLETION -->
     <div id="lesson-completion">
       <div id="quiz-required-notice">
-        ⚠️ Complete the quiz and score 5/6 or higher to mark this lesson complete.
+        ⚠️ Complete the quiz and score 8/10 or higher to mark this lesson complete.
       </div>
       <button id="markComplete" class="btn" onclick="markLessonComplete()">Mark Lesson Complete</button>
       <a id="nextLessonBtn" href="lesson5.html" class="btn" style="display:none;">Continue to Lesson 5 →</a>
@@ -289,33 +550,65 @@
   <script>
     var lessonNum    = 4;
     var totalLessons = 8;
+    var totalQ       = 10;
+    var passScore    = 8;
     var quizPassed   = false;
 
+    var correctAnswers = {
+      q1:  { value: 'b', text: 'Racetrack/Loop' },
+      q2:  { value: 'b', text: 'New, high-margin, or seasonal goods' },
+      q3:  { value: 'a', text: 'Mannequins dressed in full head-to-toe outfits' },
+      q4:  { value: 'a', text: 'Weekly or more often' },
+      q5:  { value: 'b', text: 'False — scent and music can increase time in-store by 18% and spend by 9%' },
+      q6:  { value: 'a', text: 'Create a fun, photo-friendly display or prop area' },
+      q7:  { value: 'b', text: 'At eye or hand level' },
+      q8:  { value: 'b', text: 'Red = urgency, Blue = trust' },
+      q9:  { value: 'b', text: 'Clean the display — remove dust, straighten hangers, fix price tags' },
+      q10: { value: 'c', text: 'Winter (May–Aug)' }
+    };
+
     function gradeQuiz() {
-      var correct = { q1:'b', q2:'b', q3:'a', q4:'a', q5:'b', q6:'a' };
       var score = 0;
-      for (var i = 1; i <= 6; i++) {
-        var ans = document.querySelector('input[name="q' + i + '"]:checked');
-        if (ans && ans.value === correct['q' + i]) score++;
+      for (var i = 1; i <= totalQ; i++) {
+        var qKey = 'q' + i;
+        var ans  = document.querySelector('input[name="' + qKey + '"]:checked');
+        var qDiv = document.getElementById('qq' + i);
+        var old  = qDiv.querySelector('.answer-feedback');
+        if (old) old.remove();
+        var fb = document.createElement('div');
+        fb.className = 'answer-feedback';
+        if (!ans) {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Not answered. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        } else if (ans.value === correctAnswers[qKey].value) {
+          score++;
+          fb.className += ' answer-correct';
+          fb.innerHTML = '✅ Correct!';
+        } else {
+          fb.className += ' answer-wrong';
+          fb.innerHTML = '❌ Wrong. Correct answer: <strong>' + correctAnswers[qKey].text + '</strong>';
+        }
+        qDiv.appendChild(fb);
       }
-      var msg = '🏆 You scored ' + score + ' out of 6! ';
-      if (score === 6)     msg += 'VISUAL MERCHANDISING MASTER! Your store will be a showstopper! 🔥';
-      else if (score >= 5) msg += 'Brilliant! You understand visual merchandising at an elite level.';
-      else if (score >= 4) msg += 'Good effort! Review the missed sections and try again to unlock completion.';
-      else                 msg += 'Keep learning! Visual merchandising is powerful — review and try again.';
 
       var resultDiv = document.getElementById('quiz4-result');
+      var msg = '🏆 You scored ' + score + ' out of ' + totalQ + '! ';
+      if (score === totalQ)        msg += 'VISUAL MERCHANDISING MASTER! Your store will be a showstopper! 🔥';
+      else if (score >= passScore) msg += 'Brilliant! You understand visual merchandising at an elite level.';
+      else if (score >= 6)         msg += 'Good effort! Review the red answers above and try again.';
+      else                         msg += 'Keep learning! Visual merchandising is powerful — review and retake the quiz.';
+
       resultDiv.textContent = msg;
       resultDiv.style.display = 'block';
-      resultDiv.scrollIntoView({ behavior:'smooth', block:'center' });
+      resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
 
-      if (score >= 5) {
+      if (score >= passScore) {
         quizPassed = true;
         document.getElementById('quiz-required-notice').classList.remove('show');
       } else {
         quizPassed = false;
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/6. Score 5 or higher to mark complete. Review the lesson and try again!';
+        document.getElementById('quiz-required-notice').textContent = '⚠️ You scored ' + score + '/' + totalQ + '. You need ' + passScore + ' or higher. Review the red answers and try again!';
       }
     }
 
@@ -323,8 +616,8 @@
       var progress = JSON.parse(localStorage.getItem('retailProgress') || '{}');
       if (!quizPassed && !progress['lesson' + lessonNum]) {
         document.getElementById('quiz-required-notice').classList.add('show');
-        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score 5/6 or higher first.';
-        document.getElementById('lesson-completion').scrollIntoView({ behavior:'smooth' });
+        document.getElementById('quiz-required-notice').textContent = '⚠️ Complete the quiz and score ' + passScore + '/' + totalQ + ' or higher first.';
+        document.getElementById('lesson-completion').scrollIntoView({ behavior: 'smooth' });
         return;
       }
       progress['lesson' + lessonNum] = true;
@@ -360,6 +653,5 @@
       updateProgressBar();
     };
   </script>
-
 </body>
 </html>
